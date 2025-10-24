@@ -1,3 +1,5 @@
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeadder from "@/components/SiteHeadder";
 import { ModeToggle } from "@/components/theme/ModeToggle";
 import Head from "next/head";
 
@@ -10,7 +12,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <>
-        <ModeToggle />
+        <SiteHeadder />
+
+        <SiteFooter />
       </>
     </>
   );
