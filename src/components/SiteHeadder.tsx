@@ -60,7 +60,7 @@ export default function SiteHeadder() {
   }, []);
 
   return (
-    <header className="w-full bg-linear-to-r from-white/60 to-gray-100/60 dark:from-gray-900/60 dark:to-gray-800/60 backdrop-blur sticky top-0 z-40 shadow-sm dark:text-white">
+    <header className="w-full bg-linear-to-r from-white  to-gray-100 dark:from-gray-900 dark:to-gray-800 sticky top-0 z-40 shadow-sm dark:text-white">
       <div
         ref={containerRef}
         className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
