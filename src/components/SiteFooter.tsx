@@ -1,24 +1,21 @@
-import {
-  Mail,
-  MapPin,
-  Phone
-} from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const services = [
-  "Web Design",
-  "Portfolio Sites",
-  "Branding",
-  "SEO",
-  "E-commerce",
-  "UI/UX",
+  { label: "Web Design", href: "/web-design" },
+  { label: "Portfolio Sites", href: "/portfolio-site" },
+  { label: "Branding", href: "/branding" },
+  { label: "SEO", href: "/seo" },
+  { label: "E-commerce", href: "/e-commerce" },
+  { label: "UI/UX", href: "/ui-ux" },
 ];
 
 const quickLinks = [
   { label: "Home 1", href: "/home1" },
   { label: "Home 2", href: "/home2" },
   { label: "About Us", href: "/about" },
+  { label: "Services", href: "/services" },
   { label: "Blog", href: "/blog" },
   { label: "Contact Us", href: "/contact" },
 ];
@@ -211,13 +208,10 @@ export default function SiteFooter() {
               Services
             </h4>
             <ul className="mt-4 space-y-2">
-              {services.map((s) => (
-                <li key={s}>
-                  <Link
-                    href={`/services/${s.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="text-sm hover:underline"
-                  >
-                    {s}
+              {services.map((s, index) => (
+                <li key={index}>
+                  <Link href={`${s.href}`} className="text-sm hover:underline">
+                    {s.label}
                   </Link>
                 </li>
               ))}

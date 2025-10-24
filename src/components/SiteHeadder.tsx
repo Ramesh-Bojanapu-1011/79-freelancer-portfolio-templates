@@ -6,12 +6,12 @@ import { ModeToggle } from "./theme/ModeToggle";
 import Image from "next/image";
 
 const services = [
-  "Web Design",
-  "Portfolio Sites",
-  "Branding",
-  "SEO",
-  "E-commerce",
-  "UI/UX",
+  { label: "Web Design", href: "/web-design" },
+  { label: "Portfolio Sites", href: "/portfolio-site" },
+  { label: "Branding", href: "/branding" },
+  { label: "SEO", href: "/seo" },
+  { label: "E-commerce", href: "/e-commerce" },
+  { label: "UI/UX", href: "/ui-ux" },
 ];
 
 export default function SiteHeadder() {
@@ -147,13 +147,13 @@ export default function SiteHeadder() {
               </button>
               {servicesOpen && (
                 <div className="absolute left-0 mt-2 w-56 rounded-md bg-white dark:bg-slate-800 shadow-lg ring-1 ring-black ring-opacity-5 py-2 grid grid-cols-1">
-                  {services.map((s) => (
+                  {services.map((s, index) => (
                     <Link
-                      key={s}
-                      href={`/services/${s.toLowerCase().replace(/\s+/g, "-")}`}
+                      key={index}
+                      href={`/${s.href}`}
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
                     >
-                      {s}
+                      {s.label}
                     </Link>
                   ))}
                 </div>
@@ -357,15 +357,13 @@ export default function SiteHeadder() {
                 </button>
                 {mobileServicesOpen && (
                   <div className="mt-1 space-y-1 pl-4">
-                    {services.map((s) => (
+                    {services.map((s, index) => (
                       <Link
-                        key={s}
-                        href={`/services/${s
-                          .toLowerCase()
-                          .replace(/\s+/g, "-")}`}
+                        key={index}
+                        href={`${s.href}`}
                         className="block px-3 py-2 rounded-md text-base"
                       >
-                        {s}
+                        {s.label}
                       </Link>
                     ))}
                   </div>
