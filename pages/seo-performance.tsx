@@ -13,7 +13,7 @@ import {
   Zap,
 } from "lucide-react";
 
-const FrontendDevelopmentPage: React.FC = () => {
+const SeoPerformancePage: React.FC = () => {
   const pricingPlans = [
     {
       id: "starter",
@@ -87,10 +87,10 @@ const FrontendDevelopmentPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Frontend Development — Services</title>
+        <title>SEO & Performance — Services</title>
         <meta
           name="description"
-          content="Frontend development services: modern React/Next.js apps, performance optimization, responsive UIs, accessibility and deployment."
+          content="SEO and performance optimization services: Core Web Vitals, Lighthouse tuning, caching, image optimization and analytics for measurable traffic growth."
         />
       </Head>
 
@@ -117,19 +117,19 @@ const FrontendDevelopmentPage: React.FC = () => {
                     </li>
                     <li className="text-slate-300 dark:text-slate-700">/</li>
                     <li className="text-indigo-600 dark:text-cyan-400 font-semibold">
-                      Frontend Development
+                      SEO & Performance
                     </li>
                   </ol>
                 </nav>
 
                 <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight text-slate-900 dark:text-white">
-                  Build Fast, Maintainable Frontends.
+                  Faster Pages, More Traffic.
                 </h1>
 
                 <p className="mt-6 text-xl text-slate-600 dark:text-slate-300 max-w-xl">
-                  We build modern React and Next.js frontends focused on
-                  performance, accessibility, and developer experience — from
-                  interactive UI to production-ready deployment pipelines.
+                  Improve load times and search visibility with targeted
+                  performance and SEO work — Core Web Vitals, Lighthouse tuning,
+                  optimized media, and measurable analytics.
                 </p>
 
                 {/* --- CTAs (Redesigned for premium look) --- */}
@@ -151,11 +151,11 @@ const FrontendDevelopmentPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Performance & SSR
+                        Core Web Vitals
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Optimized builds, server-side rendering, and bundle
-                        tuning for fast load times.
+                        Reduce CLS, LCP and TTFB with prioritized fixes and
+                        monitoring.
                       </div>
                     </div>
                   </li>
@@ -167,11 +167,11 @@ const FrontendDevelopmentPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Component Implementation
+                        Lighthouse & Audits
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Production-ready React components, primitives and
-                        design-consistent UI building blocks.
+                        Full-site audits, prioritized recommendations and
+                        remediation for accessibility, performance and SEO.
                       </div>
                     </div>
                   </li>
@@ -183,11 +183,11 @@ const FrontendDevelopmentPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Tooling & Testing
+                        Image & Cache Optimization
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Automated testing, linting, and CI pipelines to keep
-                        releases stable.
+                        Next-gen images, proper cache headers and CDN strategies
+                        for repeat visits and fast UX.
                       </div>
                     </div>
                   </li>
@@ -199,10 +199,11 @@ const FrontendDevelopmentPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Accessibility & SEO
+                        Analytics & Monitoring
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Semantic markup, ARIA, and SEO best practices baked in.
+                        Track Core Web Vitals, set up real-user monitoring and
+                        conversion analytics for data-driven decisions.
                       </div>
                     </div>
                   </li>
@@ -222,14 +223,14 @@ const FrontendDevelopmentPage: React.FC = () => {
                       />
                       <div className="p-5">
                         <div className=" text-slate-500 dark:text-slate-400">
-                          Live preview
+                          Audit snapshot
                         </div>
                         <div className="mt-1 text-lg font-semibold text-slate-900 dark:text-slate-100">
-                          Frontend implementation preview
+                          Performance & SEO snapshot
                         </div>
                         <p className="mt-2  text-slate-600 dark:text-slate-300">
-                          A short preview of an implemented page showing
-                          responsive layout, lazy images and interactive UI.
+                          A condensed view of audit results, Lighthouse scores
+                          and recommendations applied to a sample page.
                         </p>
                       </div>
                     </div>
@@ -246,11 +247,11 @@ const FrontendDevelopmentPage: React.FC = () => {
         <section className="mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32 bg-white dark:bg-slate-900">
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              Frontend Scope & Deliverables
+              SEO & Performance Deliverables
             </h2>
             <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              What you get when we deliver a frontend: production-ready
-              components, optimized pages, and deployment-ready code.
+              Actionable improvements and deliverables to make your site faster,
+              more discoverable, and more reliable in search.
             </p>
           </div>
 
@@ -258,23 +259,23 @@ const FrontendDevelopmentPage: React.FC = () => {
             {/* Deliverables */}
             <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 transition-shadow duration-300 hover:shadow-2xl">
               <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
-                <Figma className="h-6 w-6" /> Frontend Deliverables
+                <Figma className="h-6 w-6" /> SEO & Performance Deliverables
               </div>
               <ul className="mt-6 space-y-3 text-slate-700 dark:text-slate-300">
                 <li className="flex items-start gap-2">
-                  • React/Next.js pages and routes
+                  • Lighthouse audit and prioritized report
                 </li>
                 <li className="flex items-start gap-2">
-                  • Reusable UI components and hooks
+                  • Core Web Vitals remediation (LCP/CLS/TTFB)
                 </li>
                 <li className="flex items-start gap-2">
-                  • Responsive page templates and layouts
+                  • Image optimization & responsive loading
                 </li>
                 <li className="flex items-start gap-2">
-                  • Performance and accessibility improvements
+                  • CDN, cache headers and bundling strategy
                 </li>
                 <li className="flex items-start gap-2">
-                  • Deployment scripts and CI configuration
+                  • Analytics and RUM setup for monitoring
                 </li>
               </ul>
             </div>
@@ -285,12 +286,13 @@ const FrontendDevelopmentPage: React.FC = () => {
                 <Zap className="h-6 w-6" /> Timeline & Velocity
               </div>
               <div className="mt-6 text-slate-700 dark:text-slate-300">
-                Typical engagement: **1–4 weeks** depending on scope. Work is
-                split into Discovery, Implementation, and QA/Deployment with
-                milestones for reviews and user testing.
+                Typical engagement: **1–3 weeks** for audits and quick wins,
+                longer for full remediation and monitoring setup. We break work
+                into Audit, Fixes, and Monitoring phases.
               </div>
               <div className="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400 border-t pt-4 border-slate-200 dark:border-slate-700">
-                Includes performance audit, accessibility checks and CI setup.
+                Includes a prioritized action plan, before/after metrics and 30
+                days of performance monitoring.
               </div>
             </div>
 
@@ -301,10 +303,10 @@ const FrontendDevelopmentPage: React.FC = () => {
                   <Code className="h-6 w-6" /> Workflow
                 </div>
                 <ol className="mt-6 text-slate-700 dark:text-slate-300 space-y-3 list-decimal pl-5">
-                  <li>Requirements & Architecture</li>
-                  <li>Component and Route Implementation</li>
-                  <li>Testing, Accessibility & Performance Tuning</li>
-                  <li>Deployment and Monitoring</li>
+                  <li>Audit & Lighthouse scoring</li>
+                  <li>Quick wins & prioritized fixes</li>
+                  <li>Deep remediation (images, caching, code-splitting)</li>
+                  <li>Monitoring, reporting & iterative improvements</li>
                 </ol>
               </div>
 
@@ -325,8 +327,8 @@ const FrontendDevelopmentPage: React.FC = () => {
           <div className="text-center">
             <h2 className="text-2xl sm:text-3xl font-extrabold">Projects</h2>
             <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Recent work where the design system improved consistency, speed
-              and polish.
+              Recent SEO & performance improvements with measurable gains in
+              load time and organic traffic.
             </p>
           </div>
 
@@ -334,21 +336,21 @@ const FrontendDevelopmentPage: React.FC = () => {
             {[
               {
                 id: "project-1",
-                title: "Next.js marketing site — Alex M",
+                title: "E-commerce speedup — Bloom Shop",
                 img: "https://picsum.photos/seed/project-1/900/600",
-                desc: "A fast, SEO-friendly marketing site built with Next.js and ISR.",
+                desc: "Reduced LCP by 45% and improved conversion with image and cache optimizations.",
               },
               {
                 id: "project-2",
-                title: "Interactive gallery — Lina R",
+                title: "Media gallery — Lina R",
                 img: "https://picsum.photos/seed/project-2/900/600",
-                desc: "An image-heavy interactive gallery with lazy-loading and smooth transitions.",
+                desc: "Implemented responsive images and lazy-loading — 60% faster time-to-interact.",
               },
               {
                 id: "project-3",
-                title: "Agency platform — Ember Co",
+                title: "Content site SEO — Ember Co",
                 img: "https://picsum.photos/seed/project-3/900/600",
-                desc: "A client-facing portal with reusable dashboards and form flows.",
+                desc: "Structured data, meta tuning and performance improvements lifted organic traffic.",
               },
             ].map((p, idx) => (
               <article
@@ -627,4 +629,4 @@ const FrontendDevelopmentPage: React.FC = () => {
   );
 };
 
-export default FrontendDevelopmentPage;
+export default SeoPerformancePage;
