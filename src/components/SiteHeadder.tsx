@@ -60,7 +60,7 @@ export default function SiteHeadder() {
   }, []);
 
   return (
-    <header className="w-full bg-linear-to-r from-white  to-gray-100 dark:from-gray-900 dark:to-gray-800 sticky top-0 z-40 shadow-sm dark:text-white">
+    <header className="w-screen bg-linear-to-r from-white  to-gray-100 dark:from-gray-900 dark:to-gray-800 sticky top-0 z-40 shadow-sm dark:text-white">
       <div
         ref={containerRef}
         className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
@@ -68,7 +68,7 @@ export default function SiteHeadder() {
         <div className="flex h-16 items-center justify-between">
           {/* Left: Logo */}
           <div className="flex items-center gap-4">
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/home1" className="flex items-center gap-2">
               <Image
                 src="https://i.postimg.cc/DwdH9gv8/logo-stackly.png"
                 alt="Logo"

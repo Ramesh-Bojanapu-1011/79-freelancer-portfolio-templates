@@ -413,7 +413,7 @@ export default function Home1() {
         </section>
 
         {/* Testimonials / Reviews */}
-        <section className="mx-auto    bg-linear-to-b to-white from-slate-50 dark:to-slate-900 dark:from-slate-800 px-6 lg:px-8 py-16">
+        <section className="mx-auto w-screen    bg-linear-to-b to-white from-slate-50 dark:to-slate-900 dark:from-slate-800 px-6 lg:px-8 py-16">
           <div className="    ">
             <div className="flex-col flex  justify-center items-center">
               <h2 className="text-3xl lg:text-4xl font-extrabold">
@@ -438,7 +438,7 @@ export default function Home1() {
               <div className="mt-4 -ml-6 lg:ml-0">
                 <div className="relative">
                   <div className=" ">
-                    <div className="flex gap-6 px-6 lg:px-0 snap-x  ">
+                    <div className="flex gap-6 flex-wrap justify-center px-6 lg:px-0 snap-x   ">
                       {[
                         {
                           name: "Karan",
@@ -461,7 +461,7 @@ export default function Home1() {
                       ].map((r, i) => (
                         <div
                           key={i}
-                          className="snap-start"
+                          className="snap-start max-w-sm"
                           style={{ minWidth: 300 }}
                         >
                           <article className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg w-full">
