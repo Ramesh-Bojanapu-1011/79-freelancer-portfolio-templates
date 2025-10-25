@@ -33,7 +33,7 @@ const DesignSystemsUIPage: React.FC = () => {
         { icon: "Server", text: "Handoff Consultation (No)", available: false },
       ],
       highlighted: false,
-      cta: { href: "/contact", text: "Choose Starter", primary: true },
+      cta: { href: "/contact-us", text: "Choose Starter", primary: true },
     },
     {
       id: "pro",
@@ -57,7 +57,7 @@ const DesignSystemsUIPage: React.FC = () => {
         },
       ],
       highlighted: true,
-      cta: { href: "/contact", text: "Start Pro System", primary: true },
+      cta: { href: "/contact-us", text: "Start Pro System", primary: true },
     },
     {
       id: "agency",
@@ -81,7 +81,7 @@ const DesignSystemsUIPage: React.FC = () => {
         },
       ],
       highlighted: false,
-      cta: { href: "/contact", text: "Contact Sales", primary: false },
+      cta: { href: "/contact-us", text: "Contact Sales", primary: false },
     },
   ];
   return (
@@ -139,7 +139,7 @@ const DesignSystemsUIPage: React.FC = () => {
                 {/* --- CTAs (Redesigned for premium look) --- */}
                 <div className="mt-10 flex flex-wrap gap-4">
                   <Link
-                    href="/contact"
+                    href="/contact-us"
                     className="inline-flex items-center gap-2 bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-indigo-500/40 transition-all duration-300 transform hover:scale-[1.02]"
                   >
                     Start a Project
@@ -311,7 +311,7 @@ const DesignSystemsUIPage: React.FC = () => {
 
               <div className="mt-8">
                 <Link
-                  href="/contact"
+                  href="/contact-us"
                   className="inline-flex items-center justify-center w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-medium transition-colors"
                 >
                   Get a Scoped Quote
@@ -612,7 +612,7 @@ const DesignSystemsUIPage: React.FC = () => {
 
               <div className="mt-10">
                 <Link
-                  href="/contact"
+                  href="/contact-us"
                   className="inline-flex items-center gap-2 bg-linear-to-r from-cyan-500 to-indigo-600 hover:from-cyan-600 hover:to-indigo-700 text-white px-8 py-4 rounded-xl font-bold text-xl shadow-2xl shadow-cyan-500/50 transition-all duration-300 transform hover:scale-[1.05]"
                 >
                   Book Free Consultation

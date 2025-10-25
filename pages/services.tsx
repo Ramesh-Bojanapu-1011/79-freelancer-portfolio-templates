@@ -69,7 +69,7 @@ const ServicesPage = () => {
 
                 <div className="mt-8 flex   items-center gap-4">
                   <Link
-                    href="/contact"
+                    href="/contact-us"
                     className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-md font-medium"
                   >
                     Work with us
@@ -296,7 +296,7 @@ const ServicesPage = () => {
                   </p>
                   <div className="mt-4">
                     <Link
-                      href="/contact"
+                      href="/contact-us"
                       className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm"
                     >
                       Customize a theme

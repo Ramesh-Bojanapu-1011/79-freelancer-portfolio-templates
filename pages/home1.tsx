@@ -46,7 +46,7 @@ export default function Home1() {
                     Get Started
                   </Link>
                   <Link
-                    href="/contact"
+                    href="/contact-us"
                     className="inline-flex items-center gap-2 px-5 py-3 rounded-md border bg-white dark:bg-slate-800"
                   >
                     Contact Sales

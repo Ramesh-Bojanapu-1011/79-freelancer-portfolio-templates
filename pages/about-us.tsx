@@ -230,7 +230,7 @@ const AboutUsPage = () => {
 
                 <div className="mt-8 flex items-center justify-center lg:justify-start gap-4">
                   <Link
-                    href="/contact"
+                    href="/contact-us"
                     className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-md font-medium"
                   >
                     Work with us
@@ -282,7 +282,7 @@ const AboutUsPage = () => {
                   Our services
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/contact-us"
                   className="text-indigo-600 hover:underline"
                 >
                   Contact us
@@ -630,7 +630,7 @@ const AboutUsPage = () => {
 
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-md font-medium"
               >
                 Get a quote
