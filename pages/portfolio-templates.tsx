@@ -13,7 +13,7 @@ import {
   Zap,
 } from "lucide-react";
 
-const BrandingIdentityPage: React.FC = () => {
+const PortfolioTemplatesPage: React.FC = () => {
   const pricingPlans = [
     {
       id: "starter",
@@ -87,10 +87,10 @@ const BrandingIdentityPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Branding & Identity — Services</title>
+        <title>Portfolio Templates — Services</title>
         <meta
           name="description"
-          content="Branding & identity services: brand strategy, logo and asset design, visual systems, and launch-ready brand guidelines."
+          content="Ready-made portfolio templates and component kits for freelancers and creatives — responsive pages, prebuilt sections, and fast launch guides."
         />
       </Head>
 
@@ -117,19 +117,19 @@ const BrandingIdentityPage: React.FC = () => {
                     </li>
                     <li className="text-slate-300 dark:text-slate-700">/</li>
                     <li className="text-indigo-600 dark:text-cyan-400 font-semibold">
-                      Branding & Identity
+                      Portfolio Templates
                     </li>
                   </ol>
                 </nav>
 
                 <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight text-slate-900 dark:text-white">
-                  Memorable Brands, Clear Identity.
+                  Beautiful portfolio templates, ready to ship.
                 </h1>
 
                 <p className="mt-6 text-xl text-slate-600 dark:text-slate-300 max-w-xl">
-                  We craft brand strategies, logos and visual systems that make
-                  your freelance practice or studio stand out — from concept to
-                  launch-ready assets.
+                  Launch a polished portfolio in minutes. Professionally-crafted
+                  templates with prebuilt pages, components, and easy
+                  customization for freelancers and creatives.
                 </p>
 
                 {/* --- CTAs (Redesigned for premium look) --- */}
@@ -138,24 +138,24 @@ const BrandingIdentityPage: React.FC = () => {
                     href="/contact-us"
                     className="inline-flex items-center gap-2 bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-indigo-500/40 transition-all duration-300 transform hover:scale-[1.02]"
                   >
-                    Start a Project
+                    Explore Templates
                   </Link>
                 </div>
 
                 {/* --- Value/Feature List (Improved visual style) --- */}
                 <ul className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-xl">
-                  {/* Performance-minded */}
+                  {/* Template-focused */}
                   <li className="flex items-start gap-3">
                     <div className="mt-1 w-9 h-9 flex items-center justify-center rounded-lg bg-cyan-100 dark:bg-cyan-900/40 text-cyan-600">
                       <Zap className="h-5 w-5" />
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Brand Strategy
+                        Template Themes
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Positioning, messaging and audience-first strategy to
-                        guide visual direction.
+                        Curated themes for minimal, creative, and photo-forward
+                        portfolios ready to swap and launch.
                       </div>
                     </div>
                   </li>
@@ -167,11 +167,11 @@ const BrandingIdentityPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Visual Identity
+                        Prebuilt Sections
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Logo systems, color palettes, typography and imagery to
-                        express your brand consistently.
+                        Landing, about, projects and contact sections that
+                        combine into full portfolio pages.
                       </div>
                     </div>
                   </li>
@@ -183,11 +183,11 @@ const BrandingIdentityPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Brand Assets
+                        Composable Components
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Deliverables: logos, iconography, photography direction
-                        and asset exports for web and print.
+                        Buttons, cards, galleries and layout pieces designed to
+                        be reused and themed.
                       </div>
                     </div>
                   </li>
@@ -199,11 +199,11 @@ const BrandingIdentityPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Guidelines & Launch
+                        Easy Handoff
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Brand guidelines, handoff documents and launch-ready
-                        files for smooth implementation.
+                        Documentation, tokens, and a short handoff guide so you
+                        can customize or hand the site to a developer.
                       </div>
                     </div>
                   </li>
@@ -223,14 +223,14 @@ const BrandingIdentityPage: React.FC = () => {
                       />
                       <div className="p-5">
                         <div className=" text-slate-500 dark:text-slate-400">
-                          Brand preview
+                          Template preview
                         </div>
                         <div className="mt-1 text-lg font-semibold text-slate-900 dark:text-slate-100">
-                          Identity exploration
+                          Portfolio template preview
                         </div>
                         <p className="mt-2  text-slate-600 dark:text-slate-300">
-                          A quick look at logo variations, color pairs and
-                          typographic scales applied to a sample layout.
+                          A quick look at a template homepage, gallery and
+                          project layout to show structure and visual rhythm.
                         </p>
                       </div>
                     </div>
@@ -247,11 +247,11 @@ const BrandingIdentityPage: React.FC = () => {
         <section className="mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32 bg-white dark:bg-slate-900">
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              Branding & Identity Deliverables
+              Template Deliverables
             </h2>
             <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Strategy and visual assets you can use immediately — from logo
-              packages to launch-ready brand guidelines.
+              Ready-to-use portfolio templates and component kits designed for
+              quick launches and easy updates.
             </p>
           </div>
 
@@ -259,23 +259,25 @@ const BrandingIdentityPage: React.FC = () => {
             {/* Deliverables */}
             <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 transition-shadow duration-300 hover:shadow-2xl">
               <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
-                <Figma className="h-6 w-6" /> Branding Deliverables
+                <Figma className="h-6 w-6" /> Template Kit & Deliverables
               </div>
               <ul className="mt-6 space-y-3 text-slate-700 dark:text-slate-300">
                 <li className="flex items-start gap-2">
-                  • Brand strategy and messaging brief
+                  • Full, responsive portfolio pages (home, about, projects,
+                  contact)
                 </li>
                 <li className="flex items-start gap-2">
-                  • Logo suite (primary, secondary, marks)
+                  • Prebuilt components and sections (galleries, case studies,
+                  hero)
                 </li>
                 <li className="flex items-start gap-2">
-                  • Color palette and typography system
+                  • Accessible markup and responsive images
                 </li>
                 <li className="flex items-start gap-2">
-                  • Iconography and imagery direction
+                  • CMS-ready templates and SEO-friendly structure
                 </li>
                 <li className="flex items-start gap-2">
-                  • Launch-ready brand guidelines (PDF & assets)
+                  • Design tokens and a short customization guide
                 </li>
               </ul>
             </div>
@@ -286,12 +288,13 @@ const BrandingIdentityPage: React.FC = () => {
                 <Zap className="h-6 w-6" /> Timeline & Velocity
               </div>
               <div className="mt-6 text-slate-700 dark:text-slate-300">
-                Typical engagement: **1–3 weeks** depending on scope — from a
-                focused visual refresh to a full brand system and launch pack.
+                Typical engagement: **1–7 days** to pick and customize a
+                template, faster for small tweaks. We break work into Pick,
+                Customize, Deploy phases.
               </div>
               <div className="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400 border-t pt-4 border-slate-200 dark:border-slate-700">
-                Deliverables include source files, SVGs, and a concise
-                implementation guide for web and print.
+                Includes theme variables, quick-start instructions, and optional
+                setup help.
               </div>
             </div>
 
@@ -302,10 +305,10 @@ const BrandingIdentityPage: React.FC = () => {
                   <Code className="h-6 w-6" /> Workflow
                 </div>
                 <ol className="mt-6 text-slate-700 dark:text-slate-300 space-y-3 list-decimal pl-5">
-                  <li>Discovery & positioning</li>
-                  <li>Concepts & visual exploration</li>
-                  <li>Refinement and systemization</li>
-                  <li>Handoff: assets and guidelines</li>
+                  <li>Choose a template and theme</li>
+                  <li>Swap content, images and project entries</li>
+                  <li>Customize tokens (colors/typography)</li>
+                  <li>Deploy and go live</li>
                 </ol>
               </div>
 
@@ -324,32 +327,33 @@ const BrandingIdentityPage: React.FC = () => {
         {/* Projects */}
         <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
           <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-extrabold">Projects</h2>
+            <h2 className="text-2xl sm:text-3xl font-extrabold">
+              Template Showcase
+            </h2>
             <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Recent branding work showcasing strategy-led identities and
-              tangible improvements in brand recognition.
+              A few portfolio templates and style directions you can start from.
             </p>
           </div>
 
           <div className="mt-10 space-y-10">
             {[
               {
-                id: "project-1",
-                title: "Brand refresh — Bloom Shop",
-                img: "https://picsum.photos/seed/project-1/900/600",
-                desc: "New logo suite and color system that increased brand recall.",
+                id: "tpl-1",
+                title: "Minimalist — Nova",
+                img: "https://picsum.photos/seed/tpl-1/900/600",
+                desc: "A clean, minimal portfolio with emphasis on whitespace and typography.",
               },
               {
-                id: "project-2",
-                title: "Visual system — Lina R",
-                img: "https://picsum.photos/seed/project-2/900/600",
-                desc: "A cohesive identity and asset pack for a photographer's portfolio.",
+                id: "tpl-2",
+                title: "Photographer — Clara",
+                img: "https://picsum.photos/seed/tpl-2/900/600",
+                desc: "Full-bleed galleries and optimized lightbox for image-forward portfolios.",
               },
               {
-                id: "project-3",
-                title: "Identity package — Ember Co",
-                img: "https://picsum.photos/seed/project-3/900/600",
-                desc: "Logo, icons and a compact guidelines file for a fast launch.",
+                id: "tpl-3",
+                title: "Designer — Mateo",
+                img: "https://picsum.photos/seed/tpl-3/900/600",
+                desc: "Project case studies, process pages, and a modular project grid for case-focused portfolios.",
               },
             ].map((p, idx) => (
               <article
@@ -602,12 +606,12 @@ const BrandingIdentityPage: React.FC = () => {
             <div className="bg-white dark:bg-slate-950 rounded-3xl shadow-2xl ring-1 ring-black/5 dark:ring-white/5 p-12 lg:p-16 text-center">
               <FileText className="h-10 w-10 text-indigo-600 dark:text-teal-400 mx-auto mb-4" />
               <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-slate-900 dark:text-white">
-                Ready to Ship Faster?
+                Ready to Launch Your Portfolio?
               </h2>
 
               <p className="mt-4 text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-                Stop wasting time on styling and start delivering value. Let's
-                build your unified UI system.
+                Stop spending hours on layout — pick a template, swap your
+                content, and go live today.
               </p>
 
               <div className="mt-10">
@@ -615,7 +619,7 @@ const BrandingIdentityPage: React.FC = () => {
                   href="/contact-us"
                   className="inline-flex items-center gap-2 bg-linear-to-r from-cyan-500 to-indigo-600 hover:from-cyan-600 hover:to-indigo-700 text-white px-8 py-4 rounded-xl font-bold text-xl shadow-2xl shadow-cyan-500/50 transition-all duration-300 transform hover:scale-[1.05]"
                 >
-                  Book Free Consultation
+                  Start with a Template
                 </Link>
               </div>
             </div>
@@ -628,4 +632,4 @@ const BrandingIdentityPage: React.FC = () => {
   );
 };
 
-export default BrandingIdentityPage;
+export default PortfolioTemplatesPage;
