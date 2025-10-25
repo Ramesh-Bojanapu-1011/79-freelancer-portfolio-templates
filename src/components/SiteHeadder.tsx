@@ -1,11 +1,11 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
+import React from "react";
 import { ModeToggle } from "./theme/ModeToggle";
-import Image from "next/image";
 
 const services = [
+  { label: "All Services", href: "/services" },
   { label: "Web Design", href: "/web-design" },
   { label: "Portfolio Sites", href: "/portfolio-site" },
   { label: "Branding", href: "/branding" },

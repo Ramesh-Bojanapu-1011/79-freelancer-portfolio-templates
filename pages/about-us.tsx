@@ -1,8 +1,8 @@
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeadder from "@/components/SiteHeadder";
 import Head from "next/head";
-import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 const AboutUsPage = () => {
   const pillars = [

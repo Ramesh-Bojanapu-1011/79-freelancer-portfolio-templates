@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
 import { useRouter } from "next/navigation"; // Fixed for modern Next.js App Router
-import Image from "next/image";
+import React from "react";
 
 type User = {
   firstName: string;
