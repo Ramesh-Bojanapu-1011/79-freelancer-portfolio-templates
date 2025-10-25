@@ -154,7 +154,7 @@ const Home2 = () => {
               {/* Right: image */}
               <div className="relative flex items-center justify-center">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5">
-                  <Image
+                  <img 
                     src="https://i.postimg.cc/4d2j6w1y/portfolio-sample.jpg"
                     alt="Jenna portrait"
                     width={900}
@@ -177,7 +177,7 @@ const Home2 = () => {
               <div className="relative w-full max-w-md">
                 <div className="absolute -left-8 -bottom-8 w-40 h-40 rounded-full bg-indigo-100 dark:bg-indigo-900/30 opacity-60 blur-2xl" />
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5">
-                  <Image
+                  <img 
                     src="https://i.postimg.cc/4d2j6w1y/portfolio-sample.jpg"
                     alt="profile"
                     width={700}
@@ -261,7 +261,7 @@ const Home2 = () => {
             <div className="flex justify-center lg:justify-start">
               <div className="relative w-full max-w-xl">
                 <div className="rounded-lg overflow-hidden shadow-lg">
-                  <Image
+                  <img 
                     src="https://i.postimg.cc/4d2j6w1y/portfolio-sample.jpg"
                     alt="collage main"
                     width={800}
@@ -271,7 +271,7 @@ const Home2 = () => {
                 </div>
 
                 <div className="absolute -top-8 left-6 w-36 h-36 rounded-full bg-indigo-50 dark:bg-indigo-900 flex items-center justify-center shadow-md">
-                  <Image
+                  <img 
                     src="https://i.postimg.cc/5ym0KZ1Y/avatar.jpg"
                     alt="small"
                     width={120}
@@ -281,7 +281,7 @@ const Home2 = () => {
                 </div>
 
                 <div className="absolute -bottom-8 right-6 w-28 h-28 rounded-full bg-indigo-100 dark:bg-indigo-800 flex items-center justify-center shadow-md">
-                  <Image
+                  <img 
                     src="https://i.postimg.cc/5ym0KZ1Y/avatar.jpg"
                     alt="small2"
                     width={96}

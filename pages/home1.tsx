@@ -71,7 +71,7 @@ export default function Home1() {
 
               <div className="relative">
                 <div className="rounded-xl overflow-hidden shadow-xl ring-1 ring-black/5 dark:ring-white/5">
-                  <Image
+                  <img 
                     src="https://i.postimg.cc/4d2j6w1y/portfolio-sample.jpg"
                     alt="template preview"
                     width={900}
@@ -90,7 +90,7 @@ export default function Home1() {
             {/* Left: image */}
             <div className="order-2 lg:order-1">
               <div className="rounded-xl overflow-hidden shadow-lg ring-1 ring-black/5 dark:ring-white/5">
-                <Image
+                <img 
                   src="https://i.postimg.cc/4d2j6w1y/portfolio-sample.jpg"
                   alt="Showcase"
                   width={900}
@@ -244,7 +244,7 @@ export default function Home1() {
 
                 <div className="mt-6 flex items-center gap-4">
                   <div className="flex items-center gap-3">
-                    <Image
+                    <img 
                       src="https://i.postimg.cc/5ym0KZ1Y/avatar.jpg"
                       alt="Author"
                       width={48}
@@ -271,7 +271,7 @@ export default function Home1() {
                 <div className="relative w-full max-w-md">
                   <div className="absolute -inset-2 transform rotate-2 rounded-3xl bg-linear-to-tr from-indigo-400 to-pink-400 opacity-30 blur-lg"></div>
                   <div className="relative rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 dark:ring-white/5">
-                    <Image
+                    <img 
                       src="https://i.postimg.cc/4d2j6w1y/portfolio-sample.jpg"
                       alt="Why choose us"
                       width={900}
@@ -387,7 +387,7 @@ export default function Home1() {
                 className="bg-white dark:bg-slate-800 rounded-lg shadow p-4"
               >
                 <div className="rounded-md overflow-hidden">
-                  <Image
+                  <img 
                     src={t.img}
                     alt={t.title}
                     width={600}
@@ -471,7 +471,7 @@ export default function Home1() {
 
                             <div className="mt-4 flex items-center justify-between">
                               <div className="flex items-center gap-3">
-                                <Image
+                                <img 
                                   src={r.avatar}
                                   alt={r.name}
                                   width={40}

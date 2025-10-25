@@ -160,7 +160,7 @@ export default function SiteFooter() {
           {/* Column 1: Logo + description + social */}
           <div>
             <Link href="/" className="inline-flex items-center gap-3">
-              <Image
+              <img
                 src="https://i.postimg.cc/DwdH9gv8/logo-stackly.png"
                 alt="Logo"
                 width={100}

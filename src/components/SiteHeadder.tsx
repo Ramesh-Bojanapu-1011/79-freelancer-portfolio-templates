@@ -69,7 +69,7 @@ export default function SiteHeadder() {
           {/* Left: Logo */}
           <div className="flex items-center gap-4">
             <Link href="/home1" className="flex items-center gap-2">
-              <Image
+              <img 
                 src="https://i.postimg.cc/DwdH9gv8/logo-stackly.png"
                 alt="Logo"
                 width={100}
