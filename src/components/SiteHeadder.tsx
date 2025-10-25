@@ -69,7 +69,7 @@ export default function SiteHeadder() {
           {/* Left: Logo */}
           <div className="flex items-center gap-4">
             <Link href="/home1" className="flex items-center gap-2">
-              <img 
+              <img
                 src="https://i.postimg.cc/DwdH9gv8/logo-stackly.png"
                 alt="Logo"
                 width={100}
@@ -119,7 +119,7 @@ export default function SiteHeadder() {
             </div>
 
             <Link
-              href="/about"
+              href="/about-us"
               className="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
             >
               About Us
@@ -168,7 +168,7 @@ export default function SiteHeadder() {
             </Link>
 
             <Link
-              href="/contact"
+              href="/contact-us"
               className="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
             >
               Contact Us
@@ -328,7 +328,7 @@ export default function SiteHeadder() {
                 )}
               </div>
               <Link
-                href="/about"
+                href="/about-us"
                 className="block px-3 py-2 rounded-md text-base font-medium"
               >
                 About Us
@@ -376,7 +376,7 @@ export default function SiteHeadder() {
                 Blog
               </Link>
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="block px-3 py-2 rounded-md text-base font-medium"
               >
                 Contact Us

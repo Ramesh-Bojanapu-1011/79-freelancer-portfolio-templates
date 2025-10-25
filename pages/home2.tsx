@@ -244,7 +244,7 @@ const Home2 = () => {
 
               <div className="mt-6">
                 <Link
-                  href="/contact"
+                  href="/contact-us"
                   className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-md font-medium"
                 >
                   GET IN TOUCH
@@ -414,7 +414,7 @@ const Home2 = () => {
 
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-md font-medium"
               >
                 Get a quote

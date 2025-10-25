@@ -14,10 +14,10 @@ const services = [
 const quickLinks = [
   { label: "Home 1", href: "/home1" },
   { label: "Home 2", href: "/home2" },
-  { label: "About Us", href: "/about" },
+  { label: "About Us", href: "/about-us" },
   { label: "Services", href: "/services" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact Us", href: "/contact-us" },
 ];
 
 const socials = [
