@@ -3,11 +3,12 @@ import Link from "next/link";
 
 const services = [
   { label: "Web Design", href: "/web-design" },
-  { label: "Portfolio Sites", href: "/portfolio-site" },
-  { label: "Branding", href: "/branding" },
-  { label: "SEO", href: "/seo" },
-  { label: "E-commerce", href: "/e-commerce" },
-  { label: "UI/UX", href: "/ui-ux" },
+  { label: "Design Systems & UI", href: "/services/design-systems-&-ui" },
+  { label: "Frontend Development", href: "/services/frontend-development" },
+  { label: "SEO & Performance", href: "/services/seo-performance" },
+  { label: "Branding & Identity", href: "/services/branding-&-identity" },
+  { label: "Portfolio Templates", href: "/services/portfolio-templates" },
+  { label: "Setup & Support", href: "/services/setup-&-support" },
 ];
 
 const quickLinks = [
