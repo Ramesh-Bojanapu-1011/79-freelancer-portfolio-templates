@@ -186,7 +186,7 @@ export default function AuthPage() {
         <div className="bg-white dark:bg-slate-800 shadow-2xl rounded-xl p-8 sm:p-10">
           {/* Logo and Header */}
           <div className="flex flex-col items-center  ">
-            <img 
+            <img
               src={"https://i.postimg.cc/DwdH9gv8/logo-stackly.png"}
               alt={"Stakly Logo"}
               width={100}
