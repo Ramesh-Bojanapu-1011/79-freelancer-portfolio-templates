@@ -6,12 +6,13 @@ import { ModeToggle } from "./theme/ModeToggle";
 
 const services = [
   { label: "All Services", href: "/services" },
-  { label: "Design Systems & UI", href: "/services/design" },
-  { label: "Frontend Development", href: "/services/development" },
-  { label: "SEO & Performance", href: "/services/seo-performance" },
-  { label: "Branding & Identity", href: "/services/branding" },
-  { label: "Portfolio Templates", href: "/services/templates" },
-  { label: "Setup & Support", href: "/services/support" },
+
+  { label: "Design Systems & UI", href: "/design-systems-&-ui" },
+  { label: "Frontend Development", href: "/frontend-development" },
+  { label: "SEO & Performance", href: "/seo-performance" },
+  { label: "Branding & Identity", href: "/branding-&-identity" },
+  { label: "Portfolio Templates", href: "/portfolio-templates" },
+  { label: "Setup & Support", href: "/setup-&-support" },
 ];
 
 export default function SiteHeadder() {

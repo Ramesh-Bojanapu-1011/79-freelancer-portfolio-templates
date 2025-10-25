@@ -2,13 +2,12 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 
 const services = [
-  { label: "Web Design", href: "/web-design" },
-  { label: "Design Systems & UI", href: "/services/design-systems-&-ui" },
-  { label: "Frontend Development", href: "/services/frontend-development" },
-  { label: "SEO & Performance", href: "/services/seo-performance" },
-  { label: "Branding & Identity", href: "/services/branding-&-identity" },
-  { label: "Portfolio Templates", href: "/services/portfolio-templates" },
-  { label: "Setup & Support", href: "/services/setup-&-support" },
+  { label: "Design Systems & UI", href: "/design-systems-&-ui" },
+  { label: "Frontend Development", href: "/frontend-development" },
+  { label: "SEO & Performance", href: "/seo-performance" },
+  { label: "Branding & Identity", href: "/branding-&-identity" },
+  { label: "Portfolio Templates", href: "/portfolio-templates" },
+  { label: "Setup & Support", href: "/setup-&-support" },
 ];
 
 const quickLinks = [

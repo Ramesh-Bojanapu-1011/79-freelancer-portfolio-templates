@@ -6,12 +6,12 @@ import SiteFooter from "@/components/SiteFooter";
 
 const servicesData = [
   {
-    slug: "design",
+    slug: "design-systems-&-ui",
     title: "Design Systems & UI",
     desc: "Pixel-perfect visual systems and UI components for portfolios.",
   },
   {
-    slug: "development",
+    slug: "frontend-development",
     title: "Frontend Development",
     desc: "Accessible, performant frontends built with modern tooling.",
   },
@@ -21,17 +21,17 @@ const servicesData = [
     desc: "Optimization, semantic markup and best-practices for speed.",
   },
   {
-    slug: "branding",
+    slug: "branding-&-identity",
     title: "Branding & Identity",
     desc: "Logo systems, type, and cohesive brand guidelines.",
   },
   {
-    slug: "templates",
+    slug: "portfolio-templates",
     title: "Portfolio Templates",
     desc: "Ready-made templates you can customize and launch quickly.",
   },
   {
-    slug: "support",
+    slug: "setup-&-support",
     title: "Setup & Support",
     desc: "Pro onboarding and prioritized support for busy freelancers.",
   },
@@ -143,7 +143,7 @@ const ServicesPage = () => {
                 </div>
 
                 <Link
-                  href={`/services/${s.slug}`}
+                  href={`/${s.slug}`}
                   className="absolute bottom-4 right-4 text-indigo-600   text-sm"
                 >
                   Learn more →
