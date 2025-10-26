@@ -4,6 +4,8 @@ import Link from "next/link";
 import React from "react";
 import { ModeToggle } from "./theme/ModeToggle";
 import { readAuth, readUsers } from "../../pages/auth";
+import router from "next/router";
+import i18n from "@/i18n";
 
 const services = [
   { label: "All Services", href: "/services" },
@@ -16,7 +18,14 @@ const services = [
   { label: "Setup & Support", href: "/setup-&-support" },
 ];
 
+const languages = [
+  { code: "en", label: "English (EN)" },
+  { code: "ar", label: "العربية (AR)" },
+  { code: "he", label: "עברית (HE)" },
+];
+
 export default function SiteHeadder() {
+  const [lang, setLang] = React.useState("");
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [mobileHomeOpen, setMobileHomeOpen] = React.useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = React.useState(false);
@@ -109,6 +118,57 @@ export default function SiteHeadder() {
       console.error("Failed during logout:", error);
     }
   }
+
+  // On mount restore language directly from localStorage and apply it immediately.
+  React.useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const applyLang = (code: string | null) => {
+      const c = code || "en";
+      setLang(c);
+      // set direction: default to ltr for english, rtl for others
+      document.documentElement.dir = c === "en" ? "ltr" : "rtl";
+      if (i18n.language !== c) {
+        i18n.changeLanguage(c);
+      }
+    };
+
+    try {
+      const saved = localStorage.getItem("selectedLanguage");
+      applyLang(saved);
+    } catch (err) {
+      // fallback to english
+      applyLang("en");
+    }
+
+    // Ensure language is re-applied after route changes (in case other code altered it)
+    const handleRouteChange = () => {
+      try {
+        const saved = localStorage.getItem("selectedLanguage");
+        applyLang(saved);
+      } catch (e) {
+        applyLang("en");
+      }
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => router.events.off("routeChangeComplete", handleRouteChange);
+  }, [router.events]);
+
+  const handleLanguageChange = (langLabel: string) => {
+    // setSelectedLanguage(langLabel);
+    const langObj = languages.find((l) => l.code === langLabel);
+    if (langObj) {
+      localStorage.setItem("selectedLanguage", langObj.code);
+      setLang(langObj.code);
+      if (langObj.code === "en") {
+        document.documentElement.dir = "ltr";
+      } else {
+        document.documentElement.dir = "rtl";
+      }
+      i18n.changeLanguage(langObj.code);
+    }
+  };
 
   return (
     <header className="w-screen bg-linear-to-r from-white  to-gray-100 dark:from-gray-900 dark:to-gray-800 sticky top-0 z-40 shadow-sm dark:text-white caret-transparent">
@@ -246,19 +306,24 @@ export default function SiteHeadder() {
                     <path d="M3 7v0a2 2 0 0 1 2-2h6" />
                     <circle cx="12" cy="12" r="10" />
                   </svg>
-                  <span className="text-sm">EN</span>
+                  <span className="text-sm">
+                    {(lang || "en").toUpperCase()}
+                  </span>
                 </button>
                 {langOpen && (
-                  <div className="absolute right-0 mt-2 w-32 rounded-md bg-white dark:bg-slate-800 shadow-lg ring-1 ring-black ring-opacity-5 py-1">
-                    <button className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200">
-                      English (EN)
-                    </button>
-                    <button className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200">
-                      العربية (AR)
-                    </button>
-                    <button className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200">
-                      עברית (HE)
-                    </button>
+                  <div className="absolute right-0 mt-2 w-40 rounded-md bg-white dark:bg-slate-800 shadow-lg ring-1 ring-black ring-opacity-5 py-1">
+                    {languages.map((l) => (
+                      <button
+                        key={l.code}
+                        onClick={() => {
+                          handleLanguageChange(l.code);
+                          setLangOpen(false);
+                        }}
+                        className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
+                      >
+                        {l.label}
+                      </button>
+                    ))}
                   </div>
                 )}
               </div>
