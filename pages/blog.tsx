@@ -174,9 +174,7 @@ const BlogPage: React.FC = () => {
                         <span className="text-xs px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded-full text-slate-700 dark:text-slate-200">
                           {p.category}
                         </span>
-                        <span className="text-xs text-slate-500">
-                          {new Date(p.date).toLocaleDateString()}
-                        </span>
+                        <span className="text-xs text-slate-500">{p.date}</span>
                       </div>
 
                       <h3 className="mt-3 font-semibold">{p.title}</h3>
