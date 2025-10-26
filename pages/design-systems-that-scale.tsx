@@ -91,13 +91,12 @@ const DesignSystemsThatScale: React.FC = () => {
           {/* Lead image */}
           <figure className="w-full rounded-xl overflow-hidden shadow-lg mb-8 group">
             <div className="relative overflow-hidden">
-              <Image
+              <img
                 src="/images/course-illustration-1.jpg"
                 alt="Design systems illustration"
                 width={1200}
                 height={450}
                 className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
-                priority
               />
               <figcaption className="absolute bottom-3 left-3 text-xs text-white bg-black bg-opacity-40 px-2 py-1 rounded">
                 Illustration: design systems
@@ -164,7 +163,7 @@ const DesignSystemsThatScale: React.FC = () => {
               </p>
 
               <figure className="my-8 rounded-lg overflow-hidden shadow">
-                <Image
+                <img
                   src="/images/course-illustration-2.jpg"
                   alt="Figma to code"
                   width={1200}
