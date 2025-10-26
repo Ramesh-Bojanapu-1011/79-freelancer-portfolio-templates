@@ -160,5 +160,86 @@
     "email": "hello@freelancertemplates.dev",
     "phone": "+1 (234) 567-890",
     "copyright": "© {{year}} Freelancer Templates. All rights reserved."
+  },
+  "home2": {
+    "meta": {
+      "title": "Freelancer / Portfolio Templates",
+      "description": "Beautiful freelancer portfolio templates"
+    },
+    "hero": {
+      "badge": "OUR SERVICES",
+      "title": "We help freelancers grow",
+      "highlight": "Design • Development • Branding",
+      "desc": "We build polished portfolios, landing pages and case studies that highlight your work and convert visitors into clients. From visual design to lightweight implementation and SEO-friendly content, we deliver end-to-end solutions for independent professionals.",
+      "cta_explore": "Explore services",
+      "imageAlt": "Portfolio sample image"
+    },
+    "about": {
+      "badge": "ABOUT US",
+      "title": "I AM AVAILABLE FOR",
+      "highlight": "UI/UX DESIGN",
+      "desc": "I craft user-centered interfaces and brand-driven experiences that help freelancers and small teams present work with clarity and confidence.",
+      "stats": {
+        "reviewsLabel": "Google Review",
+        "yearsLabel": "Years Experience",
+        "awardsLabel": "Award Winning"
+      },
+      "cta": "GET IN TOUCH",
+      "imageAlt": "profile"
+    },
+    "resources": {
+      "badge": "RESOURCES",
+      "title": "Explore ready-made templates and resources",
+      "desc": "Dive into a curated collection of templates, UI kits and walkthroughs designed for freelancers. Quickly launch a professional portfolio, or customize a landing page to match your brand — everything is optimized for performance and SEO.",
+      "browse": "Browse templates",
+      "learn_more": "Learn more",
+      "imageAlt": "collage main",
+      "smallAlt": "small avatar",
+      "smallAlt2": "small avatar 2"
+    },
+    "tools": {
+      "badge": "My Favorite Tools",
+      "title": "Exploring the tools behind my designs",
+      "desc": "Tools and libraries we use to build polished, performant portfolios.",
+      "items": {
+        "figma": "Figma",
+        "sketch": "Sketch",
+        "photoshop": "Photoshop",
+        "after_effects": "After Effects",
+        "storybook": "Storybook",
+        "invision": "InVision"
+      }
+    },
+    "testimonials": {
+      "badge": "TESTIMONIALS",
+      "title": "Loved by freelancers",
+      "desc": "Real feedback from people using our templates and services to get more clients and ship faster.",
+      "items": [
+        {
+          "name": "Aman Singh",
+          "title": "UX Designer",
+          "quote": "These templates helped me land my first two clients — clean, fast and easy to customize. Support was quick and helpful.",
+          "time": "1 week ago"
+        },
+        {
+          "name": "Lina Park",
+          "title": "Frontend Developer",
+          "quote": "I launched a portfolio in a day. The SEO-focused markup and accessible patterns saved me hours of work.",
+          "time": "10 days ago"
+        },
+        {
+          "name": "Marco Ruiz",
+          "title": "Product Designer",
+          "quote": "Great designs and sensible defaults — perfect for freelancers who want a professional online presence without the hassle.",
+          "time": "2 weeks ago"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to launch your portfolio?",
+      "desc": "Start with a polished template and get support when you need it. We will help you ship faster and look professional.",
+      "cta_primary": "Get a quote",
+      "cta_secondary": "Browse templates"
+    }
   }
 }
