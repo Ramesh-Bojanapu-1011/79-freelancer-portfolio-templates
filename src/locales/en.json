@@ -438,5 +438,150 @@
         }
       ]
     }
+  },
+  "designSystems": {
+    "breadcrumb": { "current": "Design Systems & UI" },
+    "hero": {
+      "title_prefix": "Design systems &",
+      "title_highlight": "UI",
+      "title_suffix": "that scale your freelance work",
+      "desc": "Craft cohesive design systems, reusable components and accessible patterns to ship faster and maintain consistency across your portfolio.",
+      "cta_start": "Start a project"
+    },
+    "features": {
+      "performance": {
+        "title": "Performance-minded",
+        "desc": "Optimized components and code to keep pages fast and SEO-friendly."
+      },
+      "reusable": {
+        "title": "Reusable components",
+        "desc": "A component library that speeds up new pages and ensures visual consistency."
+      },
+      "tokens": {
+        "title": "Design tokens",
+        "desc": "Color, spacing and typography tokens that make themeing trivial."
+      },
+      "accessible": {
+        "title": "Accessible by default",
+        "desc": "Built with semantic markup and accessibility best practices."
+      }
+    },
+    "preview": {
+      "example": "Live preview",
+      "preview_title": "Design system sample",
+      "preview_desc": "An example preview that demonstrates theming, components and responsiveness."
+    },
+    "scope": {
+      "title": "Scope & Deliverables",
+      "desc": "What you get: tokens, component library, templates and documentation to run your site with confidence.",
+      "cta": "Get a quote"
+    },
+    "deliverables": {
+      "title": "Deliverables",
+      "items": {
+        "tokenfile": "Design tokens (JSON/JS)",
+        "componentLibrary": "Component library (React + CSS)",
+        "pageTemplates": "Page templates and examples",
+        "documentation": "Usage docs and developer handoff"
+      }
+    },
+    "timeline": {
+      "title": "Timeline",
+      "desc": "Typical delivery in 2–6 weeks depending on scope.",
+      "note": "Timelines vary based on complexity and feedback cycles."
+    },
+    "workflow": {
+      "title": "How we work",
+      "steps": [
+        "Discovery & brief",
+        "Design & tokens",
+        "Implementation & docs",
+        "Handoff & support"
+      ]
+    },
+    "projects": {
+      "meta": "Project details",
+      "0": {
+        "title": "Brand refresh — case study",
+        "desc": "A cohesive system that supported a full brand refresh and landing pages."
+      },
+      "1": {
+        "title": "SaaS landing kit",
+        "desc": "Component-driven pages for rapid SaaS launches and A/B testing."
+      },
+      "2": {
+        "title": "Portfolio revamp",
+        "desc": "Improved consistency and performance across multiple project pages."
+      }
+    },
+    "testimonials": {
+      "title": "Client stories",
+      "desc": "What clients say after adopting a design system.",
+      "items": {
+        "t1": {
+          "name": "Alex Morgan",
+          "role": "Product Designer",
+          "quote": "The design system cut our launch time in half—components are predictable and documentation made handoffs painless. Worth every penny."
+        },
+        "t2": {
+          "name": "Lina Rodriguez",
+          "role": "Frontend Developer",
+          "quote": "I loved how the tokens made color changes trivial—one update and my whole site matched the new brand. My site feels professional now."
+        },
+        "t3": {
+          "name": "Ember Co",
+          "role": "Founder",
+          "quote": "Consistent components and templates made it easy to produce landing pages for new services—our lead conversion improved instantly."
+        }
+      }
+    },
+    "pricing": {
+      "badge": "PRICING",
+      "title": "Plans for individuals and teams",
+      "desc": "Flexible options for solo freelancers, product teams and agencies.",
+      "plans": {
+        "starter": {
+          "title": "Starter",
+          "blurb": "A light option for solo creators who want a tokens file and a few components.",
+          "features": [
+            "Tokens file",
+            "Basic component set",
+            "1 page template",
+            "Code samples",
+            "Hosting guide"
+          ],
+          "cta": "Contact Sales"
+        },
+        "pro": {
+          "title": "Pro",
+          "blurb": "Full design system with component library, multiple templates and documentation.",
+          "features": [
+            "Tokens file",
+            "Full component library",
+            "3 page templates",
+            "Code examples",
+            "Deployment support"
+          ],
+          "cta": "Request proposal"
+        },
+        "agency": {
+          "title": "Agency",
+          "blurb": "Managed option for agencies and teams with priority support and ongoing updates.",
+          "features": [
+            "Tokens & theming",
+            "Component library",
+            "Multiple templates",
+            "Integration support",
+            "SLA & updates"
+          ],
+          "cta": "Contact us"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to scale your UI?",
+      "desc": "Start with a design system that reduces duplication and speeds up launches.",
+      "button": "Get a quote"
+    }
   }
 }

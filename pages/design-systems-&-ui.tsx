@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import SiteHeadder from "@/components/SiteHeadder";
 import SiteFooter from "@/components/SiteFooter";
+import { useTranslation } from "react-i18next";
 import {
   Check,
   Code,
@@ -14,76 +15,176 @@ import {
 } from "lucide-react";
 
 const DesignSystemsUIPage: React.FC = () => {
+  const { t } = useTranslation();
+
   const pricingPlans = [
     {
       id: "starter",
-      title: "Starter Templates",
+      titleKey: "designSystems.pricing.plans.starter.title",
       price: "$9",
       period: "/ month",
-      blurb: "For solo freelancers needing foundational structure.",
+      blurbKey: "designSystems.pricing.plans.starter.blurb",
       features: [
-        { icon: "Check", text: "1 Core Portfolio Template", available: true },
-        { icon: "Check", text: "Basic Email Support", available: true },
-        { icon: "Check", text: "Regular System Updates", available: true },
+        {
+          icon: "Check",
+          textKey: "designSystems.pricing.plans.starter.features.0",
+          available: true,
+        },
+        {
+          icon: "Check",
+          textKey: "designSystems.pricing.plans.starter.features.1",
+          available: true,
+        },
+        {
+          icon: "Check",
+          textKey: "designSystems.pricing.plans.starter.features.2",
+          available: true,
+        },
         {
           icon: "Code",
-          text: "Component Library Access (Lite)",
+          textKey: "designSystems.pricing.plans.starter.features.3",
           available: false,
         },
-        { icon: "Server", text: "Handoff Consultation (No)", available: false },
+        {
+          icon: "Server",
+          textKey: "designSystems.pricing.plans.starter.features.4",
+          available: false,
+        },
       ],
       highlighted: false,
-      cta: { href: "/contact-us", text: "Choose Starter", primary: true },
+      cta: {
+        href: "/contact-us",
+        textKey: "designSystems.pricing.plans.starter.cta",
+        primary: true,
+      },
     },
     {
       id: "pro",
-      title: "System Pro Build",
+      titleKey: "designSystems.pricing.plans.pro.title",
       price: "$2,900",
       period: "/ one-time",
-      blurb: "The full, custom design system build for professionals.",
+      blurbKey: "designSystems.pricing.plans.pro.blurb",
       features: [
-        { icon: "Check", text: "Custom Templates & Pages", available: true },
-        { icon: "Check", text: "Priority Support & Handoff", available: true },
-        { icon: "Check", text: "Full Commercial License", available: true },
+        {
+          icon: "Check",
+          textKey: "designSystems.pricing.plans.pro.features.0",
+          available: true,
+        },
+        {
+          icon: "Check",
+          textKey: "designSystems.pricing.plans.pro.features.1",
+          available: true,
+        },
+        {
+          icon: "Check",
+          textKey: "designSystems.pricing.plans.pro.features.2",
+          available: true,
+        },
         {
           icon: "Code",
-          text: "Full Component Library Access",
+          textKey: "designSystems.pricing.plans.pro.features.3",
           available: true,
         },
         {
           icon: "Server",
-          text: "Dedicated Handoff Consultation",
+          textKey: "designSystems.pricing.plans.pro.features.4",
           available: true,
         },
       ],
       highlighted: true,
-      cta: { href: "/contact-us", text: "Start Pro System", primary: true },
+      cta: {
+        href: "/contact-us",
+        textKey: "designSystems.pricing.plans.pro.cta",
+        primary: true,
+      },
     },
     {
       id: "agency",
-      title: "Agency License",
+      titleKey: "designSystems.pricing.plans.agency.title",
       price: "$79",
       period: "/ month",
-      blurb: "For studios managing systems for multiple clients.",
+      blurbKey: "designSystems.pricing.plans.agency.blurb",
       features: [
-        { icon: "Check", text: "Unlimited Template Access", available: true },
-        { icon: "Check", text: "Multi-Seat Team Access", available: true },
-        { icon: "Check", text: "Dedicated Account Manager", available: true },
+        {
+          icon: "Check",
+          textKey: "designSystems.pricing.plans.agency.features.0",
+          available: true,
+        },
+        {
+          icon: "Check",
+          textKey: "designSystems.pricing.plans.agency.features.1",
+          available: true,
+        },
+        {
+          icon: "Check",
+          textKey: "designSystems.pricing.plans.agency.features.2",
+          available: true,
+        },
         {
           icon: "Code",
-          text: "Full Component Library Access",
+          textKey: "designSystems.pricing.plans.agency.features.3",
           available: true,
         },
         {
           icon: "Server",
-          text: "Full Handoff Consultation Access",
+          textKey: "designSystems.pricing.plans.agency.features.4",
           available: true,
         },
       ],
       highlighted: false,
-      cta: { href: "/contact-us", text: "Contact Sales", primary: false },
+      cta: {
+        href: "/contact-us",
+        textKey: "designSystems.pricing.plans.agency.cta",
+        primary: false,
+      },
     },
   ];
+
+  const projects = [
+    {
+      id: "project-1",
+      titleKey: "designSystems.projects.0.title",
+      img: "https://picsum.photos/seed/project-1/900/600",
+      descKey: "designSystems.projects.0.desc",
+    },
+    {
+      id: "project-2",
+      titleKey: "designSystems.projects.1.title",
+      img: "https://picsum.photos/seed/project-2/900/600",
+      descKey: "designSystems.projects.1.desc",
+    },
+    {
+      id: "project-3",
+      titleKey: "designSystems.projects.2.title",
+      img: "https://picsum.photos/seed/project-3/900/600",
+      descKey: "designSystems.projects.2.desc",
+    },
+  ];
+
+  const testimonials = [
+    {
+      id: "t1",
+      nameKey: "designSystems.testimonials.items.t1.name",
+      roleKey: "designSystems.testimonials.items.t1.role",
+      quoteKey: "designSystems.testimonials.items.t1.quote",
+      avatar: "https://i.pravatar.cc/80?img=12",
+    },
+    {
+      id: "t2",
+      nameKey: "designSystems.testimonials.items.t2.name",
+      roleKey: "designSystems.testimonials.items.t2.role",
+      quoteKey: "designSystems.testimonials.items.t2.quote",
+      avatar: "https://i.pravatar.cc/80?img=47",
+    },
+    {
+      id: "t3",
+      nameKey: "designSystems.testimonials.items.t3.name",
+      roleKey: "designSystems.testimonials.items.t3.role",
+      quoteKey: "designSystems.testimonials.items.t3.quote",
+      avatar: "https://i.pravatar.cc/80?img=32",
+    },
+  ];
+
   return (
     <>
       <Head>
@@ -112,28 +213,26 @@ const DesignSystemsUIPage: React.FC = () => {
                   <ol className="flex items-center gap-2">
                     <li>
                       <Link href="/services" className="hover:underline">
-                        Services
+                        {t("header.services")}
                       </Link>
                     </li>
                     <li className="text-slate-300 dark:text-slate-700">/</li>
                     <li className="text-indigo-600 dark:text-cyan-400 font-semibold">
-                      Design Systems & UI
+                      {t("designSystems.breadcrumb.current")}
                     </li>
                   </ol>
                 </nav>
 
                 <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight text-slate-900 dark:text-white">
-                  Engineer a{" "}
+                  {t("designSystems.hero.title_prefix")}{" "}
                   <span className="text-indigo-600 dark:text-cyan-400">
-                    Scalable
+                    {t("designSystems.hero.title_highlight")}
                   </span>{" "}
-                  Portfolio UI.
+                  {t("designSystems.hero.title_suffix")}
                 </h1>
 
                 <p className="mt-6 text-xl text-slate-600 dark:text-slate-300 max-w-xl">
-                  Build a predictable, reusable UI foundation with components,
-                  design tokens, and high-performance layouts—designed for
-                  clarity and developer speed.
+                  {t("designSystems.hero.desc")}
                 </p>
 
                 {/* --- CTAs (Redesigned for premium look) --- */}
@@ -142,7 +241,7 @@ const DesignSystemsUIPage: React.FC = () => {
                     href="/contact-us"
                     className="inline-flex items-center gap-2 bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-indigo-500/40 transition-all duration-300 transform hover:scale-[1.02]"
                   >
-                    Start a Project
+                    {t("designSystems.hero.cta_start")}
                   </Link>
                 </div>
 
@@ -155,11 +254,10 @@ const DesignSystemsUIPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Performance-Minded
+                        {t("designSystems.features.performance.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Small bundles and critical CSS patterns to keep sites
-                        fast.
+                        {t("designSystems.features.performance.desc")}
                       </div>
                     </div>
                   </li>
@@ -171,11 +269,10 @@ const DesignSystemsUIPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Reusable Components
+                        {t("designSystems.features.reusable.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Buttons, cards, and complex layout primitives you can
-                        reuse.
+                        {t("designSystems.features.reusable.desc")}
                       </div>
                     </div>
                   </li>
@@ -187,10 +284,10 @@ const DesignSystemsUIPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Design Tokens
+                        {t("designSystems.features.tokens.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Color, spacing, and type scales exported for code reuse.
+                        {t("designSystems.features.tokens.desc")}
                       </div>
                     </div>
                   </li>
@@ -202,11 +299,10 @@ const DesignSystemsUIPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Accessible by Default
+                        {t("designSystems.features.accessible.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Keyboard-first components and semantic markup for WCAG
-                        compliance.
+                        {t("designSystems.features.accessible.desc")}
                       </div>
                     </div>
                   </li>
@@ -226,14 +322,13 @@ const DesignSystemsUIPage: React.FC = () => {
                       />
                       <div className="p-5">
                         <div className=" text-slate-500 dark:text-slate-400">
-                          Example
+                          {t("designSystems.preview.example")}
                         </div>
                         <div className="mt-1 text-lg font-semibold text-slate-900 dark:text-slate-100">
-                          Component library preview
+                          {t("designSystems.preview.preview_title")}
                         </div>
                         <p className="mt-2  text-slate-600 dark:text-slate-300">
-                          A quick peek at buttons, forms and cards styled from
-                          the system.
+                          {t("designSystems.preview.preview_desc")}
                         </p>
                       </div>
                     </div>
@@ -247,214 +342,175 @@ const DesignSystemsUIPage: React.FC = () => {
         {/* ======================================================= */}
         {/* 2. SCOPE & DELIVERABLES: Card-Grid Polish */}
         {/* ======================================================= */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32 bg-white dark:bg-slate-900">
-          <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              System Scope & Deliverables
-            </h2>
-            <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              What you get when we build a design system for your portfolio —
-              clear boundaries, reusable assets, and expert documentation.
-            </p>
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Deliverables */}
-            <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 transition-shadow duration-300 hover:shadow-2xl">
-              <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
-                <Figma className="h-6 w-6" /> Design Assets
-              </div>
-              <ul className="mt-6 space-y-3 text-slate-700 dark:text-slate-300">
-                <li className="flex items-start gap-2">
-                  • Token file (Color, Type, Spacing)
-                </li>
-                <li className="flex items-start gap-2">
-                  • Component Library (Buttons, Forms, Cards, Layouts)
-                </li>
-                <li className="flex items-start gap-2">
-                  • Page Templates (Home, Case Study, Contact)
-                </li>
-                <li className="flex items-start gap-2">
-                  • Component Usage Documentation
-                </li>
-              </ul>
+        <section className=" bg-linear-to-b   from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32">
+            <div className="text-center">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                {t("designSystems.scope.title")}
+              </h2>
+              <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                {t("designSystems.scope.desc")}
+              </p>
             </div>
 
-            {/* Timeline */}
-            <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 transition-shadow duration-300 hover:shadow-2xl">
-              <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
-                <Zap className="h-6 w-6" /> Timeline & Velocity
-              </div>
-              <div className="mt-6 text-slate-700 dark:text-slate-300">
-                Typical engagement: **1–3 weeks** depending on complexity. Work
-                is broken into Discovery, Component Build, and Final Handoff
-                phases with clear milestones and review rounds.
-              </div>
-              <div className="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400 border-t pt-4 border-slate-200 dark:border-slate-700">
-                Includes two dedicated review rounds and full code handoff.
-              </div>
-            </div>
-
-            {/* How we work */}
-            <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 flex flex-col justify-between transition-shadow duration-300 hover:shadow-2xl">
-              <div>
+            <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Deliverables */}
+              <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 transition-shadow duration-300 hover:shadow-2xl">
                 <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
-                  <Code className="h-6 w-6" /> Workflow
+                  <Figma className="h-6 w-6" />{" "}
+                  {t("designSystems.deliverables.title")}
                 </div>
-                <ol className="mt-6 text-slate-700 dark:text-slate-300 space-y-3 list-decimal pl-5">
-                  <li>Kickoff & Content Audit</li>
-                  <li>Token and Component Design (Figma)</li>
-                  <li>Implementation and QA (React/Next.js)</li>
-                  <li>Final Handoff and Documentation Setup</li>
-                </ol>
+                <ul className="mt-6 space-y-3 text-slate-700 dark:text-slate-300">
+                  <li className="flex items-start gap-2">
+                    • {t("designSystems.deliverables.items.tokenfile")}
+                  </li>
+                  <li className="flex items-start gap-2">
+                    • {t("designSystems.deliverables.items.componentLibrary")}
+                  </li>
+                  <li className="flex items-start gap-2">
+                    • {t("designSystems.deliverables.items.pageTemplates")}
+                  </li>
+                  <li className="flex items-start gap-2">
+                    • {t("designSystems.deliverables.items.documentation")}
+                  </li>
+                </ul>
               </div>
 
-              <div className="mt-8">
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center justify-center w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-medium transition-colors"
-                >
-                  Get a Scoped Quote
-                </Link>
+              {/* Timeline */}
+              <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 transition-shadow duration-300 hover:shadow-2xl">
+                <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
+                  <Zap className="h-6 w-6" />{" "}
+                  {t("designSystems.timeline.title")}
+                </div>
+                <div className="mt-6 text-slate-700 dark:text-slate-300">
+                  {t("designSystems.timeline.desc")}
+                </div>
+                <div className="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400 border-t pt-4 border-slate-200 dark:border-slate-700">
+                  {t("designSystems.timeline.note")}
+                </div>
+              </div>
+
+              {/* How we work */}
+              <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 flex flex-col justify-between transition-shadow duration-300 hover:shadow-2xl">
+                <div>
+                  <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
+                    <Code className="h-6 w-6" />{" "}
+                    {t("designSystems.workflow.title")}
+                  </div>
+                  <ol className="mt-6 text-slate-700 dark:text-slate-300 space-y-3 list-decimal pl-5">
+                    <li>{t("designSystems.workflow.steps.0")}</li>
+                    <li>{t("designSystems.workflow.steps.1")}</li>
+                    <li>{t("designSystems.workflow.steps.2")}</li>
+                    <li>{t("designSystems.workflow.steps.3")}</li>
+                  </ol>
+                </div>
+
+                <div className="mt-8">
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex items-center justify-center w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-medium transition-colors"
+                  >
+                    {t("designSystems.scope.cta")}
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Projects */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
-          <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-extrabold">Projects</h2>
-            <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Recent work where the design system improved consistency, speed
-              and polish.
-            </p>
-          </div>
+        <section className="bg-linear-to-b   from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
+            <div className="text-center">
+              <h2 className="text-2xl sm:text-3xl font-extrabold">Projects</h2>
+              <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                Recent work where the design system improved consistency, speed
+                and polish.
+              </p>
+            </div>
 
-          <div className="mt-10 space-y-10">
-            {[
-              {
-                id: "project-1",
-                title: "Portfolio refresh — Alex M",
-                img: "https://picsum.photos/seed/project-1/900/600",
-                desc: "A minimal, high-performance portfolio showcasing case studies and photography.",
-              },
-              {
-                id: "project-2",
-                title: "Creative showcase — Lina R",
-                img: "https://picsum.photos/seed/project-2/900/600",
-                desc: "Bold visual layout with emphasis on galleries and project captions.",
-              },
-              {
-                id: "project-3",
-                title: "Agency-lite site — Ember Co",
-                img: "https://picsum.photos/seed/project-3/900/600",
-                desc: "Polished services pages and a reusable case study template for leads.",
-              },
-            ].map((p, idx) => (
-              <article
-                key={p.id}
-                className="group rounded-2xl overflow-hidden bg-white dark:bg-slate-800 shadow-sm ring-1 ring-black/5 dark:ring-white/5"
-              >
-                <div
-                  className={`flex flex-col lg:flex-row items-center gap-6 p-4 ${
-                    idx % 2 === 1 ? "lg:flex-row-reverse" : ""
-                  }`}
+            <div className="mt-10 space-y-10">
+              {projects.map((p, idx) => (
+                <article
+                  key={p.id}
+                  className="group rounded-2xl overflow-hidden bg-white dark:bg-slate-800 shadow-sm ring-1 ring-black/5 dark:ring-white/5"
                 >
-                  <div className="relative w-full lg:w-1/2 h-56 sm:h-64 lg:h-56 overflow-hidden rounded-xl">
-                    <img
-                      src={p.img}
-                      alt={p.title}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
-                    <span className="absolute left-4 bottom-4 inline-flex items-center gap-2 bg-white/90 dark:bg-black/60 text-sm px-3 py-1 rounded-full font-medium text-slate-800 dark:text-slate-100">
-                      {p.title.split("—")[0].trim()}
-                    </span>
-                  </div>
+                  <div
+                    className={`flex flex-col lg:flex-row items-center gap-6 p-4 ${
+                      idx % 2 === 1 ? "lg:flex-row-reverse" : ""
+                    }`}
+                  >
+                    <div className="relative w-full lg:w-1/2 h-56 sm:h-64 lg:h-56 overflow-hidden rounded-xl">
+                      <img
+                        src={p.img}
+                        alt={t(p.titleKey)}
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
+                      <span className="absolute left-4 bottom-4 inline-flex items-center gap-2 bg-white/90 dark:bg-black/60 text-sm px-3 py-1 rounded-full font-medium text-slate-800 dark:text-slate-100">
+                        {t(p.titleKey).split("—")[0].trim()}
+                      </span>
+                    </div>
 
-                  <div className="w-full lg:w-1/2 p-2 lg:p-6">
-                    <h3 className="font-semibold text-2xl text-slate-900 dark:text-slate-100">
-                      {p.title}
-                    </h3>
-                    <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
-                      {p.desc}
-                    </p>
-                    <div className="mt-6 flex items-center justify-between">
-                      <div className="text-xs text-slate-500 dark:text-slate-400">
-                        Design & implementation
+                    <div className="w-full lg:w-1/2 p-2 lg:p-6">
+                      <h3 className="font-semibold text-2xl text-slate-900 dark:text-slate-100">
+                        {t(p.titleKey)}
+                      </h3>
+                      <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
+                        {t(p.descKey)}
+                      </p>
+                      <div className="mt-6 flex items-center justify-between">
+                        <div className="text-xs text-slate-500 dark:text-slate-400">
+                          {t("designSystems.projects.meta")}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </article>
-            ))}
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Testimonials */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
-          <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              Client Success Stories
-            </h2>
-            <p className="mt-2 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Real results from freelancers who used our systems to ship faster
-              and look more polished.
-            </p>
-          </div>
+        <section className=" bg-linear-to-b   from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
+            <div className="text-center">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                {t("designSystems.testimonials.title")}
+              </h2>
+              <p className="mt-2 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                {t("designSystems.testimonials.desc")}
+              </p>
+            </div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                id: "t1",
-                name: "Alex Morgan",
-                role: "Product Designer",
-                quote:
-                  "The design system cut our launch time in half—components are predictable and documentation made handoffs painless. Worth every penny.",
-                avatar: "https://i.pravatar.cc/80?img=12",
-              },
-              {
-                id: "t2",
-                name: "Lina Rodriguez",
-                role: "Illustrator",
-                quote:
-                  "I loved how the tokens made color changes trivial—one update and my whole site matched the new brand. My site feels professional now.",
-                avatar: "https://i.pravatar.cc/80?img=47",
-              },
-              {
-                id: "t3",
-                name: "Ember Co",
-                role: "Founder",
-                quote:
-                  "Consistent components and templates made it easy to produce landing pages for new services—our lead conversion improved instantly.",
-                avatar: "https://i.pravatar.cc/80?img=32",
-              },
-            ].map((t) => (
-              <blockquote
-                key={t.id}
-                className="rounded-3xl bg-slate-50 dark:bg-slate-800 p-8 shadow-md ring-1 ring-black/5 dark:ring-white/5 border-t-4 border-indigo-600 dark:border-cyan-400"
-              >
-                <p className="text-lg font-medium text-slate-700 dark:text-slate-200">
-                  “{t.quote}”
-                </p>
-                <div className="mt-6 flex items-center gap-4">
-                  <img
-                    src={t.avatar}
-                    alt={t.name}
-                    className="w-12 h-12 rounded-full ring-2 ring-indigo-600 dark:ring-cyan-400"
-                  />
-                  <div>
-                    <div className="text-sm font-bold text-slate-900 dark:text-white">
-                      {t.name}
-                    </div>
-                    <div className="text-xs text-slate-500 dark:text-slate-400">
-                      {t.role}
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+              {testimonials.map((item) => (
+                <blockquote
+                  key={item.id}
+                  className="rounded-3xl bg-slate-50 dark:bg-slate-800 p-8 shadow-md ring-1 ring-black/5 dark:ring-white/5 border-t-4 border-indigo-600 dark:border-cyan-400"
+                >
+                  <p className="text-lg font-medium text-slate-700 dark:text-slate-200">
+                    “{t(item.quoteKey)}”
+                  </p>
+                  <div className="mt-6 flex items-center gap-4">
+                    <img
+                      src={item.avatar}
+                      alt={t(item.nameKey)}
+                      className="w-12 h-12 rounded-full ring-2 ring-indigo-600 dark:ring-cyan-400"
+                    />
+                    <div>
+                      <div className="text-sm font-bold text-slate-900 dark:text-white">
+                        {t(item.nameKey)}
+                      </div>
+                      <div className="text-xs text-slate-500 dark:text-slate-400">
+                        {t(item.roleKey)}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </blockquote>
-            ))}
+                </blockquote>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -467,14 +523,13 @@ const DesignSystemsUIPage: React.FC = () => {
         >
           <div className="text-center">
             <p className="text-sm font-medium text-teal-500 uppercase">
-              PRICING
+              {t("designSystems.pricing.badge")}
             </p>
             <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              Transparent, Value-Driven Packages
+              {t("designSystems.pricing.title")}
             </h2>
             <p className="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Choose the level of support and system depth that best fits your
-              freelance practice or small team.
+              {t("designSystems.pricing.desc")}
             </p>
           </div>
 
@@ -499,7 +554,7 @@ const DesignSystemsUIPage: React.FC = () => {
                         : "text-xl font-bold text-slate-900 dark:text-white"
                     }`}
                   >
-                    {plan.title}
+                    {t(plan.titleKey)}
                   </div>
 
                   <div className="mt-6 flex items-baseline gap-2">
@@ -523,7 +578,7 @@ const DesignSystemsUIPage: React.FC = () => {
                         : "text-slate-600 dark:text-slate-400"
                     }`}
                   >
-                    {plan.blurb}
+                    {t(plan.blurbKey)}
                   </p>
 
                   <ul
@@ -569,7 +624,7 @@ const DesignSystemsUIPage: React.FC = () => {
                             }`}
                           />
                         )}
-                        {f.text}
+                        {t(f.textKey)}
                       </li>
                     ))}
                   </ul>
@@ -585,7 +640,7 @@ const DesignSystemsUIPage: React.FC = () => {
                           : "inline-flex items-center justify-center w-full border-2 border-indigo-600 dark:border-teal-400 text-indigo-600 dark:text-teal-400 px-4 py-3 rounded-xl font-bold text-lg hover:bg-indigo-50 dark:hover:bg-slate-800 transition-colors"
                       }
                     >
-                      {plan.cta.text}
+                      {t(plan.cta.textKey)}
                     </Link>
                   </div>
                 </div>
@@ -601,13 +656,13 @@ const DesignSystemsUIPage: React.FC = () => {
           <div className="relative w-full max-w-5xl px-6">
             <div className="bg-white dark:bg-slate-950 rounded-3xl shadow-2xl ring-1 ring-black/5 dark:ring-white/5 p-12 lg:p-16 text-center">
               <FileText className="h-10 w-10 text-indigo-600 dark:text-teal-400 mx-auto mb-4" />
+
               <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-slate-900 dark:text-white">
-                Ready to Ship Faster?
+                {t("designSystems.cta.title")}
               </h2>
 
               <p className="mt-4 text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-                Stop wasting time on styling and start delivering value. Let's
-                build your unified UI system.
+                {t("designSystems.cta.desc")}
               </p>
 
               <div className="mt-10">
@@ -615,7 +670,7 @@ const DesignSystemsUIPage: React.FC = () => {
                   href="/contact-us"
                   className="inline-flex items-center gap-2 bg-linear-to-r from-cyan-500 to-indigo-600 hover:from-cyan-600 hover:to-indigo-700 text-white px-8 py-4 rounded-xl font-bold text-xl shadow-2xl shadow-cyan-500/50 transition-all duration-300 transform hover:scale-[1.05]"
                 >
-                  Book Free Consultation
+                  {t("designSystems.cta.button")}
                 </Link>
               </div>
             </div>
