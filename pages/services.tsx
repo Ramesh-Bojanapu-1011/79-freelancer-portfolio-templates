@@ -1,43 +1,48 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import SiteHeadder from "@/components/SiteHeadder";
 import SiteFooter from "@/components/SiteFooter";
 
-const servicesData = [
-  {
-    slug: "design-systems-&-ui",
-    title: "Design Systems & UI",
-    desc: "Pixel-perfect visual systems and UI components for portfolios.",
-  },
-  {
-    slug: "frontend-development",
-    title: "Frontend Development",
-    desc: "Accessible, performant frontends built with modern tooling.",
-  },
-  {
-    slug: "seo-performance",
-    title: "SEO & Performance",
-    desc: "Optimization, semantic markup and best-practices for speed.",
-  },
-  {
-    slug: "branding-&-identity",
-    title: "Branding & Identity",
-    desc: "Logo systems, type, and cohesive brand guidelines.",
-  },
-  {
-    slug: "portfolio-templates",
-    title: "Portfolio Templates",
-    desc: "Ready-made templates you can customize and launch quickly.",
-  },
-  {
-    slug: "setup-&-support",
-    title: "Setup & Support",
-    desc: "Pro onboarding and prioritized support for busy freelancers.",
-  },
-];
+// servicesData moved into component so titles/descriptions can be localized via i18n
 
 const ServicesPage = () => {
+  const { t } = useTranslation();
+
+  const servicesData = [
+    {
+      slug: "design-systems-&-ui",
+      titleKey: "services.items.designSystems.title",
+      descKey: "services.items.designSystems.desc",
+    },
+    {
+      slug: "frontend-development",
+      titleKey: "services.items.frontend.title",
+      descKey: "services.items.frontend.desc",
+    },
+    {
+      slug: "seo-performance",
+      titleKey: "services.items.seo.title",
+      descKey: "services.items.seo.desc",
+    },
+    {
+      slug: "branding-&-identity",
+      titleKey: "services.items.branding.title",
+      descKey: "services.items.branding.desc",
+    },
+    {
+      slug: "portfolio-templates",
+      titleKey: "services.items.templates.title",
+      descKey: "services.items.templates.desc",
+    },
+    {
+      slug: "setup-&-support",
+      titleKey: "services.items.setup.title",
+      descKey: "services.items.setup.desc",
+    },
+  ];
+
   return (
     <>
       <Head>
@@ -57,14 +62,13 @@ const ServicesPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
                 <div className="inline-block rounded-full bg-indigo-50 dark:bg-indigo-900 px-3 py-1 text-sm text-indigo-600 font-medium">
-                  SERVICES
+                  {t("services.hero.badge")}
                 </div>
                 <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-tight">
-                  Services for freelancers who want to ship faster
+                  {t("services.hero.title")}
                 </h1>
                 <p className="mt-6 text-lg text-slate-600 dark:text-slate-300 max-w-xl">
-                  From design systems to SEO and deployment support — we provide
-                  focused services that let you show your work and win clients.
+                  {t("services.hero.desc")}
                 </p>
 
                 <div className="mt-8 flex   items-center gap-4">
@@ -72,13 +76,13 @@ const ServicesPage = () => {
                     href="/contact-us"
                     className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-md font-medium"
                   >
-                    Work with us
+                    {t("services.hero.cta_work")}
                   </Link>
                   <Link
                     href="#services"
                     className="text-indigo-600 hover:underline"
                   >
-                    Explore services
+                    {t("services.hero.cta_explore")}
                   </Link>
                 </div>
               </div>
@@ -99,10 +103,11 @@ const ServicesPage = () => {
         {/* Services grid */}
         <section id="services" className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
           <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-extrabold">What we do</h2>
+            <h2 className="text-3xl sm:text-4xl font-extrabold">
+              {t("services.grid.heading")}
+            </h2>
             <p className="mt-3 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Choose a focused service or book a combined package — each service
-              has its own detail page with scope and pricing.
+              {t("services.grid.description")}
             </p>
           </div>
 
@@ -111,32 +116,34 @@ const ServicesPage = () => {
               <div
                 key={s.slug}
                 className="group relative block overflow-hidden rounded-2xl bg-white dark:bg-slate-800 shadow-sm ring-1 ring-black/5 dark:ring-white/5 hover:shadow-lg transition-shadow"
-                aria-label={`Learn more about ${s.title}`}
+                aria-label={t("services.card.learn_more_aria", {
+                  title: t(s.titleKey),
+                })}
               >
                 <div className="p-6      items-center">
                   <div className=" flex flex-col ">
                     <div className="flex items-center gap-3">
                       <div className="shrink-0 rounded-lg w-12 h-12 flex items-center justify-center bg-linear-to-br from-indigo-500 to-indigo-700 text-white shadow-sm">
                         <span className="font-semibold">
-                          {s.title.charAt(0)}
+                          {t(s.titleKey).charAt(0)}
                         </span>
                       </div>
                       <div>
                         <div className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-                          {s.title}
+                          {t(s.titleKey)}
                         </div>
                         <div className="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                          {s.desc}
+                          {t(s.descKey)}
                         </div>
                       </div>
                     </div>
 
                     <div className="mt-4 flex flex-wrap gap-2">
                       <span className="inline-block px-3 py-1 text-xs rounded-full bg-indigo-50 dark:bg-indigo-900 text-indigo-600">
-                        Popular
+                        {t("services.tags.popular")}
                       </span>
                       <span className="inline-block px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600">
-                        Custom
+                        {t("services.tags.custom")}
                       </span>
                     </div>
                   </div>
@@ -145,8 +152,11 @@ const ServicesPage = () => {
                 <Link
                   href={`/${s.slug}`}
                   className="absolute bottom-4 right-4 text-indigo-600   text-sm"
+                  aria-label={t("services.card.learn_more_aria", {
+                    title: t(s.titleKey),
+                  })}
                 >
-                  Learn more →
+                  {t("services.card.learn_more")} →
                 </Link>
               </div>
             ))}
@@ -159,12 +169,10 @@ const ServicesPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl sm:text-3xl font-extrabold">
-                Theme & customization
+                {t("services.theme.title")}
               </h3>
               <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-xl">
-                Ship a polished, on-brand portfolio quickly — we provide theme
-                customizations, component theming and a style system so your
-                site matches your voice.
+                {t("services.theme.desc")}
               </p>
 
               <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -187,10 +195,11 @@ const ServicesPage = () => {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-medium text-sm">Color systems</div>
+                    <div className="font-medium text-sm">
+                      {t("services.theme.items.color.title")}
+                    </div>
                     <div className="text-sm text-slate-600 dark:text-slate-300">
-                      Custom palettes, accessible contrasts and easy theme
-                      swaps.
+                      {t("services.theme.items.color.desc")}
                     </div>
                   </div>
                 </li>
@@ -215,10 +224,11 @@ const ServicesPage = () => {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-medium text-sm">Typography</div>
+                    <div className="font-medium text-sm">
+                      {t("services.theme.items.typography.title")}
+                    </div>
                     <div className="text-sm text-slate-600 dark:text-slate-300">
-                      Type scale, pairing and fine-tuned spacing for readable
-                      case studies.
+                      {t("services.theme.items.typography.desc")}
                     </div>
                   </div>
                 </li>
@@ -242,11 +252,10 @@ const ServicesPage = () => {
                   </div>
                   <div>
                     <div className="font-medium text-sm">
-                      Responsive layouts
+                      {t("services.theme.items.responsive.title")}
                     </div>
                     <div className="text-sm text-slate-600 dark:text-slate-300">
-                      Grid and card rules that keep your work looking great on
-                      all screens.
+                      {t("services.theme.items.responsive.desc")}
                     </div>
                   </div>
                 </li>
@@ -269,10 +278,11 @@ const ServicesPage = () => {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-medium text-sm">Dark mode</div>
+                    <div className="font-medium text-sm">
+                      {t("services.theme.items.dark.title")}
+                    </div>
                     <div className="text-sm text-slate-600 dark:text-slate-300">
-                      Well-tested color tokens and prefers-reduced-motion
-                      friendly transitions.
+                      {t("services.theme.items.dark.desc")}
                     </div>
                   </div>
                 </li>
@@ -288,18 +298,17 @@ const ServicesPage = () => {
                 />
                 <div className="p-5">
                   <div className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-                    Theme preview
+                    {t("services.theme.preview_title")}
                   </div>
                   <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                    Preview a theme with your colors and brand — then we’ll
-                    apply it across components and pages.
+                    {t("services.theme.preview_desc")}
                   </p>
                   <div className="mt-4">
                     <Link
                       href="/contact-us"
                       className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm"
                     >
-                      Customize a theme
+                      {t("services.theme.preview_cta")}
                     </Link>
                   </div>
                 </div>
@@ -311,10 +320,11 @@ const ServicesPage = () => {
         {/* 1) Process - refreshed timeline look */}
         <section className="mx-auto max-w-7xl px-6 lg:px-8 py-12">
           <div className="text-center">
-            <h3 className="text-2xl sm:text-3xl font-extrabold">Our process</h3>
+            <h3 className="text-2xl sm:text-3xl font-extrabold">
+              {t("services.process.title")}
+            </h3>
             <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              A short, repeatable process to get you from brief to a live
-              portfolio.
+              {t("services.process.desc")}
             </p>
           </div>
 
@@ -326,8 +336,8 @@ const ServicesPage = () => {
               {[
                 {
                   num: "01",
-                  title: "Kickoff",
-                  desc: "Discovery, goals and content planning.",
+                  titleKey: "services.process.steps.0.title",
+                  descKey: "services.process.steps.0.desc",
                   icon: (
                     <svg
                       width="20"
@@ -349,6 +359,8 @@ const ServicesPage = () => {
                 },
                 {
                   num: "02",
+                  titleKey: "services.process.steps.1.title",
+                  descKey: "services.process.steps.1.desc",
                   title: "Design",
                   desc: "Components, layouts and visual polish.",
                   icon: (
@@ -368,6 +380,8 @@ const ServicesPage = () => {
                 },
                 {
                   num: "03",
+                  titleKey: "services.process.steps.2.title",
+                  descKey: "services.process.steps.2.desc",
                   title: "Launch",
                   desc: "Deploy, optimize and hand off with docs.",
                   icon: (
@@ -404,20 +418,20 @@ const ServicesPage = () => {
                     </div>
                     <div className="lg:hidden">
                       <div className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-                        {step.title}
+                        {step.titleKey ? t(step.titleKey) : step.title}
                       </div>
                       <div className="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                        {step.desc}
+                        {step.descKey ? t(step.descKey) : step.desc}
                       </div>
                     </div>
                   </div>
 
                   <div className="hidden lg:block">
                     <div className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-                      {step.title}
+                      {step.titleKey ? t(step.titleKey) : step.title}
                     </div>
                     <div className="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                      {step.desc}
+                      {step.descKey ? t(step.descKey) : step.desc}
                     </div>
                   </div>
 
@@ -437,11 +451,10 @@ const ServicesPage = () => {
         <section className="mx-auto max-w-7xl px-6 lg:px-8 py-12">
           <div className="text-center">
             <h3 className="text-2xl sm:text-3xl font-extrabold">
-              Integrations & tools
+              {t("services.tools.heading")}
             </h3>
             <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Deploy, analytics and design tools we use to deliver fast,
-              maintainable portfolios.
+              {t("services.tools.description")}
             </p>
           </div>
 
@@ -640,11 +653,10 @@ const ServicesPage = () => {
           <div className="max-w-7xl">
             <div className="text-center">
               <h3 className="text-2xl sm:text-3xl font-extrabold">
-                Templates showcase
+                {t("services.templates.heading")}
               </h3>
               <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-                Hand-picked starter templates — quick to launch and easy to
-                customize for freelancers.
+                {t("services.templates.description")}
               </p>
             </div>
 
@@ -652,48 +664,48 @@ const ServicesPage = () => {
               {[
                 {
                   id: 1,
-                  title: "Clean Portfolio",
-                  tag: "Minimal",
+                  titleKey: "services.templates.items.0.title",
+                  tagKey: "services.templates.items.0.tag",
                   img: "https://picsum.photos/seed/tpl-1/1200/800",
-                  desc: "A stripped-back portfolio focused on work and case studies.",
+                  descKey: "services.templates.items.0.desc",
                 },
                 {
                   id: 2,
-                  title: "Creative Showcase",
-                  tag: "Bold",
+                  titleKey: "services.templates.items.1.title",
+                  tagKey: "services.templates.items.1.tag",
                   img: "https://picsum.photos/seed/tpl-2/1200/800",
-                  desc: "A colorful layout for visual artists and illustrators.",
+                  descKey: "services.templates.items.1.desc",
                 },
                 {
                   id: 3,
-                  title: "Agency-lite",
-                  tag: "Professional",
+                  titleKey: "services.templates.items.2.title",
+                  tagKey: "services.templates.items.2.tag",
                   img: "https://picsum.photos/seed/tpl-3/1200/800",
-                  desc: "A polished template for freelancers offering services.",
+                  descKey: "services.templates.items.2.desc",
                 },
-              ].map((t) => (
+              ].map((tItem) => (
                 <article
-                  key={t.id}
+                  key={tItem.id}
                   className="group rounded-2xl shadow-2xl overflow-hidden bg-white dark:bg-slate-800   ring-1 ring-black/5 dark:ring-white/5 hover:shadow-lg transition-shadow"
                 >
                   <div className="relative h-44 sm:h-48">
                     <img
-                      src={t.img}
-                      alt={t.title}
+                      src={tItem.img}
+                      alt={t(tItem.titleKey)}
                       className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent" />
                     <span className="absolute left-4 bottom-4 inline-flex items-center gap-2 bg-white/90 dark:bg-black/60 text-sm px-3 py-1 rounded-full font-medium">
-                      {t.tag}
+                      {t(tItem.tagKey)}
                     </span>
                   </div>
 
                   <div className="p-4">
                     <h4 className="font-semibold text-lg text-slate-900 dark:text-slate-100">
-                      {t.title}
+                      {t(tItem.titleKey)}
                     </h4>
                     <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                      {t.desc}
+                      {t(tItem.descKey)}
                     </p>
                   </div>
                 </article>

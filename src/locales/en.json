@@ -329,5 +329,88 @@
       "cta_primary": "Get a quote",
       "cta_secondary": "Browse templates"
     }
+  },
+  "services": {
+    "hero": {
+      "badge": "SERVICES",
+      "title": "Services for freelancers who want to ship faster",
+      "desc": "From design systems to SEO and deployment support — we provide focused services that let you show your work and win clients.",
+      "cta_work": "Work with us",
+      "cta_explore": "Explore services"
+    },
+    "grid": {
+      "heading": "What we do",
+      "description": "Choose a focused service or book a combined package — each service has its own detail page with scope and pricing."
+    },
+    "card": {
+      "learn_more": "Learn more",
+      "learn_more_aria": "Learn more about {{title}}"
+    },
+    "tags": { "popular": "Popular", "custom": "Custom" },
+    "tools": {
+      "heading": "Integrations & tools",
+      "description": "Deploy, analytics and design tools we use to deliver fast, maintainable portfolios."
+    },
+    "theme": {
+      "title": "Theme & customization",
+      "desc": "Ship a polished, on-brand portfolio quickly — we provide theme customizations, component theming and a style system so your site matches your voice.",
+      "items": {
+        "color": {
+          "title": "Color systems",
+          "desc": "Custom palettes, accessible contrasts and easy theme swaps."
+        },
+        "typography": {
+          "title": "Typography",
+          "desc": "Type scale, pairing and fine-tuned spacing for readable case studies."
+        },
+        "responsive": {
+          "title": "Responsive layouts",
+          "desc": "Grid and card rules that keep your work looking great on all screens."
+        },
+        "dark": {
+          "title": "Dark mode",
+          "desc": "Well-tested color tokens and prefers-reduced-motion friendly transitions."
+        }
+      },
+      "preview_title": "Theme preview",
+      "preview_desc": "Preview a theme with your colors and brand — then we’ll apply it across components and pages.",
+      "preview_cta": "Customize a theme"
+    },
+    "process": {
+      "title": "Our process",
+      "desc": "A short, repeatable process to get you from brief to a live portfolio.",
+      "steps": [
+        {
+          "title": "Kickoff",
+          "desc": "Discovery, goals and content planning."
+        },
+        { "title": "Design", "desc": "Components, layouts and visual polish." },
+        {
+          "title": "Launch",
+          "desc": "Deploy, optimize and hand off with docs."
+        }
+      ]
+    },
+    "templates": {
+      "heading": "Templates showcase",
+      "description": "Hand-picked starter templates — quick to launch and easy to customize for freelancers.",
+      "items": [
+        {
+          "title": "Clean Portfolio",
+          "tag": "Minimal",
+          "desc": "A stripped-back portfolio focused on work and case studies."
+        },
+        {
+          "title": "Creative Showcase",
+          "tag": "Bold",
+          "desc": "A colorful layout for visual artists and illustrators."
+        },
+        {
+          "title": "Agency-lite",
+          "tag": "Professional",
+          "desc": "A polished template for freelancers offering services."
+        }
+      ]
+    }
   }
 }
