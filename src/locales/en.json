@@ -732,5 +732,160 @@
       "desc": "Start with a design system that reduces duplication and speeds up launches.",
       "button": "Get a quote"
     }
+  },
+  "seoPerformance": {
+    "meta": {
+      "title": "SEO & Performance — Services",
+      "description": "SEO and performance optimization services: Core Web Vitals, Lighthouse tuning, caching, image optimization and analytics for measurable traffic growth."
+    },
+    "breadcrumb": { "services": "Services", "current": "SEO & Performance" },
+    "hero": {
+      "title": "Faster Pages, More Traffic.",
+      "desc": "Improve load times and search visibility with targeted performance and SEO work — Core Web Vitals, Lighthouse tuning, optimized media, and measurable analytics.",
+      "cta_start": "Start a Project"
+    },
+    "features": {
+      "performance": {
+        "title": "Core Web Vitals",
+        "desc": "Reduce CLS, LCP and TTFB with prioritized fixes and monitoring."
+      },
+      "reusable": {
+        "title": "Lighthouse & Audits",
+        "desc": "Full-site audits, prioritized recommendations and remediation for accessibility, performance and SEO."
+      },
+      "tooling": {
+        "title": "Image & Cache Optimization",
+        "desc": "Next-gen images, proper cache headers and CDN strategies for repeat visits and fast UX."
+      },
+      "accessibility": {
+        "title": "Analytics & Monitoring",
+        "desc": "Track Core Web Vitals, set up real-user monitoring and conversion analytics for data-driven decisions."
+      }
+    },
+    "preview": {
+      "example": "Audit snapshot",
+      "preview_title": "Performance & SEO snapshot",
+      "preview_desc": "A condensed view of audit results, Lighthouse scores and recommendations applied to a sample page."
+    },
+    "scope": {
+      "title": "SEO & Performance Scope & Deliverables",
+      "desc": "What you get: audits, prioritized fixes, optimized assets and monitoring setup to track improvements over time.",
+      "cta": "Get a quote"
+    },
+    "deliverables": {
+      "title": "SEO & Performance Deliverables",
+      "desc": "Actionable improvements and deliverables to make your site faster, more discoverable, and more reliable in search.",
+      "items": {
+        "audit": "Lighthouse audit and prioritized report",
+        "performance": "Core Web Vitals remediation (LCP/CLS/TTFB)",
+        "images": "Image optimization & responsive loading",
+        "cdn": "CDN, cache headers and bundling strategy",
+        "analytics": "Analytics and RUM setup for monitoring"
+      }
+    },
+    "timeline": {
+      "title": "Project Timeline",
+      "desc": "Typical engagement: 1–3 weeks for audits and quick wins, longer for full remediation and monitoring setup. We break work into Audit, Fixes, and Monitoring phases.",
+      "note": "Includes a prioritized action plan, before/after metrics and 30 days of performance monitoring."
+    },
+    "workflow": {
+      "title": "Workflow",
+      "steps": [
+        "Audit & Lighthouse scoring",
+        "Quick wins & prioritized fixes",
+        "Deep remediation (images, caching, code-splitting)",
+        "Monitoring, reporting & iterative improvements"
+      ]
+    },
+    "projects": {
+      "title": "Projects",
+      "desc": "Recent SEO & performance improvements with measurable gains in load time and organic traffic.",
+      "items": [
+        {
+          "title": "E-commerce speedup — Bloom Shop",
+          "desc": "Reduced LCP by 45% and improved conversion with image and cache optimizations."
+        },
+        {
+          "title": "Media gallery — Lina R",
+          "desc": "Implemented responsive images and lazy-loading — 60% faster time-to-interact."
+        },
+        {
+          "title": "Content site SEO — Ember Co",
+          "desc": "Structured data, meta tuning and performance improvements lifted organic traffic."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Client Success Stories",
+      "desc": "Real results from freelancers who used our systems to ship faster and look more polished.",
+      "items": {
+        "t1": {
+          "name": "Alex Morgan",
+          "role": "Product Designer",
+          "quote": "The design system cut our launch time in half—components are predictable and documentation made handoffs painless. Worth every penny."
+        },
+        "t2": {
+          "name": "Lina Rodriguez",
+          "role": "Illustrator",
+          "quote": "I loved how the tokens made color changes trivial—one update and my whole site matched the new brand. My site feels professional now."
+        },
+        "t3": {
+          "name": "Ember Co",
+          "role": "Founder",
+          "quote": "Consistent components and templates made it easy to produce landing pages for new services—our lead conversion improved instantly."
+        }
+      }
+    },
+    "pricing": {
+      "badge": "PRICING",
+      "title": "Transparent, Value-Driven Packages",
+      "desc": "Choose the level of support and system depth that best fits your freelance practice or small team.",
+      "most_popular": "MOST POPULAR",
+      "plans": {
+        "starter": {
+          "title": "Starter Templates",
+          "blurb": "For solo freelancers needing foundational structure.",
+          "features": [
+            "1 Core Portfolio Template",
+            "Basic Email Support",
+            "Regular System Updates",
+            "Component Library Access (Lite)",
+            "Handoff Consultation (No)"
+          ],
+          "cta": "Choose Starter"
+        },
+        "pro": {
+          "title": "System Pro Build",
+          "blurb": "The full, custom design system build for professionals.",
+          "features": [
+            "Custom Templates & Pages",
+            "Priority Support & Handoff",
+            "Full Commercial License",
+            "Full Component Library Access",
+            "Dedicated Handoff Consultation"
+          ],
+          "cta": "Start Pro System"
+        },
+        "agency": {
+          "title": "Agency License",
+          "blurb": "For studios managing systems for multiple clients.",
+          "features": [
+            "Unlimited Template Access",
+            "Multi-Seat Team Access",
+            "Dedicated Account Manager",
+            "Full Component Library Access",
+            "Full Handoff Consultation Access"
+          ],
+          "cta": "Contact Sales"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Ship Faster?",
+      "desc": "Stop wasting time on styling and start delivering value. Let's build your unified UI system.",
+      "scoped_quote": "Get a Scoped Quote",
+      "button": "Book Free Consultation",
+      "title_short": "Ready to Ship Faster?"
+    }
   }
 }
