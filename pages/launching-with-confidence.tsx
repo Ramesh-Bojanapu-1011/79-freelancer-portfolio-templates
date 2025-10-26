@@ -19,7 +19,7 @@ const LaunchingWithConfidence: React.FC = () => {
 
       <SiteHeadder />
 
-      <main className="max-w-7xl mx-auto px-6 py-16">
+      <main className="max-w-7xl mx-auto px-6 py-16 caret-transparent">
         {/* Hero */}
         <article className="mx-auto">
           <header className="mb-10">

@@ -6,14 +6,14 @@ import SiteHeadder from "@/components/SiteHeadder";
 import SiteFooter from "@/components/SiteFooter";
 import { Calendar, User, Tag, Share2 } from "lucide-react";
 
-const DesignSystemsThatScale: React.FC = () => {
+const FromFigmaToProduction: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Design systems that scale — Blog</title>
+        <title>From Figma to Production — Blog</title>
         <meta
           name="description"
-          content="How to build a maintainable design system for fast-moving teams."
+          content="Practical steps to convert Figma designs into reusable components, tokens and shipped production UI."
         />
       </Head>
 
@@ -30,24 +30,24 @@ const DesignSystemsThatScale: React.FC = () => {
                 aria-hidden
               />
               <p className="text-sm text-sky-600 font-medium">
-                Guides · Design systems
+                Guides · Design to code
               </p>
               <h1 className="text-4xl md:text-5xl font-extrabold mt-3 text-slate-900 dark:text-white">
-                Design systems that scale
+                From Figma to Production
               </h1>
               <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-2xl">
-                Practical patterns, governance and tooling to help teams design
-                and ship consistent interfaces across products and time.
+                Practical steps to convert Figma designs into reusable
+                components, tokens and shipped production UI.
               </p>
 
               {/* tag chips and share */}
               <div className="mt-4 flex items-center gap-3">
                 <div className="flex items-center gap-2">
                   <span className="text-xs inline-flex items-center px-2.5 py-1 rounded-full bg-sky-100 text-sky-700">
-                    Design
+                    Figma
                   </span>
                   <span className="text-xs inline-flex items-center px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                    UI
+                    Components
                   </span>
                 </div>
                 <div className="ml-auto">
@@ -68,9 +68,9 @@ const DesignSystemsThatScale: React.FC = () => {
                       Alex Morales
                     </div>
                     <div className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-2">
-                      <Calendar className="w-3.5 h-3.5" /> Sep 10, 2025 ·{" "}
+                      <Calendar className="w-3.5 h-3.5" /> Oct 26, 2025 ·{" "}
                       <span className="inline-flex items-center gap-1">
-                        <Tag className="w-3.5 h-3.5" /> Design, UI
+                        <Tag className="w-3.5 h-3.5" /> Design, Engineering
                       </span>
                     </div>
                   </div>
@@ -100,7 +100,7 @@ const DesignSystemsThatScale: React.FC = () => {
                 priority
               />
               <figcaption className="absolute bottom-3 left-3 text-xs text-white bg-black bg-opacity-40 px-2 py-1 rounded">
-                Illustration: design systems
+                Figma → Production
               </figcaption>
             </div>
           </figure>
@@ -109,58 +109,41 @@ const DesignSystemsThatScale: React.FC = () => {
           <div className="lg:grid lg:grid-cols-3 lg:gap-10">
             <section className="mx-auto prose prose-slate dark:prose-invert lg:prose-lg text-slate-700 dark:text-slate-200 lg:col-span-2">
               <p className="lead first-letter:text-6xl first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:text-sky-600">
-                Design systems are more than a collection of components — they
-                are a set of principles, decisions and processes that help teams
-                ship reliable products faster. In this article we’ll break down
-                the key parts and give you a roadmap to scale.
+                Turning designs into resilient, reusable UI takes more than
+                exporting assets. This guide walks through handoff, tokens,
+                component APIs, visual testing and deployment patterns that
+                shorten the path from Figma to production.
               </p>
 
-              <h2 id="strategy">Start with a clear strategy</h2>
+              <h2 id="handoff">Design handoff & tokens</h2>
               <p>
-                Before you design atoms and molecules, align on the problems
-                you're solving. Define the scope, governance model, and who is
-                accountable for updates. A lightweight living document works
-                better than an enormous spec that no one reads.
+                Start with an explicit handoff: export tokens for colors,
+                spacing and typography and provide clear usage guidelines. A
+                shared token set keeps design and engineering aligned and makes
+                theming and platform parity easier.
               </p>
 
-              <h3 id="tokens">Design tokens and theming</h3>
+              <h3 id="components">Component APIs & patterns</h3>
               <p>
-                Use tokens for colors, spacing and typography to keep a single
-                source of truth. Tokens make it easy to support themes,
-                accessibility modes and platform differences without duplicating
-                effort.
+                Build components with a small, stable public API. Favor
+                composition over many boolean props, document expected
+                interactions, and expose accessibility hooks (aria-labels,
+                keyboard handling) as part of the contract.
               </p>
 
               <blockquote className="mt-6 border-l-4 border-sky-300 bg-sky-50 dark:bg-slate-800 p-4 rounded">
                 <p className="italic text-slate-700 dark:text-slate-300">
-                  "Treat your design system like a product: version it, ship
-                  releases, and collect feedback from consumers."
+                  "Treat components as the contract between designers and
+                  engineers — stable APIs reduce friction and speed up
+                  delivery."
                 </p>
               </blockquote>
 
-              <h3 id="component-api">Component API and documentation</h3>
+              <h3 id="visual-testing">Visual testing & QA</h3>
               <p>
-                Create components with clear props and predictable behaviors.
-                Good docs include usage patterns, dos & don'ts, and code
-                examples that make adoption trivial for engineers and designers.
-              </p>
-
-              <ul>
-                <li>Define a minimal set of public props.</li>
-                <li>
-                  Provide visual examples for states (hover, active, disabled).
-                </li>
-                <li>
-                  Document accessibility concerns and keyboard interactions.
-                </li>
-              </ul>
-
-              <h3 id="workflows">Cross-team workflows</h3>
-              <p>
-                Successful systems include clear contribution paths: how
-                designers propose tokens, how engineers release changes, and how
-                product teams request exceptions. Use automation (linting,
-                visual tests) to reduce friction.
+                Integrate visual regression testing (Chromatic, Percy) and
+                storybook-driven development so designers can review and sign
+                off on components before they land in product pages.
               </p>
 
               <figure className="my-8 rounded-lg overflow-hidden shadow">
@@ -173,27 +156,34 @@ const DesignSystemsThatScale: React.FC = () => {
                 />
               </figure>
 
-              <h3 id="governance">Governance & scaling</h3>
+              <h3 id="ci">CI/CD & preview environments</h3>
               <p>
-                As usage grows, adopt a release cadence and a changelog.
-                Consider an internal registry (npm or a repository) for
-                components and tokens so teams can depend on specific versions.
+                Automate builds and tests in CI. Use per-PR preview deploys and
+                visual diffs so reviewers see actual rendered pages. Gate merges
+                on passing checks to reduce regressions.
               </p>
 
-              <h3 id="checklist">Quick checklist</h3>
+              <h3 id="performance">Performance & accessibility</h3>
+              <p>
+                Optimize images, fonts and critical rendering paths. Run
+                automated accessibility checks and manual spot checks for key
+                flows to catch issues early.
+              </p>
+
+              <h3 id="checklist">Production checklist</h3>
               <ol>
-                <li>Document system purpose and owners.</li>
                 <li>Publish tokens and ensure platform parity.</li>
-                <li>Provide ready-to-use examples and code snippets.</li>
-                <li>Automate visual regression testing.</li>
+                <li>Cover core components with visual and unit tests.</li>
+                <li>Run accessibility and performance preflight checks.</li>
+                <li>Deploy preview and validate critical user journeys.</li>
               </ol>
 
               <h3 id="conclusion">Conclusion</h3>
               <p>
-                Building a scalable design system is a long-term investment.
-                Start small, prioritize adoption, and iterate. With governance,
-                tooling and clear docs, you’ll see faster, more consistent
-                deliveries across teams.
+                A repeatable design-to-code pipeline reduces cycle time and
+                improves quality. Standardize tokens, component contracts and
+                automated testing so teams can deliver UI faster and with
+                confidence.
               </p>
 
               <div className="mt-10 p-6 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-100 dark:border-slate-700">
@@ -219,34 +209,34 @@ const DesignSystemsThatScale: React.FC = () => {
                   <h5 className="text-sm font-semibold mb-2">On this page</h5>
                   <nav className="text-sm space-y-2">
                     <a
-                      href="#strategy"
+                      href="#handoff"
                       className="block text-slate-700 dark:text-slate-300 hover:text-sky-600"
                     >
-                      Strategy
+                      Handoff
                     </a>
                     <a
-                      href="#tokens"
+                      href="#components"
                       className="block text-slate-700 dark:text-slate-300 hover:text-sky-600"
                     >
-                      Tokens & theming
+                      Components
                     </a>
                     <a
-                      href="#component-api"
+                      href="#visual-testing"
                       className="block text-slate-700 dark:text-slate-300 hover:text-sky-600"
                     >
-                      Component API
+                      Visual testing
                     </a>
                     <a
-                      href="#workflows"
+                      href="#ci"
                       className="block text-slate-700 dark:text-slate-300 hover:text-sky-600"
                     >
-                      Workflows
+                      CI / Preview
                     </a>
                     <a
-                      href="#governance"
+                      href="#performance"
                       className="block text-slate-700 dark:text-slate-300 hover:text-sky-600"
                     >
-                      Governance
+                      Performance
                     </a>
                     <a
                       href="#checklist"
@@ -267,16 +257,16 @@ const DesignSystemsThatScale: React.FC = () => {
                   <h5 className="text-sm font-semibold mb-3">Related posts</h5>
                   <div className="space-y-3">
                     <Link
-                      href="/from-figma-to-production"
-                      className="block text-sm text-slate-700 dark:text-slate-300 hover:text-sky-600"
-                    >
-                      From Figma to Production
-                    </Link>
-                    <Link
                       href="/launching-with-confidence"
                       className="block text-sm text-slate-700 dark:text-slate-300 hover:text-sky-600"
                     >
                       Launching with confidence
+                    </Link>
+                    <Link
+                      href="/design-systems-that-scale"
+                      className="block text-sm text-slate-700 dark:text-slate-300 hover:text-sky-600"
+                    >
+                      Design systems that scale
                     </Link>
                   </div>
                 </div>
@@ -291,4 +281,4 @@ const DesignSystemsThatScale: React.FC = () => {
   );
 };
 
-export default DesignSystemsThatScale;
+export default FromFigmaToProduction;
