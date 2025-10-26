@@ -8,14 +8,16 @@ import router from "next/router";
 import i18n from "@/i18n";
 
 const services = [
-  { label: "All Services", href: "/services" },
-
-  { label: "Design Systems & UI", href: "/design-systems-&-ui" },
-  { label: "Frontend Development", href: "/frontend-development" },
-  { label: "SEO & Performance", href: "/seo-performance" },
-  { label: "Branding & Identity", href: "/branding-&-identity" },
-  { label: "Portfolio Templates", href: "/portfolio-templates" },
-  { label: "Setup & Support", href: "/setup-&-support" },
+  { key: "header.servicesdrop.all_services", href: "/services" },
+  { key: "header.servicesdrop.design_systems", href: "/design-systems-&-ui" },
+  { key: "header.servicesdrop.frontend_dev", href: "/frontend-development" },
+  { key: "header.servicesdrop.seo", href: "/seo-performance" },
+  { key: "header.servicesdrop.branding", href: "/branding-&-identity" },
+  {
+    key: "header.servicesdrop.portfolio_templates",
+    href: "/portfolio-templates",
+  },
+  { key: "header.servicesdrop.setup_support", href: "/setup-&-support" },
 ];
 
 const languages = [
@@ -106,7 +108,7 @@ export default function SiteHeadder() {
       const updatedUsers = currentUsers.map((u) =>
         u.email === user.email
           ? { ...u, logoutTime: new Date().toISOString() }
-          : u,
+          : u
       );
 
       if (typeof window !== "undefined") {
@@ -194,7 +196,7 @@ export default function SiteHeadder() {
                 aria-expanded={homeOpen}
                 className="inline-flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
               >
-                Home
+                {i18n.t("header.home")}
                 <svg
                   className="h-4 w-4"
                   viewBox="0 0 20 20"
@@ -214,13 +216,13 @@ export default function SiteHeadder() {
                     href="/home1"
                     className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
                   >
-                    Home 1
+                    {i18n.t("header.home1")}
                   </Link>
                   <Link
                     href="/home2"
                     className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
                   >
-                    Home 2
+                    {i18n.t("header.home2")}
                   </Link>
                 </div>
               )}
@@ -230,7 +232,7 @@ export default function SiteHeadder() {
               href="/about-us"
               className="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
             >
-              About Us
+              {i18n.t("header.about")}
             </Link>
 
             <div className="relative">
@@ -239,7 +241,7 @@ export default function SiteHeadder() {
                 aria-expanded={servicesOpen}
                 className="inline-flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
               >
-                Services
+                {i18n.t("header.services")}
                 <svg
                   className="h-4 w-4"
                   viewBox="0 0 20 20"
@@ -261,7 +263,7 @@ export default function SiteHeadder() {
                       href={`/${s.href}`}
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
                     >
-                      {s.label}
+                      {i18n.t(s.key)}
                     </Link>
                   ))}
                 </div>
@@ -272,14 +274,14 @@ export default function SiteHeadder() {
               href="/blog"
               className="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
             >
-              Blog
+              {i18n.t("header.blog")}
             </Link>
 
             <Link
               href="/contact-us"
               className="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
             >
-              Contact Us
+              {i18n.t("header.contact")}
             </Link>
           </nav>
 
@@ -346,13 +348,13 @@ export default function SiteHeadder() {
                       href="/profile"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
                     >
-                      Profile
+                      {i18n.t("header.profile")}
                     </Link>
                     <button
                       onClick={() => handleLogout()}
                       className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
                     >
-                      Logout
+                      {i18n.t("header.logout")}
                     </button>
                   </div>
                 )}
@@ -365,7 +367,7 @@ export default function SiteHeadder() {
                 onClick={() => setMobileOpen((s) => !s)}
                 aria-expanded={mobileOpen}
                 className="inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
-                title="Toggle menu"
+                title={i18n.t("header.toggle_menu")}
               >
                 {mobileOpen ? (
                   <svg
@@ -410,7 +412,7 @@ export default function SiteHeadder() {
                   aria-expanded={mobileHomeOpen}
                   className="w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium"
                 >
-                  <span>Home</span>
+                  <span>{i18n.t("header.home")}</span>
                   <svg
                     className={`h-5 w-5 transition-transform ${
                       mobileHomeOpen ? "rotate-180" : ""
@@ -432,13 +434,13 @@ export default function SiteHeadder() {
                       href="/home1"
                       className="block px-3 py-2 rounded-md text-base"
                     >
-                      Home 1
+                      {i18n.t("header.home1")}
                     </Link>
                     <Link
                       href="/home2"
                       className="block px-3 py-2 rounded-md text-base"
                     >
-                      Home 2
+                      {i18n.t("header.home2")}
                     </Link>
                   </div>
                 )}
@@ -447,7 +449,7 @@ export default function SiteHeadder() {
                 href="/about-us"
                 className="block px-3 py-2 rounded-md text-base font-medium"
               >
-                About Us
+                {i18n.t("header.about")}
               </Link>
               <div className="pt-2 pb-1">
                 <button
@@ -479,7 +481,7 @@ export default function SiteHeadder() {
                         href={`${s.href}`}
                         className="block px-3 py-2 rounded-md text-base"
                       >
-                        {s.label}
+                        {i18n.t(s.key)}
                       </Link>
                     ))}
                   </div>
@@ -489,13 +491,13 @@ export default function SiteHeadder() {
                 href="/blog"
                 className="block px-3 py-2 rounded-md text-base font-medium"
               >
-                Blog
+                {i18n.t("header.blog")}
               </Link>
               <Link
                 href="/contact-us"
                 className="block px-3 py-2 rounded-md text-base font-medium"
               >
-                Contact Us
+                {i18n.t("header.contact")}
               </Link>
 
               <div className="pt-2 border-t border-slate-100 dark:border-slate-700">
@@ -519,13 +521,13 @@ export default function SiteHeadder() {
                       href="/profile"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
                     >
-                      Profile
+                      {i18n.t("header.profile")}
                     </Link>
                     <button
                       onClick={() => handleLogout()}
                       className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
                     >
-                      Logout
+                      {i18n.t("header.logout")}
                     </button>
                   </div>
                 )}

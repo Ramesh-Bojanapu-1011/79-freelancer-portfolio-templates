@@ -1,1 +1,23 @@
-{}
+{
+  "header": {
+    "home": "Home",
+    "home1": "Home 1",
+    "home2": "Home 2",
+    "about": "About Us",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact Us",
+    "profile": "Profile",
+    "logout": "Logout",
+    "toggle_menu": "Toggle menu",
+    "servicesdrop": {
+      "all_services": "All Services",
+      "design_systems": "Design Systems & UI",
+      "frontend_dev": "Frontend Development",
+      "seo": "SEO & Performance",
+      "branding": "Branding & Identity",
+      "portfolio_templates": "Portfolio Templates",
+      "setup_support": "Setup & Support"
+    }
+  }
+}

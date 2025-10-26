@@ -1,1 +1,23 @@
-{}
+{
+  "header": {
+    "home": "דף הבית",
+    "home1": "דף הבית 1",
+    "home2": "דף הבית 2",
+    "about": "אודות",
+    "services": "שירותים",
+    "blog": "בלוג",
+    "contact": "צור קשר",
+    "profile": "פרופיל",
+    "logout": "התנתק",
+    "toggle_menu": "החלף תפריט",
+    "servicesdrop": {
+      "all_services": "כל השירותים",
+      "design_systems": "מערכות עיצוב וממשק משתמש",
+      "frontend_dev": "פיתוח צד הלקוח",
+      "seo": "קידום וביצועים",
+      "branding": "מיתוג וזהות",
+      "portfolio_templates": "תבניות תיק עבודות",
+      "setup_support": "התקנה ותמיכה"
+    }
+  }
+}
