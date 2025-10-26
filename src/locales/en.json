@@ -241,5 +241,93 @@
       "cta_primary": "Get a quote",
       "cta_secondary": "Browse templates"
     }
+  },
+  "about": {
+    "meta": {
+      "title": "About — Freelancer / Portfolio Templates",
+      "description": "About us — we design and build polished portfolio templates for freelancers."
+    },
+    "hero": {
+      "badge": "ABOUT US",
+      "title": "We make beautiful portfolios for freelancers",
+      "subtitle": "Fast. Accessible. SEO-ready.",
+      "desc": "Our templates are crafted to help independent professionals showcase work, win clients and focus on what matters — the work itself. We combine design systems, performance best-practices and clear documentation so you can ship fast.",
+      "cta_work": "Work with us",
+      "cta_browse": "Browse templates"
+    },
+    "mission": {
+      "title": "Our mission",
+      "desc": "We help freelancers present their work with clarity and confidence. Our goal is to reduce the friction of going live — design, code, and docs that let you focus on projects rather than setup.",
+      "cta_services": "Our services",
+      "cta_contact": "Contact us"
+    },
+    "pillars": {
+      "speed": {
+        "title": "Speed",
+        "desc": "Ship quickly with prebuilt components and clear docs."
+      },
+      "accessibility": {
+        "title": "Accessibility",
+        "desc": "Built with semantic markup and inclusive patterns."
+      },
+      "seo": {
+        "title": "SEO & Performance",
+        "desc": "Optimized markup, fast loads, and sensible defaults."
+      }
+    },
+    "stats": {
+      "heading": "Trusted by freelancers worldwide",
+      "desc": "Our templates and services have helped hundreds of freelancers launch portfolios that look professional and convert visitors into clients.",
+      "items": [
+        { "label": "Google reviews" },
+        { "label": "Years experience" },
+        { "label": "Awards & recognitions" }
+      ]
+    },
+    "team": {
+      "title": "Meet the team",
+      "desc": "A small, focused team that loves design systems and performance.",
+      "members": [
+        {
+          "name": "Jenna Doe",
+          "role": "Lead Designer",
+          "bio": "Design lead focused on systems, UX and beautiful interfaces."
+        },
+        {
+          "name": "Ramesh B.",
+          "role": "Frontend Engineer",
+          "bio": "Loves performant, accessible frontends and clean code."
+        },
+        {
+          "name": "Sana K.",
+          "role": "Product Designer",
+          "bio": "Product-minded designer who prototypes and ships fast."
+        }
+      ]
+    },
+    "approach": {
+      "title": "Our approach",
+      "desc": "We combine design systems, accessible markup, and performance-minded code to deliver templates that are production-ready.",
+      "items": [
+        {
+          "title": "Plan",
+          "desc": "We discover goals, gather requirements and prepare a focused brief."
+        },
+        {
+          "title": "Build",
+          "desc": "Design and develop accessible, performant templates ready for content."
+        },
+        {
+          "title": "Launch",
+          "desc": "Deploy, optimize and hand off with clear docs and optional setup support."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to start your portfolio?",
+      "desc": "Start with a template or book a setup — we help freelancers ship faster with minimal fuss.",
+      "cta_primary": "Get a quote",
+      "cta_secondary": "Browse templates"
+    }
   }
 }

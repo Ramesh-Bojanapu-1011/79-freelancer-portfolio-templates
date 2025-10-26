@@ -3,12 +3,15 @@ import SiteHeadder from "@/components/SiteHeadder";
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const AboutUsPage = () => {
+  const { t } = useTranslation();
+
   const pillars = [
     {
-      title: "Speed",
-      desc: "Ship quickly with prebuilt components and clear docs.",
+      title: t("about.pillars.speed.title"),
+      desc: t("about.pillars.speed.desc"),
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -24,8 +27,8 @@ const AboutUsPage = () => {
       ),
     },
     {
-      title: "Accessibility",
-      desc: "Built with semantic markup and inclusive patterns.",
+      title: t("about.pillars.accessibility.title"),
+      desc: t("about.pillars.accessibility.desc"),
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -73,8 +76,8 @@ const AboutUsPage = () => {
       ),
     },
     {
-      title: "SEO & Performance",
-      desc: "Optimized markup, fast loads, and sensible defaults.",
+      title: t("about.pillars.seo.title"),
+      desc: t("about.pillars.seo.desc"),
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -168,9 +171,9 @@ const AboutUsPage = () => {
   const [statsVisible, setStatsVisible] = useState(false);
 
   const stats = [
-    { label: "Google reviews", value: 280, suffix: "+" },
-    { label: "Years experience", value: 15, suffix: "+" },
-    { label: "Awards & recognitions", value: 49, suffix: "+" },
+    { label: t("about.stats.items.0.label"), value: 280, suffix: "+" },
+    { label: t("about.stats.items.1.label"), value: 15, suffix: "+" },
+    { label: t("about.stats.items.2.label"), value: 49, suffix: "+" },
   ];
 
   useEffect(() => {
@@ -194,11 +197,8 @@ const AboutUsPage = () => {
   return (
     <>
       <Head>
-        <title>About — Freelancer / Portfolio Templates</title>
-        <meta
-          name="description"
-          content="About us — we design and build polished portfolio templates for freelancers."
-        />
+        <title>{t("about.meta.title")}</title>
+        <meta name="description" content={t("about.meta.description")} />
       </Head>
 
       <SiteHeadder />
@@ -210,22 +210,18 @@ const AboutUsPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
               <div className="text-center lg:text-left">
                 <div className="inline-block rounded-full bg-indigo-50 dark:bg-indigo-900 px-3 py-1 text-sm text-indigo-600 font-medium">
-                  ABOUT US
+                  {t("about.hero.badge")}
                 </div>
 
                 <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-tight text-slate-900 dark:text-white">
-                  We make beautiful portfolios for freelancers
-                  <br />
+                  {t("about.hero.title")} <br />
                   <span className="text-indigo-500">
-                    Fast. Accessible. SEO-ready.
+                    {t("about.hero.subtitle")}
                   </span>
                 </h1>
 
                 <p className="mt-6 text-lg text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0">
-                  Our templates are crafted to help independent professionals
-                  showcase work, win clients and focus on what matters — the
-                  work itself. We combine design systems, performance
-                  best-practices and clear documentation so you can ship fast.
+                  {t("about.hero.desc")}
                 </p>
 
                 <div className="mt-8 flex items-center justify-center lg:justify-start gap-4">
@@ -233,14 +229,14 @@ const AboutUsPage = () => {
                     href="/contact-us"
                     className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-md font-medium"
                   >
-                    Work with us
+                    {t("about.hero.cta_work")}
                   </Link>
 
                   <Link
                     href="/templates"
                     className="text-indigo-600 hover:underline"
                   >
-                    Browse templates
+                    {t("about.hero.cta_browse")}
                   </Link>
                 </div>
               </div>
@@ -265,13 +261,10 @@ const AboutUsPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl font-extrabold">
-                Our mission
+                {t("about.mission.title")}
               </h2>
               <p className="mt-4 text-slate-600 dark:text-slate-300 max-w-xl">
-                We help freelancers present their work with clarity and
-                confidence. Our goal is to reduce the friction of going live —
-                design, code, and docs that let you focus on projects rather
-                than setup.
+                {t("about.mission.desc")}
               </p>
 
               <div className="mt-6 flex items-center gap-4">
@@ -279,13 +272,13 @@ const AboutUsPage = () => {
                   href="/services"
                   className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md font-medium"
                 >
-                  Our services
+                  {t("about.mission.cta_services")}
                 </Link>
                 <Link
                   href="/contact-us"
                   className="text-indigo-600 hover:underline"
                 >
-                  Contact us
+                  {t("about.mission.cta_contact")}
                 </Link>
               </div>
             </div>
@@ -315,13 +308,11 @@ const AboutUsPage = () => {
         <section className="mx-auto max-w-7xl px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
             <div className="lg:col-span-1 text-center lg:text-left">
-              <h3 className="text-3xl sm:text-4xl font-extrabold">
-                Trusted by freelancers worldwide
+              <h3 className="text-2xl sm:text-3xl font-extrabold">
+                {t("about.stats.heading")}
               </h3>
-              <p className="mt-3 text-slate-600 dark:text-slate-300 max-w-md">
-                Our templates and services have helped hundreds of freelancers
-                launch portfolios that look professional and convert visitors
-                into clients.
+              <p className="mt-3 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                {t("about.stats.desc")}
               </p>
             </div>
 
@@ -347,10 +338,10 @@ const AboutUsPage = () => {
         <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
           <div className="text-center">
             <h3 className="text-2xl sm:text-3xl font-extrabold">
-              Meet the team
+              {t("about.team.title")}
             </h3>
             <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              A small, focused team that loves design systems and performance.
+              {t("about.team.desc")}
             </p>
           </div>
 
@@ -396,16 +387,20 @@ const AboutUsPage = () => {
                       className="w-full h-full rounded-full ring-1 ring-black/5 dark:ring-white/5 object-cover"
                     />
                     <div className="absolute    -bottom-2    left-1/2 -translate-x-1/2 bg-white dark:bg-slate-900 rounded-full px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200 shadow-sm ring-1 ring-black/5">
-                      {m.role}
+                      {t(`about.team.members.${i}.role`, {
+                        defaultValue: m.role,
+                      })}
                     </div>
                   </div>
 
                   <div className="mt-6 text-lg font-semibold text-slate-900 dark:text-slate-100">
-                    {m.name}
+                    {t(`about.team.members.${i}.name`, {
+                      defaultValue: m.name,
+                    })}
                   </div>
 
                   <p className="mt-2 text-sm text-slate-500 max-w-xs text-center">
-                    {m.bio}
+                    {t(`about.team.members.${i}.bio`, { defaultValue: m.bio })}
                   </p>
                 </div>
 
@@ -595,10 +590,14 @@ const AboutUsPage = () => {
 
                         <div className="sm:text-center">
                           <div className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-                            {step.title}
+                            {t(`about.approach.items.${idx}.title`, {
+                              defaultValue: step.title,
+                            })}
                           </div>
                           <div className="mt-2 text-sm text-slate-600 dark:text-slate-300 max-w-md">
-                            {step.desc}
+                            {t(`about.approach.items.${idx}.desc`, {
+                              defaultValue: step.desc,
+                            })}
                           </div>
                         </div>
                       </div>
@@ -621,11 +620,10 @@ const AboutUsPage = () => {
         <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
           <div className="rounded-2xl bg-indigo-600/5 dark:bg-indigo-900/30 p-8 sm:p-12 text-center ring-1 ring-black/5 dark:ring-white/5">
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-              Ready to start your portfolio?
+              {t("about.cta.title")}
             </h3>
             <p className="mt-3 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Start with a template or book a setup — we help freelancers ship
-              faster with minimal fuss.
+              {t("about.cta.desc")}
             </p>
 
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -633,13 +631,13 @@ const AboutUsPage = () => {
                 href="/contact-us"
                 className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-md font-medium"
               >
-                Get a quote
+                {t("about.cta.cta_primary")}
               </Link>
               <Link
                 href="/templates"
                 className="inline-flex items-center gap-2 text-indigo-600 hover:underline px-4 py-3 rounded-md font-medium"
               >
-                Browse templates
+                {t("about.cta.cta_secondary")}
               </Link>
             </div>
           </div>
