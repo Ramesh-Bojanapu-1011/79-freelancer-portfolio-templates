@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React from "react";
 import { ModeToggle } from "./theme/ModeToggle";
+import { readAuth, readUsers } from "../../pages/auth";
 
 const services = [
   { label: "All Services", href: "/services" },
@@ -24,6 +25,31 @@ export default function SiteHeadder() {
   const [langOpen, setLangOpen] = React.useState(false);
   const [profileOpen, setProfileOpen] = React.useState(false);
   const [mobileprofileOpen, setMobileProfileOpen] = React.useState(false);
+  const users = readUsers();
+
+  // Avoid reading `ft_auth` during server render to prevent hydration mismatch.
+  // We'll compute initials on the client after mount.
+  const [initials, setInitials] = React.useState("R");
+
+  React.useEffect(() => {
+    try {
+      const auth = readAuth();
+      if (!auth) return;
+      const userObj = auth as {
+        firstName?: string;
+        lastName?: string;
+        email?: string;
+      };
+      const f = (userObj.firstName || "").trim();
+      const l = (userObj.lastName || "").trim();
+      let computed = "R";
+      if (f || l) computed = (f.charAt(0) + (l.charAt(0) || "")).toUpperCase();
+      else if (userObj.email) computed = userObj.email.charAt(0).toUpperCase();
+      setInitials(computed);
+    } catch (e) {
+      // ignore
+    }
+  }, []);
 
   const containerRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -59,6 +85,30 @@ export default function SiteHeadder() {
       document.removeEventListener("keydown", onKey);
     };
   }, []);
+  console.log("SiteHeader initials:", initials);
+
+  function handleLogout(): void {
+    // Implement logout functionality (read auth/users at runtime to avoid SSR reads)
+    try {
+      const auth = readAuth();
+      if (!auth) return;
+      const user = auth as { email?: string };
+      const currentUsers = readUsers();
+      const updatedUsers = currentUsers.map((u) =>
+        u.email === user.email
+          ? { ...u, logoutTime: new Date().toISOString() }
+          : u,
+      );
+
+      if (typeof window !== "undefined") {
+        localStorage.removeItem("ft_auth");
+        localStorage.setItem("ft_users", JSON.stringify(updatedUsers));
+        window.location.href = "/auth";
+      }
+    } catch (error) {
+      console.error("Failed during logout:", error);
+    }
+  }
 
   return (
     <header className="w-screen bg-linear-to-r from-white  to-gray-100 dark:from-gray-900 dark:to-gray-800 sticky top-0 z-40 shadow-sm dark:text-white">
@@ -225,7 +275,7 @@ export default function SiteHeadder() {
                   className="flex items-center gap-2 p-1 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800"
                 >
                   <div className="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-sm font-medium text-slate-700 dark:text-slate-200">
-                    R
+                    {initials}
                   </div>
                 </button>
                 {profileOpen && (
@@ -236,7 +286,10 @@ export default function SiteHeadder() {
                     >
                       Profile
                     </Link>
-                    <button className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200">
+                    <button
+                      onClick={() => handleLogout()}
+                      className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
+                    >
                       Logout
                     </button>
                   </div>
@@ -391,7 +444,7 @@ export default function SiteHeadder() {
                       aria-expanded={mobileprofileOpen}
                       className="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 flex justify-center items-center"
                     >
-                      AD
+                      {initials}
                     </button>
                   </div>
                   <ModeToggle />
@@ -406,7 +459,10 @@ export default function SiteHeadder() {
                     >
                       Profile
                     </Link>
-                    <button className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200">
+                    <button
+                      onClick={() => handleLogout()}
+                      className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
+                    >
                       Logout
                     </button>
                   </div>

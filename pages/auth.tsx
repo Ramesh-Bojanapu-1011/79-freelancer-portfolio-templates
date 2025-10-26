@@ -15,6 +15,49 @@ type User = {
 const ADMIN_EMAIL = "admin@stakly.com";
 const ADMIN_PASS = "admin123";
 
+/* --- LocalStorage User Handlers --- */
+
+export function readUsers(): User[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = localStorage.getItem("ft_users");
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+}
+
+export function writeUsers(users: User[]) {
+  if (typeof window === "undefined") return;
+  localStorage.setItem("ft_users", JSON.stringify(users));
+}
+
+export function setAuth(user: User, isAdmin = false) {
+  if (typeof window === "undefined") return;
+  const now = new Date();
+  localStorage.setItem(
+    "ft_auth",
+    JSON.stringify({
+      email: user.email,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      isAdmin,
+      logindate: now,
+      registerdate: user.registerdate,
+    }),
+  );
+}
+
+export function readAuth(): User | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = localStorage.getItem("ft_auth");
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+}
+
 export default function AuthPage() {
   const router = useRouter();
   const [mode, setMode] = React.useState<"login" | "register" | "forgot">(
@@ -36,39 +79,6 @@ export default function AuthPage() {
   const [newPassword, setNewPassword] = React.useState("");
 
   const [message, setMessage] = React.useState<string | null>(null);
-
-  /* --- LocalStorage User Handlers --- */
-
-  function readUsers(): User[] {
-    if (typeof window === "undefined") return [];
-    try {
-      const raw = localStorage.getItem("ft_users");
-      return raw ? JSON.parse(raw) : [];
-    } catch {
-      return [];
-    }
-  }
-
-  function writeUsers(users: User[]) {
-    if (typeof window === "undefined") return;
-    localStorage.setItem("ft_users", JSON.stringify(users));
-  }
-
-  function setAuth(user: User, isAdmin = false) {
-    if (typeof window === "undefined") return;
-    const now = new Date();
-    localStorage.setItem(
-      "ft_auth",
-      JSON.stringify({
-        email: user.email,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        isAdmin,
-        logindate: now,
-        registerdate: user.registerdate,
-      }),
-    );
-  }
 
   /* --- Auth Flow Handlers --- */
 
