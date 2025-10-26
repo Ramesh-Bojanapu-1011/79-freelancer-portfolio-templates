@@ -2,9 +2,14 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeadder from "@/components/SiteHeadder";
 import { Briefcase, Check, Star, User } from "lucide-react";
 import Head from "next/head";
+import React from "react";
+import AOS from "aos";
 import Link from "next/link";
 
 export default function Home1() {
+  React.useEffect(() => {
+    AOS.init({ duration: 1000, once: false });
+  }, []);
   return (
     <>
       <Head>
@@ -14,14 +19,14 @@ export default function Home1() {
           content="Beautiful freelancer portfolio templates"
         />
       </Head>
-      <div className="min-h-screen flex flex-col bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100  caret-transparent">
+      <div className="min-h-screen flex flex-col bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100  caret-transparent max-w-screen overflow-x-hidden">
         <SiteHeadder />
 
         {/* Hero */}
-        <section className="relative overflow-hidden bg-linear-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32">
+        <section className="relative  overflow-hidden bg-linear-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 min-h-screen flex justify-center items-center">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8    ">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              <div>
+              <div data-aos="fade-up-right">
                 <div className="inline-flex items-center gap-2 rounded-full bg-indigo-50 dark:bg-indigo-900 px-3 py-1 text-sm w-max">
                   <Briefcase className="h-4 w-4 text-indigo-600 dark:text-indigo-300" />
                   <span className="text-indigo-700 dark:text-indigo-200 font-medium">
@@ -68,10 +73,10 @@ export default function Home1() {
                 </div>
               </div>
 
-              <div className="relative">
+              <div data-aos="fade-left" className="relative">
                 <div className="rounded-xl overflow-hidden shadow-xl ring-1 ring-black/5 dark:ring-white/5">
                   <img
-                    src="https://i.postimg.cc/4d2j6w1y/portfolio-sample.jpg"
+                    src="https://i.postimg.cc/portfolio-sample.jpg"
                     alt="template preview"
                     width={900}
                     height={600}
@@ -87,7 +92,7 @@ export default function Home1() {
         <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             {/* Left: image */}
-            <div className="order-2 lg:order-1">
+            <div data-aos="fade-up-right" className="order-2 lg:order-1">
               <div className="rounded-xl overflow-hidden shadow-lg ring-1 ring-black/5 dark:ring-white/5">
                 <img
                   src="https://i.postimg.cc/4d2j6w1y/portfolio-sample.jpg"
@@ -100,7 +105,7 @@ export default function Home1() {
             </div>
 
             {/* Right: content */}
-            <div className="order-1 lg:order-2">
+            <div data-aos="fade-left" className="order-1 lg:order-2">
               <div className="inline-flex items-center gap-2 rounded-full bg-indigo-50 dark:bg-indigo-900 px-3 py-1 text-sm w-max">
                 <span className="text-indigo-700 dark:text-indigo-200 font-medium">
                   GET TO KNOW ABOUT US
@@ -179,7 +184,7 @@ export default function Home1() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
               {/* Left: text + bullets */}
-              <div>
+              <div data-aos="fade-up-right">
                 <h3 className="text-sm font-medium text-indigo-600">
                   WHY CHOOSE US
                 </h3>
@@ -266,7 +271,10 @@ export default function Home1() {
               </div>
 
               {/* Right: image with decorative gradient */}
-              <div className="flex justify-center lg:justify-end">
+              <div
+                data-aos="fade-left"
+                className="flex justify-center lg:justify-end"
+              >
                 <div className="relative w-full max-w-md">
                   <div className="absolute -inset-2 transform rotate-2 rounded-3xl bg-linear-to-tr from-indigo-400 to-pink-400 opacity-30 blur-lg"></div>
                   <div className="relative rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 dark:ring-white/5">
@@ -304,38 +312,51 @@ export default function Home1() {
                 title: "Discovery",
                 desc: "Understand goals and audience to craft the right strategy.",
                 icon: Check,
+                color: "from-blue-500 to-indigo-500",
+                animation: "fade-up",
               },
               {
                 title: "Strategize",
                 desc: "Create a clear plan focused on conversion and growth.",
                 icon: Briefcase,
+                color: "from-purple-500 to-pink-500",
+                animation: "fade-up",
               },
               {
                 title: "Implementation",
                 desc: "Ship polished templates, pages and assets quickly.",
                 icon: Star,
+                color: "from-emerald-500 to-teal-500",
+                animation: "fade-up",
               },
               {
                 title: "Analysis & Optimization",
                 desc: "Measure results and iterate to continuously improve.",
                 icon: User,
+                color: "from-orange-500 to-red-500",
+                animation: "fade-up",
               },
-            ].map((f, idx) => {
+            ].map((f, i) => {
               const Icon = f.icon;
               return (
                 <div
-                  key={idx}
-                  className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm ring-1 ring-black/5 dark:ring-white/5"
+                  key={i}
+                  data-aos={f.animation}
+                  data-aos-delay={i * 150}
+                  className="relative bg-white/60 dark:bg-slate-800/70 backdrop-blur-md border border-white/20 dark:border-slate-700/30 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div className="flex items-center justify-center">
-                    <div className="h-14 w-14 rounded-full bg-indigo-600 flex items-center justify-center text-white">
-                      <Icon className="h-6 w-6" />
+                  <div className="absolute inset-0 rounded-2xl bg-linear-to-tr from-transparent to-white/10 dark:to-white/5 pointer-events-none" />
+                  <div className="flex justify-center">
+                    <div
+                      className={`h-16 w-16 rounded-full bg-linear-to-tr ${f.color} flex items-center justify-center text-white shadow-lg`}
+                    >
+                      <Icon className="h-7 w-7" />
                     </div>
                   </div>
-                  <h3 className="mt-6 text-lg font-semibold text-center">
+                  <h3 className="mt-6 text-lg font-semibold text-center text-slate-900 dark:text-white">
                     {f.title}
                   </h3>
-                  <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 text-center">
+                  <p className="mt-3 text-sm text-center text-slate-600 dark:text-slate-300 leading-relaxed">
                     {f.desc}
                   </p>
                 </div>
@@ -383,7 +404,9 @@ export default function Home1() {
             ].map((t, i) => (
               <article
                 key={i}
-                className="bg-white dark:bg-slate-800 rounded-lg shadow p-4"
+                data-aos="fade-up"
+                data-aos-delay={i * 150}
+                className="bg-white dark:bg-slate-800 rounded-lg shadow-lg hover:shadow-2xl p-4"
               >
                 <div className="rounded-md overflow-hidden">
                   <img
@@ -398,14 +421,6 @@ export default function Home1() {
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
                   {t.desc}
                 </p>
-                <div className="mt-4">
-                  <a
-                    href="#"
-                    className="text-indigo-600 hover:underline text-sm"
-                  >
-                    Preview →
-                  </a>
-                </div>
               </article>
             ))}
           </div>
@@ -460,6 +475,8 @@ export default function Home1() {
                       ].map((r, i) => (
                         <div
                           key={i}
+                          data-aos="fade-up"
+                          data-aos-delay={i * 150}
                           className="snap-start max-w-sm"
                           style={{ minWidth: 300 }}
                         >
