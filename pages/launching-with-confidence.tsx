@@ -213,7 +213,7 @@ const LaunchingWithConfidence: React.FC = () => {
                 </p>
                 <div className="mt-4">
                   <Link
-                    href="/contact"
+                    href="/contact-us"
                     className="inline-block rounded-md bg-sky-600 px-4 py-2 text-white"
                   >
                     Request an audit

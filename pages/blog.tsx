@@ -133,7 +133,7 @@ const BlogPage: React.FC = () => {
           </p>
           <div className="mt-6 flex justify-center gap-3">
             <Link
-              href="/contact"
+              href="/contact-us"
               className="inline-block rounded-md bg-sky-600 px-4 py-2 text-white hover:bg-sky-700"
             >
               Work with us
@@ -269,7 +269,7 @@ const BlogPage: React.FC = () => {
 
                 <div className="mt-6">
                   <Link
-                    href="/contact"
+                    href="/contact-us"
                     className="inline-block rounded-md bg-sky-600 px-4 py-2 text-white"
                   >
                     Get started
