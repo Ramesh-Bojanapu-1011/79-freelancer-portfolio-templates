@@ -439,6 +439,155 @@
       ]
     }
   },
+  "frontend": {
+    "meta": {
+      "title": "Frontend Development — Services",
+      "description": "Frontend development services: modern React/Next.js apps, performance optimization, responsive UIs, accessibility and deployment."
+    },
+    "breadcrumb": { "current": "Frontend Development" },
+    "hero": {
+      "title": "Build Fast, Maintainable Frontends.",
+      "desc": "We build modern React and Next.js frontends focused on performance, accessibility, and developer experience — from interactive UI to production-ready deployment pipelines.",
+      "cta_start": "Start a Project"
+    },
+    "features": {
+      "performance": {
+        "title": "Performance & SSR",
+        "desc": "Optimized builds, server-side rendering, and bundle tuning for fast load times."
+      },
+      "reusable": {
+        "title": "Component Implementation",
+        "desc": "Production-ready React components, primitives and design-consistent UI building blocks."
+      },
+      "tooling": {
+        "title": "Tooling & Testing",
+        "desc": "Automated testing, linting, and CI pipelines to keep releases stable."
+      },
+      "accessibility": {
+        "title": "Accessibility & SEO",
+        "desc": "Semantic markup, ARIA, and SEO best practices baked in."
+      }
+    },
+    "preview": {
+      "example": "Live preview",
+      "preview_title": "Frontend implementation preview",
+      "preview_desc": "A short preview of an implemented page showing responsive layout, lazy images and interactive UI."
+    },
+    "scope": {
+      "title": "Frontend Scope & Deliverables",
+      "desc": "What you get when we deliver a frontend: production-ready components, optimized pages, and deployment-ready code."
+    },
+    "deliverables": {
+      "title": "Frontend Deliverables",
+      "items": {
+        "reactPages": "React/Next.js pages and routes",
+        "components": "Reusable UI components and hooks",
+        "pageTemplates": "Responsive page templates and layouts",
+        "performance": "Performance and accessibility improvements",
+        "deployment": "Deployment scripts and CI configuration"
+      }
+    },
+    "timeline": {
+      "title": "Project timeline",
+      "desc": "Typical engagement: 1–4 weeks depending on scope. Work is split into Discovery, Implementation, and QA/Deployment with milestones for reviews and user testing.",
+      "note": "Includes performance audit, accessibility checks and CI setup."
+    },
+    "workflow": {
+      "title": "Our workflow",
+      "steps": [
+        "Requirements & Architecture",
+        "Component and Route Implementation",
+        "Testing, Accessibility & Performance Tuning",
+        "Deployment and Monitoring"
+      ],
+      "cta": "Get a quote"
+    },
+    "projects": {
+      "title": "Projects",
+      "desc": "Recent work where frontend implementation improved performance and polish.",
+      "0": {
+        "title": "Next.js marketing site — Alex M",
+        "desc": "A fast, SEO-friendly marketing site built with Next.js and ISR."
+      },
+      "1": {
+        "title": "Interactive gallery — Lina R",
+        "desc": "An image-heavy interactive gallery with lazy-loading and smooth transitions."
+      },
+      "2": {
+        "title": "Agency platform — Ember Co",
+        "desc": "A client-facing portal with reusable dashboards and form flows."
+      }
+    },
+    "testimonials": {
+      "title": "Client Success Stories",
+      "desc": "Real results from freelancers who used our systems to ship faster and look more polished.",
+      "items": {
+        "t1": {
+          "name": "Alex Morgan",
+          "role": "Product Designer",
+          "quote": "The design system cut our launch time in half—components are predictable and documentation made handoffs painless. Worth every penny."
+        },
+        "t2": {
+          "name": "Lina Rodriguez",
+          "role": "Illustrator",
+          "quote": "I loved how the tokens made color changes trivial—one update and my whole site matched the new brand. My site feels professional now."
+        },
+        "t3": {
+          "name": "Ember Co",
+          "role": "Founder",
+          "quote": "Consistent components and templates made it easy to produce landing pages for new services—our lead conversion improved instantly."
+        }
+      }
+    },
+    "pricing": {
+      "badge": "PRICING",
+      "title": "Transparent, Value-Driven Packages",
+      "desc": "Choose the level of support and system depth that best fits your freelance practice or small team.",
+      "plans": {
+        "starter": {
+          "title": "Starter Templates",
+          "blurb": "For solo freelancers needing foundational structure.",
+          "features": [
+            "1 Core Portfolio Template",
+            "Basic Email Support",
+            "Regular System Updates",
+            "Component Library Access (Lite)",
+            "Handoff Consultation (No)"
+          ],
+          "cta": "Choose Starter"
+        },
+        "pro": {
+          "title": "System Pro Build",
+          "blurb": "The full, custom build for professionals.",
+          "features": [
+            "Custom Templates & Pages",
+            "Priority Support & Handoff",
+            "Full Commercial License",
+            "Full Component Library Access",
+            "Dedicated Handoff Consultation"
+          ],
+          "cta": "Start Pro System"
+        },
+        "agency": {
+          "title": "Agency License",
+          "blurb": "For studios managing systems for multiple clients.",
+          "features": [
+            "Unlimited Template Access",
+            "Multi-Seat Team Access",
+            "Dedicated Account Manager",
+            "Full Component Library Access",
+            "Full Handoff Consultation Access"
+          ],
+          "cta": "Contact Sales"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Ship Faster?",
+      "desc": "Stop wasting time on styling and start delivering value. Let's build your unified UI system.",
+      "button": "Book Free Consultation"
+    }
+  },
   "designSystems": {
     "breadcrumb": { "current": "Design Systems & UI" },
     "hero": {

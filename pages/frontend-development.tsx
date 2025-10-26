@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import SiteHeadder from "@/components/SiteHeadder";
 import SiteFooter from "@/components/SiteFooter";
+import { useTranslation } from "react-i18next";
 import {
   Check,
   Code,
@@ -13,84 +14,184 @@ import {
   Zap,
 } from "lucide-react";
 
-const FrontendDevelopmentPage: React.FC = () => {
+const DesignSystemsUIPage: React.FC = () => {
+  const { t } = useTranslation();
+
   const pricingPlans = [
     {
       id: "starter",
-      title: "Starter Templates",
+      titleKey: "frontend.pricing.plans.starter.title",
       price: "$9",
       period: "/ month",
-      blurb: "For solo freelancers needing foundational structure.",
+      blurbKey: "frontend.pricing.plans.starter.blurb",
       features: [
-        { icon: "Check", text: "1 Core Portfolio Template", available: true },
-        { icon: "Check", text: "Basic Email Support", available: true },
-        { icon: "Check", text: "Regular System Updates", available: true },
+        {
+          icon: "Check",
+          textKey: "frontend.pricing.plans.starter.features.0",
+          available: true,
+        },
+        {
+          icon: "Check",
+          textKey: "frontend.pricing.plans.starter.features.1",
+          available: true,
+        },
+        {
+          icon: "Check",
+          textKey: "frontend.pricing.plans.starter.features.2",
+          available: true,
+        },
         {
           icon: "Code",
-          text: "Component Library Access (Lite)",
+          textKey: "frontend.pricing.plans.starter.features.3",
           available: false,
         },
-        { icon: "Server", text: "Handoff Consultation (No)", available: false },
+        {
+          icon: "Server",
+          textKey: "frontend.pricing.plans.starter.features.4",
+          available: false,
+        },
       ],
       highlighted: false,
-      cta: { href: "/contact-us", text: "Choose Starter", primary: true },
+      cta: {
+        href: "/contact-us",
+        textKey: "frontend.pricing.plans.starter.cta",
+        primary: true,
+      },
     },
     {
       id: "pro",
-      title: "System Pro Build",
+      titleKey: "frontend.pricing.plans.pro.title",
       price: "$2,900",
       period: "/ one-time",
-      blurb: "The full, custom design system build for professionals.",
+      blurbKey: "frontend.pricing.plans.pro.blurb",
       features: [
-        { icon: "Check", text: "Custom Templates & Pages", available: true },
-        { icon: "Check", text: "Priority Support & Handoff", available: true },
-        { icon: "Check", text: "Full Commercial License", available: true },
+        {
+          icon: "Check",
+          textKey: "frontend.pricing.plans.pro.features.0",
+          available: true,
+        },
+        {
+          icon: "Check",
+          textKey: "frontend.pricing.plans.pro.features.1",
+          available: true,
+        },
+        {
+          icon: "Check",
+          textKey: "frontend.pricing.plans.pro.features.2",
+          available: true,
+        },
         {
           icon: "Code",
-          text: "Full Component Library Access",
+          textKey: "frontend.pricing.plans.pro.features.3",
           available: true,
         },
         {
           icon: "Server",
-          text: "Dedicated Handoff Consultation",
+          textKey: "frontend.pricing.plans.pro.features.4",
           available: true,
         },
       ],
       highlighted: true,
-      cta: { href: "/contact-us", text: "Start Pro System", primary: true },
+      cta: {
+        href: "/contact-us",
+        textKey: "frontend.pricing.plans.pro.cta",
+        primary: true,
+      },
     },
     {
       id: "agency",
-      title: "Agency License",
+      titleKey: "frontend.pricing.plans.agency.title",
       price: "$79",
       period: "/ month",
-      blurb: "For studios managing systems for multiple clients.",
+      blurbKey: "frontend.pricing.plans.agency.blurb",
       features: [
-        { icon: "Check", text: "Unlimited Template Access", available: true },
-        { icon: "Check", text: "Multi-Seat Team Access", available: true },
-        { icon: "Check", text: "Dedicated Account Manager", available: true },
+        {
+          icon: "Check",
+          textKey: "frontend.pricing.plans.agency.features.0",
+          available: true,
+        },
+        {
+          icon: "Check",
+          textKey: "frontend.pricing.plans.agency.features.1",
+          available: true,
+        },
+        {
+          icon: "Check",
+          textKey: "frontend.pricing.plans.agency.features.2",
+          available: true,
+        },
         {
           icon: "Code",
-          text: "Full Component Library Access",
+          textKey: "frontend.pricing.plans.agency.features.3",
           available: true,
         },
         {
           icon: "Server",
-          text: "Full Handoff Consultation Access",
+          textKey: "frontend.pricing.plans.agency.features.4",
           available: true,
         },
       ],
       highlighted: false,
-      cta: { href: "/contact-us", text: "Contact Sales", primary: false },
+      cta: {
+        href: "/contact-us",
+        textKey: "frontend.pricing.plans.agency.cta",
+        primary: false,
+      },
     },
   ];
+
+  const projects = [
+    {
+      id: "project-1",
+      titleKey: "frontend.projects.0.title",
+      img: "https://picsum.photos/seed/project-1/900/600",
+      descKey: "frontend.projects.0.desc",
+    },
+    {
+      id: "project-2",
+      titleKey: "frontend.projects.1.title",
+      img: "https://picsum.photos/seed/project-2/900/600",
+      descKey: "frontend.projects.1.desc",
+    },
+    {
+      id: "project-3",
+      titleKey: "frontend.projects.2.title",
+      img: "https://picsum.photos/seed/project-3/900/600",
+      descKey: "frontend.projects.2.desc",
+    },
+  ];
+
+  const testimonials = [
+    {
+      id: "t1",
+      nameKey: "frontend.testimonials.items.t1.name",
+      roleKey: "frontend.testimonials.items.t1.role",
+      quoteKey: "frontend.testimonials.items.t1.quote",
+      avatar: "https://i.pravatar.cc/80?img=12",
+    },
+    {
+      id: "t2",
+      nameKey: "frontend.testimonials.items.t2.name",
+      roleKey: "frontend.testimonials.items.t2.role",
+      quoteKey: "frontend.testimonials.items.t2.quote",
+      avatar: "https://i.pravatar.cc/80?img=47",
+    },
+    {
+      id: "t3",
+      nameKey: "frontend.testimonials.items.t3.name",
+      roleKey: "frontend.testimonials.items.t3.role",
+      quoteKey: "frontend.testimonials.items.t3.quote",
+      avatar: "https://i.pravatar.cc/80?img=32",
+    },
+  ];
+
   return (
     <>
       <Head>
-        <title>Frontend Development — Services</title>
+        <title>Design Systems & UI — Services</title>
         <meta
           name="description"
-          content="Frontend development services: modern React/Next.js apps, performance optimization, responsive UIs, accessibility and deployment."
+          content="Design systems, reusable UI components and polished layouts for freelancer portfolios."
         />
       </Head>
 
@@ -112,24 +213,22 @@ const FrontendDevelopmentPage: React.FC = () => {
                   <ol className="flex items-center gap-2">
                     <li>
                       <Link href="/services" className="hover:underline">
-                        Services
+                        {t("header.services")}
                       </Link>
                     </li>
                     <li className="text-slate-300 dark:text-slate-700">/</li>
                     <li className="text-indigo-600 dark:text-cyan-400 font-semibold">
-                      Frontend Development
+                      {t("frontend.breadcrumb.current")}
                     </li>
                   </ol>
                 </nav>
 
                 <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight text-slate-900 dark:text-white">
-                  Build Fast, Maintainable Frontends.
+                  {t("frontend.hero.title")}
                 </h1>
 
                 <p className="mt-6 text-xl text-slate-600 dark:text-slate-300 max-w-xl">
-                  We build modern React and Next.js frontends focused on
-                  performance, accessibility, and developer experience — from
-                  interactive UI to production-ready deployment pipelines.
+                  {t("frontend.hero.desc")}
                 </p>
 
                 {/* --- CTAs (Redesigned for premium look) --- */}
@@ -138,7 +237,7 @@ const FrontendDevelopmentPage: React.FC = () => {
                     href="/contact-us"
                     className="inline-flex items-center gap-2 bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-indigo-500/40 transition-all duration-300 transform hover:scale-[1.02]"
                   >
-                    Start a Project
+                    {t("frontend.hero.cta_start")}
                   </Link>
                 </div>
 
@@ -151,11 +250,10 @@ const FrontendDevelopmentPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Performance & SSR
+                        {t("frontend.features.performance.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Optimized builds, server-side rendering, and bundle
-                        tuning for fast load times.
+                        {t("frontend.features.performance.desc")}
                       </div>
                     </div>
                   </li>
@@ -167,11 +265,10 @@ const FrontendDevelopmentPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Component Implementation
+                        {t("frontend.features.reusable.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Production-ready React components, primitives and
-                        design-consistent UI building blocks.
+                        {t("frontend.features.reusable.desc")}
                       </div>
                     </div>
                   </li>
@@ -183,11 +280,10 @@ const FrontendDevelopmentPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Tooling & Testing
+                        {t("frontend.features.tooling.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Automated testing, linting, and CI pipelines to keep
-                        releases stable.
+                        {t("frontend.features.tooling.desc")}
                       </div>
                     </div>
                   </li>
@@ -199,10 +295,10 @@ const FrontendDevelopmentPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Accessibility & SEO
+                        {t("frontend.features.accessibility.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Semantic markup, ARIA, and SEO best practices baked in.
+                        {t("frontend.features.accessibility.desc")}
                       </div>
                     </div>
                   </li>
@@ -222,14 +318,13 @@ const FrontendDevelopmentPage: React.FC = () => {
                       />
                       <div className="p-5">
                         <div className=" text-slate-500 dark:text-slate-400">
-                          Live preview
+                          {t("frontend.preview.example")}
                         </div>
                         <div className="mt-1 text-lg font-semibold text-slate-900 dark:text-slate-100">
-                          Frontend implementation preview
+                          {t("frontend.preview.preview_title")}
                         </div>
                         <p className="mt-2  text-slate-600 dark:text-slate-300">
-                          A short preview of an implemented page showing
-                          responsive layout, lazy images and interactive UI.
+                          {t("frontend.preview.preview_desc")}
                         </p>
                       </div>
                     </div>
@@ -243,217 +338,177 @@ const FrontendDevelopmentPage: React.FC = () => {
         {/* ======================================================= */}
         {/* 2. SCOPE & DELIVERABLES: Card-Grid Polish */}
         {/* ======================================================= */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32 bg-white dark:bg-slate-900">
-          <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              Frontend Scope & Deliverables
-            </h2>
-            <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              What you get when we deliver a frontend: production-ready
-              components, optimized pages, and deployment-ready code.
-            </p>
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Deliverables */}
-            <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 transition-shadow duration-300 hover:shadow-2xl">
-              <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
-                <Figma className="h-6 w-6" /> Frontend Deliverables
-              </div>
-              <ul className="mt-6 space-y-3 text-slate-700 dark:text-slate-300">
-                <li className="flex items-start gap-2">
-                  • React/Next.js pages and routes
-                </li>
-                <li className="flex items-start gap-2">
-                  • Reusable UI components and hooks
-                </li>
-                <li className="flex items-start gap-2">
-                  • Responsive page templates and layouts
-                </li>
-                <li className="flex items-start gap-2">
-                  • Performance and accessibility improvements
-                </li>
-                <li className="flex items-start gap-2">
-                  • Deployment scripts and CI configuration
-                </li>
-              </ul>
+        <section className=" bg-linear-to-b   from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32">
+            <div className="text-center">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                {t("frontend.scope.title")}
+              </h2>
+              <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                {t("frontend.scope.desc")}
+              </p>
             </div>
 
-            {/* Timeline */}
-            <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 transition-shadow duration-300 hover:shadow-2xl">
-              <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
-                <Zap className="h-6 w-6" /> Timeline & Velocity
-              </div>
-              <div className="mt-6 text-slate-700 dark:text-slate-300">
-                Typical engagement: **1–4 weeks** depending on scope. Work is
-                split into Discovery, Implementation, and QA/Deployment with
-                milestones for reviews and user testing.
-              </div>
-              <div className="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400 border-t pt-4 border-slate-200 dark:border-slate-700">
-                Includes performance audit, accessibility checks and CI setup.
-              </div>
-            </div>
-
-            {/* How we work */}
-            <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 flex flex-col justify-between transition-shadow duration-300 hover:shadow-2xl">
-              <div>
+            <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Deliverables */}
+              <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 transition-shadow duration-300 hover:shadow-2xl">
                 <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
-                  <Code className="h-6 w-6" /> Workflow
+                  <Figma className="h-6 w-6" />{" "}
+                  {t("frontend.deliverables.title")}
                 </div>
-                <ol className="mt-6 text-slate-700 dark:text-slate-300 space-y-3 list-decimal pl-5">
-                  <li>Requirements & Architecture</li>
-                  <li>Component and Route Implementation</li>
-                  <li>Testing, Accessibility & Performance Tuning</li>
-                  <li>Deployment and Monitoring</li>
-                </ol>
+                <ul className="mt-6 space-y-3 text-slate-700 dark:text-slate-300">
+                  <li className="flex items-start gap-2">
+                    • {t("frontend.deliverables.items.reactPages")}
+                  </li>
+                  <li className="flex items-start gap-2">
+                    • {t("frontend.deliverables.items.components")}
+                  </li>
+                  <li className="flex items-start gap-2">
+                    • {t("frontend.deliverables.items.pageTemplates")}
+                  </li>
+                  <li className="flex items-start gap-2">
+                    • {t("frontend.deliverables.items.performance")}
+                  </li>
+                  <li className="flex items-start gap-2">
+                    • {t("frontend.deliverables.items.deployment")}
+                  </li>
+                </ul>
               </div>
 
-              <div className="mt-8">
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center justify-center w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-medium transition-colors"
-                >
-                  Get a Scoped Quote
-                </Link>
+              {/* Timeline */}
+              <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 transition-shadow duration-300 hover:shadow-2xl">
+                <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
+                  <Zap className="h-6 w-6" /> {t("frontend.timeline.title")}
+                </div>
+                <div className="mt-6 text-slate-700 dark:text-slate-300">
+                  {t("frontend.timeline.desc")}
+                </div>
+                <div className="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400 border-t pt-4 border-slate-200 dark:border-slate-700">
+                  {t("frontend.timeline.note")}
+                </div>
+              </div>
+
+              {/* How we work */}
+              <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 flex flex-col justify-between transition-shadow duration-300 hover:shadow-2xl">
+                <div>
+                  <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
+                    <Code className="h-6 w-6" /> {t("frontend.workflow.title")}
+                  </div>
+                  <ol className="mt-6 text-slate-700 dark:text-slate-300 space-y-3 list-decimal pl-5">
+                    <li>{t("frontend.workflow.steps.0")}</li>
+                    <li>{t("frontend.workflow.steps.1")}</li>
+                    <li>{t("frontend.workflow.steps.2")}</li>
+                    <li>{t("frontend.workflow.steps.3")}</li>
+                  </ol>
+                </div>
+
+                <div className="mt-8">
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex items-center justify-center w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-medium transition-colors"
+                  >
+                    {t("frontend.workflow.cta")}
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Projects */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
-          <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-extrabold">Projects</h2>
-            <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Recent work where the design system improved consistency, speed
-              and polish.
-            </p>
-          </div>
+        <section className="bg-linear-to-b   from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
+            <div className="text-center">
+              <h2 className="text-2xl sm:text-3xl font-extrabold">
+                {t("frontend.projects.title")}
+              </h2>
+              <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                {t("frontend.projects.desc")}
+              </p>
+            </div>
 
-          <div className="mt-10 space-y-10">
-            {[
-              {
-                id: "project-1",
-                title: "Next.js marketing site — Alex M",
-                img: "https://picsum.photos/seed/project-1/900/600",
-                desc: "A fast, SEO-friendly marketing site built with Next.js and ISR.",
-              },
-              {
-                id: "project-2",
-                title: "Interactive gallery — Lina R",
-                img: "https://picsum.photos/seed/project-2/900/600",
-                desc: "An image-heavy interactive gallery with lazy-loading and smooth transitions.",
-              },
-              {
-                id: "project-3",
-                title: "Agency platform — Ember Co",
-                img: "https://picsum.photos/seed/project-3/900/600",
-                desc: "A client-facing portal with reusable dashboards and form flows.",
-              },
-            ].map((p, idx) => (
-              <article
-                key={p.id}
-                className="group rounded-2xl overflow-hidden bg-white dark:bg-slate-800 shadow-sm ring-1 ring-black/5 dark:ring-white/5"
-              >
-                <div
-                  className={`flex flex-col lg:flex-row items-center gap-6 p-4 ${
-                    idx % 2 === 1 ? "lg:flex-row-reverse" : ""
-                  }`}
+            <div className="mt-10 space-y-10">
+              {projects.map((p, idx) => (
+                <article
+                  key={p.id}
+                  className="group rounded-2xl overflow-hidden bg-white dark:bg-slate-800 shadow-sm ring-1 ring-black/5 dark:ring-white/5"
                 >
-                  <div className="relative w-full lg:w-1/2 h-56 sm:h-64 lg:h-56 overflow-hidden rounded-xl">
-                    <img
-                      src={p.img}
-                      alt={p.title}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
-                    <span className="absolute left-4 bottom-4 inline-flex items-center gap-2 bg-white/90 dark:bg-black/60 text-sm px-3 py-1 rounded-full font-medium text-slate-800 dark:text-slate-100">
-                      {p.title.split("—")[0].trim()}
-                    </span>
-                  </div>
+                  <div
+                    className={`flex flex-col lg:flex-row items-center gap-6 p-4 ${
+                      idx % 2 === 1 ? "lg:flex-row-reverse" : ""
+                    }`}
+                  >
+                    <div className="relative w-full lg:w-1/2 h-56 sm:h-64 lg:h-56 overflow-hidden rounded-xl">
+                      <img
+                        src={p.img}
+                        alt={t(p.titleKey)}
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
+                      <span className="absolute left-4 bottom-4 inline-flex items-center gap-2 bg-white/90 dark:bg-black/60 text-sm px-3 py-1 rounded-full font-medium text-slate-800 dark:text-slate-100">
+                        {t(p.titleKey).split("—")[0].trim()}
+                      </span>
+                    </div>
 
-                  <div className="w-full lg:w-1/2 p-2 lg:p-6">
-                    <h3 className="font-semibold text-2xl text-slate-900 dark:text-slate-100">
-                      {p.title}
-                    </h3>
-                    <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
-                      {p.desc}
-                    </p>
-                    <div className="mt-6 flex items-center justify-between">
-                      <div className="text-xs text-slate-500 dark:text-slate-400">
-                        Design & implementation
+                    <div className="w-full lg:w-1/2 p-2 lg:p-6">
+                      <h3 className="font-semibold text-2xl text-slate-900 dark:text-slate-100">
+                        {t(p.titleKey)}
+                      </h3>
+                      <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
+                        {t(p.descKey)}
+                      </p>
+                      <div className="mt-6 flex items-center justify-between">
+                        <div className="text-xs text-slate-500 dark:text-slate-400">
+                          {t("frontend.projects.meta")}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </article>
-            ))}
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Testimonials */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
-          <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              Client Success Stories
-            </h2>
-            <p className="mt-2 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Real results from freelancers who used our systems to ship faster
-              and look more polished.
-            </p>
-          </div>
+        <section className=" bg-linear-to-b   from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
+            <div className="text-center">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                {t("frontend.testimonials.title")}
+              </h2>
+              <p className="mt-2 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                {t("frontend.testimonials.desc")}
+              </p>
+            </div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                id: "t1",
-                name: "Alex Morgan",
-                role: "Product Designer",
-                quote:
-                  "The design system cut our launch time in half—components are predictable and documentation made handoffs painless. Worth every penny.",
-                avatar: "https://i.pravatar.cc/80?img=12",
-              },
-              {
-                id: "t2",
-                name: "Lina Rodriguez",
-                role: "Illustrator",
-                quote:
-                  "I loved how the tokens made color changes trivial—one update and my whole site matched the new brand. My site feels professional now.",
-                avatar: "https://i.pravatar.cc/80?img=47",
-              },
-              {
-                id: "t3",
-                name: "Ember Co",
-                role: "Founder",
-                quote:
-                  "Consistent components and templates made it easy to produce landing pages for new services—our lead conversion improved instantly.",
-                avatar: "https://i.pravatar.cc/80?img=32",
-              },
-            ].map((t) => (
-              <blockquote
-                key={t.id}
-                className="rounded-3xl bg-slate-50 dark:bg-slate-800 p-8 shadow-md ring-1 ring-black/5 dark:ring-white/5 border-t-4 border-indigo-600 dark:border-cyan-400"
-              >
-                <p className="text-lg font-medium text-slate-700 dark:text-slate-200">
-                  “{t.quote}”
-                </p>
-                <div className="mt-6 flex items-center gap-4">
-                  <img
-                    src={t.avatar}
-                    alt={t.name}
-                    className="w-12 h-12 rounded-full ring-2 ring-indigo-600 dark:ring-cyan-400"
-                  />
-                  <div>
-                    <div className="text-sm font-bold text-slate-900 dark:text-white">
-                      {t.name}
-                    </div>
-                    <div className="text-xs text-slate-500 dark:text-slate-400">
-                      {t.role}
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+              {testimonials.map((item) => (
+                <blockquote
+                  key={item.id}
+                  className="rounded-3xl bg-slate-50 dark:bg-slate-800 p-8 shadow-md ring-1 ring-black/5 dark:ring-white/5 border-t-4 border-indigo-600 dark:border-cyan-400"
+                >
+                  <p className="text-lg font-medium text-slate-700 dark:text-slate-200">
+                    “{t(item.quoteKey)}”
+                  </p>
+                  <div className="mt-6 flex items-center gap-4">
+                    <img
+                      src={item.avatar}
+                      alt={t(item.nameKey)}
+                      className="w-12 h-12 rounded-full ring-2 ring-indigo-600 dark:ring-cyan-400"
+                    />
+                    <div>
+                      <div className="text-sm font-bold text-slate-900 dark:text-white">
+                        {t(item.nameKey)}
+                      </div>
+                      <div className="text-xs text-slate-500 dark:text-slate-400">
+                        {t(item.roleKey)}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </blockquote>
-            ))}
+                </blockquote>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -466,14 +521,13 @@ const FrontendDevelopmentPage: React.FC = () => {
         >
           <div className="text-center">
             <p className="text-sm font-medium text-teal-500 uppercase">
-              PRICING
+              {t("frontend.pricing.badge")}
             </p>
             <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              Transparent, Value-Driven Packages
+              {t("frontend.pricing.title")}
             </h2>
             <p className="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Choose the level of support and system depth that best fits your
-              freelance practice or small team.
+              {t("frontend.pricing.desc")}
             </p>
           </div>
 
@@ -498,7 +552,7 @@ const FrontendDevelopmentPage: React.FC = () => {
                         : "text-xl font-bold text-slate-900 dark:text-white"
                     }`}
                   >
-                    {plan.title}
+                    {t(plan.titleKey)}
                   </div>
 
                   <div className="mt-6 flex items-baseline gap-2">
@@ -522,7 +576,7 @@ const FrontendDevelopmentPage: React.FC = () => {
                         : "text-slate-600 dark:text-slate-400"
                     }`}
                   >
-                    {plan.blurb}
+                    {t(plan.blurbKey)}
                   </p>
 
                   <ul
@@ -568,7 +622,7 @@ const FrontendDevelopmentPage: React.FC = () => {
                             }`}
                           />
                         )}
-                        {f.text}
+                        {t(f.textKey)}
                       </li>
                     ))}
                   </ul>
@@ -584,7 +638,7 @@ const FrontendDevelopmentPage: React.FC = () => {
                           : "inline-flex items-center justify-center w-full border-2 border-indigo-600 dark:border-teal-400 text-indigo-600 dark:text-teal-400 px-4 py-3 rounded-xl font-bold text-lg hover:bg-indigo-50 dark:hover:bg-slate-800 transition-colors"
                       }
                     >
-                      {plan.cta.text}
+                      {t(plan.cta.textKey)}
                     </Link>
                   </div>
                 </div>
@@ -600,13 +654,13 @@ const FrontendDevelopmentPage: React.FC = () => {
           <div className="relative w-full max-w-5xl px-6">
             <div className="bg-white dark:bg-slate-950 rounded-3xl shadow-2xl ring-1 ring-black/5 dark:ring-white/5 p-12 lg:p-16 text-center">
               <FileText className="h-10 w-10 text-indigo-600 dark:text-teal-400 mx-auto mb-4" />
+
               <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-slate-900 dark:text-white">
-                Ready to Ship Faster?
+                {t("frontend.cta.title")}
               </h2>
 
               <p className="mt-4 text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-                Stop wasting time on styling and start delivering value. Let's
-                build your unified UI system.
+                {t("frontend.cta.desc")}
               </p>
 
               <div className="mt-10">
@@ -614,7 +668,7 @@ const FrontendDevelopmentPage: React.FC = () => {
                   href="/contact-us"
                   className="inline-flex items-center gap-2 bg-linear-to-r from-cyan-500 to-indigo-600 hover:from-cyan-600 hover:to-indigo-700 text-white px-8 py-4 rounded-xl font-bold text-xl shadow-2xl shadow-cyan-500/50 transition-all duration-300 transform hover:scale-[1.05]"
                 >
-                  Book Free Consultation
+                  {t("frontend.cta.button")}
                 </Link>
               </div>
             </div>
@@ -627,4 +681,4 @@ const FrontendDevelopmentPage: React.FC = () => {
   );
 };
 
-export default FrontendDevelopmentPage;
+export default DesignSystemsUIPage;
