@@ -588,6 +588,156 @@
       "button": "Book Free Consultation"
     }
   },
+  "branding": {
+    "meta": {
+      "title": "Branding & Identity — Services",
+      "description": "Branding & identity services: brand strategy, logo and asset design, visual systems, and launch-ready brand guidelines."
+    },
+    "breadcrumb": { "services": "Services", "current": "Branding & Identity" },
+    "hero": {
+      "title": "Memorable Brands, Clear Identity.",
+      "desc": "We craft brand strategies, logos and visual systems that make your freelance practice or studio stand out — from concept to launch-ready assets.",
+      "cta": "Start a Project"
+    },
+    "features": {
+      "strategy": {
+        "title": "Brand Strategy",
+        "desc": "Positioning, messaging and audience-first strategy to guide visual direction."
+      },
+      "visual": {
+        "title": "Visual Identity",
+        "desc": "Logo systems, color palettes, typography and imagery to express your brand consistently."
+      },
+      "assets": {
+        "title": "Brand Assets",
+        "desc": "Deliverables: logos, iconography, photography direction and asset exports for web and print."
+      },
+      "guidelines": {
+        "title": "Guidelines & Launch",
+        "desc": "Brand guidelines, handoff documents and launch-ready files for smooth implementation."
+      }
+    },
+    "preview": {
+      "label": "Brand preview",
+      "title": "Identity exploration",
+      "desc": "A quick look at logo variations, color pairs and typographic scales applied to a sample layout.",
+      "alt": "Design system preview"
+    },
+    "deliverables": {
+      "title": "Branding & Identity Deliverables",
+      "desc": "Strategy and visual assets you can use immediately — from logo packages to launch-ready brand guidelines.",
+      "items": [
+        "Brand strategy and messaging brief",
+        "Logo suite (primary, secondary, marks)",
+        "Color palette and typography system",
+        "Iconography and imagery direction",
+        "Launch-ready brand guidelines (PDF & assets)"
+      ]
+    },
+    "timeline": {
+      "title": "Timeline & Velocity",
+      "desc": "Typical engagement: 1–3 weeks depending on scope — from a focused visual refresh to a full brand system and launch pack.",
+      "note": "Deliverables include source files, SVGs, and a concise implementation guide for web and print."
+    },
+    "workflow": {
+      "title": "Workflow",
+      "steps": [
+        "Discovery & positioning",
+        "Concepts & visual exploration",
+        "Refinement and systemization",
+        "Handoff: assets and guidelines"
+      ],
+      "cta": "Get a Scoped Quote"
+    },
+    "projects": {
+      "title": "Projects",
+      "desc": "Recent branding work showcasing strategy-led identities and tangible improvements in brand recognition.",
+      "items": {
+        "project-1": {
+          "title": "Brand refresh — Bloom Shop",
+          "desc": "New logo suite and color system that increased brand recall."
+        },
+        "project-2": {
+          "title": "Visual system — Lina R",
+          "desc": "A cohesive identity and asset pack for a photographer's portfolio."
+        },
+        "project-3": {
+          "title": "Identity package — Ember Co",
+          "desc": "Logo, icons and a compact guidelines file for a fast launch."
+        }
+      }
+    },
+    "testimonials": {
+      "title": "Client Success Stories",
+      "desc": "Real results from freelancers who used our systems to ship faster and look more polished.",
+      "items": {
+        "t1": {
+          "name": "Alex Morgan",
+          "role": "Product Designer",
+          "quote": "The design system cut our launch time in half—components are predictable and documentation made handoffs painless. Worth every penny."
+        },
+        "t2": {
+          "name": "Lina Rodriguez",
+          "role": "Illustrator",
+          "quote": "I loved how the tokens made color changes trivial—one update and my whole site matched the new brand. My site feels professional now."
+        },
+        "t3": {
+          "name": "Ember Co",
+          "role": "Founder",
+          "quote": "Consistent components and templates made it easy to produce landing pages for new services—our lead conversion improved instantly."
+        }
+      }
+    },
+    "pricing": {
+      "badge": "PRICING",
+      "title": "Transparent, Value-Driven Packages",
+      "desc": "Choose the level of support and system depth that best fits your freelance practice or small team.",
+      "most_popular": "MOST POPULAR",
+      "plans": {
+        "starter": {
+          "title": "Starter Templates",
+          "blurb": "For solo freelancers needing foundational structure.",
+          "features": [
+            "1 Core Portfolio Template",
+            "Basic Email Support",
+            "Regular System Updates",
+            "Component Library Access (Lite)",
+            "Handoff Consultation (No)"
+          ],
+          "cta": "Choose Starter"
+        },
+        "pro": {
+          "title": "System Pro Build",
+          "blurb": "The full, custom design system build for professionals.",
+          "features": [
+            "Custom Templates & Pages",
+            "Priority Support & Handoff",
+            "Full Commercial License",
+            "Full Component Library Access",
+            "Dedicated Handoff Consultation"
+          ],
+          "cta": "Start Pro System"
+        },
+        "agency": {
+          "title": "Agency License",
+          "blurb": "For studios managing systems for multiple clients.",
+          "features": [
+            "Unlimited Template Access",
+            "Multi-Seat Team Access",
+            "Dedicated Account Manager",
+            "Full Component Library Access",
+            "Full Handoff Consultation Access"
+          ],
+          "cta": "Contact Sales"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Ship Faster?",
+      "desc": "Stop wasting time on styling and start delivering value. Let's build your unified UI system.",
+      "button": "Book Free Consultation"
+    }
+  },
   "designSystems": {
     "breadcrumb": { "current": "Design Systems & UI" },
     "hero": {

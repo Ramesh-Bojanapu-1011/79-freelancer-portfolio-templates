@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import SiteHeadder from "@/components/SiteHeadder";
 import SiteFooter from "@/components/SiteFooter";
+import { useTranslation } from "react-i18next";
 import {
   Check,
   Code,
@@ -14,6 +15,7 @@ import {
 } from "lucide-react";
 
 const BrandingIdentityPage: React.FC = () => {
+  const { t } = useTranslation();
   const pricingPlans = [
     {
       id: "starter",
@@ -87,11 +89,8 @@ const BrandingIdentityPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Branding & Identity — Services</title>
-        <meta
-          name="description"
-          content="Branding & identity services: brand strategy, logo and asset design, visual systems, and launch-ready brand guidelines."
-        />
+        <title>{t("branding.meta.title")}</title>
+        <meta name="description" content={t("branding.meta.description")} />
       </Head>
 
       <SiteHeadder />
@@ -112,24 +111,22 @@ const BrandingIdentityPage: React.FC = () => {
                   <ol className="flex items-center gap-2">
                     <li>
                       <Link href="/services" className="hover:underline">
-                        Services
+                        {t("branding.breadcrumb.services")}
                       </Link>
                     </li>
                     <li className="text-slate-300 dark:text-slate-700">/</li>
                     <li className="text-indigo-600 dark:text-cyan-400 font-semibold">
-                      Branding & Identity
+                      {t("branding.breadcrumb.current")}
                     </li>
                   </ol>
                 </nav>
 
                 <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight text-slate-900 dark:text-white">
-                  Memorable Brands, Clear Identity.
+                  {t("branding.hero.title")}
                 </h1>
 
                 <p className="mt-6 text-xl text-slate-600 dark:text-slate-300 max-w-xl">
-                  We craft brand strategies, logos and visual systems that make
-                  your freelance practice or studio stand out — from concept to
-                  launch-ready assets.
+                  {t("branding.hero.desc")}
                 </p>
 
                 {/* --- CTAs (Redesigned for premium look) --- */}
@@ -138,7 +135,7 @@ const BrandingIdentityPage: React.FC = () => {
                     href="/contact-us"
                     className="inline-flex items-center gap-2 bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-indigo-500/40 transition-all duration-300 transform hover:scale-[1.02]"
                   >
-                    Start a Project
+                    {t("branding.hero.cta")}
                   </Link>
                 </div>
 
@@ -151,11 +148,10 @@ const BrandingIdentityPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Brand Strategy
+                        {t("branding.features.strategy.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Positioning, messaging and audience-first strategy to
-                        guide visual direction.
+                        {t("branding.features.strategy.desc")}
                       </div>
                     </div>
                   </li>
@@ -167,11 +163,10 @@ const BrandingIdentityPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Visual Identity
+                        {t("branding.features.visual.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Logo systems, color palettes, typography and imagery to
-                        express your brand consistently.
+                        {t("branding.features.visual.desc")}
                       </div>
                     </div>
                   </li>
@@ -183,11 +178,10 @@ const BrandingIdentityPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Brand Assets
+                        {t("branding.features.assets.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Deliverables: logos, iconography, photography direction
-                        and asset exports for web and print.
+                        {t("branding.features.assets.desc")}
                       </div>
                     </div>
                   </li>
@@ -199,11 +193,10 @@ const BrandingIdentityPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Guidelines & Launch
+                        {t("branding.features.guidelines.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Brand guidelines, handoff documents and launch-ready
-                        files for smooth implementation.
+                        {t("branding.features.guidelines.desc")}
                       </div>
                     </div>
                   </li>
@@ -223,14 +216,13 @@ const BrandingIdentityPage: React.FC = () => {
                       />
                       <div className="p-5">
                         <div className=" text-slate-500 dark:text-slate-400">
-                          Brand preview
+                          {t("branding.preview.label")}
                         </div>
                         <div className="mt-1 text-lg font-semibold text-slate-900 dark:text-slate-100">
-                          Identity exploration
+                          {t("branding.preview.title")}
                         </div>
                         <p className="mt-2  text-slate-600 dark:text-slate-300">
-                          A quick look at logo variations, color pairs and
-                          typographic scales applied to a sample layout.
+                          {t("branding.preview.desc")}
                         </p>
                       </div>
                     </div>
@@ -247,11 +239,10 @@ const BrandingIdentityPage: React.FC = () => {
         <section className="mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32 bg-white dark:bg-slate-900">
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              Branding & Identity Deliverables
+              {t("branding.deliverables.title")}
             </h2>
             <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Strategy and visual assets you can use immediately — from logo
-              packages to launch-ready brand guidelines.
+              {t("branding.deliverables.desc")}
             </p>
           </div>
 
@@ -259,23 +250,23 @@ const BrandingIdentityPage: React.FC = () => {
             {/* Deliverables */}
             <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 transition-shadow duration-300 hover:shadow-2xl">
               <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
-                <Figma className="h-6 w-6" /> Branding Deliverables
+                <Figma className="h-6 w-6" /> {t("branding.deliverables.title")}
               </div>
               <ul className="mt-6 space-y-3 text-slate-700 dark:text-slate-300">
                 <li className="flex items-start gap-2">
-                  • Brand strategy and messaging brief
+                  • {t("branding.deliverables.items.0")}
                 </li>
                 <li className="flex items-start gap-2">
-                  • Logo suite (primary, secondary, marks)
+                  • {t("branding.deliverables.items.1")}
                 </li>
                 <li className="flex items-start gap-2">
-                  • Color palette and typography system
+                  • {t("branding.deliverables.items.2")}
                 </li>
                 <li className="flex items-start gap-2">
-                  • Iconography and imagery direction
+                  • {t("branding.deliverables.items.3")}
                 </li>
                 <li className="flex items-start gap-2">
-                  • Launch-ready brand guidelines (PDF & assets)
+                  • {t("branding.deliverables.items.4")}
                 </li>
               </ul>
             </div>
@@ -283,15 +274,13 @@ const BrandingIdentityPage: React.FC = () => {
             {/* Timeline */}
             <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 transition-shadow duration-300 hover:shadow-2xl">
               <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
-                <Zap className="h-6 w-6" /> Timeline & Velocity
+                <Zap className="h-6 w-6" /> {t("branding.timeline.title")}
               </div>
               <div className="mt-6 text-slate-700 dark:text-slate-300">
-                Typical engagement: **1–3 weeks** depending on scope — from a
-                focused visual refresh to a full brand system and launch pack.
+                {t("branding.timeline.desc")}
               </div>
               <div className="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400 border-t pt-4 border-slate-200 dark:border-slate-700">
-                Deliverables include source files, SVGs, and a concise
-                implementation guide for web and print.
+                {t("branding.timeline.note")}
               </div>
             </div>
 
@@ -299,13 +288,13 @@ const BrandingIdentityPage: React.FC = () => {
             <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 flex flex-col justify-between transition-shadow duration-300 hover:shadow-2xl">
               <div>
                 <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
-                  <Code className="h-6 w-6" /> Workflow
+                  <Code className="h-6 w-6" /> {t("branding.workflow.title")}
                 </div>
                 <ol className="mt-6 text-slate-700 dark:text-slate-300 space-y-3 list-decimal pl-5">
-                  <li>Discovery & positioning</li>
-                  <li>Concepts & visual exploration</li>
-                  <li>Refinement and systemization</li>
-                  <li>Handoff: assets and guidelines</li>
+                  <li>{t("branding.workflow.steps.0")}</li>
+                  <li>{t("branding.workflow.steps.1")}</li>
+                  <li>{t("branding.workflow.steps.2")}</li>
+                  <li>{t("branding.workflow.steps.3")}</li>
                 </ol>
               </div>
 
@@ -314,7 +303,7 @@ const BrandingIdentityPage: React.FC = () => {
                   href="/contact-us"
                   className="inline-flex items-center justify-center w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-medium transition-colors"
                 >
-                  Get a Scoped Quote
+                  {t("branding.workflow.cta")}
                 </Link>
               </div>
             </div>
@@ -324,10 +313,11 @@ const BrandingIdentityPage: React.FC = () => {
         {/* Projects */}
         <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
           <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-extrabold">Projects</h2>
+            <h2 className="text-2xl sm:text-3xl font-extrabold">
+              {t("branding.projects.title")}
+            </h2>
             <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Recent branding work showcasing strategy-led identities and
-              tangible improvements in brand recognition.
+              {t("branding.projects.desc")}
             </p>
           </div>
 
@@ -364,21 +354,23 @@ const BrandingIdentityPage: React.FC = () => {
                   <div className="relative w-full lg:w-1/2 h-56 sm:h-64 lg:h-56 overflow-hidden rounded-xl">
                     <img
                       src={p.img}
-                      alt={p.title}
+                      alt={t(`branding.projects.items.${p.id}.title`)}
                       className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
                     <span className="absolute left-4 bottom-4 inline-flex items-center gap-2 bg-white/90 dark:bg-black/60 text-sm px-3 py-1 rounded-full font-medium text-slate-800 dark:text-slate-100">
-                      {p.title.split("—")[0].trim()}
+                      {t(`branding.projects.items.${p.id}.title`)
+                        .split("—")[0]
+                        .trim()}
                     </span>
                   </div>
 
                   <div className="w-full lg:w-1/2 p-2 lg:p-6">
                     <h3 className="font-semibold text-2xl text-slate-900 dark:text-slate-100">
-                      {p.title}
+                      {t(`branding.projects.items.${p.id}.title`)}
                     </h3>
                     <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
-                      {p.desc}
+                      {t(`branding.projects.items.${p.id}.desc`)}
                     </p>
                     <div className="mt-6 flex items-center justify-between">
                       <div className="text-xs text-slate-500 dark:text-slate-400">
@@ -396,60 +388,38 @@ const BrandingIdentityPage: React.FC = () => {
         <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              Client Success Stories
+              {t("branding.testimonials.title")}
             </h2>
             <p className="mt-2 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Real results from freelancers who used our systems to ship faster
-              and look more polished.
+              {t("branding.testimonials.desc")}
             </p>
           </div>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              {
-                id: "t1",
-                name: "Alex Morgan",
-                role: "Product Designer",
-                quote:
-                  "The design system cut our launch time in half—components are predictable and documentation made handoffs painless. Worth every penny.",
-                avatar: "https://i.pravatar.cc/80?img=12",
-              },
-              {
-                id: "t2",
-                name: "Lina Rodriguez",
-                role: "Illustrator",
-                quote:
-                  "I loved how the tokens made color changes trivial—one update and my whole site matched the new brand. My site feels professional now.",
-                avatar: "https://i.pravatar.cc/80?img=47",
-              },
-              {
-                id: "t3",
-                name: "Ember Co",
-                role: "Founder",
-                quote:
-                  "Consistent components and templates made it easy to produce landing pages for new services—our lead conversion improved instantly.",
-                avatar: "https://i.pravatar.cc/80?img=32",
-              },
-            ].map((t) => (
+              { id: "t1", avatar: "https://i.pravatar.cc/80?img=12" },
+              { id: "t2", avatar: "https://i.pravatar.cc/80?img=47" },
+              { id: "t3", avatar: "https://i.pravatar.cc/80?img=32" },
+            ].map((tm) => (
               <blockquote
-                key={t.id}
+                key={tm.id}
                 className="rounded-3xl bg-slate-50 dark:bg-slate-800 p-8 shadow-md ring-1 ring-black/5 dark:ring-white/5 border-t-4 border-indigo-600 dark:border-cyan-400"
               >
                 <p className="text-lg font-medium text-slate-700 dark:text-slate-200">
-                  “{t.quote}”
+                  “{t(`branding.testimonials.items.${tm.id}.quote`)}”
                 </p>
                 <div className="mt-6 flex items-center gap-4">
                   <img
-                    src={t.avatar}
-                    alt={t.name}
+                    src={tm.avatar}
+                    alt={t(`branding.testimonials.items.${tm.id}.name`)}
                     className="w-12 h-12 rounded-full ring-2 ring-indigo-600 dark:ring-cyan-400"
                   />
                   <div>
                     <div className="text-sm font-bold text-slate-900 dark:text-white">
-                      {t.name}
+                      {t(`branding.testimonials.items.${tm.id}.name`)}
                     </div>
                     <div className="text-xs text-slate-500 dark:text-slate-400">
-                      {t.role}
+                      {t(`branding.testimonials.items.${tm.id}.role`)}
                     </div>
                   </div>
                 </div>
@@ -467,14 +437,13 @@ const BrandingIdentityPage: React.FC = () => {
         >
           <div className="text-center">
             <p className="text-sm font-medium text-teal-500 uppercase">
-              PRICING
+              {t("branding.pricing.badge")}
             </p>
             <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              Transparent, Value-Driven Packages
+              {t("branding.pricing.title")}
             </h2>
             <p className="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Choose the level of support and system depth that best fits your
-              freelance practice or small team.
+              {t("branding.pricing.desc")}
             </p>
           </div>
 
@@ -488,7 +457,7 @@ const BrandingIdentityPage: React.FC = () => {
                 <div key={plan.id} className={baseCard}>
                   {plan.highlighted && (
                     <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-indigo-600 dark:bg-teal-500 text-white dark:text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-md">
-                      MOST POPULAR
+                      {t("branding.pricing.most_popular")}
                     </span>
                   )}
 
@@ -499,7 +468,7 @@ const BrandingIdentityPage: React.FC = () => {
                         : "text-xl font-bold text-slate-900 dark:text-white"
                     }`}
                   >
-                    {plan.title}
+                    {t(`branding.pricing.plans.${plan.id}.title`)}
                   </div>
 
                   <div className="mt-6 flex items-baseline gap-2">
@@ -523,7 +492,7 @@ const BrandingIdentityPage: React.FC = () => {
                         : "text-slate-600 dark:text-slate-400"
                     }`}
                   >
-                    {plan.blurb}
+                    {t(`branding.pricing.plans.${plan.id}.blurb`)}
                   </p>
 
                   <ul
@@ -569,7 +538,7 @@ const BrandingIdentityPage: React.FC = () => {
                             }`}
                           />
                         )}
-                        {f.text}
+                        {t(`branding.pricing.plans.${plan.id}.features.${i}`)}
                       </li>
                     ))}
                   </ul>
@@ -585,7 +554,7 @@ const BrandingIdentityPage: React.FC = () => {
                           : "inline-flex items-center justify-center w-full border-2 border-indigo-600 dark:border-teal-400 text-indigo-600 dark:text-teal-400 px-4 py-3 rounded-xl font-bold text-lg hover:bg-indigo-50 dark:hover:bg-slate-800 transition-colors"
                       }
                     >
-                      {plan.cta.text}
+                      {t(`branding.pricing.plans.${plan.id}.cta`)}
                     </Link>
                   </div>
                 </div>
@@ -602,12 +571,11 @@ const BrandingIdentityPage: React.FC = () => {
             <div className="bg-white dark:bg-slate-950 rounded-3xl shadow-2xl ring-1 ring-black/5 dark:ring-white/5 p-12 lg:p-16 text-center">
               <FileText className="h-10 w-10 text-indigo-600 dark:text-teal-400 mx-auto mb-4" />
               <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-slate-900 dark:text-white">
-                Ready to Ship Faster?
+                {t("branding.cta.title")}
               </h2>
 
               <p className="mt-4 text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-                Stop wasting time on styling and start delivering value. Let's
-                build your unified UI system.
+                {t("branding.cta.desc")}
               </p>
 
               <div className="mt-10">
@@ -615,7 +583,7 @@ const BrandingIdentityPage: React.FC = () => {
                   href="/contact-us"
                   className="inline-flex items-center gap-2 bg-linear-to-r from-cyan-500 to-indigo-600 hover:from-cyan-600 hover:to-indigo-700 text-white px-8 py-4 rounded-xl font-bold text-xl shadow-2xl shadow-cyan-500/50 transition-all duration-300 transform hover:scale-[1.05]"
                 >
-                  Book Free Consultation
+                  {t("branding.cta.button")}
                 </Link>
               </div>
             </div>
