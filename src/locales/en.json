@@ -242,6 +242,157 @@
       "cta_secondary": "Browse templates"
     }
   },
+  "portfolio": {
+    "meta": {
+      "title": "Portfolio Templates — Services",
+      "description": "Ready-made portfolio templates and component kits for freelancers and creatives — responsive pages, prebuilt sections, and fast launch guides."
+    },
+    "breadcrumb": { "services": "Services", "current": "Portfolio Templates" },
+    "hero": {
+      "title": "Beautiful portfolio templates, ready to ship.",
+      "desc": "Launch a polished portfolio in minutes. Professionally-crafted templates with prebuilt pages, components, and easy customization for freelancers and creatives."
+    },
+    "cta": {
+      "explore": "Explore Templates",
+      "get_quote": "Get a Scoped Quote"
+    },
+    "features": {
+      "theme": {
+        "title": "Template Themes",
+        "desc": "Curated themes for minimal, creative, and photo-forward portfolios ready to swap and launch."
+      },
+      "sections": {
+        "title": "Prebuilt Sections",
+        "desc": "Landing, about, projects and contact sections that combine into full portfolio pages."
+      },
+      "components": {
+        "title": "Composable Components",
+        "desc": "Buttons, cards, galleries and layout pieces designed to be reused and themed."
+      },
+      "handoff": {
+        "title": "Easy Handoff",
+        "desc": "Documentation, tokens, and a short handoff guide so you can customize or hand the site to a developer."
+      }
+    },
+    "preview": {
+      "label": "Template preview",
+      "title": "Portfolio template preview",
+      "desc": "A quick look at a template homepage, gallery and project layout to show structure and visual rhythm."
+    },
+    "deliverables": {
+      "title": "Template Deliverables",
+      "desc": "Ready-to-use portfolio templates and component kits designed for quick launches and easy updates.",
+      "items": [
+        "• Full, responsive portfolio pages (home, about, projects, contact)",
+        "• Prebuilt components and sections (galleries, case studies, hero)",
+        "• Accessible markup and responsive images",
+        "• CMS-ready templates and SEO-friendly structure",
+        "• Design tokens and a short customization guide"
+      ]
+    },
+    "timeline": {
+      "title": "Timeline & Velocity",
+      "desc": "Typical engagement: 1–7 days to pick and customize a template, faster for small tweaks. We break work into Pick, Customize, Deploy phases.",
+      "includes": "Includes theme variables, quick-start instructions, and optional setup help."
+    },
+    "workflow": {
+      "title": "Workflow",
+      "steps": [
+        "Choose a template and theme",
+        "Swap content, images and project entries",
+        "Customize tokens (colors/typography)",
+        "Deploy and go live"
+      ]
+    },
+    "projects": {
+      "title": "Template Showcase",
+      "desc": "A few portfolio templates and style directions you can start from.",
+      "items": {
+        "tpl-1": {
+          "title": "Minimalist — Nova",
+          "desc": "A clean, minimal portfolio with emphasis on whitespace and typography."
+        },
+        "tpl-2": {
+          "title": "Photographer — Clara",
+          "desc": "Full-bleed galleries and optimized lightbox for image-forward portfolios."
+        },
+        "tpl-3": {
+          "title": "Designer — Mateo",
+          "desc": "Project case studies, process pages, and a modular project grid for case-focused portfolios."
+        }
+      }
+    },
+    "testimonials": {
+      "title": "Client Success Stories",
+      "desc": "Real results from freelancers who used our systems to ship faster and look more polished.",
+      "items": {
+        "t1": {
+          "name": "Alex Morgan",
+          "role": "Product Designer",
+          "quote": "The design system cut our launch time in half—components are predictable and documentation made handoffs painless. Worth every penny."
+        },
+        "t2": {
+          "name": "Lina Rodriguez",
+          "role": "Illustrator",
+          "quote": "I loved how the tokens made color changes trivial—one update and my whole site matched the new brand. My site feels professional now."
+        },
+        "t3": {
+          "name": "Ember Co",
+          "role": "Founder",
+          "quote": "Consistent components and templates made it easy to produce landing pages for new services—our lead conversion improved instantly."
+        }
+      }
+    },
+    "pricing": {
+      "label": "PRICING",
+      "title": "Transparent, Value-Driven Packages",
+      "desc": "Choose the level of support and system depth that best fits your freelance practice or small team.",
+      "most_popular": "MOST POPULAR",
+      "plans": {
+        "starter": {
+          "title": "Starter Templates",
+          "blurb": "For solo freelancers needing foundational structure.",
+          "features": [
+            "1 Core Portfolio Template",
+            "Basic Email Support",
+            "Regular System Updates",
+            "Component Library Access (Lite)",
+            "Handoff Consultation (No)"
+          ],
+          "cta": "Choose Starter"
+        },
+        "pro": {
+          "title": "System Pro Build",
+          "blurb": "The full, custom design system build for professionals.",
+          "features": [
+            "Custom Templates & Pages",
+            "Priority Support & Handoff",
+            "Full Commercial License",
+            "Full Component Library Access",
+            "Dedicated Handoff Consultation"
+          ],
+          "cta": "Start Pro System"
+        },
+        "agency": {
+          "title": "Agency License",
+          "blurb": "For studios managing systems for multiple clients.",
+          "features": [
+            "Unlimited Template Access",
+            "Multi-Seat Team Access",
+            "Dedicated Account Manager",
+            "Full Component Library Access",
+            "Full Handoff Consultation Access"
+          ],
+          "cta": "Contact Sales"
+        }
+      }
+    },
+    "final": {
+      "title": "Ready to Launch Your Portfolio?",
+      "desc": "Stop spending hours on layout — pick a template, swap your content, and go live today.",
+      "cta": "Start with a Template"
+    }
+  },
   "about": {
     "meta": {
       "title": "About — Freelancer / Portfolio Templates",

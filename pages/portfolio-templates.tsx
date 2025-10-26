@@ -12,86 +12,137 @@ import {
   Server,
   Zap,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const PortfolioTemplatesPage: React.FC = () => {
+  const { t } = useTranslation();
   const pricingPlans = [
     {
       id: "starter",
-      title: "Starter Templates",
+      title: t("portfolio.pricing.plans.starter.title"),
       price: "$9",
       period: "/ month",
-      blurb: "For solo freelancers needing foundational structure.",
+      blurb: t("portfolio.pricing.plans.starter.blurb"),
       features: [
-        { icon: "Check", text: "1 Core Portfolio Template", available: true },
-        { icon: "Check", text: "Basic Email Support", available: true },
-        { icon: "Check", text: "Regular System Updates", available: true },
+        {
+          icon: "Check",
+          text: t("portfolio.pricing.plans.starter.features.0"),
+          available: true,
+        },
+        {
+          icon: "Check",
+          text: t("portfolio.pricing.plans.starter.features.1"),
+          available: true,
+        },
+        {
+          icon: "Check",
+          text: t("portfolio.pricing.plans.starter.features.2"),
+          available: true,
+        },
         {
           icon: "Code",
-          text: "Component Library Access (Lite)",
+          text: t("portfolio.pricing.plans.starter.features.3"),
           available: false,
         },
-        { icon: "Server", text: "Handoff Consultation (No)", available: false },
+        {
+          icon: "Server",
+          text: t("portfolio.pricing.plans.starter.features.4"),
+          available: false,
+        },
       ],
       highlighted: false,
-      cta: { href: "/contact-us", text: "Choose Starter", primary: true },
+      cta: {
+        href: "/contact-us",
+        text: t("portfolio.pricing.plans.starter.cta"),
+        primary: true,
+      },
     },
     {
       id: "pro",
-      title: "System Pro Build",
+      title: t("portfolio.pricing.plans.pro.title"),
       price: "$2,900",
       period: "/ one-time",
-      blurb: "The full, custom design system build for professionals.",
+      blurb: t("portfolio.pricing.plans.pro.blurb"),
       features: [
-        { icon: "Check", text: "Custom Templates & Pages", available: true },
-        { icon: "Check", text: "Priority Support & Handoff", available: true },
-        { icon: "Check", text: "Full Commercial License", available: true },
+        {
+          icon: "Check",
+          text: t("portfolio.pricing.plans.pro.features.0"),
+          available: true,
+        },
+        {
+          icon: "Check",
+          text: t("portfolio.pricing.plans.pro.features.1"),
+          available: true,
+        },
+        {
+          icon: "Check",
+          text: t("portfolio.pricing.plans.pro.features.2"),
+          available: true,
+        },
         {
           icon: "Code",
-          text: "Full Component Library Access",
+          text: t("portfolio.pricing.plans.pro.features.3"),
           available: true,
         },
         {
           icon: "Server",
-          text: "Dedicated Handoff Consultation",
+          text: t("portfolio.pricing.plans.pro.features.4"),
           available: true,
         },
       ],
       highlighted: true,
-      cta: { href: "/contact-us", text: "Start Pro System", primary: true },
+      cta: {
+        href: "/contact-us",
+        text: t("portfolio.pricing.plans.pro.cta"),
+        primary: true,
+      },
     },
     {
       id: "agency",
-      title: "Agency License",
+      title: t("portfolio.pricing.plans.agency.title"),
       price: "$79",
       period: "/ month",
-      blurb: "For studios managing systems for multiple clients.",
+      blurb: t("portfolio.pricing.plans.agency.blurb"),
       features: [
-        { icon: "Check", text: "Unlimited Template Access", available: true },
-        { icon: "Check", text: "Multi-Seat Team Access", available: true },
-        { icon: "Check", text: "Dedicated Account Manager", available: true },
+        {
+          icon: "Check",
+          text: t("portfolio.pricing.plans.agency.features.0"),
+          available: true,
+        },
+        {
+          icon: "Check",
+          text: t("portfolio.pricing.plans.agency.features.1"),
+          available: true,
+        },
+        {
+          icon: "Check",
+          text: t("portfolio.pricing.plans.agency.features.2"),
+          available: true,
+        },
         {
           icon: "Code",
-          text: "Full Component Library Access",
+          text: t("portfolio.pricing.plans.agency.features.3"),
           available: true,
         },
         {
           icon: "Server",
-          text: "Full Handoff Consultation Access",
+          text: t("portfolio.pricing.plans.agency.features.4"),
           available: true,
         },
       ],
       highlighted: false,
-      cta: { href: "/contact-us", text: "Contact Sales", primary: false },
+      cta: {
+        href: "/contact-us",
+        text: t("portfolio.pricing.plans.agency.cta"),
+        primary: false,
+      },
     },
   ];
   return (
     <>
       <Head>
-        <title>Portfolio Templates — Services</title>
-        <meta
-          name="description"
-          content="Ready-made portfolio templates and component kits for freelancers and creatives — responsive pages, prebuilt sections, and fast launch guides."
-        />
+        <title>{t("portfolio.meta.title")}</title>
+        <meta name="description" content={t("portfolio.meta.description")} />
       </Head>
 
       <SiteHeadder />
@@ -112,24 +163,22 @@ const PortfolioTemplatesPage: React.FC = () => {
                   <ol className="flex items-center gap-2">
                     <li>
                       <Link href="/services" className="hover:underline">
-                        Services
+                        {t("portfolio.breadcrumb.services")}
                       </Link>
                     </li>
                     <li className="text-slate-300 dark:text-slate-700">/</li>
                     <li className="text-indigo-600 dark:text-cyan-400 font-semibold">
-                      Portfolio Templates
+                      {t("portfolio.breadcrumb.current")}
                     </li>
                   </ol>
                 </nav>
 
                 <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight text-slate-900 dark:text-white">
-                  Beautiful portfolio templates, ready to ship.
+                  {t("portfolio.hero.title")}
                 </h1>
 
                 <p className="mt-6 text-xl text-slate-600 dark:text-slate-300 max-w-xl">
-                  Launch a polished portfolio in minutes. Professionally-crafted
-                  templates with prebuilt pages, components, and easy
-                  customization for freelancers and creatives.
+                  {t("portfolio.hero.desc")}
                 </p>
 
                 {/* --- CTAs (Redesigned for premium look) --- */}
@@ -138,7 +187,7 @@ const PortfolioTemplatesPage: React.FC = () => {
                     href="/contact-us"
                     className="inline-flex items-center gap-2 bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-indigo-500/40 transition-all duration-300 transform hover:scale-[1.02]"
                   >
-                    Explore Templates
+                    {t("portfolio.cta.explore")}
                   </Link>
                 </div>
 
@@ -151,11 +200,10 @@ const PortfolioTemplatesPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Template Themes
+                        {t("portfolio.features.theme.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Curated themes for minimal, creative, and photo-forward
-                        portfolios ready to swap and launch.
+                        {t("portfolio.features.theme.desc")}
                       </div>
                     </div>
                   </li>
@@ -167,11 +215,10 @@ const PortfolioTemplatesPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Prebuilt Sections
+                        {t("portfolio.features.sections.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Landing, about, projects and contact sections that
-                        combine into full portfolio pages.
+                        {t("portfolio.features.sections.desc")}
                       </div>
                     </div>
                   </li>
@@ -183,11 +230,10 @@ const PortfolioTemplatesPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Composable Components
+                        {t("portfolio.features.components.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Buttons, cards, galleries and layout pieces designed to
-                        be reused and themed.
+                        {t("portfolio.features.components.desc")}
                       </div>
                     </div>
                   </li>
@@ -199,11 +245,10 @@ const PortfolioTemplatesPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Easy Handoff
+                        {t("portfolio.features.handoff.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Documentation, tokens, and a short handoff guide so you
-                        can customize or hand the site to a developer.
+                        {t("portfolio.features.handoff.desc")}
                       </div>
                     </div>
                   </li>
@@ -223,14 +268,13 @@ const PortfolioTemplatesPage: React.FC = () => {
                       />
                       <div className="p-5">
                         <div className=" text-slate-500 dark:text-slate-400">
-                          Template preview
+                          {t("portfolio.preview.label")}
                         </div>
                         <div className="mt-1 text-lg font-semibold text-slate-900 dark:text-slate-100">
-                          Portfolio template preview
+                          {t("portfolio.preview.title")}
                         </div>
                         <p className="mt-2  text-slate-600 dark:text-slate-300">
-                          A quick look at a template homepage, gallery and
-                          project layout to show structure and visual rhythm.
+                          {t("portfolio.preview.desc")}
                         </p>
                       </div>
                     </div>
@@ -247,11 +291,10 @@ const PortfolioTemplatesPage: React.FC = () => {
         <section className="mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32 bg-white dark:bg-slate-900">
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              Template Deliverables
+              {t("portfolio.deliverables.title")}
             </h2>
             <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Ready-to-use portfolio templates and component kits designed for
-              quick launches and easy updates.
+              {t("portfolio.deliverables.desc")}
             </p>
           </div>
 
@@ -263,21 +306,19 @@ const PortfolioTemplatesPage: React.FC = () => {
               </div>
               <ul className="mt-6 space-y-3 text-slate-700 dark:text-slate-300">
                 <li className="flex items-start gap-2">
-                  • Full, responsive portfolio pages (home, about, projects,
-                  contact)
+                  {t("portfolio.deliverables.items.0")}
                 </li>
                 <li className="flex items-start gap-2">
-                  • Prebuilt components and sections (galleries, case studies,
-                  hero)
+                  {t("portfolio.deliverables.items.1")}
                 </li>
                 <li className="flex items-start gap-2">
-                  • Accessible markup and responsive images
+                  {t("portfolio.deliverables.items.2")}
                 </li>
                 <li className="flex items-start gap-2">
-                  • CMS-ready templates and SEO-friendly structure
+                  {t("portfolio.deliverables.items.3")}
                 </li>
                 <li className="flex items-start gap-2">
-                  • Design tokens and a short customization guide
+                  {t("portfolio.deliverables.items.4")}
                 </li>
               </ul>
             </div>
@@ -285,16 +326,13 @@ const PortfolioTemplatesPage: React.FC = () => {
             {/* Timeline */}
             <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 transition-shadow duration-300 hover:shadow-2xl">
               <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
-                <Zap className="h-6 w-6" /> Timeline & Velocity
+                <Zap className="h-6 w-6" /> {t("portfolio.timeline.title")}
               </div>
               <div className="mt-6 text-slate-700 dark:text-slate-300">
-                Typical engagement: **1–7 days** to pick and customize a
-                template, faster for small tweaks. We break work into Pick,
-                Customize, Deploy phases.
+                {t("portfolio.timeline.desc")}
               </div>
               <div className="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400 border-t pt-4 border-slate-200 dark:border-slate-700">
-                Includes theme variables, quick-start instructions, and optional
-                setup help.
+                {t("portfolio.timeline.includes")}
               </div>
             </div>
 
@@ -302,13 +340,13 @@ const PortfolioTemplatesPage: React.FC = () => {
             <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 flex flex-col justify-between transition-shadow duration-300 hover:shadow-2xl">
               <div>
                 <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
-                  <Code className="h-6 w-6" /> Workflow
+                  <Code className="h-6 w-6" /> {t("portfolio.workflow.title")}
                 </div>
                 <ol className="mt-6 text-slate-700 dark:text-slate-300 space-y-3 list-decimal pl-5">
-                  <li>Choose a template and theme</li>
-                  <li>Swap content, images and project entries</li>
-                  <li>Customize tokens (colors/typography)</li>
-                  <li>Deploy and go live</li>
+                  <li>{t("portfolio.workflow.steps.0")}</li>
+                  <li>{t("portfolio.workflow.steps.1")}</li>
+                  <li>{t("portfolio.workflow.steps.2")}</li>
+                  <li>{t("portfolio.workflow.steps.3")}</li>
                 </ol>
               </div>
 
@@ -317,7 +355,7 @@ const PortfolioTemplatesPage: React.FC = () => {
                   href="/contact-us"
                   className="inline-flex items-center justify-center w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-medium transition-colors"
                 >
-                  Get a Scoped Quote
+                  {t("portfolio.cta.get_quote")}
                 </Link>
               </div>
             </div>
@@ -328,33 +366,18 @@ const PortfolioTemplatesPage: React.FC = () => {
         <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
           <div className="text-center">
             <h2 className="text-2xl sm:text-3xl font-extrabold">
-              Template Showcase
+              {t("portfolio.projects.title")}
             </h2>
             <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              A few portfolio templates and style directions you can start from.
+              {t("portfolio.projects.desc")}
             </p>
           </div>
 
           <div className="mt-10 space-y-10">
             {[
-              {
-                id: "tpl-1",
-                title: "Minimalist — Nova",
-                img: "https://picsum.photos/seed/tpl-1/900/600",
-                desc: "A clean, minimal portfolio with emphasis on whitespace and typography.",
-              },
-              {
-                id: "tpl-2",
-                title: "Photographer — Clara",
-                img: "https://picsum.photos/seed/tpl-2/900/600",
-                desc: "Full-bleed galleries and optimized lightbox for image-forward portfolios.",
-              },
-              {
-                id: "tpl-3",
-                title: "Designer — Mateo",
-                img: "https://picsum.photos/seed/tpl-3/900/600",
-                desc: "Project case studies, process pages, and a modular project grid for case-focused portfolios.",
-              },
+              { id: "tpl-1", img: "https://picsum.photos/seed/tpl-1/900/600" },
+              { id: "tpl-2", img: "https://picsum.photos/seed/tpl-2/900/600" },
+              { id: "tpl-3", img: "https://picsum.photos/seed/tpl-3/900/600" },
             ].map((p, idx) => (
               <article
                 key={p.id}
@@ -368,21 +391,23 @@ const PortfolioTemplatesPage: React.FC = () => {
                   <div className="relative w-full lg:w-1/2 h-56 sm:h-64 lg:h-56 overflow-hidden rounded-xl">
                     <img
                       src={p.img}
-                      alt={p.title}
+                      alt={t(`portfolio.projects.items.${p.id}.title`)}
                       className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
                     <span className="absolute left-4 bottom-4 inline-flex items-center gap-2 bg-white/90 dark:bg-black/60 text-sm px-3 py-1 rounded-full font-medium text-slate-800 dark:text-slate-100">
-                      {p.title.split("—")[0].trim()}
+                      {t(`portfolio.projects.items.${p.id}.title`)
+                        .split("—")[0]
+                        .trim()}
                     </span>
                   </div>
 
                   <div className="w-full lg:w-1/2 p-2 lg:p-6">
                     <h3 className="font-semibold text-2xl text-slate-900 dark:text-slate-100">
-                      {p.title}
+                      {t(`portfolio.projects.items.${p.id}.title`)}
                     </h3>
                     <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
-                      {p.desc}
+                      {t(`portfolio.projects.items.${p.id}.desc`)}
                     </p>
                     <div className="mt-6 flex items-center justify-between">
                       <div className="text-xs text-slate-500 dark:text-slate-400">
@@ -400,60 +425,38 @@ const PortfolioTemplatesPage: React.FC = () => {
         <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              Client Success Stories
+              {t("portfolio.testimonials.title")}
             </h2>
             <p className="mt-2 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Real results from freelancers who used our systems to ship faster
-              and look more polished.
+              {t("portfolio.testimonials.desc")}
             </p>
           </div>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              {
-                id: "t1",
-                name: "Alex Morgan",
-                role: "Product Designer",
-                quote:
-                  "The design system cut our launch time in half—components are predictable and documentation made handoffs painless. Worth every penny.",
-                avatar: "https://i.pravatar.cc/80?img=12",
-              },
-              {
-                id: "t2",
-                name: "Lina Rodriguez",
-                role: "Illustrator",
-                quote:
-                  "I loved how the tokens made color changes trivial—one update and my whole site matched the new brand. My site feels professional now.",
-                avatar: "https://i.pravatar.cc/80?img=47",
-              },
-              {
-                id: "t3",
-                name: "Ember Co",
-                role: "Founder",
-                quote:
-                  "Consistent components and templates made it easy to produce landing pages for new services—our lead conversion improved instantly.",
-                avatar: "https://i.pravatar.cc/80?img=32",
-              },
-            ].map((t) => (
+              { id: "t1", avatar: "https://i.pravatar.cc/80?img=12" },
+              { id: "t2", avatar: "https://i.pravatar.cc/80?img=47" },
+              { id: "t3", avatar: "https://i.pravatar.cc/80?img=32" },
+            ].map((tm) => (
               <blockquote
-                key={t.id}
+                key={tm.id}
                 className="rounded-3xl bg-slate-50 dark:bg-slate-800 p-8 shadow-md ring-1 ring-black/5 dark:ring-white/5 border-t-4 border-indigo-600 dark:border-cyan-400"
               >
                 <p className="text-lg font-medium text-slate-700 dark:text-slate-200">
-                  “{t.quote}”
+                  “{t(`portfolio.testimonials.items.${tm.id}.quote`)}”
                 </p>
                 <div className="mt-6 flex items-center gap-4">
                   <img
-                    src={t.avatar}
-                    alt={t.name}
+                    src={tm.avatar}
+                    alt={t(`portfolio.testimonials.items.${tm.id}.name`)}
                     className="w-12 h-12 rounded-full ring-2 ring-indigo-600 dark:ring-cyan-400"
                   />
                   <div>
                     <div className="text-sm font-bold text-slate-900 dark:text-white">
-                      {t.name}
+                      {t(`portfolio.testimonials.items.${tm.id}.name`)}
                     </div>
                     <div className="text-xs text-slate-500 dark:text-slate-400">
-                      {t.role}
+                      {t(`portfolio.testimonials.items.${tm.id}.role`)}
                     </div>
                   </div>
                 </div>
@@ -471,14 +474,13 @@ const PortfolioTemplatesPage: React.FC = () => {
         >
           <div className="text-center">
             <p className="text-sm font-medium text-teal-500 uppercase">
-              PRICING
+              {t("portfolio.pricing.label")}
             </p>
             <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              Transparent, Value-Driven Packages
+              {t("portfolio.pricing.title")}
             </h2>
             <p className="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Choose the level of support and system depth that best fits your
-              freelance practice or small team.
+              {t("portfolio.pricing.desc")}
             </p>
           </div>
 
@@ -492,7 +494,7 @@ const PortfolioTemplatesPage: React.FC = () => {
                 <div key={plan.id} className={baseCard}>
                   {plan.highlighted && (
                     <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-indigo-600 dark:bg-teal-500 text-white dark:text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-md">
-                      MOST POPULAR
+                      {t("portfolio.pricing.most_popular")}
                     </span>
                   )}
 
@@ -606,12 +608,11 @@ const PortfolioTemplatesPage: React.FC = () => {
             <div className="bg-white dark:bg-slate-950 rounded-3xl shadow-2xl ring-1 ring-black/5 dark:ring-white/5 p-12 lg:p-16 text-center">
               <FileText className="h-10 w-10 text-indigo-600 dark:text-teal-400 mx-auto mb-4" />
               <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-slate-900 dark:text-white">
-                Ready to Launch Your Portfolio?
+                {t("portfolio.final.title")}
               </h2>
 
               <p className="mt-4 text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-                Stop spending hours on layout — pick a template, swap your
-                content, and go live today.
+                {t("portfolio.final.desc")}
               </p>
 
               <div className="mt-10">
@@ -619,7 +620,7 @@ const PortfolioTemplatesPage: React.FC = () => {
                   href="/contact-us"
                   className="inline-flex items-center gap-2 bg-linear-to-r from-cyan-500 to-indigo-600 hover:from-cyan-600 hover:to-indigo-700 text-white px-8 py-4 rounded-xl font-bold text-xl shadow-2xl shadow-cyan-500/50 transition-all duration-300 transform hover:scale-[1.05]"
                 >
-                  Start with a Template
+                  {t("portfolio.final.cta")}
                 </Link>
               </div>
             </div>
