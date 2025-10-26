@@ -15,8 +15,10 @@ import {
   Star,
   Twitter,
 } from "lucide-react";
+import AOS from "aos";
 import Head from "next/head";
 import Link from "next/link";
+import React from "react";
 
 const Home2 = () => {
   const testimonials = [
@@ -76,6 +78,10 @@ const Home2 = () => {
     },
   ];
 
+  React.useEffect(() => {
+    AOS.init({ duration: 1000, once: false });
+  }, []);
+
   return (
     <>
       <Head>
@@ -88,13 +94,16 @@ const Home2 = () => {
 
       <SiteHeadder />
 
-      <main className="min-h-screen flex flex-col bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 caret-transparent">
+      <main className="min-h-screen flex flex-col bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 caret-transparent max-w-svw overflow-hidden">
         {/* Hero (dark profile) */}
         <section className="relative overflow-hidden bg-linear-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
               {/* Left: text */}
-              <div className="text-center lg:text-left">
+              <div
+                data-aos="fade-up-right"
+                className="text-center lg:text-left"
+              >
                 <div className="inline-block rounded-full bg-indigo-50 dark:bg-indigo-900 px-3 py-1 text-sm text-indigo-600 font-medium">
                   OUR SERVICES
                 </div>
@@ -151,7 +160,10 @@ const Home2 = () => {
               </div>
 
               {/* Right: image */}
-              <div className="relative flex items-center justify-center">
+              <div
+                data-aos="fade-left"
+                className="relative flex items-center justify-center"
+              >
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5">
                   <img
                     src="https://i.postimg.cc/4d2j6w1y/portfolio-sample.jpg"
@@ -161,8 +173,6 @@ const Home2 = () => {
                     className="w-[560px] h-auto object-cover"
                   />
                 </div>
-                {/* decorative lines */}
-                <div className="hidden lg:block absolute right-8 -mr-10 w-44 h-44 rounded-full border-2 border-white/10" />
               </div>
             </div>
           </div>
@@ -172,7 +182,7 @@ const Home2 = () => {
         <section className="mx-auto   w-screen   px-6 lg:px-8 py-20 bg-linear-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             {/* Left: portrait card */}
-            <div className="flex justify-center">
+            <div data-aos="fade-up-right" className="flex justify-center">
               <div className="relative w-full max-w-md">
                 <div className="absolute -left-8 -bottom-8 w-40 h-40 rounded-full bg-indigo-100 dark:bg-indigo-900/30 opacity-60 blur-2xl" />
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5">
@@ -188,7 +198,7 @@ const Home2 = () => {
             </div>
 
             {/* Right: content */}
-            <div>
+            <div data-aos="fade-left">
               <div className="inline-flex items-center gap-2 rounded-full bg-indigo-50 dark:bg-indigo-900 px-3 py-1 text-sm w-max">
                 <span className="text-indigo-700 dark:text-indigo-200 font-medium">
                   ABOUT US
@@ -254,10 +264,13 @@ const Home2 = () => {
           </div>
         </section>
         {/* Explore / Courses-like collage section (theme colors) */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-8 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <section className=" bg-linear-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+          <div className=" mx-auto max-w-7xl px-6 lg:px-8 py-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             {/* Left: collage */}
-            <div className="flex justify-center lg:justify-start">
+            <div
+              data-aos="fade-up-right"
+              className="flex justify-center lg:justify-start"
+            >
               <div className="relative w-full max-w-xl">
                 <div className="rounded-lg overflow-hidden shadow-lg">
                   <img
@@ -292,7 +305,7 @@ const Home2 = () => {
             </div>
 
             {/* Right: content */}
-            <div>
+            <div data-aos="fade-left">
               <p className="text-sm font-medium text-indigo-600">RESOURCES</p>
               <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold">
                 Explore ready-made templates and resources
@@ -323,80 +336,93 @@ const Home2 = () => {
         </section>
 
         {/* Tools / Favorite tools section */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
-          <div className="text-center">
-            <p className="text-sm font-medium text-indigo-600">
-              My Favorite Tools
-            </p>
-            <h3 className="mt-3 text-2xl sm:text-3xl font-extrabold">
-              Exploring the tools behind my designs
-            </h3>
-            <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Tools and libraries we use to build polished, performant
-              portfolios.
-            </p>
-          </div>
+        <section className="bg-linear-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16 ">
+            <div className="text-center">
+              <p className="text-sm font-medium text-indigo-600">
+                My Favorite Tools
+              </p>
+              <h3 className="mt-3 text-2xl sm:text-3xl font-extrabold">
+                Exploring the tools behind my designs
+              </h3>
+              <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                Tools and libraries we use to build polished, performant
+                portfolios.
+              </p>
+            </div>
 
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-end">
-            {tools.map((tool, i) => (
-              <div key={i} className="flex flex-col items-center">
-                <div className="w-20 h-20 rounded-full bg-white dark:bg-slate-800 flex flex-col items-center justify-center shadow ring-1 ring-black/5 dark:ring-white/5">
-                  {tool.icon}
+            <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-end">
+              {tools.map((tool, i) => (
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay={i * 150}
+                  key={i}
+                  className="flex flex-col items-center"
+                >
+                  <div className="w-20 h-20 rounded-full bg-white dark:bg-slate-800 flex flex-col items-center justify-center shadow ring-1 ring-black/5 dark:ring-white/5">
+                    {tool.icon}
+                  </div>
+                  <div className="mt-3 text-lg text-slate-600 dark:text-slate-300">
+                    {tool.name}
+                  </div>
                 </div>
-                <div className="mt-3 text-lg text-slate-600 dark:text-slate-300">
-                  {tool.name}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Testimonials section */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
-          <div className="text-center">
-            <p className="text-sm font-medium text-indigo-600">TESTIMONIALS</p>
-            <h3 className="mt-3 text-2xl sm:text-3xl font-extrabold">
-              Loved by freelancers
-            </h3>
-            <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Real feedback from people using our templates and services to get
-              more clients and ship faster.
-            </p>
-          </div>
+        <section className=" bg-linear-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
+            <div className="text-center">
+              <p className="text-sm font-medium text-indigo-600">
+                TESTIMONIALS
+              </p>
+              <h3 className="mt-3 text-2xl sm:text-3xl font-extrabold">
+                Loved by freelancers
+              </h3>
+              <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                Real feedback from people using our templates and services to
+                get more clients and ship faster.
+              </p>
+            </div>
 
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {testimonials.map((t, idx) => (
-              <blockquote
-                key={idx}
-                className="rounded-2xl bg-white dark:bg-slate-800 p-6 shadow-sm ring-1 ring-black/5 dark:ring-white/5"
-              >
-                <div className="flex items-center gap-2 mb-3">
-                  {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 text-indigo-500" />
-                  ))}
-                </div>
-
-                <p className="text-sm text-slate-700 dark:text-slate-300">
-                  “{t.quote}”
-                </p>
-
-                <footer className="mt-4 flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-indigo-50 dark:bg-indigo-900 flex items-center justify-center text-indigo-600 font-medium">
-                    {t.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .slice(0, 2)
-                      .join("")}
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {testimonials.map((t, idx) => (
+                <blockquote
+                  key={idx}
+                  data-aos="fade-up"
+                  data-aos-delay={idx * 150}
+                  className="rounded-2xl bg-white dark:bg-slate-800 p-6 shadow-sm ring-1 ring-black/5 dark:ring-white/5"
+                >
+                  <div className="flex items-center gap-2 mb-3">
+                    {Array.from({ length: t.rating }).map((_, i) => (
+                      <Star key={i} className="h-4 w-4 text-indigo-500" />
+                    ))}
                   </div>
-                  <div>
-                    <div className="text-sm font-semibold text-slate-900 dark:text-slate-100">
-                      {t.name}
+
+                  <p className="text-sm text-slate-700 dark:text-slate-300">
+                    “{t.quote}”
+                  </p>
+
+                  <footer className="mt-4 flex items-center gap-3">
+                    <div className="h-10 w-10 rounded-full bg-indigo-50 dark:bg-indigo-900 flex items-center justify-center text-indigo-600 font-medium">
+                      {t.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .slice(0, 2)
+                        .join("")}
                     </div>
-                    <div className="text-xs text-slate-500">{t.title}</div>
-                  </div>
-                </footer>
-              </blockquote>
-            ))}
+                    <div>
+                      <div className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                        {t.name}
+                      </div>
+                      <div className="text-xs text-slate-500">{t.title}</div>
+                    </div>
+                  </footer>
+                </blockquote>
+              ))}
+            </div>
           </div>
         </section>
 
