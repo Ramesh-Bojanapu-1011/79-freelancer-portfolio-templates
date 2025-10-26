@@ -2,22 +2,22 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeadder from "@/components/SiteHeadder";
 import { Briefcase, Check, Star, User } from "lucide-react";
 import Head from "next/head";
-import React from "react";
+import React, { useTransition } from "react";
 import AOS from "aos";
 import Link from "next/link";
+import i18n from "@/i18n";
+import { useTranslation } from "react-i18next";
 
 export default function Home1() {
+  const { t } = useTranslation();
   React.useEffect(() => {
     AOS.init({ duration: 1000, once: false });
   }, []);
   return (
     <>
       <Head>
-        <title>Freelancer / Portfolio Templates</title>
-        <meta
-          name="description"
-          content="Beautiful freelancer portfolio templates"
-        />
+        <title>{t("home.meta.title")}</title>
+        <meta name="description" content={t("home.meta.description")} />
       </Head>
       <SiteHeadder />
       <div className="min-h-screen flex flex-col bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100  caret-transparent max-w-screen overflow-x-hidden">
@@ -29,17 +29,15 @@ export default function Home1() {
                 <div className="inline-flex items-center gap-2 rounded-full bg-indigo-50 dark:bg-indigo-900 px-3 py-1 text-sm w-max">
                   <Briefcase className="h-4 w-4 text-indigo-600 dark:text-indigo-300" />
                   <span className="text-indigo-700 dark:text-indigo-200 font-medium">
-                    Freelancer-focused
+                    {t("home.hero.badge")}
                   </span>
                 </div>
 
                 <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-tight">
-                  Beautiful portfolio templates that win clients
+                  {t("home.hero.title")}
                 </h1>
                 <p className="mt-6 text-lg text-slate-600 dark:text-slate-300 max-w-xl">
-                  Modern, responsive templates crafted for freelancers and
-                  creatives. Ship a professional portfolio fast and start
-                  getting inquiries.
+                  {t("home.hero.subtitle")}
                 </p>
 
                 <div className="mt-8 flex items-center gap-4">
@@ -47,27 +45,28 @@ export default function Home1() {
                     href="/auth"
                     className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-md font-medium"
                   >
-                    Get Started
+                    {t("home.hero.get_started")}
                   </Link>
                   <Link
                     href="/contact-us"
                     className="inline-flex items-center gap-2 px-5 py-3 rounded-md border bg-white dark:bg-slate-800"
                   >
-                    Contact Sales
+                    {t("home.hero.contact_sales")}
                   </Link>
                 </div>
 
                 <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
                   <div className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                    <Star className="h-4 w-4 text-amber-500" /> Trusted by
-                    freelancers
+                    <Star className="h-4 w-4 text-amber-500" />{" "}
+                    {t("home.hero.trusted")}
                   </div>
                   <div className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                    <Check className="h-4 w-4 text-emerald-500" /> Fast to
-                    customize
+                    <Check className="h-4 w-4 text-emerald-500" />{" "}
+                    {t("home.hero.fast_customize")}
                   </div>
                   <div className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                    <User className="h-4 w-4 text-indigo-500" /> SEO-friendly
+                    <User className="h-4 w-4 text-indigo-500" />{" "}
+                    {t("home.hero.seo_friendly")}
                   </div>
                 </div>
               </div>
@@ -107,17 +106,15 @@ export default function Home1() {
             <div data-aos="fade-left" className="order-1 lg:order-2">
               <div className="inline-flex items-center gap-2 rounded-full bg-indigo-50 dark:bg-indigo-900 px-3 py-1 text-sm w-max">
                 <span className="text-indigo-700 dark:text-indigo-200 font-medium">
-                  GET TO KNOW ABOUT US
+                  {t("home.services.badge")}
                 </span>
               </div>
 
               <h2 className="mt-4 text-2xl font-bold">
-                Dive into our services and ignite your freelancing
+                {t("home.services.title")}
               </h2>
               <p className="mt-4 text-slate-600 dark:text-slate-300">
-                Collaboratively reinvent user-friendly interfaces and provide
-                content while enabling efficient methods of empowerment —
-                tailor-made solutions that produce measurable results.
+                {t("home.services.subtitle")}
               </p>
 
               <ul className="mt-6 space-y-3">
@@ -127,11 +124,10 @@ export default function Home1() {
                   </div>
                   <div>
                     <strong className="font-medium">
-                      Dramatically re-imagine value-added systems
+                      {t("home.services.bullet1.title")}
                     </strong>
                     <div className="text-sm text-slate-600 dark:text-slate-300">
-                      that empower your freelance offerings and position you for
-                      growth.
+                      {t("home.services.bullet1.desc")}
                     </div>
                   </div>
                 </li>
@@ -142,11 +138,10 @@ export default function Home1() {
                   </div>
                   <div>
                     <strong className="font-medium">
-                      Access more than 100+ online templates
+                      {t("home.services.bullet2.title")}
                     </strong>
                     <div className="text-sm text-slate-600 dark:text-slate-300">
-                      Choose layouts built for portfolios, case studies and
-                      service pages.
+                      {t("home.services.bullet2.desc")}
                     </div>
                   </div>
                 </li>
@@ -157,10 +152,10 @@ export default function Home1() {
                   </div>
                   <div>
                     <strong className="font-medium">
-                      Learn the high-impact skills that clients want
+                      {t("home.services.bullet3.title")}
                     </strong>
                     <div className="text-sm text-slate-600 dark:text-slate-300">
-                      Templates optimized to convert visitors into leads.
+                      {t("home.services.bullet3.desc")}
                     </div>
                   </div>
                 </li>
@@ -171,7 +166,7 @@ export default function Home1() {
                   href="#"
                   className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md"
                 >
-                  About more
+                  {t("home.services.learn_more")}
                 </a>
               </div>
             </div>
@@ -185,13 +180,11 @@ export default function Home1() {
               {/* Left: text + bullets */}
               <div data-aos="fade-up-right">
                 <h3 className="text-sm font-medium text-indigo-600">
-                  WHY CHOOSE US
+                  {t("home.why.title")}
                 </h3>
 
                 <p className="mt-4 text-slate-600 dark:text-slate-300 max-w-xl">
-                  We build beautiful, high-converting portfolio templates
-                  tailored for freelancers — fast to customize and simple to
-                  maintain. Focus on your work while we make you look great.
+                  {t("home.why.para")}
                 </p>
 
                 <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -200,9 +193,11 @@ export default function Home1() {
                       <Check className="h-5 w-5" />
                     </div>
                     <div>
-                      <h4 className="font-medium">Business Growth</h4>
+                      <h4 className="font-medium">
+                        {t("home.why.business_growth.title")}
+                      </h4>
                       <p className="text-sm text-slate-600 dark:text-slate-300">
-                        Templates designed to convert visitors into clients.
+                        {t("home.why.business_growth.desc")}
                       </p>
                     </div>
                   </div>
@@ -212,10 +207,11 @@ export default function Home1() {
                       <Briefcase className="h-5 w-5" />
                     </div>
                     <div>
-                      <h4 className="font-medium">Perfect for Freelancers</h4>
+                      <h4 className="font-medium">
+                        {t("home.why.perfect.title")}
+                      </h4>
                       <p className="text-sm text-slate-600 dark:text-slate-300">
-                        Lightweight, focused portfolios that highlight your
-                        work.
+                        {t("home.why.perfect.desc")}
                       </p>
                     </div>
                   </div>
@@ -225,9 +221,11 @@ export default function Home1() {
                       <Star className="h-5 w-5" />
                     </div>
                     <div>
-                      <h4 className="font-medium">Trusted Designs</h4>
+                      <h4 className="font-medium">
+                        {t("home.why.trusted.title")}
+                      </h4>
                       <p className="text-sm text-slate-600 dark:text-slate-300">
-                        Used by freelancers and agencies to win more clients.
+                        {t("home.why.trusted.desc")}
                       </p>
                     </div>
                   </div>
@@ -237,9 +235,9 @@ export default function Home1() {
                       <User className="h-5 w-5" />
                     </div>
                     <div>
-                      <h4 className="font-medium">SEO Friendly</h4>
+                      <h4 className="font-medium">{t("home.why.seo.title")}</h4>
                       <p className="text-sm text-slate-600 dark:text-slate-300">
-                        Clean markup and performance-minded templates.
+                        {t("home.why.seo.desc")}
                       </p>
                     </div>
                   </div>
@@ -255,15 +253,19 @@ export default function Home1() {
                       className="rounded-full"
                     />
                     <div>
-                      <p className="font-medium">Sarah Brooks</p>
-                      <p className="text-sm text-slate-500">CEO, Stakly</p>
+                      <p className="font-medium">
+                        {t("home.why.testimonial.author")}
+                      </p>
+                      <p className="text-sm text-slate-500">
+                        {t("home.why.testimonial.role")}
+                      </p>
                     </div>
                   </div>
 
                   <div className="ml-auto text-sm text-slate-500">
-                    Call us{" "}
+                    {t("home.why.call_us")}{" "}
                     <span className="text-indigo-600 font-medium">
-                      +1 234-456-7890
+                      {t("footer.phone")}
                     </span>
                   </div>
                 </div>
@@ -294,49 +296,49 @@ export default function Home1() {
         {/* Approach / Four features section (new) */}
         <section className="mx-auto  px-6 lg:px-8 py-20 bg-linear-to-b to-white from-slate-50 dark:to-slate-900 dark:from-slate-800">
           <div className="text-center">
-            <p className="text-sm font-medium text-indigo-600">APPROACH</p>
+            <p className="text-sm font-medium text-indigo-600">
+              {t("home.approach.badge")}
+            </p>
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold">
-              Unleashing the Potential of Digital Marketing
+              {t("home.approach.title")}
             </h2>
             <p className="mt-4 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              A structured process that moves ideas from discovery to strategy,
-              implementation and optimization — built to deliver measurable
-              growth.
+              {t("home.approach.subtitle")}
             </p>
           </div>
 
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                title: "Discovery",
-                desc: "Understand goals and audience to craft the right strategy.",
+                titleKey: "home.approach.items.discovery.title",
+                descKey: "home.approach.items.discovery.desc",
                 icon: Check,
                 color: "from-blue-500 to-indigo-500",
                 animation: "fade-up",
               },
               {
-                title: "Strategize",
-                desc: "Create a clear plan focused on conversion and growth.",
+                titleKey: "home.approach.items.strategize.title",
+                descKey: "home.approach.items.strategize.desc",
                 icon: Briefcase,
                 color: "from-purple-500 to-pink-500",
                 animation: "fade-up",
               },
               {
-                title: "Implementation",
-                desc: "Ship polished templates, pages and assets quickly.",
+                titleKey: "home.approach.items.implementation.title",
+                descKey: "home.approach.items.implementation.desc",
                 icon: Star,
                 color: "from-emerald-500 to-teal-500",
                 animation: "fade-up",
               },
               {
-                title: "Analysis & Optimization",
-                desc: "Measure results and iterate to continuously improve.",
+                titleKey: "home.approach.items.analysis.title",
+                descKey: "home.approach.items.analysis.desc",
                 icon: User,
                 color: "from-orange-500 to-red-500",
                 animation: "fade-up",
               },
             ].map((f, i) => {
-              const Icon = f.icon;
+              const Icon = f.icon as any;
               return (
                 <div
                   key={i}
@@ -353,10 +355,10 @@ export default function Home1() {
                     </div>
                   </div>
                   <h3 className="mt-6 text-lg font-semibold text-center text-slate-900 dark:text-white">
-                    {f.title}
+                    {t(f.titleKey!)}
                   </h3>
                   <p className="mt-3 text-sm text-center text-slate-600 dark:text-slate-300 leading-relaxed">
-                    {f.desc}
+                    {t(f.descKey!)}
                   </p>
                 </div>
               );
@@ -367,40 +369,40 @@ export default function Home1() {
         {/* Template types / Related to theme (new) */}
         <section className="mx-auto bg-linear-to-b to-white from-slate-50 dark:to-slate-900 dark:from-slate-800   px-6 lg:px-8 py-20">
           <div className="text-center">
-            <h3 className="text-sm font-medium text-indigo-600">TEMPLATES</h3>
+            <h3 className="text-sm font-medium text-indigo-600">
+              {t("home.templates.heading")}
+            </h3>
             <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold">
-              Template types for every freelancer
+              {t("home.templates.title")}
             </h2>
             <p className="mt-3 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Choose a starting point that fits your work — portfolio, case
-              study, agency or landing pages. Each template is optimized for
-              clarity and conversion.
+              {t("home.templates.description")}
             </p>
           </div>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                title: "Portfolio",
-                desc: "Show your best projects with elegant case layouts.",
+                titleKey: "home.templates.items.portfolio.title",
+                descKey: "home.templates.items.portfolio.desc",
                 img: "https://i.postimg.cc/6QxYq3k1/portfolio-thumb.jpg",
               },
               {
-                title: "Agency",
-                desc: "Team pages, services and case studies for agencies.",
+                titleKey: "home.templates.items.agency.title",
+                descKey: "home.templates.items.agency.desc",
                 img: "https://i.postimg.cc/6QxYq3k1/portfolio-thumb.jpg",
               },
               {
-                title: "Case Study",
-                desc: "Deep-dive project pages that highlight results.",
+                titleKey: "home.templates.items.case.title",
+                descKey: "home.templates.items.case.desc",
                 img: "https://i.postimg.cc/6QxYq3k1/portfolio-thumb.jpg",
               },
               {
-                title: "Landing",
-                desc: "High-converting landing pages for offers and services.",
+                titleKey: "home.templates.items.landing.title",
+                descKey: "home.templates.items.landing.desc",
                 img: "https://i.postimg.cc/6QxYq3k1/portfolio-thumb.jpg",
               },
-            ].map((t, i) => (
+            ].map((item, i) => (
               <article
                 key={i}
                 data-aos="fade-up"
@@ -409,16 +411,16 @@ export default function Home1() {
               >
                 <div className="rounded-md overflow-hidden">
                   <img
-                    src={t.img}
-                    alt={t.title}
+                    src={item.img}
+                    alt={t(item.titleKey)}
                     width={600}
                     height={400}
                     className="w-full h-36 object-cover"
                   />
                 </div>
-                <h4 className="mt-4 font-semibold">{t.title}</h4>
+                <h4 className="mt-4 font-semibold">{t(item.titleKey)}</h4>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                  {t.desc}
+                  {t(item.descKey)}
                 </p>
               </article>
             ))}
@@ -430,18 +432,22 @@ export default function Home1() {
           <div className="    ">
             <div className="flex-col flex  justify-center items-center">
               <h2 className="text-3xl lg:text-4xl font-extrabold">
-                Read reviews,
-                <span className="text-indigo-600">ride with confidence.</span>
+                {t("home.testimonials.title")}
+                <span className="text-indigo-600">
+                  {t("home.testimonials.highlight")}
+                </span>
               </h2>
 
               <div className="mt-4 flex items-center gap-4">
                 <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
-                  <span className="text-lg font-medium">4.2/5</span>
+                  <span className="text-lg font-medium">
+                    {t("home.testimonials.rating")}
+                  </span>
                   <Star className="h-4 w-4 text-emerald-500" />
-                  <span className="ml-1">Trustpilot</span>
+                  <span className="ml-1">{t("home.testimonials.source")}</span>
                 </div>
                 <div className="text-sm text-slate-400">
-                  Based on 5210 reviews
+                  {t("home.testimonials.based_on")}
                 </div>
               </div>
             </div>
@@ -454,22 +460,22 @@ export default function Home1() {
                     <div className="flex gap-6 flex-wrap justify-center px-6 lg:px-0 snap-x   ">
                       {[
                         {
-                          name: "Karan",
-                          text: "My buying experience is so nice, and received me very politely. Riding experience is also very good.",
+                          nameKey: "home.testimonials.items.0.name",
+                          textKey: "home.testimonials.items.0.text",
                           avatar: "https://i.postimg.cc/5ym0KZ1Y/avatar.jpg",
-                          time: "1 week ago",
+                          timeKey: "home.testimonials.items.0.time",
                         },
                         {
-                          name: "Catherine",
-                          text: "I love my e-bike and the customer service is excellent. They respond quickly and help with accessories.",
+                          nameKey: "home.testimonials.items.1.name",
+                          textKey: "home.testimonials.items.1.text",
                           avatar: "https://i.postimg.cc/5ym0KZ1Y/avatar.jpg",
-                          time: "10 days ago",
+                          timeKey: "home.testimonials.items.1.time",
                         },
                         {
-                          name: "Peter",
-                          text: "Visited the store — product selection was great and the team helped with customization.",
+                          nameKey: "home.testimonials.items.2.name",
+                          textKey: "home.testimonials.items.2.text",
                           avatar: "https://i.postimg.cc/5ym0KZ1Y/avatar.jpg",
-                          time: "2 weeks ago",
+                          timeKey: "home.testimonials.items.2.time",
                         },
                       ].map((r, i) => (
                         <div
@@ -481,22 +487,24 @@ export default function Home1() {
                         >
                           <article className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg w-full">
                             <p className="text-slate-600 dark:text-slate-300 text-sm">
-                              {r.text}
+                              {t(r.textKey!)}
                             </p>
 
                             <div className="mt-4 flex items-center justify-between">
                               <div className="flex items-center gap-3">
                                 <img
                                   src={r.avatar}
-                                  alt={r.name}
+                                  alt={t(r.nameKey!)}
                                   width={40}
                                   height={40}
                                   className="rounded-full"
                                 />
                                 <div>
-                                  <div className="font-medium">{r.name}</div>
+                                  <div className="font-medium">
+                                    {t(r.nameKey!)}
+                                  </div>
                                   <div className="text-xs text-slate-500">
-                                    {r.time}
+                                    {t(r.timeKey!)}
                                   </div>
                                 </div>
                               </div>

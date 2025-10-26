@@ -21,6 +21,136 @@
     }
   },
 
+  "home": {
+    "meta": {
+      "title": "Freelancer / Portfolio Templates",
+      "description": "Beautiful freelancer portfolio templates"
+    },
+    "hero": {
+      "badge": "Freelancer-focused",
+      "title": "Beautiful portfolio templates that win clients",
+      "subtitle": "Modern, responsive templates crafted for freelancers and creatives. Ship a professional portfolio fast and start getting inquiries.",
+      "get_started": "Get Started",
+      "contact_sales": "Contact Sales",
+      "trusted": "Trusted by freelancers",
+      "fast_customize": "Fast to customize",
+      "seo_friendly": "SEO-friendly"
+    },
+    "services": {
+      "badge": "GET TO KNOW ABOUT US",
+      "title": "Dive into our services and ignite your freelancing",
+      "subtitle": "Collaboratively reinvent user-friendly interfaces and provide content while enabling efficient methods of empowerment — tailor-made solutions that produce measurable results.",
+      "bullet1": {
+        "title": "Dramatically re-imagine value-added systems",
+        "desc": "that empower your freelance offerings and position you for growth."
+      },
+      "bullet2": {
+        "title": "Access more than 100+ online templates",
+        "desc": "Choose layouts built for portfolios, case studies and service pages."
+      },
+      "bullet3": {
+        "title": "Learn the high-impact skills that clients want",
+        "desc": "Templates optimized to convert visitors into leads."
+      },
+      "learn_more": "About more"
+    },
+    "why": {
+      "title": "WHY CHOOSE US",
+      "para": "We build beautiful, high-converting portfolio templates tailored for freelancers — fast to customize and simple to maintain. Focus on your work while we make you look great.",
+      "business_growth": {
+        "title": "Business Growth",
+        "desc": "Templates designed to convert visitors into clients."
+      },
+      "perfect": {
+        "title": "Perfect for Freelancers",
+        "desc": "Lightweight, focused portfolios that highlight your work."
+      },
+      "trusted": {
+        "title": "Trusted Designs",
+        "desc": "Used by freelancers and agencies to win more clients."
+      },
+      "seo": {
+        "title": "SEO Friendly",
+        "desc": "Clean markup and performance-minded templates."
+      },
+      "testimonial": {
+        "author": "Sarah Brooks",
+        "role": "CEO, Stakly"
+      },
+      "call_us": "Call us"
+    },
+    "templates": {
+      "heading": "TEMPLATES",
+      "title": "Template types for every freelancer",
+      "description": "Choose a starting point that fits your work — portfolio, case study, agency or landing pages. Each template is optimized for clarity and conversion.",
+      "items": {
+        "portfolio": {
+          "title": "Portfolio",
+          "desc": "Show your best projects with elegant case layouts."
+        },
+        "agency": {
+          "title": "Agency",
+          "desc": "Team pages, services and case studies for agencies."
+        },
+        "case": {
+          "title": "Case Study",
+          "desc": "Deep-dive project pages that highlight results."
+        },
+        "landing": {
+          "title": "Landing",
+          "desc": "High-converting landing pages for offers and services."
+        }
+      }
+    },
+    "testimonials": {
+      "title": "Read reviews,",
+      "highlight": "ride with confidence.",
+      "rating": "4.2/5",
+      "source": "Trustpilot",
+      "based_on": "Based on 5210 reviews",
+      "items": [
+        {
+          "name": "Karan",
+          "text": "My buying experience is so nice, and received me very politely. Riding experience is also very good.",
+          "time": "1 week ago"
+        },
+        {
+          "name": "Catherine",
+          "text": "I love my e-bike and the customer service is excellent. They respond quickly and help with accessories.",
+          "time": "10 days ago"
+        },
+        {
+          "name": "Peter",
+          "text": "Visited the store — product selection was great and the team helped with customization.",
+          "time": "2 weeks ago"
+        }
+      ]
+    },
+    "approach": {
+      "badge": "APPROACH",
+      "title": "Unleashing the Potential of Digital Marketing",
+      "subtitle": "A structured process that moves ideas from discovery to strategy, implementation and optimization — built to deliver measurable growth.",
+      "items": {
+        "discovery": {
+          "title": "Discovery",
+          "desc": "Understand goals and audience to craft the right strategy."
+        },
+        "strategize": {
+          "title": "Strategize",
+          "desc": "Create a clear plan focused on conversion and growth."
+        },
+        "implementation": {
+          "title": "Implementation",
+          "desc": "Ship polished templates, pages and assets quickly."
+        },
+        "analysis": {
+          "title": "Analysis & Optimization",
+          "desc": "Measure results and iterate to continuously improve."
+        }
+      }
+    }
+  },
+
   "footer": {
     "description": "Beautiful, ready-made portfolio templates for freelancers. Fast, responsive and easy to customize — perfect to show off your work.",
     "quick_links": "Quick Links",
