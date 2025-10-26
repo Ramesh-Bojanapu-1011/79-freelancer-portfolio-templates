@@ -19,9 +19,8 @@ export default function Home1() {
           content="Beautiful freelancer portfolio templates"
         />
       </Head>
+      <SiteHeadder />
       <div className="min-h-screen flex flex-col bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100  caret-transparent max-w-screen overflow-x-hidden">
-        <SiteHeadder />
-
         {/* Hero */}
         <section className="relative  overflow-hidden bg-linear-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 min-h-screen flex justify-center items-center">
           <div className="mx-auto max-w-7xl px-6 lg:px-8    ">

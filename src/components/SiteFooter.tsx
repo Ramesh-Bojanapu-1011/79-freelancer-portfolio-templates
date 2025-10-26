@@ -1,27 +1,32 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+import i18n from "@/i18n";
+import { useTranslation } from "react-i18next";
 
 const services = [
-  { label: "Design Systems & UI", href: "/design-systems-&-ui" },
-  { label: "Frontend Development", href: "/frontend-development" },
-  { label: "SEO & Performance", href: "/seo-performance" },
-  { label: "Branding & Identity", href: "/branding-&-identity" },
-  { label: "Portfolio Templates", href: "/portfolio-templates" },
-  { label: "Setup & Support", href: "/setup-&-support" },
+  { key: "header.servicesdrop.design_systems", href: "/design-systems-&-ui" },
+  { key: "header.servicesdrop.frontend_dev", href: "/frontend-development" },
+  { key: "header.servicesdrop.seo", href: "/seo-performance" },
+  { key: "header.servicesdrop.branding", href: "/branding-&-identity" },
+  {
+    key: "header.servicesdrop.portfolio_templates",
+    href: "/portfolio-templates",
+  },
+  { key: "header.servicesdrop.setup_support", href: "/setup-&-support" },
 ];
 
 const quickLinks = [
-  { label: "Home 1", href: "/home1" },
-  { label: "Home 2", href: "/home2" },
-  { label: "About Us", href: "/about-us" },
-  { label: "Services", href: "/services" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact Us", href: "/contact-us" },
+  { key: "header.home1", href: "/home1" },
+  { key: "header.home2", href: "/home2" },
+  { key: "header.about", href: "/about-us" },
+  { key: "header.services", href: "/services" },
+  { key: "header.blog", href: "/blog" },
+  { key: "header.contact", href: "/contact-us" },
 ];
 
 const socials = [
   {
-    label: "Twitter",
+    labelKey: "social.twitter",
     href: "#",
     Icon: (
       <>
@@ -44,7 +49,7 @@ const socials = [
     ),
   },
   {
-    label: "Facebook",
+    labelKey: "social.facebook",
     href: "#",
     Icon: (
       <>
@@ -67,7 +72,7 @@ const socials = [
     ),
   },
   {
-    label: "Instagram",
+    labelKey: "social.instagram",
     href: "#",
     Icon: (
       <>
@@ -127,7 +132,7 @@ const socials = [
     ),
   },
   {
-    label: "LinkedIn",
+    labelKey: "social.linkedin",
     href: "#",
     Icon: (
       <>
@@ -152,6 +157,7 @@ const socials = [
 ];
 
 export default function SiteFooter() {
+  const { t } = useTranslation();
   return (
     <footer className="bg-slate-50 caret-transparent dark:bg-slate-900 text-slate-700 dark:text-slate-200 border-t border-slate-200 dark:border-slate-700">
       <div className="mx-auto  px-4 sm:px-6 lg:px-8 py-12">
@@ -167,8 +173,7 @@ export default function SiteFooter() {
               />
             </Link>
             <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">
-              Beautiful, ready-made portfolio templates for freelancers. Fast,
-              responsive and easy to customize — perfect to show off your work.
+              {t("footer.description")}
             </p>
 
             <div className="mt-4 flex items-center space-x-3">
@@ -176,7 +181,7 @@ export default function SiteFooter() {
                 <Link
                   key={index}
                   href={i.href}
-                  aria-label={i.label}
+                  aria-label={t(i.labelKey)}
                   className="p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800"
                 >
                   {i.Icon}
@@ -188,13 +193,13 @@ export default function SiteFooter() {
           {/* Column 2: Quick Links */}
           <div>
             <h4 className="text-sm font-semibold text-slate-900 dark:text-white">
-              Quick Links
+              {t("footer.quick_links")}
             </h4>
             <ul className="mt-4 space-y-2">
               {quickLinks.map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="text-sm hover:underline">
-                    {l.label}
+                    {t(l.key)}
                   </Link>
                 </li>
               ))}
@@ -204,13 +209,13 @@ export default function SiteFooter() {
           {/* Column 3: Services (same as header) */}
           <div>
             <h4 className="text-sm font-semibold text-slate-900 dark:text-white">
-              Services
+              {t("footer.services")}
             </h4>
             <ul className="mt-4 space-y-2">
               {services.map((s, index) => (
                 <li key={index}>
                   <Link href={`${s.href}`} className="text-sm hover:underline">
-                    {s.label}
+                    {t(s.key)}
                   </Link>
                 </li>
               ))}
@@ -220,12 +225,12 @@ export default function SiteFooter() {
           {/* Column 4: Contact */}
           <div>
             <h4 className="text-sm font-semibold text-slate-900 dark:text-white">
-              Contact Us
+              {t("footer.contact")}
             </h4>
             <div className="mt-4 space-y-3 text-sm text-slate-600 dark:text-slate-400">
               <div className="flex items-start gap-2">
                 <MapPin className="h-5 w-5 text-slate-500 dark:text-slate-300 mt-1" />
-                <div>123 Freelancer St., Creativetown, Country</div>
+                <div>{t("footer.address")}</div>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-5 w-5 text-slate-500 dark:text-slate-300" />
@@ -233,13 +238,13 @@ export default function SiteFooter() {
                   href="mailto:hello@freelancertemplates.dev"
                   className="hover:underline"
                 >
-                  hello@freelancertemplates.dev
+                  {t("footer.email")}
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-5 w-5 text-slate-500 dark:text-slate-300" />
                 <a href="tel:+1234567890" className="hover:underline">
-                  +1 (234) 567-890
+                  {t("footer.phone")}
                 </a>
               </div>
             </div>
@@ -247,8 +252,7 @@ export default function SiteFooter() {
         </div>
 
         <div className="mt-8 border-t flex justify-center border-slate-200 dark:border-slate-700 pt-6 text-xs text-slate-500">
-          © {new Date().getFullYear()} Freelancer Templates. All rights
-          reserved.
+          {t("footer.copyright", { year: new Date().getFullYear() })}
         </div>
       </div>
     </footer>

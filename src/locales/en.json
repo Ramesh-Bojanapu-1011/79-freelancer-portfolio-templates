@@ -19,5 +19,16 @@
       "portfolio_templates": "Portfolio Templates",
       "setup_support": "Setup & Support"
     }
+  },
+
+  "footer": {
+    "description": "Beautiful, ready-made portfolio templates for freelancers. Fast, responsive and easy to customize — perfect to show off your work.",
+    "quick_links": "Quick Links",
+    "services": "Services",
+    "contact": "Contact Us",
+    "address": "123 Freelancer St., Creativetown, Country",
+    "email": "hello@freelancertemplates.dev",
+    "phone": "+1 (234) 567-890",
+    "copyright": "© {{year}} Freelancer Templates. All rights reserved."
   }
 }

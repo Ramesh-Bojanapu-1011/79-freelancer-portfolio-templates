@@ -1,11 +1,12 @@
 "use client";
 
-import Link from "next/link";
-import React from "react";
-import { ModeToggle } from "./theme/ModeToggle";
-import { readAuth, readUsers } from "../../pages/auth";
-import router from "next/router";
 import i18n from "@/i18n";
+import Link from "next/link";
+import router from "next/router";
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { readAuth, readUsers } from "../../pages/auth";
+import { ModeToggle } from "./theme/ModeToggle";
 
 const services = [
   { key: "header.servicesdrop.all_services", href: "/services" },
@@ -36,7 +37,7 @@ export default function SiteHeadder() {
   const [langOpen, setLangOpen] = React.useState(false);
   const [profileOpen, setProfileOpen] = React.useState(false);
   const [mobileprofileOpen, setMobileProfileOpen] = React.useState(false);
-  const users = readUsers();
+  const { t } = useTranslation();
 
   // Avoid reading `ft_auth` during server render to prevent hydration mismatch.
   // We'll compute initials on the client after mount.
@@ -108,7 +109,7 @@ export default function SiteHeadder() {
       const updatedUsers = currentUsers.map((u) =>
         u.email === user.email
           ? { ...u, logoutTime: new Date().toISOString() }
-          : u
+          : u,
       );
 
       if (typeof window !== "undefined") {
@@ -196,7 +197,7 @@ export default function SiteHeadder() {
                 aria-expanded={homeOpen}
                 className="inline-flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
               >
-                {i18n.t("header.home")}
+                {t("header.home")}
                 <svg
                   className="h-4 w-4"
                   viewBox="0 0 20 20"
@@ -216,13 +217,13 @@ export default function SiteHeadder() {
                     href="/home1"
                     className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
                   >
-                    {i18n.t("header.home1")}
+                    {t("header.home1")}
                   </Link>
                   <Link
                     href="/home2"
                     className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
                   >
-                    {i18n.t("header.home2")}
+                    {t("header.home2")}
                   </Link>
                 </div>
               )}
@@ -232,7 +233,7 @@ export default function SiteHeadder() {
               href="/about-us"
               className="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
             >
-              {i18n.t("header.about")}
+              {t("header.about")}
             </Link>
 
             <div className="relative">
@@ -241,7 +242,7 @@ export default function SiteHeadder() {
                 aria-expanded={servicesOpen}
                 className="inline-flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
               >
-                {i18n.t("header.services")}
+                {t("header.services")}
                 <svg
                   className="h-4 w-4"
                   viewBox="0 0 20 20"
@@ -263,7 +264,7 @@ export default function SiteHeadder() {
                       href={`/${s.href}`}
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
                     >
-                      {i18n.t(s.key)}
+                      {t(s.key)}
                     </Link>
                   ))}
                 </div>
@@ -274,14 +275,14 @@ export default function SiteHeadder() {
               href="/blog"
               className="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
             >
-              {i18n.t("header.blog")}
+              {t("header.blog")}
             </Link>
 
             <Link
               href="/contact-us"
               className="px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
             >
-              {i18n.t("header.contact")}
+              {t("header.contact")}
             </Link>
           </nav>
 
@@ -348,13 +349,13 @@ export default function SiteHeadder() {
                       href="/profile"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
                     >
-                      {i18n.t("header.profile")}
+                      {t("header.profile")}
                     </Link>
                     <button
                       onClick={() => handleLogout()}
                       className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
                     >
-                      {i18n.t("header.logout")}
+                      {t("header.logout")}
                     </button>
                   </div>
                 )}
@@ -367,7 +368,7 @@ export default function SiteHeadder() {
                 onClick={() => setMobileOpen((s) => !s)}
                 aria-expanded={mobileOpen}
                 className="inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
-                title={i18n.t("header.toggle_menu")}
+                title={t("header.toggle_menu")}
               >
                 {mobileOpen ? (
                   <svg
@@ -412,7 +413,7 @@ export default function SiteHeadder() {
                   aria-expanded={mobileHomeOpen}
                   className="w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium"
                 >
-                  <span>{i18n.t("header.home")}</span>
+                  <span>{t("header.home")}</span>
                   <svg
                     className={`h-5 w-5 transition-transform ${
                       mobileHomeOpen ? "rotate-180" : ""
@@ -434,13 +435,13 @@ export default function SiteHeadder() {
                       href="/home1"
                       className="block px-3 py-2 rounded-md text-base"
                     >
-                      {i18n.t("header.home1")}
+                      {t("header.home1")}
                     </Link>
                     <Link
                       href="/home2"
                       className="block px-3 py-2 rounded-md text-base"
                     >
-                      {i18n.t("header.home2")}
+                      {t("header.home2")}
                     </Link>
                   </div>
                 )}
@@ -449,7 +450,7 @@ export default function SiteHeadder() {
                 href="/about-us"
                 className="block px-3 py-2 rounded-md text-base font-medium"
               >
-                {i18n.t("header.about")}
+                {t("header.about")}
               </Link>
               <div className="pt-2 pb-1">
                 <button
@@ -481,7 +482,7 @@ export default function SiteHeadder() {
                         href={`${s.href}`}
                         className="block px-3 py-2 rounded-md text-base"
                       >
-                        {i18n.t(s.key)}
+                        {t(s.key)}
                       </Link>
                     ))}
                   </div>
@@ -491,13 +492,13 @@ export default function SiteHeadder() {
                 href="/blog"
                 className="block px-3 py-2 rounded-md text-base font-medium"
               >
-                {i18n.t("header.blog")}
+                {t("header.blog")}
               </Link>
               <Link
                 href="/contact-us"
                 className="block px-3 py-2 rounded-md text-base font-medium"
               >
-                {i18n.t("header.contact")}
+                {t("header.contact")}
               </Link>
 
               <div className="pt-2 border-t border-slate-100 dark:border-slate-700">
@@ -521,13 +522,13 @@ export default function SiteHeadder() {
                       href="/profile"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
                     >
-                      {i18n.t("header.profile")}
+                      {t("header.profile")}
                     </Link>
                     <button
                       onClick={() => handleLogout()}
                       className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
                     >
-                      {i18n.t("header.logout")}
+                      {t("header.logout")}
                     </button>
                   </div>
                 )}
