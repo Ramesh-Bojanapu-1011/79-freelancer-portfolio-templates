@@ -346,6 +346,32 @@
       "learn_more": "Learn more",
       "learn_more_aria": "Learn more about {{title}}"
     },
+    "items": {
+      "designSystems": {
+        "title": "Design Systems & UI",
+        "desc": "Craft a cohesive design system and reusable components for your portfolio."
+      },
+      "frontend": {
+        "title": "Frontend Development",
+        "desc": "Lightweight, accessible implementation of your portfolio design."
+      },
+      "seo": {
+        "title": "SEO & Performance",
+        "desc": "Optimize your portfolio for search engines and fast load times."
+      },
+      "branding": {
+        "title": "Branding & Identity",
+        "desc": "Create a memorable brand identity that reflects your freelance work."
+      },
+      "templates": {
+        "title": "Portfolio Templates",
+        "desc": "Choose from a selection of ready-made portfolio templates."
+      },
+      "setup": {
+        "title": "Setup & Support",
+        "desc": "Get help deploying and maintaining your portfolio."
+      }
+    },
     "tags": { "popular": "Popular", "custom": "Custom" },
     "tools": {
       "heading": "Integrations & tools",
