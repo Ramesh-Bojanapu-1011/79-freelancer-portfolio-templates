@@ -12,81 +12,138 @@ import {
   Server,
   Zap,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const SetupSupportPage: React.FC = () => {
+  const { t } = useTranslation();
+
   const pricingPlans = [
     {
       id: "starter-setup",
-      title: "Basic Setup",
+      title: t("setup.pricing.plans.starter.title"),
       price: "$149",
       period: "/ one-time",
-      blurb:
-        "Quick site setup for freelancers: hosting, domain, SSL and one deployment.",
+      blurb: t("setup.pricing.plans.starter.blurb"),
       features: [
-        { icon: "Check", text: "Hosting & domain connect", available: true },
-        { icon: "Check", text: "One-time deployment", available: true },
         {
           icon: "Check",
-          text: "Basic form & analytics setup",
+          text: t("setup.pricing.plans.starter.features.0"),
           available: true,
         },
-        { icon: "Code", text: "Simple CMS wiring (starter)", available: false },
-        { icon: "Server", text: "30 days email support", available: true },
+        {
+          icon: "Check",
+          text: t("setup.pricing.plans.starter.features.1"),
+          available: true,
+        },
+        {
+          icon: "Check",
+          text: t("setup.pricing.plans.starter.features.2"),
+          available: true,
+        },
+        {
+          icon: "Code",
+          text: t("setup.pricing.plans.starter.features.3"),
+          available: false,
+        },
+        {
+          icon: "Server",
+          text: t("setup.pricing.plans.starter.features.4"),
+          available: true,
+        },
       ],
       highlighted: false,
-      cta: { href: "/contact-us", text: "Request Setup", primary: true },
+      cta: {
+        href: "/contact-us",
+        text: t("setup.pricing.plans.starter.cta"),
+        primary: true,
+      },
     },
     {
       id: "migration-pro",
-      title: "Migration & Integrations",
+      title: t("setup.pricing.plans.pro.title"),
       price: "$1,200",
       period: "/ one-time",
-      blurb:
-        "Content migrations, CI/CD setup and integrations for growing sites.",
+      blurb: t("setup.pricing.plans.pro.blurb"),
       features: [
-        { icon: "Check", text: "Content migration & mapping", available: true },
-        { icon: "Check", text: "CI/CD + staging pipeline", available: true },
         {
           icon: "Check",
-          text: "Headless CMS or CMS integration",
+          text: t("setup.pricing.plans.pro.features.0"),
           available: true,
         },
-        { icon: "Code", text: "Custom integration work", available: true },
-        { icon: "Server", text: "60 days priority support", available: true },
+        {
+          icon: "Check",
+          text: t("setup.pricing.plans.pro.features.1"),
+          available: true,
+        },
+        {
+          icon: "Check",
+          text: t("setup.pricing.plans.pro.features.2"),
+          available: true,
+        },
+        {
+          icon: "Code",
+          text: t("setup.pricing.plans.pro.features.3"),
+          available: true,
+        },
+        {
+          icon: "Server",
+          text: t("setup.pricing.plans.pro.features.4"),
+          available: true,
+        },
       ],
       highlighted: true,
-      cta: { href: "/contact-us", text: "Start Migration", primary: true },
+      cta: {
+        href: "/contact-us",
+        text: t("setup.pricing.plans.pro.cta"),
+        primary: true,
+      },
     },
     {
       id: "managed",
-      title: "Managed Support",
+      title: t("setup.pricing.plans.managed.title"),
       price: "$79",
       period: "/ month",
-      blurb:
-        "Ongoing maintenance, monitoring and emergency fixes for production sites.",
+      blurb: t("setup.pricing.plans.managed.blurb"),
       features: [
-        { icon: "Check", text: "Daily backups & monitoring", available: true },
-        { icon: "Check", text: "Security patching & updates", available: true },
-        { icon: "Check", text: "Priority incident response", available: true },
         {
-          icon: "Code",
-          text: "Small content & config changes",
+          icon: "Check",
+          text: t("setup.pricing.plans.managed.features.0"),
           available: true,
         },
-        { icon: "Server", text: "Monthly performance review", available: true },
+        {
+          icon: "Check",
+          text: t("setup.pricing.plans.managed.features.1"),
+          available: true,
+        },
+        {
+          icon: "Check",
+          text: t("setup.pricing.plans.managed.features.2"),
+          available: true,
+        },
+        {
+          icon: "Code",
+          text: t("setup.pricing.plans.managed.features.3"),
+          available: true,
+        },
+        {
+          icon: "Server",
+          text: t("setup.pricing.plans.managed.features.4"),
+          available: true,
+        },
       ],
       highlighted: false,
-      cta: { href: "/contact-us", text: "Contact Sales", primary: false },
+      cta: {
+        href: "/contact-us",
+        text: t("setup.pricing.plans.managed.cta"),
+        primary: false,
+      },
     },
   ];
   return (
     <>
       <Head>
-        <title>Setup & Support — Services</title>
-        <meta
-          name="description"
-          content="Setup & Support services: deployment, configuration, CMS and hosting setup, migrations, and ongoing technical support for quick, reliable launches."
-        />
+        <title>{t("setup.meta.title")}</title>
+        <meta name="description" content={t("setup.meta.description")} />
       </Head>
 
       <SiteHeadder />
@@ -107,24 +164,22 @@ const SetupSupportPage: React.FC = () => {
                   <ol className="flex items-center gap-2">
                     <li>
                       <Link href="/services" className="hover:underline">
-                        Services
+                        {t("setup.breadcrumb.services")}
                       </Link>
                     </li>
                     <li className="text-slate-300 dark:text-slate-700">/</li>
                     <li className="text-indigo-600 dark:text-cyan-400 font-semibold">
-                      Setup & Support
+                      {t("setup.breadcrumb.current")}
                     </li>
                   </ol>
                 </nav>
 
                 <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight text-slate-900 dark:text-white">
-                  Setup, Deploy & Maintain — Fast.
+                  {t("setup.hero.title")}
                 </h1>
 
                 <p className="mt-6 text-xl text-slate-600 dark:text-slate-300 max-w-xl">
-                  We handle the technical lift: hosting, deployments, CMS and
-                  form setup, migrations, automated backups and ongoing support
-                  so you can focus on shipping.
+                  {t("setup.hero.desc")}
                 </p>
 
                 {/* --- CTAs (Redesigned for premium look) --- */}
@@ -133,7 +188,7 @@ const SetupSupportPage: React.FC = () => {
                     href="/contact-us"
                     className="inline-flex items-center gap-2 bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-indigo-500/40 transition-all duration-300 transform hover:scale-[1.02]"
                   >
-                    Request Setup Help
+                    {t("setup.cta.request_setup")}
                   </Link>
                 </div>
 
@@ -146,11 +201,10 @@ const SetupSupportPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Install & Configure
+                        {t("setup.features.install.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        We set up hosting, deployment pipelines, domains, SSL
-                        and initial environment configuration.
+                        {t("setup.features.install.desc")}
                       </div>
                     </div>
                   </li>
@@ -162,11 +216,10 @@ const SetupSupportPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Integrations
+                        {t("setup.features.integrations.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Connect analytics, forms, CMS, payment gateways and CDNs
-                        for a complete production setup.
+                        {t("setup.features.integrations.desc")}
                       </div>
                     </div>
                   </li>
@@ -178,11 +231,10 @@ const SetupSupportPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Backups & Monitoring
+                        {t("setup.features.backups.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Scheduled backups, uptime monitoring and error reporting
-                        to keep the site reliable.
+                        {t("setup.features.backups.desc")}
                       </div>
                     </div>
                   </li>
@@ -194,11 +246,10 @@ const SetupSupportPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Ongoing Support
+                        {t("setup.features.support.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Post-launch support windows, emergency fixes and
-                        optional managed plans.
+                        {t("setup.features.support.desc")}
                       </div>
                     </div>
                   </li>
@@ -218,14 +269,13 @@ const SetupSupportPage: React.FC = () => {
                       />
                       <div className="p-5">
                         <div className=" text-slate-500 dark:text-slate-400">
-                          Setup preview
+                          {t("setup.preview.label")}
                         </div>
                         <div className="mt-1 text-lg font-semibold text-slate-900 dark:text-slate-100">
-                          Deployment & dashboard
+                          {t("setup.preview.title")}
                         </div>
                         <p className="mt-2  text-slate-600 dark:text-slate-300">
-                          A snapshot of deployment status, monitoring dashboards
-                          and configuration applied to a sample site.
+                          {t("setup.preview.desc")}
                         </p>
                       </div>
                     </div>
@@ -242,11 +292,10 @@ const SetupSupportPage: React.FC = () => {
         <section className="mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32 bg-white dark:bg-slate-900">
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              Setup & Support Deliverables
+              {t("setup.deliverables.title")}
             </h2>
             <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Deployment, configuration and support deliverables to get your
-              site live and reliable.
+              {t("setup.deliverables.desc")}
             </p>
           </div>
 
@@ -258,19 +307,19 @@ const SetupSupportPage: React.FC = () => {
               </div>
               <ul className="mt-6 space-y-3 text-slate-700 dark:text-slate-300">
                 <li className="flex items-start gap-2">
-                  • Hosting and deployment configuration (CI/CD)
+                  {t("setup.deliverables.items.0")}
                 </li>
                 <li className="flex items-start gap-2">
-                  • CMS and form setup, content migration support
+                  {t("setup.deliverables.items.1")}
                 </li>
                 <li className="flex items-start gap-2">
-                  • Monitoring, alerts and automated backups
+                  {t("setup.deliverables.items.2")}
                 </li>
                 <li className="flex items-start gap-2">
-                  • Integrations: analytics, payments, CDNs
+                  {t("setup.deliverables.items.3")}
                 </li>
                 <li className="flex items-start gap-2">
-                  • Handoff docs and a short support window
+                  {t("setup.deliverables.items.4")}
                 </li>
               </ul>
             </div>
@@ -278,15 +327,13 @@ const SetupSupportPage: React.FC = () => {
             {/* Timeline */}
             <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 transition-shadow duration-300 hover:shadow-2xl">
               <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
-                <Zap className="h-6 w-6" /> Timeline & Velocity
+                <Zap className="h-6 w-6" /> {t("setup.timeline.title")}
               </div>
               <div className="mt-6 text-slate-700 dark:text-slate-300">
-                Typical engagement: **1–5 days** for common setup tasks;
-                migrations and complex integrations can take longer.
+                {t("setup.timeline.desc")}
               </div>
               <div className="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400 border-t pt-4 border-slate-200 dark:border-slate-700">
-                Includes deployment notes, access instructions and optional
-                post-setup support window.
+                {t("setup.timeline.includes")}
               </div>
             </div>
 
@@ -294,13 +341,13 @@ const SetupSupportPage: React.FC = () => {
             <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 flex flex-col justify-between transition-shadow duration-300 hover:shadow-2xl">
               <div>
                 <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
-                  <Code className="h-6 w-6" /> Workflow
+                  <Code className="h-6 w-6" /> {t("setup.workflow.title")}
                 </div>
                 <ol className="mt-6 text-slate-700 dark:text-slate-300 space-y-3 list-decimal pl-5">
-                  <li>Discovery & requirements gathering</li>
-                  <li>Environment & deployment setup</li>
-                  <li>Integrations, testing & verification</li>
-                  <li>Handoff, docs & short support window</li>
+                  <li>{t("setup.workflow.steps.0")}</li>
+                  <li>{t("setup.workflow.steps.1")}</li>
+                  <li>{t("setup.workflow.steps.2")}</li>
+                  <li>{t("setup.workflow.steps.3")}</li>
                 </ol>
               </div>
 
@@ -309,7 +356,7 @@ const SetupSupportPage: React.FC = () => {
                   href="/contact-us"
                   className="inline-flex items-center justify-center w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-medium transition-colors"
                 >
-                  Request Setup Quote
+                  {t("setup.cta.get_quote")}
                 </Link>
               </div>
             </div>
@@ -320,11 +367,10 @@ const SetupSupportPage: React.FC = () => {
         <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
           <div className="text-center">
             <h2 className="text-2xl sm:text-3xl font-extrabold">
-              Setup & Launches
+              {t("setup.projects.title")}
             </h2>
             <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Recent setup and migration projects that show fast, reliable
-              launches.
+              {t("setup.projects.desc")}
             </p>
           </div>
 
@@ -332,21 +378,15 @@ const SetupSupportPage: React.FC = () => {
             {[
               {
                 id: "project-1",
-                title: "Platform migration — Bloom Shop",
                 img: "https://picsum.photos/seed/project-1/900/600",
-                desc: "Migrated content and setup CI/CD, reducing deploy friction and downtime.",
               },
               {
                 id: "project-2",
-                title: "CMS setup — Lina R",
                 img: "https://picsum.photos/seed/project-2/900/600",
-                desc: "Connected headless CMS, forms and optimized media delivery.",
               },
               {
                 id: "project-3",
-                title: "Managed hosting — Ember Co",
                 img: "https://picsum.photos/seed/project-3/900/600",
-                desc: "Setup monitoring, backups and a low-downtime deployment pipeline.",
               },
             ].map((p, idx) => (
               <article
@@ -361,21 +401,23 @@ const SetupSupportPage: React.FC = () => {
                   <div className="relative w-full lg:w-1/2 h-56 sm:h-64 lg:h-56 overflow-hidden rounded-xl">
                     <img
                       src={p.img}
-                      alt={p.title}
+                      alt={t(`setup.projects.items.${p.id}.title`)}
                       className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
                     <span className="absolute left-4 bottom-4 inline-flex items-center gap-2 bg-white/90 dark:bg-black/60 text-sm px-3 py-1 rounded-full font-medium text-slate-800 dark:text-slate-100">
-                      {p.title.split("—")[0].trim()}
+                      {t(`setup.projects.items.${p.id}.title`)
+                        .split("—")[0]
+                        .trim()}
                     </span>
                   </div>
 
                   <div className="w-full lg:w-1/2 p-2 lg:p-6">
                     <h3 className="font-semibold text-2xl text-slate-900 dark:text-slate-100">
-                      {p.title}
+                      {t(`setup.projects.items.${p.id}.title`)}
                     </h3>
                     <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
-                      {p.desc}
+                      {t(`setup.projects.items.${p.id}.desc`)}
                     </p>
                     <div className="mt-6 flex items-center justify-between">
                       <div className="text-xs text-slate-500 dark:text-slate-400">
@@ -393,60 +435,38 @@ const SetupSupportPage: React.FC = () => {
         <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              Client Success Stories
+              {t("setup.testimonials.title")}
             </h2>
             <p className="mt-2 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Real results from freelancers who used our systems to ship faster
-              and look more polished.
+              {t("setup.testimonials.desc")}
             </p>
           </div>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              {
-                id: "t1",
-                name: "Alex Morgan",
-                role: "Product Designer",
-                quote:
-                  "The design system cut our launch time in half—components are predictable and documentation made handoffs painless. Worth every penny.",
-                avatar: "https://i.pravatar.cc/80?img=12",
-              },
-              {
-                id: "t2",
-                name: "Lina Rodriguez",
-                role: "Illustrator",
-                quote:
-                  "I loved how the tokens made color changes trivial—one update and my whole site matched the new brand. My site feels professional now.",
-                avatar: "https://i.pravatar.cc/80?img=47",
-              },
-              {
-                id: "t3",
-                name: "Ember Co",
-                role: "Founder",
-                quote:
-                  "Consistent components and templates made it easy to produce landing pages for new services—our lead conversion improved instantly.",
-                avatar: "https://i.pravatar.cc/80?img=32",
-              },
-            ].map((t) => (
+              { id: "t1", avatar: "https://i.pravatar.cc/80?img=12" },
+              { id: "t2", avatar: "https://i.pravatar.cc/80?img=47" },
+              { id: "t3", avatar: "https://i.pravatar.cc/80?img=32" },
+            ].map((tm) => (
               <blockquote
-                key={t.id}
+                key={tm.id}
                 className="rounded-3xl bg-slate-50 dark:bg-slate-800 p-8 shadow-md ring-1 ring-black/5 dark:ring-white/5 border-t-4 border-indigo-600 dark:border-cyan-400"
               >
                 <p className="text-lg font-medium text-slate-700 dark:text-slate-200">
-                  “{t.quote}”
+                  “{t(`setup.testimonials.items.${tm.id}.quote`)}”
                 </p>
                 <div className="mt-6 flex items-center gap-4">
                   <img
-                    src={t.avatar}
-                    alt={t.name}
+                    src={tm.avatar}
+                    alt={t(`setup.testimonials.items.${tm.id}.name`)}
                     className="w-12 h-12 rounded-full ring-2 ring-indigo-600 dark:ring-cyan-400"
                   />
                   <div>
                     <div className="text-sm font-bold text-slate-900 dark:text-white">
-                      {t.name}
+                      {t(`setup.testimonials.items.${tm.id}.name`)}
                     </div>
                     <div className="text-xs text-slate-500 dark:text-slate-400">
-                      {t.role}
+                      {t(`setup.testimonials.items.${tm.id}.role`)}
                     </div>
                   </div>
                 </div>
@@ -464,14 +484,13 @@ const SetupSupportPage: React.FC = () => {
         >
           <div className="text-center">
             <p className="text-sm font-medium text-teal-500 uppercase">
-              PRICING
+              {t("setup.pricing.label")}
             </p>
             <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              Transparent, Value-Driven Packages
+              {t("setup.pricing.title")}
             </h2>
             <p className="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Choose the level of support and system depth that best fits your
-              freelance practice or small team.
+              {t("setup.pricing.desc")}
             </p>
           </div>
 
@@ -599,12 +618,11 @@ const SetupSupportPage: React.FC = () => {
             <div className="bg-white dark:bg-slate-950 rounded-3xl shadow-2xl ring-1 ring-black/5 dark:ring-white/5 p-12 lg:p-16 text-center">
               <FileText className="h-10 w-10 text-indigo-600 dark:text-teal-400 mx-auto mb-4" />
               <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-slate-900 dark:text-white">
-                Need Setup & Support?
+                {t("setup.final.title")}
               </h2>
 
               <p className="mt-4 text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-                Get your site live with a reliable deployment, integrations and
-                a short support window to ensure everything runs smoothly.
+                {t("setup.final.desc")}
               </p>
 
               <div className="mt-10">
@@ -612,7 +630,7 @@ const SetupSupportPage: React.FC = () => {
                   href="/contact-us"
                   className="inline-flex items-center gap-2 bg-linear-to-r from-cyan-500 to-indigo-600 hover:from-cyan-600 hover:to-indigo-700 text-white px-8 py-4 rounded-xl font-bold text-xl shadow-2xl shadow-cyan-500/50 transition-all duration-300 transform hover:scale-[1.05]"
                 >
-                  Request Setup
+                  {t("setup.final.cta")}
                 </Link>
               </div>
             </div>

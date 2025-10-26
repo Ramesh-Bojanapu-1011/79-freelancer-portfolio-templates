@@ -590,6 +590,157 @@
       ]
     }
   },
+  "setup": {
+    "meta": {
+      "title": "Setup & Support — Services",
+      "description": "Deployment, integrations and ongoing support to get your portfolio live and maintained."
+    },
+    "breadcrumb": { "services": "Services", "current": "Setup & Support" },
+    "hero": {
+      "title": "Reliable setup, fast launches.",
+      "desc": "Get your site live with deployment, integrations and a short support window to ensure everything runs smoothly."
+    },
+    "cta": {
+      "request_setup": "Request Setup",
+      "get_quote": "Get a Scoped Quote"
+    },
+    "features": {
+      "install": {
+        "title": "Easy Deployment",
+        "desc": "We deploy your site to a production-ready host with proper caching and domain setup."
+      },
+      "integrations": {
+        "title": "Integrations",
+        "desc": "Connect analytics, forms, CMS and third-party services for a complete workflow."
+      },
+      "backups": {
+        "title": "Backups & Rollback",
+        "desc": "Automated backups and rollback options so you can restore quickly if needed."
+      },
+      "support": {
+        "title": "Short-term Support",
+        "desc": "A limited support window to handle launch issues and ensure smooth operations."
+      }
+    },
+    "preview": {
+      "label": "Setup preview",
+      "title": "Deployment & integrations preview",
+      "desc": "A look at hosting configuration, analytics and connection status."
+    },
+    "deliverables": {
+      "title": "Setup Deliverables",
+      "desc": "What we provide to get your site live and stable.",
+      "items": [
+        "• Hosting & domain setup",
+        "• Integrations (analytics, forms, CMS)",
+        "• Backup & rollback configuration",
+        "• Short support window & handoff notes",
+        "• Launch checklist and testing"
+      ]
+    },
+    "timeline": {
+      "title": "Timeline & Velocity",
+      "desc": "Typical engagement: 1–7 days for setup and migration depending on scope.",
+      "includes": "Includes deployment scripts, quick-start instructions, and optional migration help."
+    },
+    "workflow": {
+      "title": "How we work",
+      "steps": [
+        "Kickoff & plan",
+        "Deploy & configure",
+        "Test & validate",
+        "Handoff & support"
+      ]
+    },
+    "projects": {
+      "title": "Setup & Launches",
+      "desc": "Recent setup and migration projects that show fast, reliable launches.",
+      "items": {
+        "project-1": {
+          "title": "Fast migration — Bloom Shop",
+          "desc": "A fast migration with zero downtime and verified redirects."
+        },
+        "project-2": {
+          "title": "Analytics integration — Lina R",
+          "desc": "Integrations for analytics, forms and performance monitoring."
+        },
+        "project-3": {
+          "title": "Headless CMS migration — Ember Co",
+          "desc": "Migrated content to a headless CMS and configured previewing."
+        }
+      }
+    },
+    "testimonials": {
+      "title": "Client Success Stories",
+      "desc": "Real results from freelancers who used our setup services.",
+      "items": {
+        "t1": {
+          "name": "Alex Morgan",
+          "role": "Product Designer",
+          "quote": "The team deployed my site quickly and handled DNS properly — launch was effortless."
+        },
+        "t2": {
+          "name": "Lina Rodriguez",
+          "role": "Illustrator",
+          "quote": "Integrations were configured perfectly — analytics and forms worked out of the box."
+        },
+        "t3": {
+          "name": "Ember Co",
+          "role": "Founder",
+          "quote": "Migration was seamless and the backup strategy saved us during a content rollback."
+        }
+      }
+    },
+    "pricing": {
+      "label": "PRICING",
+      "title": "Transparent, Value-Driven Packages",
+      "desc": "Choose the level of support and system depth that best fits your freelance practice or small team.",
+      "most_popular": "MOST POPULAR",
+      "plans": {
+        "starter": {
+          "title": "Starter Setup",
+          "blurb": "Basic deployment & setup for single templates.",
+          "features": [
+            "Hosting & domain setup",
+            "Basic integrations",
+            "Backup configuration",
+            "Handoff notes",
+            "Email support (3 days)"
+          ],
+          "cta": "Choose Starter"
+        },
+        "pro": {
+          "title": "Migration Pro",
+          "blurb": "Full migration and integration for growing freelancers.",
+          "features": [
+            "Migration & redirects",
+            "Priority integrations",
+            "Full backup & rollback",
+            "Performance checks",
+            "Priority support (7 days)"
+          ],
+          "cta": "Start Pro Migration"
+        },
+        "managed": {
+          "title": "Managed",
+          "blurb": "Ongoing maintenance and support",
+          "features": [
+            "Monthly updates",
+            "Monitoring & alerts",
+            "Priority fixes",
+            "Integrations maintenance",
+            "Monthly backups"
+          ],
+          "cta": "Contact Sales"
+        }
+      }
+    },
+    "final": {
+      "title": "Need Setup & Support?",
+      "desc": "Get your site live with a reliable deployment, integrations and a short support window to ensure everything runs smoothly.",
+      "cta": "Request Setup"
+    }
+  },
   "frontend": {
     "meta": {
       "title": "Frontend Development — Services",
