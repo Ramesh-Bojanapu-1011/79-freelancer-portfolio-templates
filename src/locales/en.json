@@ -1416,6 +1416,92 @@
       "cta": "Contact us"
     }
   },
+  "launchingWithConfidence": {
+    "meta": {
+      "title": "Launching with confidence — Blog",
+      "description": "A practical launch checklist covering performance, accessibility, testing and monitoring so your product ships smoothly."
+    },
+    "hero": {
+      "badge": "Guides · Design systems",
+      "title": "Launching with confidence",
+      "subtitle": "A practical launch checklist covering performance, accessibility, testing and monitoring so your product ships smoothly."
+    },
+    "tags": { "launch": "Launch", "product": "Product" },
+    "share": "Share",
+    "author": { "name": "Alex Morales" },
+    "date": "Oct 26, 2025 ·",
+    "tagsList": "Launch, Release",
+    "reading": "Reading: {{time}}",
+    "level": "Level: Intermediate",
+    "imageAlt1": "Design systems illustration",
+    "figcaption1": "Illustration: launching",
+    "imageAlt2": "Launch monitoring",
+    "lead": "Launching a product is more than shipping features — it's about planning, reducing risk, and keeping users happy. This guide covers the practical steps to prepare, test and monitor a launch so your team ships with confidence.",
+    "plan": {
+      "title": "Plan your release",
+      "body": "Successful launches start with a clear plan: defined goals, stakeholders, rollback criteria and a communication plan. List critical journeys and acceptance criteria before you freeze the release."
+    },
+    "performance": {
+      "title": "Performance & observability",
+      "body": "Optimize for speed: measure Core Web Vitals, lazy-load noncritical assets, and instrument key transactions with tracing and metrics. Make sure alerts are actionable and dashboards show real user impact."
+    },
+    "quote": "Ship smaller, observe faster, and be ready to roll back — launches are an experiment, not a single perfect event.",
+    "accessibility": {
+      "title": "Accessibility & UX",
+      "body": "Prioritize accessibility checks for critical flows: keyboard navigation, screen reader labels and color contrast. A small set of automated a11y checks plus manual spot checks goes a long way.",
+      "items": [
+        "Run automated tests (axe, pa11y) on staging and preflight branches.",
+        "Validate critical forms and error states work on low bandwidth.",
+        "Include accessibility owners in the release checklist."
+      ]
+    },
+    "testing": {
+      "title": "Testing & QA",
+      "body": "Combine unit, integration and end-to-end tests for the most important flows. Use smoke tests against production-like staging environments to catch configuration issues before release."
+    },
+    "rollout": {
+      "title": "Feature flags & rollout",
+      "body": "Use gradual rollouts and feature flags to limit blast radius. Start with internal or opt-in users, then increase exposure while monitoring errors and performance."
+    },
+    "monitoring": {
+      "title": "Post-launch monitoring",
+      "body": "After launch, monitor error rates, latency and user journeys closely. Have a clear incident response path and make quick decisions based on real user data."
+    },
+    "checklist": {
+      "title": "Launch checklist",
+      "item1": "Define success metrics and rollback criteria.",
+      "item2": "Run performance and accessibility preflight checks.",
+      "item3": "Smoke-test production-like staging environment.",
+      "item4": "Plan staged rollout with feature flags."
+    },
+    "conclusion": {
+      "title": "Conclusion",
+      "body": "Launches are the moment of truth — prepare, test, observe and iterate. With clear plans, gradual rollouts and good monitoring you can reduce risk and deliver value to customers with confidence."
+    },
+    "cta": {
+      "title": "Ready to start?",
+      "desc": "If you'd like help defining or implementing a design system, we offer audits and hands-on setups.",
+      "cta_primary": "Request an audit"
+    },
+    "aside": {
+      "onThisPage": "On this page",
+      "nav": {
+        "plan": "Plan",
+        "performance": "Performance",
+        "accessibility": "Accessibility",
+        "testing": "Testing",
+        "rollout": "Rollout",
+        "monitoring": "Monitoring",
+        "checklist": "Checklist",
+        "conclusion": "Conclusion"
+      },
+      "relatedPosts": "Related posts"
+    },
+    "related": {
+      "fromFigma": "From Figma to Production",
+      "designSystems": "Design systems that scale"
+    }
+  },
   "contact": {
     "meta": {
       "title": "Contact — Enkonix Templates",
