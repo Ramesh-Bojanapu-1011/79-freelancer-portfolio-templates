@@ -1,6 +1,6 @@
 "use client";
 
-import i18n from "@/i18n";
+import i18n, { applyLanguage } from "@/i18n";
 import Link from "next/link";
 import router from "next/router";
 import React from "react";
@@ -126,31 +126,28 @@ export default function SiteHeadder() {
   React.useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const applyLang = (code: string | null) => {
-      const c = code || "en";
-      setLang(c);
-      // set direction: default to ltr for english, rtl for others
-      document.documentElement.dir = c === "en" ? "ltr" : "rtl";
-      if (i18n.language !== c) {
-        i18n.changeLanguage(c);
-      }
-    };
-
     try {
-      const saved = localStorage.getItem("selectedLanguage");
-      applyLang(saved);
+      const saved = localStorage.getItem("selectedLanguage") || undefined;
+      const initial = saved || undefined;
+      const c = initial || i18n.language || "en";
+      setLang(c);
+      applyLanguage(c);
     } catch (err) {
       // fallback to english
-      applyLang("en");
+      setLang("en");
+      applyLanguage("en");
     }
 
     // Ensure language is re-applied after route changes (in case other code altered it)
     const handleRouteChange = () => {
       try {
-        const saved = localStorage.getItem("selectedLanguage");
-        applyLang(saved);
+        const saved =
+          localStorage.getItem("selectedLanguage") || i18n.language || "en";
+        setLang(saved);
+        applyLanguage(saved);
       } catch (e) {
-        applyLang("en");
+        setLang("en");
+        applyLanguage("en");
       }
     };
 
@@ -158,18 +155,11 @@ export default function SiteHeadder() {
     return () => router.events.off("routeChangeComplete", handleRouteChange);
   }, [router.events]);
 
-  const handleLanguageChange = (langLabel: string) => {
-    // setSelectedLanguage(langLabel);
-    const langObj = languages.find((l) => l.code === langLabel);
+  const handleLanguageChange = (langCode: string) => {
+    const langObj = languages.find((l) => l.code === langCode);
     if (langObj) {
-      localStorage.setItem("selectedLanguage", langObj.code);
       setLang(langObj.code);
-      if (langObj.code === "en") {
-        document.documentElement.dir = "ltr";
-      } else {
-        document.documentElement.dir = "rtl";
-      }
-      i18n.changeLanguage(langObj.code);
+      applyLanguage(langObj.code);
     }
   };
 
@@ -458,7 +448,7 @@ export default function SiteHeadder() {
                   aria-expanded={mobileServicesOpen}
                   className="w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium"
                 >
-                  <span>Services</span>
+                  <span>{t("header.services")}</span>
                   <svg
                     className={`h-5 w-5 transition-transform ${
                       mobileServicesOpen ? "rotate-180" : ""

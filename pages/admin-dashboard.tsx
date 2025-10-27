@@ -16,6 +16,7 @@ import {
   CartesianGrid,
 } from "recharts";
 import SiteHeadder from "@/components/SiteHeadder";
+import { useTranslation } from "react-i18next";
 
 // --- Utility Functions (Kept as is) ---
 function formatShort(dateStr?: string | Date | null) {
@@ -57,6 +58,7 @@ const StatCard: React.FC<{
 // ----------------------------------------
 
 export default function AdminDashboard() {
+  const { t } = useTranslation();
   const [users, setUsers] = React.useState<any[]>([]);
 
   React.useEffect(() => {
@@ -84,8 +86,11 @@ export default function AdminDashboard() {
 
   // Pie chart data and colors (Vibrant Violet/Purple scheme)
   const pieData = [
-    { name: "Active (30d)", value: activeCount },
-    { name: "Inactive", value: Math.max(0, total - activeCount) },
+    { name: t("adminDashboard.pie.activeLabel"), value: activeCount },
+    {
+      name: t("adminDashboard.pie.inactiveLabel"),
+      value: Math.max(0, total - activeCount),
+    },
   ];
   const PIE_COLORS = ["#8b5cf6", "#d8b4fe"]; // Violet-500, Violet-300
 
@@ -117,16 +122,16 @@ export default function AdminDashboard() {
       <div className="mx-auto p-4 md:p-0 max-w-7xl">
         {/* Prominent Header */}
         <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-2">
-          Admin Overview
+          {t("adminDashboard.title")}
         </h1>
         <p className="text-gray-500 dark:text-gray-400 mb-8">
-          Key performance metrics and user activity analysis.
+          {t("adminDashboard.subtitle")}
         </p>
 
         {/* 2. Stats Section: Vibrant, Gradient Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <StatCard
-            title="Total Registered Users"
+            title={t("adminDashboard.stats.totalRegistered")}
             value={total.toLocaleString()}
             color="bg-gradient-to-r from-blue-500 to-indigo-600"
             icon={
@@ -141,7 +146,7 @@ export default function AdminDashboard() {
             }
           />
           <StatCard
-            title="Active Users (Last 30 Days)"
+            title={t("adminDashboard.stats.activeLast30")}
             value={activeCount.toLocaleString()}
             color="bg-gradient-to-r from-teal-500 to-cyan-600"
             icon={
@@ -160,7 +165,7 @@ export default function AdminDashboard() {
             }
           />
           <StatCard
-            title="Inactive Users Count"
+            title={t("adminDashboard.stats.inactiveCount")}
             value={Math.max(0, total - activeCount).toLocaleString()}
             color="bg-gradient-to-r from-pink-500 to-red-600"
             icon={
@@ -181,7 +186,7 @@ export default function AdminDashboard() {
           {/* Pie Chart Card */}
           <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 h-[400px]">
             <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
-              Users: Active vs Inactive
+              {t("adminDashboard.charts.pieTitle")}
             </h2>
             <ResponsiveContainer width="100%" height="80%">
               <PieChart>
@@ -228,7 +233,7 @@ export default function AdminDashboard() {
           {/* Bar Chart Card */}
           <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 h-[400px]">
             <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
-              Logins / Logouts Trend
+              {t("adminDashboard.charts.barTitle")}
             </h2>
             <ResponsiveContainer width="100%" height="80%">
               <BarChart
@@ -250,8 +255,16 @@ export default function AdminDashboard() {
                   }}
                 />
                 <Legend />
-                <Bar dataKey="logins" fill="#10b981" name="Logins" />
-                <Bar dataKey="logouts" fill="#ef4444" name="Logouts" />
+                <Bar
+                  dataKey="logins"
+                  fill="#10b981"
+                  name={t("adminDashboard.charts.logins")}
+                />
+                <Bar
+                  dataKey="logouts"
+                  fill="#ef4444"
+                  name={t("adminDashboard.charts.logouts")}
+                />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -260,7 +273,7 @@ export default function AdminDashboard() {
         {/* 4. User Table Section: Clean Table in a Card with Alternating Rows */}
         <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
           <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
-            User Activity Log
+            {t("adminDashboard.table.title")}
           </h2>
 
           {/* Responsive Container for Table */}
@@ -269,19 +282,19 @@ export default function AdminDashboard() {
               <thead className="bg-gray-50 dark:bg-gray-700">
                 <tr>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                    Name
+                    {t("adminDashboard.table.columns.name")}
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                    Email
+                    {t("adminDashboard.table.columns.email")}
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                    Registered
+                    {t("adminDashboard.table.columns.registered")}
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                    Last Login
+                    {t("adminDashboard.table.columns.lastLogin")}
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                    Logout Time
+                    {t("adminDashboard.table.columns.logoutTime")}
                   </th>
                 </tr>
               </thead>
@@ -323,7 +336,7 @@ export default function AdminDashboard() {
                       colSpan={5}
                       className="p-6 text-center text-sm text-gray-500 dark:text-gray-400"
                     >
-                      No users found in localStorage (key: ft_users)
+                      {t("adminDashboard.table.noUsers")}
                     </td>
                   </tr>
                 )}

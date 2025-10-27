@@ -1691,6 +1691,36 @@
       "cta_primary": "اطلب مراجعة"
     }
   },
+  "adminDashboard": {
+    "title": "نظرة عامة للمسؤول",
+    "subtitle": "مقاييس الأداء الرئيسية وتحليل نشاط المستخدمين.",
+    "stats": {
+      "totalRegistered": "إجمالي المستخدمين المسجلين",
+      "activeLast30": "المستخدمون النشطون (آخر 30 يومًا)",
+      "inactiveCount": "عدد المستخدمين غير النشطين"
+    },
+    "pie": {
+      "activeLabel": "مستخدمون نشطون",
+      "inactiveLabel": "مستخدمون غير نشطين"
+    },
+    "charts": {
+      "pieTitle": "المستخدمون: نشطون مقابل غير نشطين",
+      "logins": "تسجيلات الدخول",
+      "logouts": "تسجيلات الخروج",
+      "barTitle": "اتجاهات تسجيل الدخول / تسجيل الخروج"
+    },
+    "table": {
+      "title": "سجل نشاط المستخدم",
+      "columns": {
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "registered": "مسجل",
+        "lastLogin": "آخر تسجيل دخول",
+        "logoutTime": "وقت تسجيل الخروج"
+      },
+      "noUsers": "لم يتم العثور على مستخدمين في localStorage (مفتاح: ft_users)"
+    }
+  },
   "fromFigmaToProduction": {
     "meta": {
       "title": "من Figma إلى الإنتاج — المدونة",

@@ -1771,5 +1771,35 @@
       "desc": "If you'd like help defining or implementing a design system, we offer audits and hands-on setups.",
       "cta_primary": "Request an audit"
     }
+  },
+  "adminDashboard": {
+    "title": "Admin Overview",
+    "subtitle": "Key performance metrics and user activity analysis.",
+    "stats": {
+      "totalRegistered": "Total Registered Users",
+      "activeLast30": "Active Users (Last 30 Days)",
+      "inactiveCount": "Inactive Users Count"
+    },
+    "pie": {
+      "activeLabel": "Active Users",
+      "inactiveLabel": "Inactive Users"
+    },
+    "charts": {
+      "pieTitle": "Users: Active vs Inactive",
+      "logins": "Logins",
+      "logouts": "Logouts",
+      "barTitle": "Logins / Logouts Trend"
+    },
+    "table": {
+      "title": "User Activity Log",
+      "columns": {
+        "name": "Name",
+        "email": "Email",
+        "registered": "Registered",
+        "lastLogin": "Last Login",
+        "logoutTime": "Logout Time"
+      },
+      "noUsers": "No users found in localStorage (key: ft_users)"
+    }
   }
 }
