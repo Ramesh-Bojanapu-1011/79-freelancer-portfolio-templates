@@ -1415,5 +1415,124 @@
       "desc": "Stop wasting time on styling and start delivering value. Let's build your unified UI system.",
       "cta": "Contact us"
     }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact — Enkonix Templates",
+      "description": "Get in touch for audits, implementations and design+engineering help."
+    },
+    "hero": {
+      "badge": "CONTACT",
+      "title_line1": "We'd love to hear from you",
+      "title_line2": "Questions, estimates or support — let’s talk.",
+      "desc": "Reach out for audits, bespoke implementations or help shipping production-ready UIs. Use the form to send a message or call us during business hours — we typically respond within one business day.",
+      "image_alt": "Contact illustration"
+    },
+    "actions": {
+      "send_message": "Send a message",
+      "call_us_label": "Call us:",
+      "phone": "+1 (555) 123-4567",
+      "hours": "Business hours: Mon–Fri, 9am–6pm (EST)"
+    },
+    "form": {
+      "title": "Send us a message",
+      "desc": "Tell us a bit about your project and we'll follow up with next steps.",
+      "name_label": "Name",
+      "name_placeholder": "Your full name",
+      "email_label": "Email",
+      "email_placeholder": "you@company.com",
+      "message_label": "Message",
+      "message_placeholder": "Tell us about your project, timeline and budget (optional)",
+      "newsletter_label": "Send occasional updates and resources",
+      "privacy": "All messages are private. We reply within 1 business day.",
+      "sending": "Sending...",
+      "send_button": "Send message",
+      "thanks": "Thanks — we'll be in touch!",
+      "error": "Something went wrong — try again."
+    },
+    "offices": {
+      "title": "Our offices",
+      "location1": "New York",
+      "location2": "Remote / EU",
+      "location1desc": "123 Market St, New York, NY",
+      "location2desc": "We operate remotely across EU timezones."
+    },
+    "alternate": { "title": "Prefer another way?" },
+    "faq": {
+      "title": "FAQ",
+      "items": {
+        "0": {
+          "title": "How long until you reply?",
+          "subtitle": "Response time & availability",
+          "body": "We typically respond within one business day. During busy periods we may take slightly longer — if you need urgent support please call the number above."
+        },
+        "1": {
+          "title": "Do you offer audits?",
+          "subtitle": "Design system & accessibility",
+          "body": "Yes — we provide design system and accessibility audits. Use the form to request a custom audit; include goals and the scale of your product for an accurate estimate."
+        }
+      }
+    },
+    "testimonials": {
+      "title": "What our clients say",
+      "desc": "Trusted by product teams and startups — here are a few kind words from our clients.",
+      "source": "Invoice2go",
+      "items": [
+        {
+          "name": "Alex Rivera",
+          "role": "Head of Design, Acme Co.",
+          "roleShort": "Head of Design",
+          "quote": "The team helped us ship a scalable design system faster than we expected. Their attention to detail in accessibility and performance was outstanding.",
+          "handle": "alex.rivera",
+          "date": "Nov 20, 2024",
+          "initials": "AR"
+        },
+        {
+          "name": "Maya Johnson",
+          "role": "Product Lead, Nova Labs",
+          "roleShort": "Product Lead",
+          "quote": "Great collaboration and clear documentation — the handoff to engineering was seamless and saved us weeks of rework.",
+          "handle": "maya.j",
+          "date": "Oct 2, 2024",
+          "initials": "MJ"
+        },
+        {
+          "name": "Ravi Lal",
+          "role": "CTO, BrightApps",
+          "roleShort": "CTO",
+          "quote": "They helped us launch with confidence — fast, pragmatic, and reliably communicative through the whole process.",
+          "handle": "ravi.lal",
+          "date": "Sep 12, 2024",
+          "initials": "RL"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to talk?",
+      "desc": "Book a quick call and we'll discuss your project and next steps.",
+      "book": "Book a call",
+      "email_us": "Email us"
+    },
+    "office": {
+      "title": "Office hours"
+    },
+    "map": {
+      "get_directions": "Get directions",
+      "open": "Open in Maps"
+    },
+    "subscribe": {
+      "label": "Email address",
+      "joining": "Joining...",
+      "join": "Join",
+      "title": "Stay in the loop",
+      "desc": "Occasional updates, case studies and practical design tips. We respect your privacy.",
+      "placeholder": "you@company.com",
+      "privacy": "We never share your email. Unsubscribe anytime.",
+      "subscribed": "Subscribed — check your inbox",
+      "error": "Subscription failed — try again"
+    },
+    "social": {
+      "follow": "Follow us"
+    }
   }
 }

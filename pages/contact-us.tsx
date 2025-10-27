@@ -4,6 +4,7 @@ import SiteHeadder from "@/components/SiteHeadder";
 import SiteFooter from "@/components/SiteFooter";
 import Image from "next/image";
 import { Mail, Phone, MapPin, Send, Check, ChevronDown } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ContactUs: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -80,6 +81,8 @@ const ContactUs: React.FC = () => {
     }
   };
 
+  const { t } = useTranslation();
+
   // Testimonials data (rendered with .map below)
   const testimonials: Array<{
     quote: string;
@@ -92,48 +95,42 @@ const ContactUs: React.FC = () => {
     avatar?: string;
   }> = [
     {
-      quote:
-        "The team helped us ship a scalable design system faster than we expected. Their attention to detail in accessibility and performance was outstanding.",
-      name: "Alex Rivera",
-      role: "Head of Design, Acme Co.",
-      roleShort: "Head of Design",
-      handle: "alex.rivera",
-      date: "Nov 20, 2024",
+      quote: t("contact.testimonials.items.0.quote"),
+      name: t("contact.testimonials.items.0.name"),
+      role: t("contact.testimonials.items.0.role"),
+      roleShort: t("contact.testimonials.items.0.roleShort"),
+      handle: t("contact.testimonials.items.0.handle"),
+      date: t("contact.testimonials.items.0.date"),
       avatar: "/images/avatars/alex.jpg",
-      initials: "AR",
+      initials: t("contact.testimonials.items.0.initials"),
     },
     {
-      quote:
-        "Great collaboration and clear documentation — the handoff to engineering was seamless and saved us weeks of rework.",
-      name: "Maya Johnson",
-      role: "Product Lead, Nova Labs",
-      roleShort: "Product Lead",
-      handle: "maya.j",
-      date: "Oct 2, 2024",
+      quote: t("contact.testimonials.items.1.quote"),
+      name: t("contact.testimonials.items.1.name"),
+      role: t("contact.testimonials.items.1.role"),
+      roleShort: t("contact.testimonials.items.1.roleShort"),
+      handle: t("contact.testimonials.items.1.handle"),
+      date: t("contact.testimonials.items.1.date"),
       avatar: "/images/avatars/maya.jpg",
-      initials: "MJ",
+      initials: t("contact.testimonials.items.1.initials"),
     },
     {
-      quote:
-        "They helped us launch with confidence — fast, pragmatic, and reliably communicative through the whole process.",
-      name: "Ravi Lal",
-      role: "CTO, BrightApps",
-      roleShort: "CTO",
-      handle: "ravi.lal",
-      date: "Sep 12, 2024",
+      quote: t("contact.testimonials.items.2.quote"),
+      name: t("contact.testimonials.items.2.name"),
+      role: t("contact.testimonials.items.2.role"),
+      roleShort: t("contact.testimonials.items.2.roleShort"),
+      handle: t("contact.testimonials.items.2.handle"),
+      date: t("contact.testimonials.items.2.date"),
       avatar: "/images/avatars/ravi.jpg",
-      initials: "RL",
+      initials: t("contact.testimonials.items.2.initials"),
     },
   ];
 
   return (
     <>
       <Head>
-        <title>Contact — Enkonix Templates</title>
-        <meta
-          name="description"
-          content="Get in touch for audits, implementations and design+engineering help."
-        />
+        <title>{t("contact.meta.title")}</title>
+        <meta name="description" content={t("contact.meta.description")} />
       </Head>
 
       <SiteHeadder />
@@ -146,21 +143,18 @@ const ContactUs: React.FC = () => {
               {/* left: contact text */}
               <div>
                 <span className="inline-block text-xs font-medium px-3 py-1 rounded-full bg-sky-50 text-sky-700">
-                  CONTACT
+                  {t("contact.hero.badge")}
                 </span>
                 <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900 dark:text-white">
-                  We'd love to hear from you
+                  {t("contact.hero.title_line1")}
                   <br />
                   <span className="text-sky-600">
-                    Questions, estimates or support — let’s talk.
+                    {t("contact.hero.title_line2")}
                   </span>
                 </h1>
 
                 <p className="mt-6 text-base text-slate-600 dark:text-slate-300 max-w-xl">
-                  Reach out for audits, bespoke implementations or help shipping
-                  production-ready UIs. Use the form to send a message or call
-                  us during business hours — we typically respond within one
-                  business day.
+                  {t("contact.hero.desc")}
                 </p>
 
                 <div className="mt-6 space-y-3">
@@ -168,16 +162,16 @@ const ContactUs: React.FC = () => {
                     href="#contact-form"
                     className="inline-block rounded-md bg-sky-600 px-5 py-3 text-white shadow"
                   >
-                    Send a message
+                    {t("contact.actions.send_message")}
                   </a>
                   <div className="text-sm text-slate-700 dark:text-slate-300">
-                    <strong>Call us:</strong>{" "}
+                    <strong>{t("contact.actions.call_us_label")}</strong>{" "}
                     <a className="text-sky-600" href="tel:+15551234567">
-                      +1 (555) 123-4567
+                      {t("contact.actions.phone")}
                     </a>
                   </div>
                   <div className="text-sm text-slate-500">
-                    Business hours: Mon–Fri, 9am–6pm (EST)
+                    {t("contact.actions.hours")}
                   </div>
                 </div>
               </div>
@@ -188,7 +182,7 @@ const ContactUs: React.FC = () => {
                   <div className="relative w-full h-80">
                     <img
                       src="/images/contact-illustration.jpg"
-                      alt="Contact illustration"
+                      alt={t("contact.hero.image_alt")}
                       style={{ objectFit: "cover" }}
                     />
                   </div>
@@ -205,10 +199,11 @@ const ContactUs: React.FC = () => {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 max-w-7xl   py-24 lg:py-32">
             <div>
-              <h2 className="text-2xl font-semibold">Send us a message</h2>
+              <h2 className="text-2xl font-semibold">
+                {t("contact.form.title")}
+              </h2>
               <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                Tell us a bit about your project and we'll follow up with next
-                steps.
+                {t("contact.form.desc")}
               </p>
 
               <div className="mt-6">
@@ -229,21 +224,21 @@ const ContactUs: React.FC = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <label className="block">
                           <span className="text-sm font-medium text-slate-600 dark:text-slate-300">
-                            Name
+                            {t("contact.form.name_label")}
                           </span>
                           <input
                             name="name"
                             value={formState.name}
                             onChange={handleChange}
                             required
-                            placeholder="Your full name"
+                            placeholder={t("contact.form.name_placeholder")}
                             className="mt-1 block w-full rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-sky-300 dark:focus:ring-sky-500 transition"
                           />
                         </label>
 
                         <label className="block">
                           <span className="text-sm font-medium text-slate-600 dark:text-slate-300">
-                            Email
+                            {t("contact.form.email_label")}
                           </span>
                           <input
                             name="email"
@@ -251,7 +246,7 @@ const ContactUs: React.FC = () => {
                             value={formState.email}
                             onChange={handleChange}
                             required
-                            placeholder="you@company.com"
+                            placeholder={t("contact.form.email_placeholder")}
                             className="mt-1 block w-full rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-sky-300 dark:focus:ring-sky-500 transition"
                           />
                         </label>
@@ -259,7 +254,7 @@ const ContactUs: React.FC = () => {
 
                       <label className="block">
                         <span className="text-sm font-medium text-slate-600 dark:text-slate-300">
-                          Message
+                          {t("contact.form.message_label")}
                         </span>
                         <textarea
                           name="message"
@@ -267,7 +262,7 @@ const ContactUs: React.FC = () => {
                           onChange={handleChange}
                           required
                           rows={5}
-                          placeholder="Tell us about your project, timeline and budget (optional)"
+                          placeholder={t("contact.form.message_placeholder")}
                           className="mt-1 block w-full rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-sky-300 dark:focus:ring-sky-500 transition"
                         />
                       </label>
@@ -281,12 +276,11 @@ const ContactUs: React.FC = () => {
                             onChange={handleChange}
                             className="h-4 w-4 rounded border-slate-300 text-sky-600 focus:ring-sky-500"
                           />
-                          <span>Send occasional updates and resources</span>
+                          <span>{t("contact.form.newsletter_label")}</span>
                         </label>
 
                         <div className="text-sm text-slate-500">
-                          All messages are private. We reply within 1 business
-                          day.
+                          {t("contact.form.privacy")}
                         </div>
                       </div>
 
@@ -301,19 +295,21 @@ const ContactUs: React.FC = () => {
                           disabled={status === "sending"}
                         >
                           <Send className="w-4 h-4 mr-2" />
-                          {status === "sending" ? "Sending..." : "Send message"}
+                          {status === "sending"
+                            ? t("contact.form.sending")
+                            : t("contact.form.send_button")}
                         </button>
 
                         <div aria-live="polite" className="text-sm">
                           {status === "sent" && (
                             <span className="flex items-center gap-2 text-green-600">
-                              <Check className="w-4 h-4" /> Thanks — we'll be in
-                              touch!
+                              <Check className="w-4 h-4" />{" "}
+                              {t("contact.form.thanks")}
                             </span>
                           )}
                           {status === "error" && (
                             <span className="text-sm text-red-600">
-                              Something went wrong — try again.
+                              {t("contact.form.error")}
                             </span>
                           )}
                         </div>
@@ -326,16 +322,20 @@ const ContactUs: React.FC = () => {
 
             {/* 3) Offices */}
             <div>
-              <h3 className="text-lg font-semibold">Our offices</h3>
+              <h3 className="text-lg font-semibold">
+                {t("contact.offices.title")}
+              </h3>
               <ul className="mt-4 space-y-4">
                 <li className="flex gap-3 items-start">
                   <div className="p-2 bg-sky-100 text-sky-700 rounded">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="font-medium">New York</div>
+                    <div className="font-medium">
+                      {t("contact.offices.location1")}
+                    </div>
                     <div className="text-sm text-slate-500">
-                      123 Market St, New York, NY
+                      {t("contact.offices.location1desc")}
                     </div>
                   </div>
                 </li>
@@ -344,9 +344,11 @@ const ContactUs: React.FC = () => {
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="font-medium">Remote / EU</div>
+                    <div className="font-medium">
+                      {t("contact.offices.location2")}
+                    </div>
                     <div className="text-sm text-slate-500">
-                      We operate remotely across EU timezones
+                      {t("contact.offices.location2desc")}
                     </div>
                   </div>
                 </li>
@@ -354,7 +356,9 @@ const ContactUs: React.FC = () => {
 
               {/* 4) Contact methods */}
               <div className="mt-8">
-                <h4 className="text-sm font-semibold">Prefer another way?</h4>
+                <h4 className="text-sm font-semibold">
+                  {t("contact.alternate.title")}
+                </h4>
                 <div className="mt-3 space-y-3">
                   <a
                     href="mailto:hello@example.com"
@@ -377,21 +381,23 @@ const ContactUs: React.FC = () => {
         {/* 5) FAQ - controlled accordion (try new) */}
         <section className="mb-10 flex justify-center w-screen items-center bg-white dark:bg-slate-900">
           <div className="w-full max-w-3xl px-4">
-            <h3 className="text-2xl font-semibold text-center">FAQ</h3>
+            <h3 className="text-2xl font-semibold text-center">
+              {t("contact.faq.title")}
+            </h3>
 
             {/* Controlled accordion implementation */}
             <Accordion
               faqs={[
                 {
-                  title: "How long until you reply?",
-                  subtitle: "Response time & availability",
-                  body: `We typically respond within one business day. During busy periods we may take slightly longer — if you need urgent support please call the number above.`,
+                  title: t("contact.faq.items.0.title"),
+                  subtitle: t("contact.faq.items.0.subtitle"),
+                  body: t("contact.faq.items.0.body"),
                   icon: "pin",
                 },
                 {
-                  title: "Do you offer audits?",
-                  subtitle: "Design system & accessibility",
-                  body: `Yes — we provide design system and accessibility audits. Use the form to request a custom audit; include goals and the scale of your product for an accurate estimate.`,
+                  title: t("contact.faq.items.1.title"),
+                  subtitle: t("contact.faq.items.1.subtitle"),
+                  body: t("contact.faq.items.1.body"),
                   icon: "check",
                 },
               ]}
@@ -403,25 +409,24 @@ const ContactUs: React.FC = () => {
         <section className="mb-10 flex justify-center w-screen items-center  ">
           <div className="w-full max-w-7xl px-6 lg:px-8 py-12">
             <h3 className="text-2xl font-semibold text-center">
-              What our clients say
+              {t("contact.testimonials.title")}
             </h3>
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 text-center max-w-2xl mx-auto">
-              Trusted by product teams and startups — here are a few kind words
-              from our clients.
+              {t("contact.testimonials.desc")}
             </p>
             <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {testimonials.map((t, i) => (
+              {testimonials.map((test, i) => (
                 <figure
                   key={i}
                   className="relative pt-6 pb-6 px-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-lg  "
                 >
                   {/* overlapping avatar */}
                   <div className="absolute -top-6 left-6">
-                    {t.avatar ? (
+                    {test.avatar ? (
                       <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-white dark:ring-slate-900 shadow">
                         <img
-                          src={t.avatar}
-                          alt={t.name}
+                          src={test.avatar}
+                          alt={test.name}
                           width={48}
                           height={48}
                           className=" object-cover object-center"
@@ -429,7 +434,7 @@ const ContactUs: React.FC = () => {
                       </div>
                     ) : (
                       <div className="w-12 h-12 rounded-full bg-sky-50 text-sky-600 flex items-center justify-center font-semibold ring-2 ring-white dark:ring-slate-900 shadow">
-                        {t.initials}
+                        {test.initials}
                       </div>
                     )}
                   </div>
@@ -437,22 +442,22 @@ const ContactUs: React.FC = () => {
                   <div className="ml-0 pl-16">
                     <div className="flex items-center gap-3">
                       <div className="text-sm font-medium text-slate-900 dark:text-slate-100">
-                        {t.name}
+                        {test.name}
                       </div>
-                      {t.handle && (
+                      {test.handle && (
                         <div className="text-xs text-slate-500">
-                          @{t.handle}
+                          @{test.handle}
                         </div>
                       )}
-                      {t.roleShort && (
+                      {test.roleShort && (
                         <span className="ml-auto text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded-full text-slate-600">
-                          {t.roleShort}
+                          {test.roleShort}
                         </span>
                       )}
                     </div>
 
                     <blockquote className="mt-3 text-sm italic text-slate-700 dark:text-slate-200 leading-relaxed">
-                      {t.quote}
+                      {test.quote}
                     </blockquote>
 
                     <div className="mt-4 flex items-center justify-between text-xs text-slate-400">
@@ -460,7 +465,7 @@ const ContactUs: React.FC = () => {
                         <Send className="w-4 h-4 text-slate-400" />
                         <span className="text-slate-500">Invoice2go</span>
                       </div>
-                      <div>{t.date}</div>
+                      <div>{test.date}</div>
                     </div>
                   </div>
                 </figure>
@@ -473,9 +478,11 @@ const ContactUs: React.FC = () => {
         <section className="rounded-lg p-6 bg-linear-to-r from-sky-50 to-white dark:from-slate-800 dark:to-slate-900 border border-slate-100 dark:border-slate-700">
           <div className="md:flex md:items-center md:justify-between md:gap-6">
             <div className="md:flex-1">
-              <h4 className="text-lg font-semibold">Ready to talk?</h4>
+              <h4 className="text-lg font-semibold">
+                {t("contact.cta.title")}
+              </h4>
               <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                Book a quick call and we'll discuss your project and next steps.
+                {t("contact.cta.desc")}
               </p>
             </div>
             <div className="mt-4 md:mt-0 flex gap-3">
@@ -483,13 +490,13 @@ const ContactUs: React.FC = () => {
                 href="#contact-form"
                 className="inline-flex items-center gap-2 rounded-md bg-sky-600 px-4 py-2 text-white shadow-sm hover:bg-sky-700 transition"
               >
-                <Send className="w-4 h-4" /> Book a call
+                <Send className="w-4 h-4" /> {t("contact.cta.book")}
               </a>
               <a
                 href="mailto:hello@example.com"
                 className="inline-flex items-center gap-2 rounded-md border border-slate-200 dark:border-slate-800 px-4 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition"
               >
-                <Mail className="w-4 h-4" /> Email us
+                <Mail className="w-4 h-4" /> {t("contact.cta.email_us")}
               </a>
             </div>
           </div>
@@ -508,9 +515,11 @@ const ContactUs: React.FC = () => {
 
             <div className="h-48 rounded border border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 flex flex-col justify-between">
               <div>
-                <div className="text-sm font-medium">Office hours</div>
+                <div className="text-sm font-medium">
+                  {t("contact.office.title")}
+                </div>
                 <div className="mt-2 text-sm text-slate-600">
-                  Mon–Fri, 9am–6pm (EST)
+                  {t("contact.actions.hours")}
                 </div>
                 <div className="mt-3">
                   <a href="tel:+15551234567" className="text-sky-600">
@@ -526,7 +535,7 @@ const ContactUs: React.FC = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-md bg-white border border-slate-200 px-3 py-1 text-sm text-slate-700 hover:bg-slate-50 transition"
                 >
-                  Get directions
+                  {t("contact.map.get_directions")}
                 </a>
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=123+Market+St+New+York+NY"
@@ -534,7 +543,7 @@ const ContactUs: React.FC = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-md bg-sky-600 px-3 py-1 text-sm text-white hover:bg-sky-700 transition"
                 >
-                  Open in Maps
+                  {t("contact.map.open")}
                 </a>
               </div>
             </div>
@@ -548,11 +557,10 @@ const ContactUs: React.FC = () => {
               <div className="flex flex-col md:flex-row items-center justify-between gap-4 p-6 md:p-8">
                 <div className="md:flex-1">
                   <h4 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
-                    Stay in the loop
+                    {t("contact.subscribe.title")}
                   </h4>
                   <p className="mt-1 text-sm text-slate-700 dark:text-slate-300">
-                    Occasional updates, case studies and practical design tips.
-                    We respect your privacy.
+                    {t("contact.subscribe.desc")}
                   </p>
                 </div>
 
@@ -569,7 +577,7 @@ const ContactUs: React.FC = () => {
                       type="email"
                       value={subscriptionEmail}
                       onChange={(e) => setSubscriptionEmail(e.target.value)}
-                      placeholder="you@company.com"
+                      placeholder={t("contact.subscribe.placeholder")}
                       className="flex-1 px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-300 dark:focus:ring-sky-500"
                     />
                     <button
@@ -583,7 +591,9 @@ const ContactUs: React.FC = () => {
                     >
                       <Mail className="w-4 h-4" />
                       <span>
-                        {subStatus === "sending" ? "Joining..." : "Join"}
+                        {subStatus === "sending"
+                          ? t("contact.subscribe.joining")
+                          : t("contact.subscribe.join")}
                       </span>
                     </button>
                   </form>
@@ -591,7 +601,7 @@ const ContactUs: React.FC = () => {
 
                 <div className="flex items-center gap-2 md:pl-6">
                   <span className="hidden md:inline text-sm text-slate-500">
-                    Follow us
+                    {t("contact.social.follow")}
                   </span>
                   <a
                     href="https://twitter.com"
@@ -673,18 +683,18 @@ const ContactUs: React.FC = () => {
 
               <div className="px-6 pb-6 md:px-8 md:pb-8 flex items-center justify-between">
                 <div className="text-xs text-slate-500">
-                  We never share your email. Unsubscribe anytime.
+                  {t("contact.subscribe.privacy")}
                 </div>
                 <div aria-live="polite" className="text-sm">
                   {subStatus === "sent" && (
                     <span className="inline-flex items-center gap-2 text-green-600">
-                      <Check className="w-4 h-4" /> Subscribed — check your
-                      inbox
+                      <Check className="w-4 h-4" />{" "}
+                      {t("contact.subscribe.subscribed")}
                     </span>
                   )}
                   {subStatus === "error" && (
                     <span className="text-red-600">
-                      Subscription failed — try again
+                      {t("contact.subscribe.error")}
                     </span>
                   )}
                 </div>

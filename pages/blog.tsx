@@ -205,7 +205,9 @@ const BlogPage: React.FC = () => {
                     <div className="h-10 w-10 rounded-full bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center font-semibold text-sky-600">
                       {f.id}
                     </div>
-                    <div className="text-xs text-slate-500">{t("blog.features.badge")} {f.id}</div>
+                    <div className="text-xs text-slate-500">
+                      {t("blog.features.badge")} {f.id}
+                    </div>
                   </div>
                 </div>
               ))}
