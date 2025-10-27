@@ -74,9 +74,11 @@ const DesignSystemsThatScale: React.FC = () => {
                       {t("designSystemsThatScale.author.name")}
                     </div>
                     <div className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-2">
-                      <Calendar className="w-3.5 h-3.5" /> {t("designSystemsThatScale.date")}
+                      <Calendar className="w-3.5 h-3.5" />{" "}
+                      {t("designSystemsThatScale.date")}
                       <span className="inline-flex items-center gap-1">
-                        <Tag className="w-3.5 h-3.5" /> {t("designSystemsThatScale.tagsList")}
+                        <Tag className="w-3.5 h-3.5" />{" "}
+                        {t("designSystemsThatScale.tagsList")}
                       </span>
                     </div>
                   </div>
@@ -150,7 +152,7 @@ const DesignSystemsThatScale: React.FC = () => {
               <figure className="my-8 rounded-lg overflow-hidden shadow">
                 <img
                   src="/images/course-illustration-2.jpg"
-                    alt={t("designSystemsThatScale.imageAlt2")}
+                  alt={t("designSystemsThatScale.imageAlt2")}
                   width={1200}
                   height={400}
                   className="w-full h-56 object-cover"
@@ -198,7 +200,9 @@ const DesignSystemsThatScale: React.FC = () => {
             <aside className="mt-8 lg:mt-0 lg:col-span-1">
               <div className="sticky top-24 space-y-6">
                 <div className="p-4 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-lg shadow-sm">
-                  <h5 className="text-sm font-semibold mb-2">{t("designSystemsThatScale.aside.onThisPage")}</h5>
+                  <h5 className="text-sm font-semibold mb-2">
+                    {t("designSystemsThatScale.aside.onThisPage")}
+                  </h5>
                   <nav className="text-sm space-y-2">
                     <a
                       href="#strategy"
@@ -246,7 +250,9 @@ const DesignSystemsThatScale: React.FC = () => {
                 </div>
 
                 <div className="p-4 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-lg shadow-sm">
-                  <h5 className="text-sm font-semibold mb-3">{t("designSystemsThatScale.aside.relatedPosts")}</h5>
+                  <h5 className="text-sm font-semibold mb-3">
+                    {t("designSystemsThatScale.aside.relatedPosts")}
+                  </h5>
                   <div className="space-y-3">
                     <Link
                       href="/from-figma-to-production"

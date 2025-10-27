@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
@@ -5,15 +7,18 @@ import Image from "next/image";
 import SiteHeadder from "@/components/SiteHeadder";
 import SiteFooter from "@/components/SiteFooter";
 import { Calendar, User, Tag, Share2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const FromFigmaToProduction: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Head>
-        <title>From Figma to Production — Blog</title>
+        <title>{t("fromFigmaToProduction.meta.title")}</title>
         <meta
           name="description"
-          content="Practical steps to convert Figma designs into reusable components, tokens and shipped production UI."
+          content={t("fromFigmaToProduction.meta.description")}
         />
       </Head>
 
@@ -30,30 +35,31 @@ const FromFigmaToProduction: React.FC = () => {
                 aria-hidden
               />
               <p className="text-sm text-sky-600 font-medium">
-                Guides · Design to code
+                {t("fromFigmaToProduction.hero.badge")}
               </p>
               <h1 className="text-4xl md:text-5xl font-extrabold mt-3 text-slate-900 dark:text-white">
-                From Figma to Production
+                {t("fromFigmaToProduction.hero.title")}
               </h1>
               <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-2xl">
-                Practical steps to convert Figma designs into reusable
-                components, tokens and shipped production UI.
+                {t("fromFigmaToProduction.hero.subtitle")}
               </p>
 
               {/* tag chips and share */}
               <div className="mt-4 flex items-center gap-3">
                 <div className="flex items-center gap-2">
                   <span className="text-xs inline-flex items-center px-2.5 py-1 rounded-full bg-sky-100 text-sky-700">
-                    Figma
+                    {t("fromFigmaToProduction.tags.figma")}
                   </span>
                   <span className="text-xs inline-flex items-center px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                    Components
+                    {t("fromFigmaToProduction.tags.components")}
                   </span>
                 </div>
                 <div className="ml-auto">
                   <button className="inline-flex items-center gap-2 px-3 py-1 text-sm rounded-md bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border border-slate-100 dark:border-slate-700">
                     <Share2 className="w-4 h-4 text-slate-700 dark:text-slate-300" />{" "}
-                    <span className="text-xs">Share</span>
+                    <span className="text-xs">
+                      {t("fromFigmaToProduction.share")}
+                    </span>
                   </button>
                 </div>
               </div>
@@ -65,12 +71,14 @@ const FromFigmaToProduction: React.FC = () => {
                   </div>
                   <div className="text-sm">
                     <div className="font-medium text-slate-900 dark:text-white">
-                      Alex Morales
+                      {t("fromFigmaToProduction.author.name")}
                     </div>
                     <div className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-2">
-                      <Calendar className="w-3.5 h-3.5" /> Oct 26, 2025 ·{" "}
+                      <Calendar className="w-3.5 h-3.5" />{" "}
+                      {t("fromFigmaToProduction.date")}
                       <span className="inline-flex items-center gap-1">
-                        <Tag className="w-3.5 h-3.5" /> Design, Engineering
+                        <Tag className="w-3.5 h-3.5" />{" "}
+                        {t("fromFigmaToProduction.tagsList")}
                       </span>
                     </div>
                   </div>
@@ -78,10 +86,10 @@ const FromFigmaToProduction: React.FC = () => {
 
                 <div className="ml-auto flex items-center gap-2">
                   <span className="inline-block px-3 py-1 rounded-full bg-sky-100 text-sky-700 text-xs font-medium">
-                    Reading: 6 min
+                    {t("fromFigmaToProduction.reading", { time: "6 min" })}
                   </span>
                   <span className="inline-block px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs">
-                    Level: Intermediate
+                    {t("fromFigmaToProduction.level")}
                   </span>
                 </div>
               </div>
@@ -93,13 +101,13 @@ const FromFigmaToProduction: React.FC = () => {
             <div className="relative overflow-hidden">
               <img
                 src="/images/course-illustration-1.jpg"
-                alt="Design systems illustration"
+                alt={t("fromFigmaToProduction.imageAlt1")}
                 width={1200}
                 height={450}
                 className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <figcaption className="absolute bottom-3 left-3 text-xs text-white bg-black bg-opacity-40 px-2 py-1 rounded">
-                Figma → Production
+                {t("fromFigmaToProduction.figcaption1")}
               </figcaption>
             </div>
           </figure>
@@ -108,95 +116,74 @@ const FromFigmaToProduction: React.FC = () => {
           <div className="lg:grid lg:grid-cols-3 lg:gap-10">
             <section className="mx-auto prose prose-slate dark:prose-invert lg:prose-lg text-slate-700 dark:text-slate-200 lg:col-span-2">
               <p className="lead first-letter:text-6xl first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:text-sky-600">
-                Turning designs into resilient, reusable UI takes more than
-                exporting assets. This guide walks through handoff, tokens,
-                component APIs, visual testing and deployment patterns that
-                shorten the path from Figma to production.
+                {t("fromFigmaToProduction.lead")}
               </p>
 
-              <h2 id="handoff">Design handoff & tokens</h2>
-              <p>
-                Start with an explicit handoff: export tokens for colors,
-                spacing and typography and provide clear usage guidelines. A
-                shared token set keeps design and engineering aligned and makes
-                theming and platform parity easier.
-              </p>
+              <h2 id="handoff">{t("fromFigmaToProduction.handoff.title")}</h2>
+              <p>{t("fromFigmaToProduction.handoff.body")}</p>
 
-              <h3 id="components">Component APIs & patterns</h3>
-              <p>
-                Build components with a small, stable public API. Favor
-                composition over many boolean props, document expected
-                interactions, and expose accessibility hooks (aria-labels,
-                keyboard handling) as part of the contract.
-              </p>
+              <h3 id="components">
+                {t("fromFigmaToProduction.components.title")}
+              </h3>
+              <p>{t("fromFigmaToProduction.components.body")}</p>
 
               <blockquote className="mt-6 border-l-4 border-sky-300 bg-sky-50 dark:bg-slate-800 p-4 rounded">
                 <p className="italic text-slate-700 dark:text-slate-300">
-                  "Treat components as the contract between designers and
-                  engineers — stable APIs reduce friction and speed up
-                  delivery."
+                  {t("fromFigmaToProduction.quote")}
                 </p>
               </blockquote>
 
-              <h3 id="visual-testing">Visual testing & QA</h3>
-              <p>
-                Integrate visual regression testing (Chromatic, Percy) and
-                storybook-driven development so designers can review and sign
-                off on components before they land in product pages.
-              </p>
+              <h3 id="visual-testing">
+                {t("fromFigmaToProduction.visualTesting.title")}
+              </h3>
+              <p>{t("fromFigmaToProduction.visualTesting.body")}</p>
 
               <figure className="my-8 rounded-lg overflow-hidden shadow">
                 <img
                   src="/images/course-illustration-2.jpg"
-                  alt="Figma to code"
+                  alt={t("fromFigmaToProduction.imageAlt2")}
                   width={1200}
                   height={400}
                   className="w-full h-56 object-cover"
                 />
               </figure>
 
-              <h3 id="ci">CI/CD & preview environments</h3>
-              <p>
-                Automate builds and tests in CI. Use per-PR preview deploys and
-                visual diffs so reviewers see actual rendered pages. Gate merges
-                on passing checks to reduce regressions.
-              </p>
+              <h3 id="ci">{t("fromFigmaToProduction.ci.title")}</h3>
+              <p>{t("fromFigmaToProduction.ci.body")}</p>
 
-              <h3 id="performance">Performance & accessibility</h3>
-              <p>
-                Optimize images, fonts and critical rendering paths. Run
-                automated accessibility checks and manual spot checks for key
-                flows to catch issues early.
-              </p>
+              <h3 id="performance">
+                {t("fromFigmaToProduction.performance.title")}
+              </h3>
+              <p>{t("fromFigmaToProduction.performance.body")}</p>
 
-              <h3 id="checklist">Production checklist</h3>
+              <h3 id="checklist">
+                {t("fromFigmaToProduction.checklist.title")}
+              </h3>
               <ol>
-                <li>Publish tokens and ensure platform parity.</li>
-                <li>Cover core components with visual and unit tests.</li>
-                <li>Run accessibility and performance preflight checks.</li>
-                <li>Deploy preview and validate critical user journeys.</li>
+                <li>{t("fromFigmaToProduction.checklist.item1")}</li>
+                <li>{t("fromFigmaToProduction.checklist.item2")}</li>
+                <li>{t("fromFigmaToProduction.checklist.item3")}</li>
+                <li>{t("fromFigmaToProduction.checklist.item4")}</li>
               </ol>
 
-              <h3 id="conclusion">Conclusion</h3>
-              <p>
-                A repeatable design-to-code pipeline reduces cycle time and
-                improves quality. Standardize tokens, component contracts and
-                automated testing so teams can deliver UI faster and with
-                confidence.
-              </p>
+              <h3 id="conclusion">
+                {t("fromFigmaToProduction.conclusion.title")}
+              </h3>
+              <p>{t("fromFigmaToProduction.conclusion.body")}</p>
 
               <div className="mt-10 p-6 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-100 dark:border-slate-700">
-                <h4 className="font-semibold">Ready to start?</h4>
+                <h4 className="font-semibold">
+                  {t("fromFigmaToProduction.cta.title")}
+                </h4>
                 <p className="text-sm text-slate-600 dark:text-slate-300">
-                  If you'd like help defining or implementing a design system,
-                  we offer audits and hands-on setups.
+                  {t("fromFigmaToProduction.cta.desc")}
                 </p>
                 <div className="mt-4">
                   <Link
                     href="/contact-us"
                     className="inline-block rounded-md bg-sky-600 px-4 py-2 text-white"
                   >
-                    Request an audit
+                    {t("fromFigmaToProduction.cta.cta_primary")}
                   </Link>
                 </div>
               </div>
@@ -205,67 +192,71 @@ const FromFigmaToProduction: React.FC = () => {
             <aside className="mt-8 lg:mt-0 lg:col-span-1">
               <div className="sticky top-24 space-y-6">
                 <div className="p-4 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-lg shadow-sm">
-                  <h5 className="text-sm font-semibold mb-2">On this page</h5>
+                  <h5 className="text-sm font-semibold mb-2">
+                    {t("fromFigmaToProduction.aside.onThisPage")}
+                  </h5>
                   <nav className="text-sm space-y-2">
                     <a
                       href="#handoff"
                       className="block text-slate-700 dark:text-slate-300 hover:text-sky-600"
                     >
-                      Handoff
+                      {t("fromFigmaToProduction.aside.nav.handoff")}
                     </a>
                     <a
                       href="#components"
                       className="block text-slate-700 dark:text-slate-300 hover:text-sky-600"
                     >
-                      Components
+                      {t("fromFigmaToProduction.aside.nav.components")}
                     </a>
                     <a
                       href="#visual-testing"
                       className="block text-slate-700 dark:text-slate-300 hover:text-sky-600"
                     >
-                      Visual testing
+                      {t("fromFigmaToProduction.aside.nav.visualTesting")}
                     </a>
                     <a
                       href="#ci"
                       className="block text-slate-700 dark:text-slate-300 hover:text-sky-600"
                     >
-                      CI / Preview
+                      {t("fromFigmaToProduction.aside.nav.ci")}
                     </a>
                     <a
                       href="#performance"
                       className="block text-slate-700 dark:text-slate-300 hover:text-sky-600"
                     >
-                      Performance
+                      {t("fromFigmaToProduction.aside.nav.performance")}
                     </a>
                     <a
                       href="#checklist"
                       className="block text-slate-700 dark:text-slate-300 hover:text-sky-600"
                     >
-                      Checklist
+                      {t("fromFigmaToProduction.aside.nav.checklist")}
                     </a>
                     <a
                       href="#conclusion"
                       className="block text-slate-700 dark:text-slate-300 hover:text-sky-600"
                     >
-                      Conclusion
+                      {t("fromFigmaToProduction.aside.nav.conclusion")}
                     </a>
                   </nav>
                 </div>
 
                 <div className="p-4 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-lg shadow-sm">
-                  <h5 className="text-sm font-semibold mb-3">Related posts</h5>
+                  <h5 className="text-sm font-semibold mb-3">
+                    {t("fromFigmaToProduction.aside.relatedPosts")}
+                  </h5>
                   <div className="space-y-3">
                     <Link
                       href="/launching-with-confidence"
                       className="block text-sm text-slate-700 dark:text-slate-300 hover:text-sky-600"
                     >
-                      Launching with confidence
+                      {t("fromFigmaToProduction.related.launching")}
                     </Link>
                     <Link
                       href="/design-systems-that-scale"
                       className="block text-sm text-slate-700 dark:text-slate-300 hover:text-sky-600"
                     >
-                      Design systems that scale
+                      {t("fromFigmaToProduction.related.designSystems")}
                     </Link>
                   </div>
                 </div>

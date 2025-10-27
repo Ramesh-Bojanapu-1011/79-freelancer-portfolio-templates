@@ -1609,5 +1609,81 @@
       "desc": "If you'd like help defining or implementing a design system, we offer audits and hands-on setups.",
       "cta_primary": "Request an audit"
     }
+  },
+  "fromFigmaToProduction": {
+    "meta": {
+      "title": "From Figma to Production — Blog",
+      "description": "Practical steps to convert Figma designs into reusable components, tokens and shipped production UI."
+    },
+    "hero": {
+      "badge": "Guides · Design to code",
+      "title": "From Figma to Production",
+      "subtitle": "Practical steps to convert Figma designs into reusable components, tokens and shipped production UI."
+    },
+    "tags": { "figma": "Figma", "components": "Components" },
+    "share": "Share",
+    "author": { "name": "Alex Morales" },
+    "date": "Oct 26, 2025 ·",
+    "tagsList": "Design, Engineering",
+    "aside": {
+      "onThisPage": "On this page",
+      "nav": {
+        "handoff": "Handoff",
+        "components": "Components",
+        "visualTesting": "Visual testing",
+        "ci": "CI / Preview",
+        "performance": "Performance",
+        "checklist": "Checklist",
+        "conclusion": "Conclusion"
+      },
+      "relatedPosts": "Related posts"
+    },
+    "related": {
+      "launching": "Launching with confidence",
+      "designSystems": "Design systems that scale"
+    },
+    "reading": "Reading: {{time}}",
+    "level": "Level: Intermediate",
+    "imageAlt1": "Design systems illustration",
+    "figcaption1": "Figma → Production",
+    "imageAlt2": "Figma to code",
+    "lead": "Turning designs into resilient, reusable UI takes more than exporting assets. This guide walks through handoff, tokens, component APIs, visual testing and deployment patterns that shorten the path from Figma to production.",
+    "handoff": {
+      "title": "Design handoff & tokens",
+      "body": "Start with an explicit handoff: export tokens for colors, spacing and typography and provide clear usage guidelines. A shared token set keeps design and engineering aligned and makes theming and platform parity easier."
+    },
+    "components": {
+      "title": "Component APIs & patterns",
+      "body": "Build components with a small, stable public API. Favor composition over many boolean props, document expected interactions, and expose accessibility hooks (aria-labels, keyboard handling) as part of the contract."
+    },
+    "quote": "Treat components as the contract between designers and engineers — stable APIs reduce friction and speed up delivery.",
+    "visualTesting": {
+      "title": "Visual testing & QA",
+      "body": "Integrate visual regression testing (Chromatic, Percy) and storybook-driven development so designers can review and sign off on components before they land in product pages."
+    },
+    "ci": {
+      "title": "CI/CD & preview environments",
+      "body": "Automate builds and tests in CI. Use per-PR preview deploys and visual diffs so reviewers see actual rendered pages. Gate merges on passing checks to reduce regressions."
+    },
+    "performance": {
+      "title": "Performance & accessibility",
+      "body": "Optimize images, fonts and critical rendering paths. Run automated accessibility checks and manual spot checks for key flows to catch issues early."
+    },
+    "checklist": {
+      "title": "Production checklist",
+      "item1": "Publish tokens and ensure platform parity.",
+      "item2": "Cover core components with visual and unit tests.",
+      "item3": "Run accessibility and performance preflight checks.",
+      "item4": "Deploy preview and validate critical user journeys."
+    },
+    "conclusion": {
+      "title": "Conclusion",
+      "body": "A repeatable design-to-code pipeline reduces cycle time and improves quality. Standardize tokens, component contracts and automated testing so teams can deliver UI faster and with confidence."
+    },
+    "cta": {
+      "title": "Ready to start?",
+      "desc": "If you'd like help defining or implementing a design system, we offer audits and hands-on setups.",
+      "cta_primary": "Request an audit"
+    }
   }
 }
