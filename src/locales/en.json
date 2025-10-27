@@ -1339,5 +1339,81 @@
       "button": "Book Free Consultation",
       "title_short": "Ready to Ship Faster?"
     }
+  },
+  "blog": {
+    "meta": {
+      "title": "Blog — Freelancer Templates",
+      "description": "Articles, guides and case studies about design, development and launching beautiful portfolios."
+    },
+    "hero": {
+      "title": "Insights, tips and case studies",
+      "desc": "Practical articles about design systems, performance, templates and launching better portfolios.",
+      "cta_work": "Work with us",
+      "cta_browse": "Browse latest"
+    },
+    "trending": {
+      "title": "Trending Now",
+      "desc": "Popular reads chosen by our community — quick, practical and actionable."
+    },
+    "posts": {
+      "1": {
+        "title": "Design systems that scale",
+        "excerpt": "How to build a maintainable design system for fast-moving teams."
+      },
+      "2": {
+        "title": "Launching with confidence",
+        "excerpt": "A checklist for launching sites: performance, accessibility and analytics."
+      },
+      "3": {
+        "title": "From Figma to Production",
+        "excerpt": "Practical steps to convert designs into reusable components and pages."
+      }
+    },
+    "cta": {
+      "read_article": "Read article →"
+    },
+    "advantages": {
+      "title": "Why read our guides",
+      "desc": "Short, focused guides that help you ship better products faster.",
+      "cta": "Get started",
+      "items": {
+        "1": {
+          "title": "Relevant skill set",
+          "desc": "Practical, role-specific skills you can apply immediately."
+        },
+        "2": {
+          "title": "Growth mindset",
+          "desc": "Continuous feedback and iterative learning to level up faster."
+        }
+      }
+    },
+    "features": {
+      "badge": "FEATURES",
+      "title": "Our Features",
+      "desc": "Core features we put into every template and project — built for speed, polish and reliability.",
+      "items": {
+        "1": {
+          "title": "Perfect UI Design",
+          "desc": "Design systems and components that look great and scale across projects."
+        },
+        "2": {
+          "title": "Great CSS Animation",
+          "desc": "Subtle, performant animations that bring polish without hurting performance."
+        },
+        "3": {
+          "title": "Fully Secured",
+          "desc": "Best-practice security defaults and deployment checks so you ship safely."
+        }
+      }
+    },
+    "clients": {
+      "title": "Meet our clients",
+      "desc": "Trusted by startups and established teams — we help clients ship beautiful, high-performing portfolios and sites."
+    },
+    "final": {
+      "title": "Ready to Ship Faster?",
+      "desc": "Stop wasting time on styling and start delivering value. Let's build your unified UI system.",
+      "cta": "Contact us"
+    }
   }
 }
