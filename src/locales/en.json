@@ -1534,5 +1534,80 @@
     "social": {
       "follow": "Follow us"
     }
+  },
+  "designSystemsThatScale": {
+    "hero": {
+      "badge": "Guides · Design systems",
+      "title": "Design systems that scale",
+      "subtitle": "Practical patterns, governance and tooling to help teams design and ship consistent interfaces across products and time."
+    },
+    "tags": {
+      "design": "Design",
+      "ui": "UI"
+    },
+    "meta": {
+      "title": "Design systems that scale — Blog",
+      "description": "How to build a maintainable design system for fast-moving teams."
+    },
+    "imageAlt1": "Design systems illustration",
+    "figcaption1": "Illustration: design systems",
+    "imageAlt2": "Figma to code",
+    "date": "Sep 10, 2025 ·",
+    "tagsList": "Design, UI",
+    "aside": {
+      "onThisPage": "On this page",
+      "relatedPosts": "Related posts"
+    },
+    "related": {
+      "fromFigma": "From Figma to Production",
+      "launching": "Launching with confidence"
+    },
+    "share": "Share",
+    "author": {
+      "name": "Alex Morales"
+    },
+    "reading": "Reading: {{time}}",
+    "level": "Level: Intermediate",
+    "lead": "Design systems are more than a collection of components — they are a set of principles, decisions and processes that help teams ship reliable products faster. In this article we’ll break down the key parts and give you a roadmap to scale.",
+    "strategy": {
+      "title": "Start with a clear strategy",
+      "body": "Before you design atoms and molecules, align on the problems you're solving. Define the scope, governance model, and who is accountable for updates. A lightweight living document works better than an enormous spec that no one reads."
+    },
+    "tokens": {
+      "title": "Design tokens and theming",
+      "body": "Use tokens for colors, spacing and typography to keep a single source of truth. Tokens make it easy to support themes, accessibility modes and platform differences without duplicating effort."
+    },
+    "quote": "Treat your design system like a product: version it, ship releases, and collect feedback from consumers.",
+    "componentApi": {
+      "title": "Component API and documentation",
+      "body": "Create components with clear props and predictable behaviors. Good docs include usage patterns, dos & don'ts, and code examples that make adoption trivial for engineers and designers."
+    },
+    "checklist": {
+      "title": "Quick checklist",
+      "item1": "Define a minimal set of public props.",
+      "item2": "Provide visual examples for states (hover, active, disabled).",
+      "item3": "Document accessibility concerns and keyboard interactions.",
+      "publish1": "Document system purpose and owners.",
+      "publish2": "Publish tokens and ensure platform parity.",
+      "publish3": "Provide ready-to-use examples and code snippets.",
+      "publish4": "Automate visual regression testing."
+    },
+    "workflows": {
+      "title": "Cross-team workflows",
+      "body": "Successful systems include clear contribution paths: how designers propose tokens, how engineers release changes, and how product teams request exceptions. Use automation (linting,visual tests) to reduce friction."
+    },
+    "governance": {
+      "title": "Governance & scaling",
+      "body": "As usage grows, adopt a release cadence and a changelog. Consider an internal registry (npm or a repository) for components and tokens so teams can depend on specific versions."
+    },
+    "conclusion": {
+      "title": "Conclusion",
+      "body": "Building a scalable design system is a long-term investment. Start small, prioritize adoption, and iterate. With governance, tooling and clear docs, you’ll see faster, more consistent deliveries across teams."
+    },
+    "cta": {
+      "title": "Ready to start?",
+      "desc": "If you'd like help defining or implementing a design system, we offer audits and hands-on setups.",
+      "cta_primary": "Request an audit"
+    }
   }
 }
