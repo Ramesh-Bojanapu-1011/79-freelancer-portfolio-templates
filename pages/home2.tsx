@@ -30,18 +30,21 @@ const Home2 = () => {
       name: t("home2.testimonials.items.0.name"),
       title: t("home2.testimonials.items.0.title"),
       rating: 5,
+      img: "https://i.pravatar.cc/100?img=32",
     },
     {
       quote: t("home2.testimonials.items.1.quote"),
       name: t("home2.testimonials.items.1.name"),
       title: t("home2.testimonials.items.1.title"),
       rating: 5,
+      img: " https://i.pravatar.cc/100?img=12",
     },
     {
       quote: t("home2.testimonials.items.2.quote"),
       name: t("home2.testimonials.items.2.name"),
       title: t("home2.testimonials.items.2.title"),
       rating: 4,
+      img: " https://i.pravatar.cc/100?img=5",
     },
   ];
 
@@ -159,7 +162,7 @@ const Home2 = () => {
               >
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5">
                   <img
-                    src="https://i.postimg.cc/4d2j6w1y/portfolio-sample.jpg"
+                    src="https://i.pinimg.com/736x/2e/39/5b/2e395b1a132ee54a7a11ea79c9c4ee86.jpg"
                     alt={t("home2.hero.imageAlt")}
                     width={900}
                     height={900}
@@ -180,7 +183,7 @@ const Home2 = () => {
                 <div className="absolute -left-8 -bottom-8 w-40 h-40 rounded-full bg-indigo-100 dark:bg-indigo-900/30 opacity-60 blur-2xl" />
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5">
                   <img
-                    src="https://i.postimg.cc/4d2j6w1y/portfolio-sample.jpg"
+                    src="https://i.pinimg.com/736x/4e/2e/7a/4e2e7a1b4b04fd4e3d03bef35b61cd80.jpg"
                     alt={t("home2.about.imageAlt")}
                     width={700}
                     height={900}
@@ -270,7 +273,7 @@ const Home2 = () => {
               <div className="relative w-full max-w-xl">
                 <div className="rounded-lg overflow-hidden shadow-lg">
                   <img
-                    src="https://i.postimg.cc/4d2j6w1y/portfolio-sample.jpg"
+                    src="https://i.pinimg.com/736x/32/2b/a3/322ba37b4f9bdd6802a6a690afcb54e0.jpg"
                     alt={t("home2.resources.imageAlt")}
                     width={800}
                     height={520}
@@ -280,21 +283,21 @@ const Home2 = () => {
 
                 <div className="absolute -top-8 left-6 w-36 h-36 rounded-full bg-indigo-50 dark:bg-indigo-900 flex items-center justify-center shadow-md">
                   <img
-                    src="https://i.postimg.cc/5ym0KZ1Y/avatar.jpg"
+                    src="https://i.pinimg.com/736x/22/5f/4c/225f4c968155fcd81cc89182f673583b.jpg"
                     alt={t("home2.resources.smallAlt")}
                     width={120}
                     height={120}
-                    className="w-20 h-20 rounded-full object-cover"
+                    className="w-20 h-20 rounded-full object-top object-cover"
                   />
                 </div>
 
                 <div className="absolute -bottom-8 right-6 w-28 h-28 rounded-full bg-indigo-100 dark:bg-indigo-800 flex items-center justify-center shadow-md">
                   <img
-                    src="https://i.postimg.cc/5ym0KZ1Y/avatar.jpg"
+                    src="https://i.pinimg.com/736x/56/85/49/56854952ea1912a7a35a6fd36c45e024.jpg"
                     alt={t("home2.resources.smallAlt2")}
                     width={96}
                     height={96}
-                    className="w-16 h-16 rounded-full object-cover"
+                    className="w-16 h-16 rounded-full object-top object-cover"
                   />
                 </div>
               </div>
@@ -311,21 +314,6 @@ const Home2 = () => {
               <p className="mt-4 text-slate-600 dark:text-slate-300 max-w-lg">
                 {t("home2.resources.desc")}
               </p>
-
-              <div className="mt-6 flex items-center gap-4">
-                <Link
-                  href="/templates"
-                  className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-md font-medium"
-                >
-                  {t("home2.resources.browse")}
-                </Link>
-                <Link
-                  href="/resources"
-                  className="text-indigo-600 hover:underline"
-                >
-                  {t("home2.resources.learn_more")}
-                </Link>
-              </div>
             </div>
           </div>
         </section>
@@ -398,13 +386,13 @@ const Home2 = () => {
                     “{tst.quote}”
                   </p>
 
-                  <footer className="mt-4 flex items-center gap-3">
+                  <div className="mt-4 flex items-center gap-3">
                     <div className="h-10 w-10 rounded-full bg-indigo-50 dark:bg-indigo-900 flex items-center justify-center text-indigo-600 font-medium">
-                      {tst.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .slice(0, 2)
-                        .join("")}
+                      <img
+                        src={tst.img}
+                        alt=""
+                        className=" h-full w-full rounded-full object-cover object-center"
+                      />
                     </div>
                     <div>
                       <div className="text-sm font-semibold text-slate-900 dark:text-slate-100">
@@ -412,7 +400,7 @@ const Home2 = () => {
                       </div>
                       <div className="text-xs text-slate-500">{tst.title}</div>
                     </div>
-                  </footer>
+                  </div>
                 </blockquote>
               ))}
             </div>

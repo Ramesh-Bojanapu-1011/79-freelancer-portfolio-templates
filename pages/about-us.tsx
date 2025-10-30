@@ -1,11 +1,15 @@
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeadder from "@/components/SiteHeadder";
+import AOS from "aos";
 import Head from "next/head";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const AboutUsPage = () => {
+  React.useEffect(() => {
+    AOS.init({ duration: 1000, once: false });
+  }, []);
   const { t } = useTranslation();
 
   const pillars = [
@@ -154,7 +158,7 @@ const AboutUsPage = () => {
     }, [value, start]);
 
     return (
-      <div className="rounded-lg bg-white dark:bg-slate-800 p-6 shadow-sm ring-1 ring-black/5 dark:ring-white/5 text-center">
+      <div className="rounded-lg bg-white dark:bg-slate-800 p-6 shadow-xl ring-1 ring-black/5 dark:ring-white/5 text-center">
         <div className="text-3xl font-extrabold text-indigo-600">
           {count}
           {suffix}
@@ -188,7 +192,7 @@ const AboutUsPage = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 },
+      { threshold: 0.3 }
     );
 
     observer.observe(el);
@@ -241,14 +245,17 @@ const AboutUsPage = () => {
                 </div>
               </div>
 
-              <div className="flex items-center justify-center">
+              <div
+                data-aos="fade-left"
+                className="flex items-center justify-center"
+              >
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5 w-full max-w-md">
                   <img
-                    src="https://i.postimg.cc/4d2j6w1y/portfolio-sample.jpg"
+                    src="https://i.pinimg.com/736x/19/cf/f1/19cff19e740ee61bd1c34a8c36906aea.jpg"
                     alt="studio"
                     width={800}
                     height={800}
-                    className="w-full h-auto object-cover"
+                    className="w-[800px] h-[400px] object-cover object-center   "
                   />
                 </div>
               </div>
@@ -257,8 +264,8 @@ const AboutUsPage = () => {
         </section>
 
         {/* Section 2: Our Mission (refreshed) */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <section className="bg-linear-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+          <div className=" mx-auto max-w-7xl px-6 lg:px-8 py-16  grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl font-extrabold">
                 {t("about.mission.title")}
@@ -287,7 +294,9 @@ const AboutUsPage = () => {
               {pillars.map((p, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-4 bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm ring-1 ring-black/5 dark:ring-white/5"
+                  data-aos="fade-up"
+                  data-aos-delay={`${i * 100}`}
+                  className="flex items-start gap-4 bg-white dark:bg-slate-800 p-4 rounded-lg shadow-lg ring-1 ring-black/5 dark:ring-white/5"
                 >
                   <div className="h-10 w-10 rounded-full bg-indigo-50 dark:bg-indigo-900 flex items-center justify-center text-indigo-600 text-lg">
                     {p.icon}
@@ -305,8 +314,8 @@ const AboutUsPage = () => {
         </section>
 
         {/* Section 3: Stats — animated counters idea */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+        <section className=" bg-linear-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center mx-auto max-w-7xl px-6 lg:px-8 py-12">
             <div className="lg:col-span-1 text-center lg:text-left">
               <h3 className="text-2xl sm:text-3xl font-extrabold">
                 {t("about.stats.heading")}
@@ -322,165 +331,172 @@ const AboutUsPage = () => {
             >
               {/* Animated stat badges — they start when the section becomes visible */}
               {stats.map((s, i) => (
-                <StatBadge
-                  key={i}
-                  label={s.label}
-                  value={s.value}
-                  suffix={s.suffix}
-                  start={statsVisible}
-                />
+                <div key={i} data-aos="fade-up" data-aos-delay={`${i * 100}`}>
+                  <StatBadge
+                    label={s.label}
+                    value={s.value}
+                    suffix={s.suffix}
+                    start={statsVisible}
+                  />
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* Section 4: Team */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
-          <div className="text-center">
-            <h3 className="text-2xl sm:text-3xl font-extrabold">
-              {t("about.team.title")}
-            </h3>
-            <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              {t("about.team.desc")}
-            </p>
-          </div>
+        <section className=" bg-linear-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
+            <div className="text-center">
+              <h3 className="text-2xl sm:text-3xl font-extrabold">
+                {t("about.team.title")}
+              </h3>
+              <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                {t("about.team.desc")}
+              </p>
+            </div>
 
-          {/* New: interactive team cards with hover overlay showing bio/contact */}
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {(
-              [
-                {
-                  name: "Jenna Doe",
-                  role: "Lead Designer",
-                  img: "https://i.postimg.cc/5ym0KZ1Y/avatar.jpg",
-                  bio: "Design lead focused on systems, UX and beautiful interfaces.",
-                  contact: "jenna@example.com",
-                },
-                {
-                  name: "Ramesh B.",
-                  role: "Frontend Engineer",
-                  img: "https://i.postimg.cc/5ym0KZ1Y/avatar.jpg",
-                  bio: "Loves performant, accessible frontends and clean code.",
-                  contact: "ramesh@example.com",
-                },
-                {
-                  name: "Sana K.",
-                  role: "Product Designer",
-                  img: "https://i.postimg.cc/5ym0KZ1Y/avatar.jpg",
-                  bio: "Product-minded designer who prototypes and ships fast.",
-                  contact: "sana@example.com",
-                },
-              ] as const
-            ).map((m, i) => (
-              <div
-                key={i}
-                className="group relative rounded-2xl overflow-hidden bg-white dark:bg-slate-800 shadow-sm ring-1 ring-black/5 dark:ring-white/5"
-              >
-                {/* Card body */}
-                <div className="p-6 flex flex-col items-center gap-4">
-                  <div className="relative w-50 h-50    ">
-                    <img
-                      src={m.img}
-                      alt={m.name}
-                      width={160}
-                      height={160}
-                      className="w-full h-full rounded-full ring-1 ring-black/5 dark:ring-white/5 object-cover"
-                    />
-                    <div className="absolute    -bottom-2    left-1/2 -translate-x-1/2 bg-white dark:bg-slate-900 rounded-full px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200 shadow-sm ring-1 ring-black/5">
-                      {t(`about.team.members.${i}.role`, {
-                        defaultValue: m.role,
+            {/* New: interactive team cards with hover overlay showing bio/contact */}
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {(
+                [
+                  {
+                    name: "Jenna Doe",
+                    role: "Lead Designer",
+                    img: "https://randomuser.me/api/portraits/women/44.jpg",
+                    bio: "Design lead focused on systems, UX and beautiful interfaces.",
+                    contact: "jenna@example.com",
+                  },
+                  {
+                    name: "Ramesh B.",
+                    role: "Frontend Engineer",
+                    img: "https://randomuser.me/api/portraits/men/46.jpg",
+                    bio: "Loves performant, accessible frontends and clean code.",
+                    contact: "ramesh@example.com",
+                  },
+                  {
+                    name: "Sana K.",
+                    role: "Product Designer",
+                    img: "https://randomuser.me/api/portraits/women/65.jpg",
+                    bio: "Product-minded designer who prototypes and ships fast.",
+                    contact: "sana@example.com",
+                  },
+                ] as const
+              ).map((m, i) => (
+                <div
+                  key={i}
+                  data-aos="fade-up"
+                  data-aos-delay={`${i * 100}`}
+                  className="group relative rounded-2xl overflow-hidden bg-white dark:bg-slate-800 shadow-2xl ring-1 ring-black/5 dark:ring-white/5"
+                >
+                  {/* Card body */}
+                  <div className="p-6 flex flex-col items-center gap-4">
+                    <div className="relative w-50 h-50    ">
+                      <img
+                        src={m.img}
+                        alt={m.name}
+                        width={160}
+                        height={160}
+                        className="w-full h-full rounded-full ring-1 ring-black/5 dark:ring-white/5 object-cover"
+                      />
+                      <div className="absolute    -bottom-2    left-1/2 -translate-x-1/2 bg-white dark:bg-slate-900 rounded-full px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200 shadow-sm ring-1 ring-black/5 text-center">
+                        {t(`about.team.members.${i}.role`, {
+                          defaultValue: m.role,
+                        })}
+                      </div>
+                    </div>
+
+                    <div className="mt-6 text-lg font-semibold text-slate-900 dark:text-slate-100">
+                      {t(`about.team.members.${i}.name`, {
+                        defaultValue: m.name,
                       })}
                     </div>
+
+                    <p className="mt-2 text-sm text-slate-500 max-w-xs text-center">
+                      {t(`about.team.members.${i}.bio`, {
+                        defaultValue: m.bio,
+                      })}
+                    </p>
                   </div>
 
-                  <div className="mt-6 text-lg font-semibold text-slate-900 dark:text-slate-100">
-                    {t(`about.team.members.${i}.name`, {
-                      defaultValue: m.name,
-                    })}
-                  </div>
-
-                  <p className="mt-2 text-sm text-slate-500 max-w-xs text-center">
-                    {t(`about.team.members.${i}.bio`, { defaultValue: m.bio })}
-                  </p>
-                </div>
-
-                {/* Slide-up action panel */}
-                <div className="absolute left-0 right-0 bottom-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <div className="bg-indigo-600/95 text-white p-4 rounded-b-2xl flex items-center justify-between gap-4">
-                    <div className="text-sm">Reach out</div>
-                    <div className="flex items-center gap-2">
-                      <Link
-                        href={`mailto:${m.contact}`}
-                        className="inline-flex items-center justify-center w-9 h-9 rounded-md bg-white/10 hover:bg-white/20 "
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width={30}
-                          height={30}
-                          viewBox="0 0 512 512"
+                  {/* Slide-up action panel */}
+                  <div className="absolute left-0 right-0 bottom-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="bg-indigo-600/95 text-white p-4 rounded-b-2xl flex items-center justify-between gap-4">
+                      <div className="text-sm">Reach out</div>
+                      <div className="flex items-center gap-2">
+                        <Link
+                          href={`mailto:${m.contact}`}
+                          className="inline-flex items-center justify-center w-9 h-9 rounded-md bg-white/10 hover:bg-white/20 "
                         >
-                          <path
-                            fill="#96a9b2"
-                            d="M511.824 425.007c1.941-5.245-220.916-173.519-220.916-173.519c-27.9-20.589-42.574-20.913-70.164 0c0 0-222.532 168.138-220.659 173.311l-.045.038c.023.045.06.076.091.117a48.5 48.5 0 0 0 8.119 14.157c1.473 1.786 3.248 3.282 4.955 4.837l-.083.064c.136.121.317.177.453.298c7.235 6.454 16.359 10.634 26.495 11.827c.159.019.287.102.446.121h.612c1.541.147 3.006.517 4.584.517h420.721c20.717 0 38.269-13.028 45.241-31.291c.083-.136.211-.234.287-.374z"
-                          ></path>
-                          <path
-                            fill="#b9c5c6"
-                            d="M256.133 232.176L1.216 423.364V152.515c0-26.4 21.397-47.797 47.797-47.797h414.24c26.4 0 47.797 21.397 47.797 47.797v270.849z"
-                          ></path>
-                          <path
-                            fill="#edece6"
-                            d="m4.189 135.896l217.645 170.949c27.47 20.271 41.918 20.591 69.083 0L508.22 136.167c-3.77-6.834-9.414-12.233-15.869-16.538l2.989-2.342c-7.295-6.641-16.62-10.946-26.971-12.058l-424.455.015c-10.322 1.097-19.662 5.417-26.942 12.043l2.967 2.313c-6.38 4.245-11.972 9.551-15.75 16.296"
-                          ></path>
-                          <path
-                            fill="#dce2e2"
-                            d="M4.118 136.254C2.207 141.419 221.63 307.099 221.63 307.099c27.47 20.271 41.918 20.591 69.083 0c0 0 219.103-165.546 217.258-170.64l.045-.037c-.022-.045-.059-.074-.089-.115a47.7 47.7 0 0 0-7.994-13.939c-1.45-1.759-3.198-3.231-4.878-4.763l.082-.063c-.134-.119-.312-.175-.446-.294c-7.124-6.354-16.107-10.47-26.086-11.645c-.156-.019-.283-.1-.439-.119h-.602c-1.517-.145-2.96-.509-4.514-.509H48.81c-20.398 0-37.68 12.828-44.543 30.809c-.082.134-.208.231-.283.368z"
-                          ></path>
-                          <path
-                            fill="#597b91"
-                            d="M291.401 154.645h-38.632a6.155 6.155 0 0 0-6.155 6.155v21.722a6.155 6.155 0 0 0 6.155 6.155h31.415a6.155 6.155 0 0 1 6.155 6.155v11.616a6.155 6.155 0 0 1-6.155 6.155h-31.415a6.155 6.155 0 0 0-6.155 6.155v23.578a6.155 6.155 0 0 0 6.155 6.155h41.316a6.155 6.155 0 0 1 6.155 6.155v12.441a6.155 6.155 0 0 1-6.155 6.155h-75.76a6.155 6.155 0 0 1-6.155-6.155V136.461a6.155 6.155 0 0 1 6.155-6.155h74.81c3.749 0 6.627 3.322 6.092 7.033l-1.733 12.028a6.156 6.156 0 0 1-6.093 5.278"
-                          ></path>
-                        </svg>
-                      </Link>
-                      <Link
-                        href={`https://linkedin.com/search/results/all/?keywords=${encodeURIComponent(
-                          m.name,
-                        )}`}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center justify-center w-9 h-9 rounded-md bg-white/10 hover:bg-white/20"
-                        aria-label={`LinkedIn ${m.name}`}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width={30}
-                          height={30}
-                          viewBox="0 0 256 256"
-                        >
-                          <g fill="none">
-                            <rect
-                              width={256}
-                              height={256}
-                              fill="#fff"
-                              rx={60}
-                            ></rect>
-                            <rect
-                              width={256}
-                              height={256}
-                              fill="#0a66c2"
-                              rx={60}
-                            ></rect>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width={30}
+                            height={30}
+                            viewBox="0 0 512 512"
+                          >
                             <path
-                              fill="#fff"
-                              d="M184.715 217.685h29.27a4 4 0 0 0 4-3.999l.015-61.842c0-32.323-6.965-57.168-44.738-57.168c-14.359-.534-27.9 6.868-35.207 19.228a.32.32 0 0 1-.595-.161V101.66a4 4 0 0 0-4-4h-27.777a4 4 0 0 0-4 4v112.02a4 4 0 0 0 4 4h29.268a4 4 0 0 0 4-4v-55.373c0-15.657 2.97-30.82 22.381-30.82c19.135 0 19.383 17.916 19.383 31.834v54.364a4 4 0 0 0 4 4M38 59.628c0 11.864 9.767 21.626 21.632 21.626c11.862-.001 21.623-9.769 21.623-21.631C81.253 47.761 71.491 38 59.628 38C47.762 38 38 47.763 38 59.627m6.959 158.058h29.307a4 4 0 0 0 4-4V101.66a4 4 0 0 0-4-4H44.959a4 4 0 0 0-4 4v112.025a4 4 0 0 0 4 4"
+                              fill="#96a9b2"
+                              d="M511.824 425.007c1.941-5.245-220.916-173.519-220.916-173.519c-27.9-20.589-42.574-20.913-70.164 0c0 0-222.532 168.138-220.659 173.311l-.045.038c.023.045.06.076.091.117a48.5 48.5 0 0 0 8.119 14.157c1.473 1.786 3.248 3.282 4.955 4.837l-.083.064c.136.121.317.177.453.298c7.235 6.454 16.359 10.634 26.495 11.827c.159.019.287.102.446.121h.612c1.541.147 3.006.517 4.584.517h420.721c20.717 0 38.269-13.028 45.241-31.291c.083-.136.211-.234.287-.374z"
                             ></path>
-                          </g>
-                        </svg>
-                      </Link>
+                            <path
+                              fill="#b9c5c6"
+                              d="M256.133 232.176L1.216 423.364V152.515c0-26.4 21.397-47.797 47.797-47.797h414.24c26.4 0 47.797 21.397 47.797 47.797v270.849z"
+                            ></path>
+                            <path
+                              fill="#edece6"
+                              d="m4.189 135.896l217.645 170.949c27.47 20.271 41.918 20.591 69.083 0L508.22 136.167c-3.77-6.834-9.414-12.233-15.869-16.538l2.989-2.342c-7.295-6.641-16.62-10.946-26.971-12.058l-424.455.015c-10.322 1.097-19.662 5.417-26.942 12.043l2.967 2.313c-6.38 4.245-11.972 9.551-15.75 16.296"
+                            ></path>
+                            <path
+                              fill="#dce2e2"
+                              d="M4.118 136.254C2.207 141.419 221.63 307.099 221.63 307.099c27.47 20.271 41.918 20.591 69.083 0c0 0 219.103-165.546 217.258-170.64l.045-.037c-.022-.045-.059-.074-.089-.115a47.7 47.7 0 0 0-7.994-13.939c-1.45-1.759-3.198-3.231-4.878-4.763l.082-.063c-.134-.119-.312-.175-.446-.294c-7.124-6.354-16.107-10.47-26.086-11.645c-.156-.019-.283-.1-.439-.119h-.602c-1.517-.145-2.96-.509-4.514-.509H48.81c-20.398 0-37.68 12.828-44.543 30.809c-.082.134-.208.231-.283.368z"
+                            ></path>
+                            <path
+                              fill="#597b91"
+                              d="M291.401 154.645h-38.632a6.155 6.155 0 0 0-6.155 6.155v21.722a6.155 6.155 0 0 0 6.155 6.155h31.415a6.155 6.155 0 0 1 6.155 6.155v11.616a6.155 6.155 0 0 1-6.155 6.155h-31.415a6.155 6.155 0 0 0-6.155 6.155v23.578a6.155 6.155 0 0 0 6.155 6.155h41.316a6.155 6.155 0 0 1 6.155 6.155v12.441a6.155 6.155 0 0 1-6.155 6.155h-75.76a6.155 6.155 0 0 1-6.155-6.155V136.461a6.155 6.155 0 0 1 6.155-6.155h74.81c3.749 0 6.627 3.322 6.092 7.033l-1.733 12.028a6.156 6.156 0 0 1-6.093 5.278"
+                            ></path>
+                          </svg>
+                        </Link>
+                        <Link
+                          href={`https://linkedin.com/search/results/all/?keywords=${encodeURIComponent(
+                            m.name
+                          )}`}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center justify-center w-9 h-9 rounded-md bg-white/10 hover:bg-white/20"
+                          aria-label={`LinkedIn ${m.name}`}
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width={30}
+                            height={30}
+                            viewBox="0 0 256 256"
+                          >
+                            <g fill="none">
+                              <rect
+                                width={256}
+                                height={256}
+                                fill="#fff"
+                                rx={60}
+                              ></rect>
+                              <rect
+                                width={256}
+                                height={256}
+                                fill="#0a66c2"
+                                rx={60}
+                              ></rect>
+                              <path
+                                fill="#fff"
+                                d="M184.715 217.685h29.27a4 4 0 0 0 4-3.999l.015-61.842c0-32.323-6.965-57.168-44.738-57.168c-14.359-.534-27.9 6.868-35.207 19.228a.32.32 0 0 1-.595-.161V101.66a4 4 0 0 0-4-4h-27.777a4 4 0 0 0-4 4v112.02a4 4 0 0 0 4 4h29.268a4 4 0 0 0 4-4v-55.373c0-15.657 2.97-30.82 22.381-30.82c19.135 0 19.383 17.916 19.383 31.834v54.364a4 4 0 0 0 4 4M38 59.628c0 11.864 9.767 21.626 21.632 21.626c11.862-.001 21.623-9.769 21.623-21.631C81.253 47.761 71.491 38 59.628 38C47.762 38 38 47.763 38 59.627m6.959 158.058h29.307a4 4 0 0 0 4-4V101.66a4 4 0 0 0-4-4H44.959a4 4 0 0 0-4 4v112.025a4 4 0 0 0 4 4"
+                              ></path>
+                            </g>
+                          </svg>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
@@ -488,13 +504,10 @@ const AboutUsPage = () => {
         <section className="mx-auto  w-screen   py-16 bg-linear-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
           <div className="text-center max-w-4xl mx-auto">
             <h3 className="text-2xl sm:text-3xl font-extrabold">
-              Our approach
+              {t("about.approach.title")}
             </h3>
             <p className="mt-3 text-slate-600 dark:text-slate-300">
-              We combine design systems, accessible markup, and
-              performance-minded code to deliver templates that are
-              production-ready. Work with templates or hire us for custom
-              setups.
+              {t("about.approach.desc")}
             </p>
 
             {/* New: 3-step process timeline */}
@@ -632,12 +645,6 @@ const AboutUsPage = () => {
                 className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-md font-medium"
               >
                 {t("about.cta.cta_primary")}
-              </Link>
-              <Link
-                href="/templates"
-                className="inline-flex items-center gap-2 text-indigo-600 hover:underline px-4 py-3 rounded-md font-medium"
-              >
-                {t("about.cta.cta_secondary")}
               </Link>
             </div>
           </div>

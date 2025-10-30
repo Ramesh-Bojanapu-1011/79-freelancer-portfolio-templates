@@ -336,7 +336,7 @@ export default function SiteHeadder() {
                 {profileOpen && (
                   <div className="absolute right-0 mt-2 w-40 rounded-md bg-white dark:bg-slate-800 shadow-lg ring-1 ring-black ring-opacity-5 py-1">
                     <Link
-                      href="/profile"
+                      href="/admin-dashboard"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200"
                     >
                       {t("header.profile")}
