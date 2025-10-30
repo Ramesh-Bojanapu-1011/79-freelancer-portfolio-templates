@@ -1,11 +1,10 @@
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeadder from "@/components/SiteHeadder";
+import AOS from "aos";
 import { Briefcase, Check, Star, User } from "lucide-react";
 import Head from "next/head";
-import React, { useTransition } from "react";
-import AOS from "aos";
 import Link from "next/link";
-import i18n from "@/i18n";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 export default function Home1() {
@@ -24,8 +23,11 @@ export default function Home1() {
         {/* Hero */}
         <section className="relative  overflow-hidden bg-linear-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 min-h-screen flex justify-center items-center">
           <div className="mx-auto max-w-7xl px-6 lg:px-8    ">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              <div data-aos="fade-up-right">
+            <div className="grid  gap-10 items-center">
+              <div
+                data-aos="fade-up-right"
+                className="flex justify-center items-center flex-col"
+              >
                 <div className="inline-flex items-center gap-2 rounded-full bg-indigo-50 dark:bg-indigo-900 px-3 py-1 text-sm w-max">
                   <Briefcase className="h-4 w-4 text-indigo-600 dark:text-indigo-300" />
                   <span className="text-indigo-700 dark:text-indigo-200 font-medium">
@@ -42,7 +44,7 @@ export default function Home1() {
 
                 <div className="mt-8 flex items-center gap-4">
                   <Link
-                    href="/auth"
+                    href="/about-us"
                     className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-md font-medium"
                   >
                     {t("home.hero.get_started")}
@@ -53,33 +55,6 @@ export default function Home1() {
                   >
                     {t("home.hero.contact_sales")}
                   </Link>
-                </div>
-
-                <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
-                  <div className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                    <Star className="h-4 w-4 text-amber-500" />{" "}
-                    {t("home.hero.trusted")}
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                    <Check className="h-4 w-4 text-emerald-500" />{" "}
-                    {t("home.hero.fast_customize")}
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                    <User className="h-4 w-4 text-indigo-500" />{" "}
-                    {t("home.hero.seo_friendly")}
-                  </div>
-                </div>
-              </div>
-
-              <div data-aos="fade-left" className="relative">
-                <div className="rounded-xl overflow-hidden shadow-xl ring-1 ring-black/5 dark:ring-white/5">
-                  <img
-                    src="https://i.postimg.cc/portfolio-sample.jpg"
-                    alt="template preview"
-                    width={900}
-                    height={600}
-                    className="w-full h-auto object-cover"
-                  />
                 </div>
               </div>
             </div>
@@ -93,7 +68,7 @@ export default function Home1() {
             <div data-aos="fade-up-right" className="order-2 lg:order-1">
               <div className="rounded-xl overflow-hidden shadow-lg ring-1 ring-black/5 dark:ring-white/5">
                 <img
-                  src="https://i.postimg.cc/4d2j6w1y/portfolio-sample.jpg"
+                  src="https://i.pinimg.com/736x/94/70/86/9470868da0fa8286610e586a45b3dbc9.jpg"
                   alt="Showcase"
                   width={900}
                   height={600}
@@ -163,7 +138,7 @@ export default function Home1() {
 
               <div className="mt-6">
                 <a
-                  href="#"
+                  href="/about-us"
                   className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md"
                 >
                   {t("home.services.learn_more")}
@@ -246,7 +221,7 @@ export default function Home1() {
                 <div className="mt-6 flex items-center gap-4">
                   <div className="flex items-center gap-3">
                     <img
-                      src="https://i.postimg.cc/5ym0KZ1Y/avatar.jpg"
+                      src="https://randomuser.me/api/portraits/men/32.jpg"
                       alt="Author"
                       width={48}
                       height={48}
@@ -280,7 +255,7 @@ export default function Home1() {
                   <div className="absolute -inset-2 transform rotate-2 rounded-3xl bg-linear-to-tr from-indigo-400 to-pink-400 opacity-30 blur-lg"></div>
                   <div className="relative rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 dark:ring-white/5">
                     <img
-                      src="https://i.postimg.cc/4d2j6w1y/portfolio-sample.jpg"
+                      src="/home1_why_choose_us.png"
                       alt="Why choose us"
                       width={900}
                       height={900}
@@ -385,22 +360,22 @@ export default function Home1() {
               {
                 titleKey: "home.templates.items.portfolio.title",
                 descKey: "home.templates.items.portfolio.desc",
-                img: "https://i.postimg.cc/6QxYq3k1/portfolio-thumb.jpg",
+                img: "https://i.pinimg.com/736x/e7/05/a6/e705a65fa6a4ceb0d2de42355af40dda.jpg",
               },
               {
                 titleKey: "home.templates.items.agency.title",
                 descKey: "home.templates.items.agency.desc",
-                img: "https://i.postimg.cc/6QxYq3k1/portfolio-thumb.jpg",
+                img: "https://i.pinimg.com/736x/08/e2/f3/08e2f38a041aa377aac5fd4b49b115c0.jpg",
               },
               {
                 titleKey: "home.templates.items.case.title",
                 descKey: "home.templates.items.case.desc",
-                img: "https://i.postimg.cc/6QxYq3k1/portfolio-thumb.jpg",
+                img: "https://i.pinimg.com/736x/91/98/d1/9198d16740c93da22ac9eab3940cce2e.jpg",
               },
               {
                 titleKey: "home.templates.items.landing.title",
                 descKey: "home.templates.items.landing.desc",
-                img: "https://i.postimg.cc/6QxYq3k1/portfolio-thumb.jpg",
+                img: "https://i.pinimg.com/1200x/5f/ad/b6/5fadb640f2836d52001038ac805ce52a.jpg",
               },
             ].map((item, i) => (
               <article
@@ -415,7 +390,7 @@ export default function Home1() {
                     alt={t(item.titleKey)}
                     width={600}
                     height={400}
-                    className="w-full h-36 object-cover"
+                    className="w-full h-80  object-cover"
                   />
                 </div>
                 <h4 className="mt-4 font-semibold">{t(item.titleKey)}</h4>
@@ -462,19 +437,22 @@ export default function Home1() {
                         {
                           nameKey: "home.testimonials.items.0.name",
                           textKey: "home.testimonials.items.0.text",
-                          avatar: "https://i.postimg.cc/5ym0KZ1Y/avatar.jpg",
+                          avatar:
+                            "https://randomuser.me/api/portraits/women/44.jpg",
                           timeKey: "home.testimonials.items.0.time",
                         },
                         {
                           nameKey: "home.testimonials.items.1.name",
                           textKey: "home.testimonials.items.1.text",
-                          avatar: "https://i.postimg.cc/5ym0KZ1Y/avatar.jpg",
+                          avatar:
+                            "https://randomuser.me/api/portraits/men/36.jpg",
                           timeKey: "home.testimonials.items.1.time",
                         },
                         {
                           nameKey: "home.testimonials.items.2.name",
                           textKey: "home.testimonials.items.2.text",
-                          avatar: "https://i.postimg.cc/5ym0KZ1Y/avatar.jpg",
+                          avatar:
+                            "https://randomuser.me/api/portraits/women/65.jpg",
                           timeKey: "home.testimonials.items.2.time",
                         },
                       ].map((r, i) => (
@@ -497,7 +475,7 @@ export default function Home1() {
                                   alt={t(r.nameKey!)}
                                   width={40}
                                   height={40}
-                                  className="rounded-full"
+                                  className="rounded-full object-cover"
                                 />
                                 <div>
                                   <div className="font-medium">
