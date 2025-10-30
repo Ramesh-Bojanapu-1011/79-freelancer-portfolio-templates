@@ -1,3 +1,4 @@
+"use client";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeadder from "@/components/SiteHeadder";
 import { Check, ChevronDown, Mail, MapPin, Phone, Send } from "lucide-react";

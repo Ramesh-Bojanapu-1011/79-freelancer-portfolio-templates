@@ -1,3 +1,4 @@
+"use client";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeadder from "@/components/SiteHeadder";
 import {
