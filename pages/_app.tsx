@@ -1,9 +1,9 @@
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
-import "aos/dist/aos.css";
-import React from "react";
 import i18n from "@/i18n";
+import "@/styles/globals.css";
+import "aos/dist/aos.css";
+import type { AppProps } from "next/app";
+import React from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [langReady, setLangReady] = React.useState(false);

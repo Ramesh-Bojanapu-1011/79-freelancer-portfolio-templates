@@ -1,6 +1,7 @@
 "use client";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeadder from "@/components/SiteHeadder";
+import AOS from "aos";
 import {
   Aperture,
   ArrowRight,
@@ -16,7 +17,6 @@ import {
   Star,
   Twitter,
 } from "lucide-react";
-import AOS from "aos";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";

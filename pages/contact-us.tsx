@@ -1,11 +1,11 @@
 "use client";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeadder from "@/components/SiteHeadder";
+import Aos from "aos";
 import { Check, ChevronDown, Mail, MapPin, Phone, Send } from "lucide-react";
 import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import Aos from "aos";
 
 const ContactUs: React.FC = () => {
   const [formState, setFormState] = useState({

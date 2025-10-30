@@ -1,6 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
-import i18n from "@/i18n";
 import { useTranslation } from "react-i18next";
 
 const services = [

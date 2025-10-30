@@ -1,12 +1,11 @@
 "use client";
 
-import React from "react";
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeadder from "@/components/SiteHeadder";
+import { Calendar, Share2, Tag } from "lucide-react";
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
-import SiteHeadder from "@/components/SiteHeadder";
-import SiteFooter from "@/components/SiteFooter";
-import { Calendar, User, Tag, Share2 } from "lucide-react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 const FromFigmaToProduction: React.FC = () => {

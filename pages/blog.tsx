@@ -1,11 +1,11 @@
 "use client";
 
-import React from "react";
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeadder from "@/components/SiteHeadder";
+import { FileText } from "lucide-react";
 import Head from "next/head";
 import Link from "next/link";
-import SiteHeadder from "@/components/SiteHeadder";
-import SiteFooter from "@/components/SiteFooter";
-import { FileText } from "lucide-react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 const posts = [
