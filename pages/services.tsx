@@ -1,14 +1,19 @@
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeadder from "@/components/SiteHeadder";
 import i18n from "@/i18n";
+import AOS from "aos";
 import Head from "next/head";
 import Link from "next/link";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 // servicesData moved into component so titles/descriptions can be localized via i18n
 
 const ServicesPage = () => {
   const { t } = useTranslation();
+    React.useEffect(() => {
+      AOS.init({ duration: 1000, once: false });
+    }, []);
 
   const servicesData = [
     {
@@ -57,10 +62,10 @@ const ServicesPage = () => {
 
       <main className="min-h-screen bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 caret-transparent">
         {/* Hero */}
-        <section className="bg-linear-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20">
+        <section className="bg-linear-to-b min-h-screen flex justify-center items-center from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+          <div className="mx-auto max-w-7xl  ">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div>
+              <div  data-aos="fade-right">
                 <div className="inline-block rounded-full bg-indigo-50 dark:bg-indigo-900 px-3 py-1 text-sm text-indigo-600 font-medium">
                   {t("services.hero.badge")}
                 </div>
@@ -87,12 +92,12 @@ const ServicesPage = () => {
                 </div>
               </div>
 
-              <div className="flex items-center justify-center">
+              <div data-aos='fade-left' className="flex items-center justify-center">
                 <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5">
                   <img
-                    src="https://i.postimg.cc/4d2j6w1y/portfolio-sample.jpg"
+                    src="https://i.pinimg.com/736x/4f/5a/fe/4f5afeaa37b34ccbcfa94efb483dcf60.jpg"
                     alt="portfolio sample"
-                    className="w-full h-auto object-cover"
+                    className="w-full h-[400px] object-cover object-center"
                   />
                 </div>
               </div>
@@ -116,8 +121,10 @@ const ServicesPage = () => {
             </div>
 
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {servicesData.map((s) => (
+              {servicesData.map((s,idx) => (
                 <div
+                  data-aos="fade-up"
+                  adata-aos-delay={idx * 100}
                   key={s.slug}
                   className="group relative block overflow-hidden rounded-2xl bg-white dark:bg-slate-800 shadow-sm ring-1 ring-black/5 dark:ring-white/5 hover:shadow-lg transition-shadow"
                   aria-label={t("services.card.learn_more_aria", {
@@ -299,7 +306,7 @@ const ServicesPage = () => {
             <div className="flex items-center justify-center">
               <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5 bg-white dark:bg-slate-800">
                 <img
-                  src="https://picsum.photos/seed/theme-preview/1200/800"
+                  src="https://i.pinimg.com/1200x/63/da/d4/63dad475236734de173933d551daf25a.jpg"
                   alt="theme preview"
                   className="w-full h-48 object-cover"
                 />
@@ -648,6 +655,8 @@ const ServicesPage = () => {
               ].map((tool, idx) => (
                 <div
                   key={idx}
+                  data-aos="fade-up"
+                  data-aos-delay={idx * 100}
                   className="flex flex-col items-center p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm ring-1 ring-black/5 dark:ring-white/5"
                 >
                   <div className="w-12 h-12 flex items-center justify-center bg-indigo-50 dark:bg-indigo-900 rounded-md text-indigo-600 font-semibold">
@@ -680,33 +689,35 @@ const ServicesPage = () => {
                   id: 1,
                   titleKey: "services.templates.items.0.title",
                   tagKey: "services.templates.items.0.tag",
-                  img: "https://picsum.photos/seed/tpl-1/1200/800",
+                  img: "https://i.pinimg.com/736x/59/09/20/59092014fe3c6538a97c20c572c42d14.jpg",
                   descKey: "services.templates.items.0.desc",
                 },
                 {
                   id: 2,
                   titleKey: "services.templates.items.1.title",
                   tagKey: "services.templates.items.1.tag",
-                  img: "https://picsum.photos/seed/tpl-2/1200/800",
+                  img: "https://i.pinimg.com/736x/9c/e5/72/9ce5729d9fb3ccae4a2358ad12d52c1d.jpg",
                   descKey: "services.templates.items.1.desc",
                 },
                 {
                   id: 3,
                   titleKey: "services.templates.items.2.title",
                   tagKey: "services.templates.items.2.tag",
-                  img: "https://picsum.photos/seed/tpl-3/1200/800",
+                  img: "https://i.pinimg.com/736x/1a/05/5e/1a055ee6a34b6c06b2a17cc6753c9e5e.jpg",
                   descKey: "services.templates.items.2.desc",
                 },
               ].map((tItem) => (
                 <article
                   key={tItem.id}
+                  data-aos="fade-up"
+                  data-aos-delay={tItem.id * 100}
                   className="group rounded-2xl shadow-2xl overflow-hidden bg-white dark:bg-slate-800   ring-1 ring-black/5 dark:ring-white/5 hover:shadow-lg transition-shadow"
                 >
-                  <div className="relative h-44 sm:h-48">
+                  <div className="relative h-44 sm:h-55">
                     <img
                       src={tItem.img}
                       alt={t(tItem.titleKey)}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform  object-top duration-500"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent" />
                     <span className="absolute left-4 bottom-4 inline-flex items-center gap-2 bg-white/90 dark:bg-black/60 text-sm px-3 py-1 rounded-full font-medium">
