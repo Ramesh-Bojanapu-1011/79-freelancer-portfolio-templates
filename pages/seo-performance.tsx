@@ -1,9 +1,6 @@
-import React from "react";
-import Head from "next/head";
-import Link from "next/link";
-import SiteHeadder from "@/components/SiteHeadder";
 import SiteFooter from "@/components/SiteFooter";
-import { useTranslation } from "react-i18next";
+import SiteHeadder from "@/components/SiteHeadder";
+import AOS from "aos";
 import {
   Check,
   Code,
@@ -13,9 +10,16 @@ import {
   Server,
   Zap,
 } from "lucide-react";
+import Head from "next/head";
+import Link from "next/link";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 const DesignSystemsUIPage: React.FC = () => {
   const { t } = useTranslation();
+  React.useEffect(() => {
+    AOS.init({ duration: 1000, once: false });
+  }, []);
 
   const pricingPlans = [
     {
@@ -144,19 +148,19 @@ const DesignSystemsUIPage: React.FC = () => {
     {
       id: "project-1",
       title: t("seoPerformance.projects.items.0.title"),
-      img: "https://picsum.photos/seed/project-1/900/600",
+      img: "https://i.pinimg.com/736x/52/ff/c4/52ffc4ea6042c947f97469e9f4da5852.jpg",
       desc: t("seoPerformance.projects.items.0.desc"),
     },
     {
       id: "project-2",
       title: t("seoPerformance.projects.items.1.title"),
-      img: "https://picsum.photos/seed/project-2/900/600",
+      img: "https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg",
       desc: t("seoPerformance.projects.items.1.desc"),
     },
     {
       id: "project-3",
       title: t("seoPerformance.projects.items.2.title"),
-      img: "https://picsum.photos/seed/project-3/900/600",
+      img: "https://images.pexels.com/photos/942331/pexels-photo-942331.jpeg",
       desc: t("seoPerformance.projects.items.2.desc"),
     },
   ];
@@ -312,7 +316,7 @@ const DesignSystemsUIPage: React.FC = () => {
                   <div className="flex items-center justify-center">
                     <div className="w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5 bg-white dark:bg-slate-800">
                       <img
-                        src="https://picsum.photos/seed/design-system/1200/800"
+                        src="https://i.pinimg.com/736x/c7/fe/04/c7fe04c85d86c41140590b6a69ea579f.jpg"
                         alt="Design system preview"
                         className="w-full h-64 object-cover"
                       />
@@ -358,19 +362,19 @@ const DesignSystemsUIPage: React.FC = () => {
                 </div>
                 <ul className="mt-6 space-y-3 text-slate-700 dark:text-slate-300">
                   <li className="flex items-start gap-2">
-                    • {t("seoPerformance.deliverables.items.reactPages")}
-                  </li>
-                  <li className="flex items-start gap-2">
-                    • {t("seoPerformance.deliverables.items.components")}
-                  </li>
-                  <li className="flex items-start gap-2">
-                    • {t("seoPerformance.deliverables.items.pageTemplates")}
+                    • {t("seoPerformance.deliverables.items.audit")}
                   </li>
                   <li className="flex items-start gap-2">
                     • {t("seoPerformance.deliverables.items.performance")}
                   </li>
                   <li className="flex items-start gap-2">
-                    • {t("seoPerformance.deliverables.items.deployment")}
+                    • {t("seoPerformance.deliverables.items.images")}
+                  </li>
+                  <li className="flex items-start gap-2">
+                    • {t("seoPerformance.deliverables.items.cdn")}
+                  </li>
+                  <li className="flex items-start gap-2">
+                    • {t("seoPerformance.deliverables.items.analytics")}
                   </li>
                 </ul>
               </div>
@@ -433,6 +437,8 @@ const DesignSystemsUIPage: React.FC = () => {
               {projects.map((p, idx) => (
                 <article
                   key={p.id}
+                  data-aos="fade-up"
+                  data-aos-delay={idx * 100}
                   className="group rounded-2xl overflow-hidden bg-white dark:bg-slate-800 shadow-sm ring-1 ring-black/5 dark:ring-white/5"
                 >
                   <div
@@ -485,9 +491,11 @@ const DesignSystemsUIPage: React.FC = () => {
             </div>
 
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-              {testimonials.map((item) => (
+              {testimonials.map((item, idx) => (
                 <blockquote
                   key={item.id}
+                  data-aos="fade-up"
+                  data-aos-delay={idx * 100}
                   className="rounded-3xl bg-slate-50 dark:bg-slate-800 p-8 shadow-md ring-1 ring-black/5 dark:ring-white/5 border-t-4 border-indigo-600 dark:border-cyan-400"
                 >
                   <p className="text-lg font-medium text-slate-700 dark:text-slate-200">
