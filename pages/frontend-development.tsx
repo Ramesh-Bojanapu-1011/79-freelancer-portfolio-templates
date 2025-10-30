@@ -1,9 +1,6 @@
-import React from "react";
-import Head from "next/head";
-import Link from "next/link";
-import SiteHeadder from "@/components/SiteHeadder";
 import SiteFooter from "@/components/SiteFooter";
-import { useTranslation } from "react-i18next";
+import SiteHeadder from "@/components/SiteHeadder";
+import AOS from "aos";
 import {
   Check,
   Code,
@@ -13,9 +10,16 @@ import {
   Server,
   Zap,
 } from "lucide-react";
+import Head from "next/head";
+import Link from "next/link";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 const DesignSystemsUIPage: React.FC = () => {
   const { t } = useTranslation();
+  React.useEffect(() => {
+    AOS.init({ duration: 1000, once: false });
+  }, []);
 
   const pricingPlans = [
     {
@@ -144,19 +148,19 @@ const DesignSystemsUIPage: React.FC = () => {
     {
       id: "project-1",
       titleKey: "frontend.projects.0.title",
-      img: "https://picsum.photos/seed/project-1/900/600",
+      img: "https://i.pinimg.com/736x/10/53/a2/1053a2c88fc1c0dd85905a18b3e580da.jpg",
       descKey: "frontend.projects.0.desc",
     },
     {
       id: "project-2",
       titleKey: "frontend.projects.1.title",
-      img: "https://picsum.photos/seed/project-2/900/600",
+      img: "https://media.istockphoto.com/id/1091104298/video/multicolor-background-projection-upon-a-female-dancer.jpg?s=640x640&k=20&c=2bOsYMs1sSbwK-UC-6Kt_Xm3x86BkpNWsrj-sISAcN0=",
       descKey: "frontend.projects.1.desc",
     },
     {
       id: "project-3",
       titleKey: "frontend.projects.2.title",
-      img: "https://picsum.photos/seed/project-3/900/600",
+      img: "https://i.pinimg.com/736x/1a/5b/10/1a5b1040ec6375c87a9b53c62fcd194d.jpg",
       descKey: "frontend.projects.2.desc",
     },
   ];
@@ -312,7 +316,7 @@ const DesignSystemsUIPage: React.FC = () => {
                   <div className="flex items-center justify-center">
                     <div className="w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5 bg-white dark:bg-slate-800">
                       <img
-                        src="https://picsum.photos/seed/design-system/1200/800"
+                        src="https://i.pinimg.com/736x/6a/5f/bc/6a5fbcdafb52ed86f72a836d55b49998.jpg"
                         alt="Design system preview"
                         className="w-full h-64 object-cover"
                       />
@@ -430,6 +434,8 @@ const DesignSystemsUIPage: React.FC = () => {
             <div className="mt-10 space-y-10">
               {projects.map((p, idx) => (
                 <article
+                  data-aos="fade-up"
+                  data-aos-delay={idx * 100}
                   key={p.id}
                   className="group rounded-2xl overflow-hidden bg-white dark:bg-slate-800 shadow-sm ring-1 ring-black/5 dark:ring-white/5"
                 >
@@ -483,8 +489,10 @@ const DesignSystemsUIPage: React.FC = () => {
             </div>
 
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-              {testimonials.map((item) => (
+              {testimonials.map((item, idx) => (
                 <blockquote
+                  data-aos="fade-up"
+                  data-aos-delay={idx * 100}
                   key={item.id}
                   className="rounded-3xl bg-slate-50 dark:bg-slate-800 p-8 shadow-md ring-1 ring-black/5 dark:ring-white/5 border-t-4 border-indigo-600 dark:border-cyan-400"
                 >
