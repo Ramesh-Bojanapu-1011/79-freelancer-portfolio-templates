@@ -11,9 +11,9 @@ import { useTranslation } from "react-i18next";
 
 const ServicesPage = () => {
   const { t } = useTranslation();
-    React.useEffect(() => {
-      AOS.init({ duration: 1000, once: false });
-    }, []);
+  React.useEffect(() => {
+    AOS.init({ duration: 1000, once: false });
+  }, []);
 
   const servicesData = [
     {
@@ -65,7 +65,7 @@ const ServicesPage = () => {
         <section className="bg-linear-to-b min-h-screen flex justify-center items-center from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
           <div className="mx-auto max-w-7xl  ">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div  data-aos="fade-right">
+              <div data-aos="fade-right">
                 <div className="inline-block rounded-full bg-indigo-50 dark:bg-indigo-900 px-3 py-1 text-sm text-indigo-600 font-medium">
                   {t("services.hero.badge")}
                 </div>
@@ -92,7 +92,10 @@ const ServicesPage = () => {
                 </div>
               </div>
 
-              <div data-aos='fade-left' className="flex items-center justify-center">
+              <div
+                data-aos="fade-left"
+                className="flex items-center justify-center"
+              >
                 <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5">
                   <img
                     src="https://i.pinimg.com/736x/4f/5a/fe/4f5afeaa37b34ccbcfa94efb483dcf60.jpg"
@@ -121,7 +124,7 @@ const ServicesPage = () => {
             </div>
 
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {servicesData.map((s,idx) => (
+              {servicesData.map((s, idx) => (
                 <div
                   data-aos="fade-up"
                   adata-aos-delay={idx * 100}

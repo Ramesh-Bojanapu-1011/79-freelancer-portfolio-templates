@@ -1,9 +1,6 @@
-import React from "react";
-import Head from "next/head";
-import Link from "next/link";
-import SiteHeadder from "@/components/SiteHeadder";
 import SiteFooter from "@/components/SiteFooter";
-import { useTranslation } from "react-i18next";
+import SiteHeadder from "@/components/SiteHeadder";
+import AOS from "aos";
 import {
   Check,
   Code,
@@ -13,9 +10,16 @@ import {
   Server,
   Zap,
 } from "lucide-react";
+import Head from "next/head";
+import Link from "next/link";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 const DesignSystemsUIPage: React.FC = () => {
   const { t } = useTranslation();
+  React.useEffect(() => {
+    AOS.init({ duration: 1000, once: false });
+  }, []);
 
   const pricingPlans = [
     {
@@ -144,19 +148,19 @@ const DesignSystemsUIPage: React.FC = () => {
     {
       id: "project-1",
       titleKey: "designSystems.projects.0.title",
-      img: "https://picsum.photos/seed/project-1/900/600",
+      img: "https://media.istockphoto.com/id/2202981730/photo/black-notebook-showing-brand-concept-on-dark-background.jpg?s=612x612&w=0&k=20&c=xDuLMAxnJxQWhsv96-dFvAQ_SrrNp1qOCtdg4KowOEk=",
       descKey: "designSystems.projects.0.desc",
     },
     {
       id: "project-2",
       titleKey: "designSystems.projects.1.title",
-      img: "https://picsum.photos/seed/project-2/900/600",
+      img: "https://images.pexels.com/photos/7947968/pexels-photo-7947968.jpeg",
       descKey: "designSystems.projects.1.desc",
     },
     {
       id: "project-3",
       titleKey: "designSystems.projects.2.title",
-      img: "https://picsum.photos/seed/project-3/900/600",
+      img: "https://i.pinimg.com/736x/e6/21/5e/e6215e09a9a3a6bffa5eabf973b6acb4.jpg",
       descKey: "designSystems.projects.2.desc",
     },
   ];
@@ -316,9 +320,9 @@ const DesignSystemsUIPage: React.FC = () => {
                   <div className="flex items-center justify-center">
                     <div className="w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5 bg-white dark:bg-slate-800">
                       <img
-                        src="https://picsum.photos/seed/design-system/1200/800"
+                        src="https://media.istockphoto.com/id/2152424991/vector/label-color-menu-swatches-in-video-editor-customizing-icon-colors-vector-illustration.jpg?s=612x612&w=0&k=20&c=dFt8zIHgQVuVJJjhe6sMQ9G_KWTfYlVy4JhmcFecZuE="
                         alt="Design system preview"
-                        className="w-full h-64 object-cover"
+                        className="w-full h-70 object-cover"
                       />
                       <div className="p-5">
                         <div className=" text-slate-500 dark:text-slate-400">
@@ -433,6 +437,8 @@ const DesignSystemsUIPage: React.FC = () => {
               {projects.map((p, idx) => (
                 <article
                   key={p.id}
+                  data-aos="fade-up"
+                  data-aos-delay={idx * 100}
                   className="group rounded-2xl overflow-hidden bg-white dark:bg-slate-800 shadow-sm ring-1 ring-black/5 dark:ring-white/5"
                 >
                   <div
@@ -485,8 +491,10 @@ const DesignSystemsUIPage: React.FC = () => {
             </div>
 
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-              {testimonials.map((item) => (
+              {testimonials.map((item, id) => (
                 <blockquote
+                  data-aos="fade-up"
+                  data-aos-delay={id * 100}
                   key={item.id}
                   className="rounded-3xl bg-slate-50 dark:bg-slate-800 p-8 shadow-md ring-1 ring-black/5 dark:ring-white/5 border-t-4 border-indigo-600 dark:border-cyan-400"
                 >

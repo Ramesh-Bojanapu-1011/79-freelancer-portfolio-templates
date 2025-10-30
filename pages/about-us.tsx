@@ -192,7 +192,7 @@ const AboutUsPage = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     observer.observe(el);
@@ -458,7 +458,7 @@ const AboutUsPage = () => {
                         </Link>
                         <Link
                           href={`https://linkedin.com/search/results/all/?keywords=${encodeURIComponent(
-                            m.name
+                            m.name,
                           )}`}
                           target="_blank"
                           rel="noreferrer"
