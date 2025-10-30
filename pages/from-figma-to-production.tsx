@@ -96,36 +96,24 @@ const FromFigmaToProduction: React.FC = () => {
             </div>
           </header>
 
-          {/* Lead image */}
-          <figure className="w-full rounded-xl overflow-hidden shadow-lg mb-8 group">
-            <div className="relative overflow-hidden">
-              <img
-                src="/images/course-illustration-1.jpg"
-                alt={t("fromFigmaToProduction.imageAlt1")}
-                width={1200}
-                height={450}
-                className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <figcaption className="absolute bottom-3 left-3 text-xs text-white bg-black bg-opacity-40 px-2 py-1 rounded">
-                {t("fromFigmaToProduction.figcaption1")}
-              </figcaption>
-            </div>
-          </figure>
-
           {/* Content */}
           <div className="lg:grid lg:grid-cols-3 lg:gap-10">
-            <section className="mx-auto prose prose-slate dark:prose-invert lg:prose-lg text-slate-700 dark:text-slate-200 lg:col-span-2">
+            <section className="mx-auto prose prose-slate dark:prose-invert lg:prose-lg text-slate-700 dark:text-slate-200 lg:col-span-2 gap-10 flex flex-col">
               <p className="lead first-letter:text-6xl first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:text-sky-600">
                 {t("fromFigmaToProduction.lead")}
               </p>
 
-              <h2 id="handoff">{t("fromFigmaToProduction.handoff.title")}</h2>
-              <p>{t("fromFigmaToProduction.handoff.body")}</p>
+              <div>
+                <h2 id="handoff">{t("fromFigmaToProduction.handoff.title")}</h2>
+                <p>{t("fromFigmaToProduction.handoff.body")}</p>
+              </div>
 
-              <h3 id="components">
-                {t("fromFigmaToProduction.components.title")}
-              </h3>
-              <p>{t("fromFigmaToProduction.components.body")}</p>
+              <div>
+                <h3 id="components">
+                  {t("fromFigmaToProduction.components.title")}
+                </h3>
+                <p>{t("fromFigmaToProduction.components.body")}</p>
+              </div>
 
               <blockquote className="mt-6 border-l-4 border-sky-300 bg-sky-50 dark:bg-slate-800 p-4 rounded">
                 <p className="italic text-slate-700 dark:text-slate-300">
@@ -133,43 +121,42 @@ const FromFigmaToProduction: React.FC = () => {
                 </p>
               </blockquote>
 
-              <h3 id="visual-testing">
-                {t("fromFigmaToProduction.visualTesting.title")}
-              </h3>
-              <p>{t("fromFigmaToProduction.visualTesting.body")}</p>
+              <div>
+                <h3 id="visual-testing">
+                  {t("fromFigmaToProduction.visualTesting.title")}
+                </h3>
+                <p>{t("fromFigmaToProduction.visualTesting.body")}</p>
+              </div>
 
-              <figure className="my-8 rounded-lg overflow-hidden shadow">
-                <img
-                  src="/images/course-illustration-2.jpg"
-                  alt={t("fromFigmaToProduction.imageAlt2")}
-                  width={1200}
-                  height={400}
-                  className="w-full h-56 object-cover"
-                />
-              </figure>
+              <div>
+                <h3 id="ci">{t("fromFigmaToProduction.ci.title")}</h3>
+                <p>{t("fromFigmaToProduction.ci.body")}</p>
+              </div>
 
-              <h3 id="ci">{t("fromFigmaToProduction.ci.title")}</h3>
-              <p>{t("fromFigmaToProduction.ci.body")}</p>
+              <div>
+                <h3 id="performance">
+                  {t("fromFigmaToProduction.performance.title")}
+                </h3>
+                <p>{t("fromFigmaToProduction.performance.body")}</p>
+              </div>
+              <div>
+                <h3 id="checklist">
+                  {t("fromFigmaToProduction.checklist.title")}
+                </h3>
+                <ol>
+                  <li>{t("fromFigmaToProduction.checklist.item1")}</li>
+                  <li>{t("fromFigmaToProduction.checklist.item2")}</li>
+                  <li>{t("fromFigmaToProduction.checklist.item3")}</li>
+                  <li>{t("fromFigmaToProduction.checklist.item4")}</li>
+                </ol>
+              </div>
 
-              <h3 id="performance">
-                {t("fromFigmaToProduction.performance.title")}
-              </h3>
-              <p>{t("fromFigmaToProduction.performance.body")}</p>
-
-              <h3 id="checklist">
-                {t("fromFigmaToProduction.checklist.title")}
-              </h3>
-              <ol>
-                <li>{t("fromFigmaToProduction.checklist.item1")}</li>
-                <li>{t("fromFigmaToProduction.checklist.item2")}</li>
-                <li>{t("fromFigmaToProduction.checklist.item3")}</li>
-                <li>{t("fromFigmaToProduction.checklist.item4")}</li>
-              </ol>
-
-              <h3 id="conclusion">
-                {t("fromFigmaToProduction.conclusion.title")}
-              </h3>
-              <p>{t("fromFigmaToProduction.conclusion.body")}</p>
+              <div>
+                <h3 id="conclusion">
+                  {t("fromFigmaToProduction.conclusion.title")}
+                </h3>
+                <p>{t("fromFigmaToProduction.conclusion.body")}</p>
+              </div>
 
               <div className="mt-10 p-6 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-100 dark:border-slate-700">
                 <h4 className="font-semibold">
