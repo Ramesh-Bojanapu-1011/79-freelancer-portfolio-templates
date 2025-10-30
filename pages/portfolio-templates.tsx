@@ -262,7 +262,7 @@ const PortfolioTemplatesPage: React.FC = () => {
                   <div className="flex items-center justify-center">
                     <div className="w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5 bg-white dark:bg-slate-800">
                       <img
-                        src="https://picsum.photos/seed/design-system/1200/800"
+                        src="https://i.pinimg.com/1200x/d3/56/35/d35635fa9834d654765b468f8f18e266.jpg"
                         alt="Design system preview"
                         className="w-full h-64 object-cover"
                       />
@@ -288,180 +288,195 @@ const PortfolioTemplatesPage: React.FC = () => {
         {/* ======================================================= */}
         {/* 2. SCOPE & DELIVERABLES: Card-Grid Polish */}
         {/* ======================================================= */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32 bg-white dark:bg-slate-900">
-          <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              {t("portfolio.deliverables.title")}
-            </h2>
-            <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              {t("portfolio.deliverables.desc")}
-            </p>
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Deliverables */}
-            <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 transition-shadow duration-300 hover:shadow-2xl">
-              <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
-                <Figma className="h-6 w-6" /> Template Kit & Deliverables
-              </div>
-              <ul className="mt-6 space-y-3 text-slate-700 dark:text-slate-300">
-                <li className="flex items-start gap-2">
-                  {t("portfolio.deliverables.items.0")}
-                </li>
-                <li className="flex items-start gap-2">
-                  {t("portfolio.deliverables.items.1")}
-                </li>
-                <li className="flex items-start gap-2">
-                  {t("portfolio.deliverables.items.2")}
-                </li>
-                <li className="flex items-start gap-2">
-                  {t("portfolio.deliverables.items.3")}
-                </li>
-                <li className="flex items-start gap-2">
-                  {t("portfolio.deliverables.items.4")}
-                </li>
-              </ul>
+        <section className="  bg-linear-to-b   from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32">
+            <div className="text-center">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                {t("portfolio.deliverables.title")}
+              </h2>
+              <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                {t("portfolio.deliverables.desc")}
+              </p>
             </div>
 
-            {/* Timeline */}
-            <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 transition-shadow duration-300 hover:shadow-2xl">
-              <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
-                <Zap className="h-6 w-6" /> {t("portfolio.timeline.title")}
-              </div>
-              <div className="mt-6 text-slate-700 dark:text-slate-300">
-                {t("portfolio.timeline.desc")}
-              </div>
-              <div className="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400 border-t pt-4 border-slate-200 dark:border-slate-700">
-                {t("portfolio.timeline.includes")}
-              </div>
-            </div>
-
-            {/* How we work */}
-            <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 flex flex-col justify-between transition-shadow duration-300 hover:shadow-2xl">
-              <div>
+            <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Deliverables */}
+              <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 transition-shadow duration-300 hover:shadow-2xl">
                 <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
-                  <Code className="h-6 w-6" /> {t("portfolio.workflow.title")}
+                  <Figma className="h-6 w-6" /> Template Kit & Deliverables
                 </div>
-                <ol className="mt-6 text-slate-700 dark:text-slate-300 space-y-3 list-decimal pl-5">
-                  <li>{t("portfolio.workflow.steps.0")}</li>
-                  <li>{t("portfolio.workflow.steps.1")}</li>
-                  <li>{t("portfolio.workflow.steps.2")}</li>
-                  <li>{t("portfolio.workflow.steps.3")}</li>
-                </ol>
+                <ul className="mt-6 space-y-3 text-slate-700 dark:text-slate-300">
+                  <li className="flex items-start gap-2">
+                    {t("portfolio.deliverables.items.0")}
+                  </li>
+                  <li className="flex items-start gap-2">
+                    {t("portfolio.deliverables.items.1")}
+                  </li>
+                  <li className="flex items-start gap-2">
+                    {t("portfolio.deliverables.items.2")}
+                  </li>
+                  <li className="flex items-start gap-2">
+                    {t("portfolio.deliverables.items.3")}
+                  </li>
+                  <li className="flex items-start gap-2">
+                    {t("portfolio.deliverables.items.4")}
+                  </li>
+                </ul>
               </div>
 
-              <div className="mt-8">
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center justify-center w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-medium transition-colors"
-                >
-                  {t("portfolio.cta.get_quote")}
-                </Link>
+              {/* Timeline */}
+              <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 transition-shadow duration-300 hover:shadow-2xl">
+                <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
+                  <Zap className="h-6 w-6" /> {t("portfolio.timeline.title")}
+                </div>
+                <div className="mt-6 text-slate-700 dark:text-slate-300">
+                  {t("portfolio.timeline.desc")}
+                </div>
+                <div className="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400 border-t pt-4 border-slate-200 dark:border-slate-700">
+                  {t("portfolio.timeline.includes")}
+                </div>
+              </div>
+
+              {/* How we work */}
+              <div className="rounded-2xl bg-slate-50 dark:bg-slate-800 p-8 shadow-xl ring-1 ring-black/5 dark:ring-white/5 flex flex-col justify-between transition-shadow duration-300 hover:shadow-2xl">
+                <div>
+                  <div className="flex items-center gap-3 text-xl font-semibold text-indigo-600 dark:text-cyan-400">
+                    <Code className="h-6 w-6" /> {t("portfolio.workflow.title")}
+                  </div>
+                  <ol className="mt-6 text-slate-700 dark:text-slate-300 space-y-3 list-decimal pl-5">
+                    <li>{t("portfolio.workflow.steps.0")}</li>
+                    <li>{t("portfolio.workflow.steps.1")}</li>
+                    <li>{t("portfolio.workflow.steps.2")}</li>
+                    <li>{t("portfolio.workflow.steps.3")}</li>
+                  </ol>
+                </div>
+
+                <div className="mt-8">
+                  <Link
+                    href="/contact-us"
+                    className="inline-flex items-center justify-center w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-medium transition-colors"
+                  >
+                    {t("portfolio.cta.get_quote")}
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Projects */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
-          <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-extrabold">
-              {t("portfolio.projects.title")}
-            </h2>
-            <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              {t("portfolio.projects.desc")}
-            </p>
-          </div>
+        <section className=" bg-linear-to-b   from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
+            <div className="text-center">
+              <h2 className="text-2xl sm:text-3xl font-extrabold">
+                {t("portfolio.projects.title")}
+              </h2>
+              <p className="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                {t("portfolio.projects.desc")}
+              </p>
+            </div>
 
-          <div className="mt-10 space-y-10">
-            {[
-              { id: "tpl-1", img: "https://picsum.photos/seed/tpl-1/900/600" },
-              { id: "tpl-2", img: "https://picsum.photos/seed/tpl-2/900/600" },
-              { id: "tpl-3", img: "https://picsum.photos/seed/tpl-3/900/600" },
-            ].map((p, idx) => (
-              <article
-                key={p.id}
-                className="group rounded-2xl overflow-hidden bg-white dark:bg-slate-800 shadow-sm ring-1 ring-black/5 dark:ring-white/5"
-              >
-                <div
-                  className={`flex flex-col lg:flex-row items-center gap-6 p-4 ${
-                    idx % 2 === 1 ? "lg:flex-row-reverse" : ""
-                  }`}
+            <div className="mt-10 space-y-10">
+              {[
+                {
+                  id: "tpl-1",
+                  img: "https://i.pinimg.com/736x/05/46/46/05464693268fd1a5c3f82dc7c27c7467.jpg",
+                },
+                {
+                  id: "tpl-2",
+                  img: "https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg",
+                },
+                {
+                  id: "tpl-3",
+                  img: "https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg",
+                },
+              ].map((p, idx) => (
+                <article
+                  key={p.id}
+                  className="group rounded-2xl overflow-hidden bg-white dark:bg-slate-800 shadow-sm ring-1 ring-black/5 dark:ring-white/5"
                 >
-                  <div className="relative w-full lg:w-1/2 h-56 sm:h-64 lg:h-56 overflow-hidden rounded-xl">
-                    <img
-                      src={p.img}
-                      alt={t(`portfolio.projects.items.${p.id}.title`)}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
-                    <span className="absolute left-4 bottom-4 inline-flex items-center gap-2 bg-white/90 dark:bg-black/60 text-sm px-3 py-1 rounded-full font-medium text-slate-800 dark:text-slate-100">
-                      {t(`portfolio.projects.items.${p.id}.title`)
-                        .split("—")[0]
-                        .trim()}
-                    </span>
-                  </div>
+                  <div
+                    className={`flex flex-col lg:flex-row items-center gap-6 p-4 ${
+                      idx % 2 === 1 ? "lg:flex-row-reverse" : ""
+                    }`}
+                  >
+                    <div className="relative w-full lg:w-1/2 h-56 sm:h-64 lg:h-56 overflow-hidden rounded-xl">
+                      <img
+                        src={p.img}
+                        alt={t(`portfolio.projects.items.${p.id}.title`)}
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
+                      <span className="absolute left-4 bottom-4 inline-flex items-center gap-2 bg-white/90 dark:bg-black/60 text-sm px-3 py-1 rounded-full font-medium text-slate-800 dark:text-slate-100">
+                        {t(`portfolio.projects.items.${p.id}.title`)
+                          .split("—")[0]
+                          .trim()}
+                      </span>
+                    </div>
 
-                  <div className="w-full lg:w-1/2 p-2 lg:p-6">
-                    <h3 className="font-semibold text-2xl text-slate-900 dark:text-slate-100">
-                      {t(`portfolio.projects.items.${p.id}.title`)}
-                    </h3>
-                    <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
-                      {t(`portfolio.projects.items.${p.id}.desc`)}
-                    </p>
-                    <div className="mt-6 flex items-center justify-between">
-                      <div className="text-xs text-slate-500 dark:text-slate-400">
-                        Design & implementation
+                    <div className="w-full lg:w-1/2 p-2 lg:p-6">
+                      <h3 className="font-semibold text-2xl text-slate-900 dark:text-slate-100">
+                        {t(`portfolio.projects.items.${p.id}.title`)}
+                      </h3>
+                      <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
+                        {t(`portfolio.projects.items.${p.id}.desc`)}
+                      </p>
+                      <div className="mt-6 flex items-center justify-between">
+                        <div className="text-xs text-slate-500 dark:text-slate-400">
+                          Design & implementation
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </article>
-            ))}
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Testimonials */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
-          <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-              {t("portfolio.testimonials.title")}
-            </h2>
-            <p className="mt-2 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              {t("portfolio.testimonials.desc")}
-            </p>
-          </div>
+        <section className=" bg-linear-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
+            <div className="text-center">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                {t("portfolio.testimonials.title")}
+              </h2>
+              <p className="mt-2 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                {t("portfolio.testimonials.desc")}
+              </p>
+            </div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { id: "t1", avatar: "https://i.pravatar.cc/80?img=12" },
-              { id: "t2", avatar: "https://i.pravatar.cc/80?img=47" },
-              { id: "t3", avatar: "https://i.pravatar.cc/80?img=32" },
-            ].map((tm) => (
-              <blockquote
-                key={tm.id}
-                className="rounded-3xl bg-slate-50 dark:bg-slate-800 p-8 shadow-md ring-1 ring-black/5 dark:ring-white/5 border-t-4 border-indigo-600 dark:border-cyan-400"
-              >
-                <p className="text-lg font-medium text-slate-700 dark:text-slate-200">
-                  “{t(`portfolio.testimonials.items.${tm.id}.quote`)}”
-                </p>
-                <div className="mt-6 flex items-center gap-4">
-                  <img
-                    src={tm.avatar}
-                    alt={t(`portfolio.testimonials.items.${tm.id}.name`)}
-                    className="w-12 h-12 rounded-full ring-2 ring-indigo-600 dark:ring-cyan-400"
-                  />
-                  <div>
-                    <div className="text-sm font-bold text-slate-900 dark:text-white">
-                      {t(`portfolio.testimonials.items.${tm.id}.name`)}
-                    </div>
-                    <div className="text-xs text-slate-500 dark:text-slate-400">
-                      {t(`portfolio.testimonials.items.${tm.id}.role`)}
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { id: "t1", avatar: "https://i.pravatar.cc/80?img=12" },
+                { id: "t2", avatar: "https://i.pravatar.cc/80?img=47" },
+                { id: "t3", avatar: "https://i.pravatar.cc/80?img=32" },
+              ].map((tm) => (
+                <blockquote
+                  key={tm.id}
+                  className="rounded-3xl bg-slate-50 dark:bg-slate-800 p-8 shadow-md ring-1 ring-black/5 dark:ring-white/5 border-t-4 border-indigo-600 dark:border-cyan-400"
+                >
+                  <p className="text-lg font-medium text-slate-700 dark:text-slate-200">
+                    “{t(`portfolio.testimonials.items.${tm.id}.quote`)}”
+                  </p>
+                  <div className="mt-6 flex items-center gap-4">
+                    <img
+                      src={tm.avatar}
+                      alt={t(`portfolio.testimonials.items.${tm.id}.name`)}
+                      className="w-12 h-12 rounded-full ring-2 ring-indigo-600 dark:ring-cyan-400"
+                    />
+                    <div>
+                      <div className="text-sm font-bold text-slate-900 dark:text-white">
+                        {t(`portfolio.testimonials.items.${tm.id}.name`)}
+                      </div>
+                      <div className="text-xs text-slate-500 dark:text-slate-400">
+                        {t(`portfolio.testimonials.items.${tm.id}.role`)}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </blockquote>
-            ))}
+                </blockquote>
+              ))}
+            </div>
           </div>
         </section>
 
