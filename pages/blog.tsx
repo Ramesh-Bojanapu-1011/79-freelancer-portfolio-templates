@@ -11,26 +11,29 @@ const posts = [
     id: "1",
     slug: "design-systems-that-scale",
     date: "2025-09-10",
+    img: "https://i.pinimg.com/1200x/07/a7/b0/07a7b06ac8052534e63f3b2a855bcf69.jpg",
   },
   {
     id: "2",
     slug: "launching-with-confidence",
     date: "2025-08-21",
+    img: "https://i.pinimg.com/1200x/21/0c/cd/210ccd28a6c26892a2235289f89e75d8.jpg",
   },
   {
     id: "3",
     slug: "from-figma-to-production",
     date: "2025-07-15",
+    img: "https://i.pinimg.com/736x/0f/f7/97/0ff797d41378ea6ca7a058b0430b77ae.jpg",
   },
 ];
 
 const clients = [
-  { name: "Mulan Park", image: "/images/client-mulan.jpg", alt: "Mulan Park" },
-  { name: "Ecom Co", image: "/images/client-2.jpg", alt: "Ecom Co" },
-  { name: "Studio X", image: "/images/client-3.jpg", alt: "Studio X" },
-  { name: "FinTech Ltd", image: "/images/client-4.jpg", alt: "FinTech Ltd" },
-  { name: "Startup Y", image: "/images/client-5.jpg", alt: "Startup Y" },
-  { name: "Agency Z", image: "/images/client-6.jpg", alt: "Agency Z" },
+  { key: "client1", image: "https://randomuser.me/api/portraits/men/69.jpg" },
+  { key: "client2", image: "https://randomuser.me/api/portraits/men/57.jpg" },
+  { key: "client3", image: "https://randomuser.me/api/portraits/men/58.jpg" },
+  { key: "client4", image: "https://randomuser.me/api/portraits/men/80.jpg" },
+  { key: "client5", image: "https://randomuser.me/api/portraits/men/50.jpg" },
+  { key: "client6", image: " https://randomuser.me/api/portraits/men/70.jpg" },
 ];
 
 const features = [{ id: 1 }, { id: 2 }, { id: 3 }];
@@ -69,8 +72,11 @@ const BlogPage: React.FC = () => {
           </div>
         </section>
 
-        <section id="latest" className="py-12">
-          <div className="max-w-6xl mx-auto px-6">
+        <section
+          id="latest"
+          className="bg-linear-to-b   from-white to-slate-50 dark:from-slate-900 dark:to-slate-800"
+        >
+          <div className="max-w-6xl py-12 mx-auto px-6">
             <div className="flex items-center flex-col">
               <h2 className="text-2xl font-semibold">
                 {t("blog.trending.title")}
@@ -84,15 +90,14 @@ const BlogPage: React.FC = () => {
               {posts.map((p) => (
                 <article
                   key={p.id}
-                  className="group relative overflow-hidden rounded-2xl border border-slate-100 dark:border-slate-800 p-6 bg-white dark:bg-slate-900"
+                  className="group relative overflow-hidden rounded-2xl border border-slate-100 dark:border-slate-800 p-6 bg-white dark:bg-slate-900 shadow-2xl"
                 >
                   <div className="h-48 bg-linear-to-r from-pink-300 to-indigo-400 flex items-center justify-center text-white rounded-md mb-4">
-                    <span className="sr-only">
-                      {t(`blog.posts.${p.id}.title`)} image
-                    </span>
-                    <div className="text-lg font-semibold">
-                      {t(`blog.posts.${p.id}.title`)}
-                    </div>
+                    <img
+                      src={p.img}
+                      alt=""
+                      className="h-full w-full object-cover object-bottom"
+                    />
                   </div>
 
                   <h3 className="mt-3 font-semibold">
@@ -117,8 +122,8 @@ const BlogPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-16">
-          <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <section className=" bg-linear-to-b   from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+          <div className="max-w-6xl py-16 mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-3xl font-semibold">
                 {t("blog.advantages.title")}
@@ -170,7 +175,7 @@ const BlogPage: React.FC = () => {
             <div className="flex items-center justify-center">
               <div className="w-full max-w-md rounded-xl overflow-hidden shadow-lg">
                 <img
-                  src="/images/upsell-illustration.jpg"
+                  src="https://i.pinimg.com/1200x/aa/0e/f8/aa0ef8f07a662a3214dcb2679d4eaab1.jpg"
                   alt="Upsell"
                   className="w-full h-64 object-cover"
                 />
@@ -179,8 +184,8 @@ const BlogPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-16 bg-white dark:bg-slate-900">
-          <div className="max-w-6xl mx-auto px-6 text-center">
+        <section className="bg-linear-to-b   from-white to-slate-50 dark:from-slate-900 dark:to-slate-800  ">
+          <div className="max-w-6xl py-16 mx-auto px-6 text-center">
             <h2 className="text-3xl font-semibold">
               {t("blog.features.title")}
             </h2>
@@ -192,7 +197,7 @@ const BlogPage: React.FC = () => {
               {features.map((f) => (
                 <div
                   key={f.id}
-                  className="p-6 rounded-xl border border-slate-100 dark:border-slate-800 text-left bg-white dark:bg-slate-900 shadow-sm"
+                  className="p-6 rounded-xl border border-slate-100 dark:border-slate-800 text-left bg-white dark:bg-slate-900 shadow-xl"
                 >
                   <h3 className="font-semibold text-lg">
                     {t(`blog.features.items.${f.id}.title`)}
@@ -226,15 +231,17 @@ const BlogPage: React.FC = () => {
 
             <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center justify-center">
               {clients.map((c) => (
-                <div key={c.name} className="flex flex-col items-center">
+                <div key={c.key} className="flex flex-col items-center">
                   <div className="h-24 w-24 rounded-full overflow-hidden bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
                     <img
                       src={c.image}
-                      alt={c.alt}
+                      alt={t(`blog.clients.items.${c.key}.alt`)}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="mt-2 text-sm">{c.name}</div>
+                  <div className="mt-2 text-sm">
+                    {t(`blog.clients.items.${c.key}.name`)}
+                  </div>
                 </div>
               ))}
             </div>

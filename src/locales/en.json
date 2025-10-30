@@ -1408,7 +1408,15 @@
     },
     "clients": {
       "title": "Meet our clients",
-      "desc": "Trusted by startups and established teams — we help clients ship beautiful, high-performing portfolios and sites."
+      "desc": "Trusted by startups and established teams — we help clients ship beautiful, high-performing portfolios and sites.",
+      "items": {
+        "client1": { "name": "Mulan Park", "alt": "Mulan Park" },
+        "client2": { "name": "Ecom Co", "alt": "Ecom Co" },
+        "client3": { "name": "Studio X", "alt": "Studio X" },
+        "client4": { "name": "FinTech Ltd", "alt": "FinTech Ltd" },
+        "client5": { "name": "Startup Y", "alt": "Startup Y" },
+        "client6": { "name": "Agency Z", "alt": "Agency Z" }
+      }
     },
     "final": {
       "title": "Ready to Ship Faster?",
