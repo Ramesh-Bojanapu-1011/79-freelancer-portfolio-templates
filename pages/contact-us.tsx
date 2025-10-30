@@ -101,7 +101,7 @@ const ContactUs: React.FC = () => {
       roleShort: t("contact.testimonials.items.0.roleShort"),
       handle: t("contact.testimonials.items.0.handle"),
       date: t("contact.testimonials.items.0.date"),
-      avatar: "/images/avatars/alex.jpg",
+      avatar: "https://randomuser.me/api/portraits/men/44.jpg",
       initials: t("contact.testimonials.items.0.initials"),
     },
     {
@@ -111,7 +111,7 @@ const ContactUs: React.FC = () => {
       roleShort: t("contact.testimonials.items.1.roleShort"),
       handle: t("contact.testimonials.items.1.handle"),
       date: t("contact.testimonials.items.1.date"),
-      avatar: "/images/avatars/maya.jpg",
+      avatar: " https://randomuser.me/api/portraits/women/68.jpg",
       initials: t("contact.testimonials.items.1.initials"),
     },
     {
@@ -121,7 +121,7 @@ const ContactUs: React.FC = () => {
       roleShort: t("contact.testimonials.items.2.roleShort"),
       handle: t("contact.testimonials.items.2.handle"),
       date: t("contact.testimonials.items.2.date"),
-      avatar: "/images/avatars/ravi.jpg",
+      avatar: " https://randomuser.me/api/portraits/men/12.jpg",
       initials: t("contact.testimonials.items.2.initials"),
     },
   ];
@@ -181,7 +181,7 @@ const ContactUs: React.FC = () => {
                 <div className="w-full max-w-md rounded-2xl overflow-hidden bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-100 dark:ring-slate-800">
                   <div className="relative w-full h-80">
                     <img
-                      src="/images/contact-illustration.jpg"
+                      src="https://i.pinimg.com/736x/68/fe/77/68fe77ee99736755043a3f52239b9ec1.jpg"
                       alt={t("contact.hero.image_alt")}
                       style={{ objectFit: "cover" }}
                     />
@@ -195,9 +195,9 @@ const ContactUs: React.FC = () => {
         {/* 2) Contact form */}
         <section
           id="contact-form"
-          className=" flex justify-center w-screen items-center bg-white dark:bg-slate-900"
+          className=" flex justify-center w-screen items-center bg-linear-to-b   from-white to-slate-50 dark:from-slate-900 dark:to-slate-800"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 max-w-7xl   py-24 lg:py-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8   max-w-7xl   py-24 lg:py-32">
             <div>
               <h2 className="text-2xl font-semibold">
                 {t("contact.form.title")}
@@ -379,8 +379,8 @@ const ContactUs: React.FC = () => {
         </section>
 
         {/* 5) FAQ - controlled accordion (try new) */}
-        <section className="mb-10 flex justify-center w-screen items-center bg-white dark:bg-slate-900">
-          <div className="w-full max-w-3xl px-4">
+        <section className=" flex justify-center w-screen items-center  bg-linear-to-b   from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+          <div className="w-full mb-10 max-w-3xl py-12 px-4">
             <h3 className="text-2xl font-semibold text-center">
               {t("contact.faq.title")}
             </h3>
@@ -406,8 +406,8 @@ const ContactUs: React.FC = () => {
         </section>
 
         {/* NEW: Testimonials (try new look) */}
-        <section className="mb-10 flex justify-center w-screen items-center  ">
-          <div className="w-full max-w-7xl px-6 lg:px-8 py-12">
+        <section className="bg-linear-to-b  flex flex-col justify-center items-center  from-white to-slate-50 dark:from-slate-900 dark:to-slate-800  ">
+          <div className="  mb-10  items-center      max-w-7xl px-6 lg:px-8 py-12">
             <h3 className="text-2xl font-semibold text-center">
               {t("contact.testimonials.title")}
             </h3>
