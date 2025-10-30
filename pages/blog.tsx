@@ -59,7 +59,7 @@ const BlogPage: React.FC = () => {
           <div className="mt-6 flex justify-center gap-3">
             <Link
               href="/contact-us"
-              className="inline-block rounded-md bg-sky-600 px-4 py-2 text-white hover:bg-sky-700"
+              className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-md font-medium"
             >
               {t("blog.hero.cta_work")}
             </Link>
@@ -165,7 +165,7 @@ const BlogPage: React.FC = () => {
               <div className="mt-6">
                 <Link
                   href="/contact-us"
-                  className="inline-block rounded-md bg-sky-600 px-4 py-2 text-white"
+                  className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-md font-medium"
                 >
                   {t("blog.advantages.cta")}
                 </Link>
@@ -262,7 +262,7 @@ const BlogPage: React.FC = () => {
               <div className="mt-10">
                 <Link
                   href="/contact-us"
-                  className="inline-block rounded-md bg-sky-600 px-4 py-2 text-white"
+                  className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-md font-medium"
                 >
                   {t("blog.final.cta")}
                 </Link>
