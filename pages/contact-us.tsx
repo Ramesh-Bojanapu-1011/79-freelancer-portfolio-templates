@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
-import Head from "next/head";
-import SiteHeadder from "@/components/SiteHeadder";
 import SiteFooter from "@/components/SiteFooter";
-import Image from "next/image";
-import { Mail, Phone, MapPin, Send, Check, ChevronDown } from "lucide-react";
+import SiteHeadder from "@/components/SiteHeadder";
+import { Check, ChevronDown, Mail, MapPin, Phone, Send } from "lucide-react";
+import Head from "next/head";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import Aos from "aos";
 
 const ContactUs: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -23,6 +23,9 @@ const ContactUs: React.FC = () => {
   const [subStatus, setSubStatus] = useState<
     null | "idle" | "sending" | "sent" | "error"
   >("idle");
+  React.useEffect(() => {
+    Aos.init({ duration: 1000, once: false });
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -141,7 +144,7 @@ const ContactUs: React.FC = () => {
           <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24  ">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
               {/* left: contact text */}
-              <div>
+              <div data-aos="fade-right">
                 <span className="inline-block text-xs font-medium px-3 py-1 rounded-full bg-sky-50 text-sky-700">
                   {t("contact.hero.badge")}
                 </span>
@@ -177,7 +180,10 @@ const ContactUs: React.FC = () => {
               </div>
 
               {/* right: large image card */}
-              <div className="flex justify-center md:justify-end">
+              <div
+                data-aos="fade-left"
+                className="flex justify-center md:justify-end"
+              >
                 <div className="w-full max-w-md rounded-2xl overflow-hidden bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-100 dark:ring-slate-800">
                   <div className="relative w-full h-80">
                     <img
@@ -418,6 +424,8 @@ const ContactUs: React.FC = () => {
               {testimonials.map((test, i) => (
                 <figure
                   key={i}
+                  data-aos="fade-up"
+                  data-aos-delay={i * 100}
                   className="relative pt-6 pb-6 px-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-lg  "
                 >
                   {/* overlapping avatar */}
