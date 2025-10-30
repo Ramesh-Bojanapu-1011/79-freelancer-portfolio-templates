@@ -424,13 +424,6 @@ const Home2 = () => {
               >
                 {t("home2.cta.cta_primary")} <ArrowRight className="h-4 w-4" />
               </Link>
-
-              <Link
-                href="/templates"
-                className="inline-flex items-center gap-2 text-indigo-600 hover:underline px-4 py-3 rounded-md font-medium"
-              >
-                {t("home2.cta.cta_secondary")}
-              </Link>
             </div>
           </div>
         </section>

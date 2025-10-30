@@ -164,7 +164,7 @@ export default function SiteFooter() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {/* Column 1: Logo + description + social */}
           <div>
-            <Link href="/" className="inline-flex items-center gap-3">
+            <Link href="/home1" className="inline-flex items-center gap-3">
               <img
                 src="https://i.postimg.cc/DwdH9gv8/logo-stackly.png"
                 alt="Logo"

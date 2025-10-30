@@ -237,7 +237,7 @@ const AboutUsPage = () => {
                   </Link>
 
                   <Link
-                    href="/templates"
+                    href="/services"
                     className="text-indigo-600 hover:underline"
                   >
                     {t("about.hero.cta_browse")}
