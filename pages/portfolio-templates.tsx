@@ -1,8 +1,6 @@
-import React from "react";
-import Head from "next/head";
-import Link from "next/link";
-import SiteHeadder from "@/components/SiteHeadder";
 import SiteFooter from "@/components/SiteFooter";
+import SiteHeadder from "@/components/SiteHeadder";
+import AOS from "aos";
 import {
   Check,
   Code,
@@ -12,9 +10,15 @@ import {
   Server,
   Zap,
 } from "lucide-react";
+import Head from "next/head";
+import Link from "next/link";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 const PortfolioTemplatesPage: React.FC = () => {
+  React.useEffect(() => {
+    AOS.init({ duration: 1000, once: false });
+  }, []);
   const { t } = useTranslation();
   const pricingPlans = [
     {
@@ -393,6 +397,8 @@ const PortfolioTemplatesPage: React.FC = () => {
               ].map((p, idx) => (
                 <article
                   key={p.id}
+                  data-aos="fade-up"
+                  data-aos-delay={idx * 100}
                   className="group rounded-2xl overflow-hidden bg-white dark:bg-slate-800 shadow-sm ring-1 ring-black/5 dark:ring-white/5"
                 >
                   <div
@@ -451,9 +457,11 @@ const PortfolioTemplatesPage: React.FC = () => {
                 { id: "t1", avatar: "https://i.pravatar.cc/80?img=12" },
                 { id: "t2", avatar: "https://i.pravatar.cc/80?img=47" },
                 { id: "t3", avatar: "https://i.pravatar.cc/80?img=32" },
-              ].map((tm) => (
+              ].map((tm, idx) => (
                 <blockquote
                   key={tm.id}
+                  data-aos="fade-up"
+                  data-aos-delay={idx * 100}
                   className="rounded-3xl bg-slate-50 dark:bg-slate-800 p-8 shadow-md ring-1 ring-black/5 dark:ring-white/5 border-t-4 border-indigo-600 dark:border-cyan-400"
                 >
                   <p className="text-lg font-medium text-slate-700 dark:text-slate-200">
